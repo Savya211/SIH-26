@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Warning</title>
+    <link rel="stylesheet" href="warning.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="warning-container">
+        <div class="icon-container">
+            ⚠️
+        </div>
+        <h1 id="warning-title">Deceptive Site Ahead</h1>
+        <p id="warning-message">
+            Attackers on this site may trick you into doing something dangerous like installing software or revealing
+            your personal information (for example, passwords, phone numbers, or credit cards).
+        </p>
+
+        <div class="details-box">
+            <p><strong>Threat Source:</strong> <span id="threat-source">Loading...</span></p>
+            <p><strong>URL:</strong> <span id="threat-url">Loading...</span></p>
+        </div>
+
+        <div class="actions">
+            <button id="btn-back" class="btn primary">Back to Safety</button>
+            <button id="btn-proceed" class="btn secondary">Proceed Anyway (Unsafe)</button>
+        </div>
+    </div>
+    <script src="warning.js"></script>
+</body>
+
+</html>

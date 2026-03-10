@@ -1,0 +1,1018 @@
+{
+  "github.com": {
+    "name": "FMHY SafeGuard",
+    "category": "Safety"
+  },
+  "fastforward.team": {
+    "name": "FastForward",
+    "category": "Browser Extension"
+  },
+  "privacybadger.org": {
+    "name": "Privacy Badger",
+    "category": "Browser Extension"
+  },
+  "eff.org": {
+    "name": "HTTPS Everywhere",
+    "category": "Browser Extension"
+  },
+  "decentraleyes.org": {
+    "name": "Decentraleyes",
+    "category": "Browser Extension"
+  },
+  "localcdn.org": {
+    "name": "LocalCDN",
+    "category": "Browser Extension"
+  },
+  "sponsor.ajay.app": {
+    "name": "SponsorBlock",
+    "category": "Browser Extension"
+  },
+  "cineby.gd": {
+    "name": "Cineby",
+    "category": "Streaming - Movies & TV"
+  },
+  "xprime.today": {
+    "name": "XPrime",
+    "category": "Streaming - Movies & TV"
+  },
+  "rivestream.org": {
+    "name": "Rive",
+    "category": "Streaming - Movies & TV"
+  },
+  "67movies.net": {
+    "name": "67Movies",
+    "category": "Streaming - Movies & TV"
+  },
+  "aether.mom": {
+    "name": "Aether",
+    "category": "Streaming - Movies & TV"
+  },
+  "flickystream.ru": {
+    "name": "FlickyStream",
+    "category": "Streaming - Movies & TV"
+  },
+  "watch.spencerdevs.xyz": {
+    "name": "SpenFlix",
+    "category": "Streaming - Movies & TV"
+  },
+  "cinegram.net": {
+    "name": "Cinegram",
+    "category": "Streaming - Movies & TV"
+  },
+  "shuttletv.su": {
+    "name": "ShuttleTV",
+    "category": "Streaming - Movies & TV"
+  },
+  "1shows.nl": {
+    "name": "1Shows",
+    "category": "Streaming - Movies & TV"
+  },
+  "cinema.bz": {
+    "name": "Cinema.BZ",
+    "category": "Streaming - Movies & TV"
+  },
+  "filmcave.ru": {
+    "name": "FilmCave",
+    "category": "Streaming - Movies & TV"
+  },
+  "popcornmovies.org": {
+    "name": "PopcornMovies",
+    "category": "Streaming - Movies & TV"
+  },
+  "azmovies.to": {
+    "name": "AZMovies",
+    "category": "Streaming - Movies & TV"
+  },
+  "bflix.sh": {
+    "name": "BFLIX",
+    "category": "Streaming - Movies & TV"
+  },
+  "primewire.mov": {
+    "name": "PrimeWire",
+    "category": "Streaming - Movies & TV"
+  },
+  "nepu.to": {
+    "name": "NEPU",
+    "category": "Streaming - Single Server"
+  },
+  "ee3.me": {
+    "name": "EE3",
+    "category": "Streaming - Single Server"
+  },
+  "yflix.to": {
+    "name": "yFlix",
+    "category": "Streaming - Single Server"
+  },
+  "sflix2.to": {
+    "name": "SFlix",
+    "category": "Streaming - Single Server"
+  },
+  "flixhq.to": {
+    "name": "FlixHQ",
+    "category": "Streaming - Single Server"
+  },
+  "lookmovie2.to": {
+    "name": "LookMovie",
+    "category": "Streaming - Single Server"
+  },
+  "hollymoviehd.cc": {
+    "name": "HollyMovieHD",
+    "category": "Streaming - Single Server"
+  },
+  "flixer.su": {
+    "name": "Flixer",
+    "category": "Streaming - Aggregator"
+  },
+  "bcine.app": {
+    "name": "bCine",
+    "category": "Streaming - Aggregator"
+  },
+  "filmex.to": {
+    "name": "Filmex",
+    "category": "Streaming - Aggregator"
+  },
+  "vidbox.cc": {
+    "name": "Vidbox",
+    "category": "Streaming - Aggregator"
+  },
+  "willow.arlen.icu": {
+    "name": "Willow",
+    "category": "Streaming - Aggregator"
+  },
+  "cinemaos.live": {
+    "name": "CinemaOS",
+    "category": "Streaming - Aggregator"
+  },
+  "tv.vynx.cc": {
+    "name": "FlyX",
+    "category": "Streaming - Aggregator"
+  },
+  "aurorascreen.org": {
+    "name": "AuroraScreen",
+    "category": "Streaming - Aggregator"
+  },
+  "popr.ink": {
+    "name": "Poprink",
+    "category": "Streaming - Aggregator"
+  },
+  "sanuflix-web-v2.pages.dev": {
+    "name": "SanuFlix",
+    "category": "Streaming - Aggregator"
+  },
+  "hydrahd.com": {
+    "name": "HydraHD",
+    "category": "Streaming - Aggregator"
+  },
+  "flickermini.pages.dev": {
+    "name": "Flicker",
+    "category": "Streaming - Aggregator"
+  },
+  "flixzy.pages.dev": {
+    "name": "VoidFlix",
+    "category": "Streaming - Embed Frontend"
+  },
+  "cinezo.net": {
+    "name": "Cinezo",
+    "category": "Streaming - Embed Frontend"
+  },
+  "redflix.co": {
+    "name": "Redflix",
+    "category": "Streaming - Embed Frontend"
+  },
+  "alienflix.net": {
+    "name": "AlienFlix",
+    "category": "Streaming - Embed Frontend"
+  },
+  "tubitv.com": {
+    "name": "Tubi",
+    "category": "Streaming - Free with Ads"
+  },
+  "watch.plex.tv": {
+    "name": "Plex",
+    "category": "Streaming - Free with Ads"
+  },
+  "pluto.tv": {
+    "name": "Pluto TV",
+    "category": "Streaming - Free with Ads"
+  },
+  "kanopy.com": {
+    "name": "Kanopy",
+    "category": "Streaming - Free with Ads"
+  },
+  "hoopladigital.com": {
+    "name": "hoopla",
+    "category": "Streaming - Free with Ads"
+  },
+  "arte.tv": {
+    "name": "ARTE",
+    "category": "Streaming - Free with Ads"
+  },
+  "justwatch.com": {
+    "name": "JustWatch",
+    "category": "Streaming Directory"
+  },
+  "streamed.pk": {
+    "name": "Streamed",
+    "category": "Sports Streaming"
+  },
+  "sportyhunter.com": {
+    "name": "SportyHunter",
+    "category": "Sports Streaming"
+  },
+  "dramacoolt.com.in": {
+    "name": "DramaCool",
+    "category": "Drama Streaming"
+  },
+  "goplay.su": {
+    "name": "GoPlay",
+    "category": "Drama Streaming"
+  },
+  "animekai.to": {
+    "name": "AnimeKai",
+    "category": "Anime - Streaming"
+  },
+  "miruro.com": {
+    "name": "Miruro",
+    "category": "Anime - Streaming"
+  },
+  "hianime.to": {
+    "name": "HiAnime",
+    "category": "Anime - Streaming"
+  },
+  "nyaa.si": {
+    "name": "Nyaa",
+    "category": "Anime - Torrenting"
+  },
+  "hayase.watch": {
+    "name": "Hayase",
+    "category": "Anime - Torrenting"
+  },
+  "tokyoinsider.com": {
+    "name": "Tokyo Insider",
+    "category": "Anime - Downloading"
+  },
+  "kayoanime.com": {
+    "name": "Kayoanime",
+    "category": "Anime - Downloading"
+  },
+  "vkvideo.ru": {
+    "name": "VK Video",
+    "category": "Video Streaming"
+  },
+  "ok.ru": {
+    "name": "OK Video",
+    "category": "Video Streaming"
+  },
+  "youtube.com": {
+    "name": "YouTube",
+    "category": "Video Streaming"
+  },
+  "dailymotion.com": {
+    "name": "Dailymotion",
+    "category": "Video Streaming"
+  },
+  "bilibili.com": {
+    "name": "BiliBili",
+    "category": "Video Streaming"
+  },
+  "nicovideo.jp": {
+    "name": "Niconico",
+    "category": "Video Streaming"
+  },
+  "annas-archive.li": {
+    "name": "Anna's Archive",
+    "category": "Books"
+  },
+  "z-lib.gd": {
+    "name": "Z-Library",
+    "category": "Books"
+  },
+  "libgen.is": {
+    "name": "Library Genesis",
+    "category": "Books"
+  },
+  "myanonamouse.net": {
+    "name": "MyAnonamouse (MAM)",
+    "category": "Books"
+  },
+  "archive.org": {
+    "name": "Internet Archive",
+    "category": "Download - General"
+  },
+  "ebookbb.com": {
+    "name": "eBookBB",
+    "category": "Books"
+  },
+  "ibookpile.net": {
+    "name": "iBookPile",
+    "category": "Books"
+  },
+  "liber3.eth.limo": {
+    "name": "Liber3",
+    "category": "Books"
+  },
+  "en.booksee.org": {
+    "name": "BookSee",
+    "category": "Books"
+  },
+  "librarylandsc.com": {
+    "name": "Library Land",
+    "category": "Books"
+  },
+  "audiobookbay.lu": {
+    "name": "AudiobookBay",
+    "category": "Audiobooks"
+  },
+  "tokybook.com": {
+    "name": "Tokybook",
+    "category": "Audiobooks"
+  },
+  "forum.mobilism.org": {
+    "name": "Mobilism",
+    "category": "Mobile Apps"
+  },
+  "weebcentral.com": {
+    "name": "Weeb Central",
+    "category": "Manga"
+  },
+  "comix.to": {
+    "name": "Comix",
+    "category": "Manga"
+  },
+  "mangafire.to": {
+    "name": "MangaFire",
+    "category": "Manga"
+  },
+  "manganato.com": {
+    "name": "MangaNato",
+    "category": "Manga"
+  },
+  "batcave.biz": {
+    "name": "BatCave",
+    "category": "Comics"
+  },
+  "readcomiconline.li": {
+    "name": "ReadComicsOnline",
+    "category": "Comics"
+  },
+  "getcomics.org": {
+    "name": "GetComics",
+    "category": "Comics"
+  },
+  "monochrome.tf": {
+    "name": "Monochrome",
+    "category": "Music - Streaming"
+  },
+  "lucida.to": {
+    "name": "lucida",
+    "category": "Music - Downloading"
+  },
+  "doubledouble.top": {
+    "name": "DoubleDouble",
+    "category": "Music - Downloading"
+  },
+  "slsknet.org": {
+    "name": "Soulseek",
+    "category": "Music - Downloading"
+  },
+  "nicotine-plus.org": {
+    "name": "Nicotine+ / Soulseek",
+    "category": "Download - P2P"
+  },
+  "mostafaalagamy.github.io": {
+    "name": "Metrolist",
+    "category": "Music - Android"
+  },
+  "rutracker.org": {
+    "name": "RuTracker",
+    "category": "Torrent Indexer"
+  },
+  "1337x.to": {
+    "name": "1337x",
+    "category": "Torrent Indexer"
+  },
+  "rarbgdump.com": {
+    "name": "RARBG Dump",
+    "category": "Torrent Indexer"
+  },
+  "limetorrents.lol": {
+    "name": "LimeTorrents",
+    "category": "Torrent Indexer"
+  },
+  "torrentdownloads.pro": {
+    "name": "TorrentDownloads",
+    "category": "Torrent Indexer"
+  },
+  "extratorrent.st": {
+    "name": "ExtraTorrent",
+    "category": "Torrent Indexer"
+  },
+  "rutor.is": {
+    "name": "RuTor",
+    "category": "Torrent Indexer"
+  },
+  "nnmclub.to": {
+    "name": "NNM-Club",
+    "category": "Torrent Indexer"
+  },
+  "ext.to": {
+    "name": "ExT",
+    "category": "Torrent Aggregator"
+  },
+  "btdig.com": {
+    "name": "BTDigg",
+    "category": "Torrent Aggregator"
+  },
+  "knaben.org": {
+    "name": "Knaben",
+    "category": "Torrent Aggregator"
+  },
+  "torrentproject.cc": {
+    "name": "TorrentProject",
+    "category": "Torrent Aggregator"
+  },
+  "snowfl.com": {
+    "name": "snowfl",
+    "category": "Torrent Aggregator"
+  },
+  "torlock.com": {
+    "name": "Torlock",
+    "category": "Torrent Aggregator"
+  },
+  "bt4gprx.com": {
+    "name": "BT4G",
+    "category": "Torrent Aggregator"
+  },
+  "filemood.com": {
+    "name": "FileMood",
+    "category": "Torrent Aggregator"
+  },
+  "torrents-csv.com": {
+    "name": "Torrents-CSV",
+    "category": "Torrent Aggregator"
+  },
+  "cloudtorrents.com": {
+    "name": "CloudTorrents",
+    "category": "Torrent Aggregator"
+  },
+  "qbittorrent.org": {
+    "name": "qBittorrent",
+    "category": "Torrent Client"
+  },
+  "deluge-torrent.org": {
+    "name": "Deluge",
+    "category": "Torrent Client"
+  },
+  "transmissionbt.com": {
+    "name": "Transmission",
+    "category": "Torrent Client"
+  },
+  "rakshasa.github.io": {
+    "name": "rTorrent",
+    "category": "Torrent Client"
+  },
+  "biglybt.com": {
+    "name": "BiglyBT",
+    "category": "Torrent Client"
+  },
+  "tixati.com": {
+    "name": "Tixati",
+    "category": "Torrent Client"
+  },
+  "webtorrent.io": {
+    "name": "WebTorrent",
+    "category": "Torrent Client"
+  },
+  "picotorrent.org": {
+    "name": "PicoTorrent",
+    "category": "Torrent Client"
+  },
+  "torbox.app": {
+    "name": "TorBox",
+    "category": "Remote Torrenting"
+  },
+  "seedr.cc": {
+    "name": "Seedr",
+    "category": "Remote Torrenting"
+  },
+  "webtor.io": {
+    "name": "webtor",
+    "category": "Remote Torrenting"
+  },
+  "real-debrid.com": {
+    "name": "Real-Debrid",
+    "category": "Debrid Service"
+  },
+  "cs.rin.ru": {
+    "name": "CS.RIN.RU",
+    "category": "Games - Download"
+  },
+  "ankergames.net": {
+    "name": "AnkerGames",
+    "category": "Games - Download"
+  },
+  "steamrip.com": {
+    "name": "SteamRIP",
+    "category": "Games - Download"
+  },
+  "astral-games.xyz": {
+    "name": "AstralGames",
+    "category": "Games - Download"
+  },
+  "gog-games.to": {
+    "name": "GOG Games",
+    "category": "Games - Download"
+  },
+  "union-crax.xyz": {
+    "name": "UnionCrax",
+    "category": "Games - Download"
+  },
+  "online-fix.me": {
+    "name": "Online Fix",
+    "category": "Games - Download"
+  },
+  "ovagames.com": {
+    "name": "Ova Games",
+    "category": "Games - Download"
+  },
+  "forum.torrminatorr.com": {
+    "name": "Torrminatorr",
+    "category": "Games - Download"
+  },
+  "steamunderground.net": {
+    "name": "SteamUnderground",
+    "category": "Games - Download"
+  },
+  "gload.to": {
+    "name": "GLoad",
+    "category": "Games - Download"
+  },
+  "g4u.to": {
+    "name": "g4u",
+    "category": "Games - Download"
+  },
+  "gamebounty.world": {
+    "name": "GameBounty",
+    "category": "Games - Download"
+  },
+  "elenemigos.com": {
+    "name": "ElEnemigos",
+    "category": "Games - Download"
+  },
+  "atopgames.com": {
+    "name": "AtopGames",
+    "category": "Games - Download"
+  },
+  "fitgirl-repacks.site": {
+    "name": "FitGirl Repacks",
+    "category": "Games - Repacks"
+  },
+  "kaoskrew.org": {
+    "name": "KaOsKrew",
+    "category": "Games - Repacks"
+  },
+  "rentry.co": {
+    "name": "Myrient",
+    "category": "ROMs & Emulation"
+  },
+  "m4ckd0ge-repacks.site": {
+    "name": "M4CKD0GE Repacks",
+    "category": "Games - Repacks"
+  },
+  "elamigos.site": {
+    "name": "ElAmigos",
+    "category": "Games - Repacks"
+  },
+  "byxatab.com": {
+    "name": "Xatab Repacks",
+    "category": "Games - Repacks"
+  },
+  "cpgrepacks.site": {
+    "name": "CPG Repacks",
+    "category": "Games - Repacks"
+  },
+  "repack.info": {
+    "name": "Chovka",
+    "category": "Games - Repacks"
+  },
+  "tiny-repacks.win": {
+    "name": "Tiny Repacks",
+    "category": "Games - Repacks"
+  },
+  "freegogpcgames.com": {
+    "name": "FreeGOGPCGames",
+    "category": "Games - Repacks"
+  },
+  "myabandonware.com": {
+    "name": "My Abandonware",
+    "category": "Games - Abandonware"
+  },
+  "abandonwaregames.net": {
+    "name": "AbandonwareGames",
+    "category": "Games - Abandonware"
+  },
+  "retro-exo.com": {
+    "name": "Retro eXo",
+    "category": "Games - Abandonware"
+  },
+  "vetusware.com": {
+    "name": "VETUSWARE",
+    "category": "Games - Abandonware"
+  },
+  "collectionchamber.blogspot.com": {
+    "name": "CollectionChamber",
+    "category": "Games - Abandonware"
+  },
+  "oldgamesdownload.com": {
+    "name": "OldGamesDownload",
+    "category": "Games - Abandonware"
+  },
+  "vrpirates.wiki": {
+    "name": "VRPirates",
+    "category": "Games - VR"
+  },
+  "rentry.org": {
+    "name": "Piracy Glossary",
+    "category": "Reference"
+  },
+  "megathread.pages.dev": {
+    "name": "privateersclub",
+    "category": "Games - Index"
+  },
+  "fearlessrevolution.com": {
+    "name": "Fearless Revolution",
+    "category": "Games - Trainers"
+  },
+  "flingtrainer.com": {
+    "name": "FLiNG Trainers",
+    "category": "Games - Trainers"
+  },
+  "wemod.com": {
+    "name": "WeMod",
+    "category": "Games - Trainers"
+  },
+  "mrantifun.net": {
+    "name": "MrAntiFun",
+    "category": "Games - Trainers"
+  },
+  "gamecopyworld.com": {
+    "name": "GameCopyWorld",
+    "category": "Games - Trainers"
+  },
+  "itch.io": {
+    "name": "itch.io Free Games",
+    "category": "Games - Free"
+  },
+  "freetogame.com": {
+    "name": "FreeToGame",
+    "category": "Games - Free"
+  },
+  "emulation.gametechwiki.com": {
+    "name": "Emulation Wiki",
+    "category": "ROMs & Emulation"
+  },
+  "r-roms.github.io": {
+    "name": "r/ROMs Mega Thread",
+    "category": "ROMs & Emulation"
+  },
+  "vimm.net": {
+    "name": "Vimm's Lair",
+    "category": "ROMs & Emulation"
+  },
+  "crocdb.net": {
+    "name": "CrocDB",
+    "category": "ROMs & Emulation"
+  },
+  "cdromance.com": {
+    "name": "CDRomance",
+    "category": "ROMs & Emulation"
+  },
+  "nxbrew.com": {
+    "name": "NXBrew",
+    "category": "ROMs & Emulation"
+  },
+  "ziperto.com": {
+    "name": "Ziperto",
+    "category": "ROMs & Emulation"
+  },
+  "the-eye.eu": {
+    "name": "The Eye",
+    "category": "ROMs & Emulation"
+  },
+  "edgeemu.net": {
+    "name": "Edge Emulation",
+    "category": "ROMs & Emulation"
+  },
+  "romulation.net": {
+    "name": "Romulation",
+    "category": "ROMs & Emulation"
+  },
+  "romspure.cc": {
+    "name": "Romspure",
+    "category": "ROMs & Emulation"
+  },
+  "theromdepot.com": {
+    "name": "TheRomDepot",
+    "category": "ROMs & Emulation"
+  },
+  "apkmirror.com": {
+    "name": "APKMirror",
+    "category": "Mobile Apps"
+  },
+  "droidify.eu.org": {
+    "name": "Droid-ify",
+    "category": "Mobile Apps"
+  },
+  "iphonecake.com": {
+    "name": "iPhone Cake",
+    "category": "Mobile Apps"
+  },
+  "revanced.app": {
+    "name": "ReVanced Manager",
+    "category": "Android"
+  },
+  "morphe.software": {
+    "name": "Morphe",
+    "category": "Android"
+  },
+  "sidestore.io": {
+    "name": "SideStore",
+    "category": "iOS Sideloading"
+  },
+  "sideloadly.io": {
+    "name": "Sideloadly",
+    "category": "iOS Sideloading"
+  },
+  "softarchive.download": {
+    "name": "SoftArchive",
+    "category": "Software Download"
+  },
+  "cracksurl.com": {
+    "name": "CracksURL",
+    "category": "Software Download"
+  },
+  "lrepacks.net": {
+    "name": "LRepacks",
+    "category": "Software Download"
+  },
+  "nsaneforums.com": {
+    "name": "Nsane Forums",
+    "category": "Software Download"
+  },
+  "soft98.ir": {
+    "name": "soft98",
+    "category": "Software Download"
+  },
+  "alternativeto.net": {
+    "name": "AlternativeTo",
+    "category": "Software"
+  },
+  "majorgeeks.com": {
+    "name": "MajorGeeks",
+    "category": "Software - Freeware"
+  },
+  "softpedia.com": {
+    "name": "Softpedia",
+    "category": "Software - Freeware"
+  },
+  "portableapps.com": {
+    "name": "PortableApps.com",
+    "category": "Software - Freeware"
+  },
+  "nirsoft.net": {
+    "name": "Nirsoft",
+    "category": "Software - Freeware"
+  },
+  "fosshub.com": {
+    "name": "FossHub",
+    "category": "Software - FOSS"
+  },
+  "sourceforge.net": {
+    "name": "SourceForge",
+    "category": "Software - FOSS"
+  },
+  "oss.gallery": {
+    "name": "OSS Gallery",
+    "category": "Software - FOSS"
+  },
+  "rlsbb.ru": {
+    "name": "ReleaseBB (RLSBB)",
+    "category": "Download - General"
+  },
+  "scnlog.me": {
+    "name": "SCNLOG",
+    "category": "Download - General"
+  },
+  "scnsrc.me": {
+    "name": "SceneSource",
+    "category": "Download - General"
+  },
+  "forum.dirtywarez.com": {
+    "name": "DirtyWarez",
+    "category": "Download - General"
+  },
+  "4shared.com": {
+    "name": "4Shared",
+    "category": "Download - General"
+  },
+  "eyedex.org": {
+    "name": "EyeDex",
+    "category": "Download - Open Directories"
+  },
+  "odcrawler.xyz": {
+    "name": "ODCrawler",
+    "category": "Download - Open Directories"
+  },
+  "sabnzbd.org": {
+    "name": "sabnzbd",
+    "category": "Usenet Downloader"
+  },
+  "nzbplanet.net": {
+    "name": "NzbPlanet",
+    "category": "Usenet Indexer"
+  },
+  "binsearch.info": {
+    "name": "binsearch",
+    "category": "Usenet Indexer"
+  },
+  "nzbfinder.ws": {
+    "name": "NZBFinder",
+    "category": "Usenet Indexer"
+  },
+  "nzbindex.com": {
+    "name": "NZB Index",
+    "category": "Usenet Indexer"
+  },
+  "predb.net": {
+    "name": "PreDB.net",
+    "category": "Release Tracker"
+  },
+  "milkie.cc": {
+    "name": "Milkie",
+    "category": "Release Tracker"
+  },
+  "xrel.to": {
+    "name": "xREL",
+    "category": "Release Tracker"
+  },
+  "srrdb.com": {
+    "name": "srrDB",
+    "category": "Release Tracker"
+  },
+  "m2v.ru": {
+    "name": "m2v.ru",
+    "category": "Release Tracker"
+  },
+  "predb.me": {
+    "name": "predb.me",
+    "category": "Release Tracker"
+  },
+  "predb.org": {
+    "name": "predb.org",
+    "category": "Release Tracker"
+  },
+  "reddit.com": {
+    "name": "CrackWatch",
+    "category": "Release Tracker"
+  },
+  "jdownloader.org": {
+    "name": "JDownloader2",
+    "category": "Download Manager"
+  },
+  "freedownloadmanager.org": {
+    "name": "FreeDownloadManager",
+    "category": "Download Manager"
+  },
+  "motrix.app": {
+    "name": "Motrix",
+    "category": "Download Manager"
+  },
+  "subhra74.github.io": {
+    "name": "Xtreme Download Manager",
+    "category": "Download Manager"
+  },
+  "mullvad.net": {
+    "name": "Mullvad VPN",
+    "category": "VPN"
+  },
+  "protonvpn.com": {
+    "name": "ProtonVPN",
+    "category": "VPN"
+  },
+  "monkrus.ws": {
+    "name": "monkrus.ws",
+    "category": "Activation"
+  },
+  "virustotal.com": {
+    "name": "VirusTotal",
+    "category": "Safety"
+  },
+  "claraiscute.neocities.org": {
+    "name": "Sandboxie",
+    "category": "Safety"
+  },
+  "7-zip.org": {
+    "name": "7-Zip",
+    "category": "Utility"
+  },
+  "bitwarden.com": {
+    "name": "Bitwarden",
+    "category": "Utility"
+  },
+  "torproject.org": {
+    "name": "Tor Browser",
+    "category": "Privacy Browser"
+  },
+  "mozilla.org": {
+    "name": "Firefox",
+    "category": "Browser"
+  },
+  "brave.com": {
+    "name": "Brave",
+    "category": "Browser"
+  },
+  "proton.me": {
+    "name": "Proton Mail",
+    "category": "Privacy"
+  },
+  "searx.fmhy.net": {
+    "name": "SearXNG",
+    "category": "Privacy"
+  },
+  "haveibeenpwned.com": {
+    "name": "HaveIBeenPwned",
+    "category": "Privacy"
+  },
+  "fmhy.net": {
+    "name": "FMHY Unsafe Sites List",
+    "category": "Reference"
+  },
+  "fmhy.pages.dev": {
+    "name": "FMHY Backup",
+    "category": "Aggregator"
+  },
+  "shakil-shahadat.github.io": {
+    "name": "Awesome Piracy",
+    "category": "Aggregator"
+  },
+  "ripped.guide": {
+    "name": "Ripped.guide",
+    "category": "Aggregator"
+  },
+  "champagne.pages.dev": {
+    "name": "Champagne Piracy Wiki",
+    "category": "Aggregator"
+  },
+  "ducklink.pages.dev": {
+    "name": "Ducklink",
+    "category": "Aggregator"
+  },
+  "simkl.com": {
+    "name": "Simkl",
+    "category": "Media Tracker"
+  },
+  "trakt.tv": {
+    "name": "Trakt",
+    "category": "Media Tracker"
+  },
+  "letterboxd.com": {
+    "name": "Letterboxd",
+    "category": "Media Tracker"
+  },
+  "myanimelist.net": {
+    "name": "MyAnimeList",
+    "category": "Media Tracker"
+  },
+  "anilist.co": {
+    "name": "AniList",
+    "category": "Media Tracker"
+  },
+  "backloggd.com": {
+    "name": "Backloggd",
+    "category": "Media Tracker"
+  },
+  "rateyourmusic.com": {
+    "name": "RateYourMusic",
+    "category": "Media Tracker"
+  },
+  "last.fm": {
+    "name": "Last.fm",
+    "category": "Media Tracker"
+  },
+  "goodreads.com": {
+    "name": "GoodReads",
+    "category": "Media Tracker"
+  },
+  "thestorygraph.com": {
+    "name": "StoryGraph",
+    "category": "Media Tracker"
+  },
+  "leagueofcomicgeeks.com": {
+    "name": "LeagueOfComicGeeks",
+    "category": "Media Tracker"
+  },
+  "skmedix.pl": {
+    "name": "SKlauncher",
+    "category": "Games - Misc"
+  }
+}

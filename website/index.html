@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TheThirdEye — A privacy-focused Chrome Extension that protects you from phishing, checks password breaches, blocks trackers, and prevents WebRTC leaks. All locally, all securely.">
+    <title>TheThirdEye — Your All-Seeing Guardian for a Safer Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="assets/hero.png">
+</head>
+
+<body>
+
+    <!-- ======== NAVBAR ======== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="assets/hero.png" alt="TheThirdEye Logo" class="nav-logo-img">
+                <span>TheThirdEye</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#tech">Technology</a></li>
+                <li><a href="#install">Install</a></li>
+            </ul>
+            <a href="#install" class="nav-cta">Get Extension</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======== HERO ======== -->
+    <section class="hero" id="hero">
+        <!-- Animated background blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <!-- Floating particles -->
+        <div class="particles" id="particles"></div>
+
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Open-Source &amp; Free Forever
+                </div>
+                <h1>Your All-Seeing<br>Guardian for a<br><span class="gradient-text">Safer Web</span></h1>
+                <p>A privacy-first Chrome Extension that silently watches over you — blocking trackers, detecting
+                    breaches, preventing IP leaks, and managing cookies, all without sending your data anywhere.</p>
+                <div class="hero-actions">
+                    <a href="#install" class="btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Install Now — It's Free
+                    </a>
+                    <a href="#features" class="btn-ghost">See Features ↓</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-target="4">0</span>
+                        <span class="stat-label">Core Shields</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">0ms</span>
+                        <span class="stat-label">Overhead Added</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Private & Local</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-glow"></div>
+                <img src="assets/hero.png" alt="TheThirdEye Shield" class="hero-img">
+                <!-- Orbiting tags -->
+                <div class="orbit-tag tag-1">🔐 Breach Check</div>
+                <div class="orbit-tag tag-2">🛡️ Tracker Block</div>
+                <div class="orbit-tag tag-3">🍪 Cookie Mgr</div>
+                <div class="orbit-tag tag-4">🌐 IP Protected</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FEATURES ======== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">What We Protect</span>
+                <h2>Powerful <span class="accent">Shields</span> Active Right Now</h2>
+                <p>Four battle-tested protection layers working silently in your browser — zero configuration needed.
+                </p>
+            </div>
+
+            <div class="features-grid">
+
+                <!-- 1: Password Breach -->
+                <div class="feature-card reveal" style="--delay:0s">
+                    <div class="feature-card-glow" style="--glow:#6366f1"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#6366f1,#4f46e5);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Password Breach Detection</h3>
+                    <p>Silently checks if your password has appeared in known data breaches using the HaveIBeenPwned
+                        API. Your actual password never leaves your device — only the first 5 characters of a SHA-1 hash
+                        are sent, using <strong>k-Anonymity</strong>.</p>
+                    <div class="feature-tag">🔒 k-Anonymity Protected</div>
+                </div>
+
+                <!-- 2: Tracker Blocker -->
+                <div class="feature-card reveal" style="--delay:0.1s">
+                    <div class="feature-card-glow" style="--glow:#10b981"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#10b981,#059669);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <h3>Tracker Blocker</h3>
+                    <p>Blocks advertising and tracking networks at the network level using Chrome's Manifest V3
+                        <strong>declarativeNetRequest</strong> API. Zero runtime overhead — rules execute natively in
+                        the browser engine before requests even leave.</p>
+                    <div class="feature-tag">⚡ Zero Performance Cost</div>
+                </div>
+
+                <!-- 3: WebRTC -->
+                <div class="feature-card reveal" style="--delay:0.2s">
+                    <div class="feature-card-glow" style="--glow:#f59e0b"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#f59e0b,#d97706);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>WebRTC IP Leak Prevention</h3>
+                    <p>Forces all UDP traffic through a proxy so your real IP address can't be exposed via WebRTC — even
+                        if you're behind a VPN. Essential protection for privacy-conscious users.</p>
+                    <div class="feature-tag">🌐 VPN Leak Safe</div>
+                </div>
+
+                <!-- 4: Cookie Control -->
+                <div class="feature-card reveal" style="--delay:0.3s">
+                    <div class="feature-card-glow" style="--glow:#ec4899"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#ec4899,#db2777);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3>Cookie Control Center</h3>
+                    <p>Inspect, manage, and delete every cookie a site has stored — directly from the extension popup.
+                        See cookie names, domains, SameSite attributes, and remove them with a single click.</p>
+                    <div class="feature-tag">🍪 Full Visibility</div>
+                </div>
+
+                <!-- 5: Security Headers -->
+                <div class="feature-card reveal" style="--delay:0.4s">
+                    <div class="feature-card-glow" style="--glow:#06b6d4"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#06b6d4,#0891b2);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <h3>Security Header Analyser</h3>
+                    <p>Grades every page you visit on its response headers — CSP, HSTS, X-Frame-Options, and more. Get
+                        an instant A–F report and understand exactly what each header means for your safety.</p>
+                    <div class="feature-tag">📊 Instant A–F Grade</div>
+                </div>
+
+                <!-- 6: Dashboard -->
+                <div class="feature-card reveal" style="--delay:0.5s">
+                    <div class="feature-card-glow" style="--glow:#a855f7"></div>
+                    <div class="feature-icon-wrap" style="background: linear-gradient(135deg,#a855f7,#7c3aed);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                    </div>
+                    <h3>Full-Screen Security Dashboard</h3>
+                    <p>A beautiful analytics dashboard showing your risk score, threat timeline, threats by source,
+                        breached domains, and blocked trackers — all populated from real local extension data.</p>
+                    <div class="feature-tag">📈 Real-Time Analytics</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== HOW IT WORKS ======== -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Simple Setup</span>
+                <h2>Up and Running in <span class="accent-green">3 Steps</span></h2>
+                <p>No accounts. No subscriptions. No cloud sync. Just install and stay protected.</p>
+            </div>
+
+            <div class="steps-wrapper">
+                <div class="steps-line"></div>
+                <div class="steps">
+                    <div class="step reveal" style="--delay:0s">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install the Extension</h3>
+                            <p>Open <code>chrome://extensions</code>, enable <strong>Developer Mode</strong>, click
+                                <strong>Load Unpacked</strong>, and select the TheThirdEye folder.</p>
+                        </div>
+                    </div>
+                    <div class="step reveal" style="--delay:0.15s">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Pin & Open the Popup</h3>
+                            <p>Pin TheThirdEye to your Chrome toolbar. Click it to open the security popup — all 4
+                                shields activate automatically. No API keys needed.</p>
+                        </div>
+                    </div>
+                    <div class="step reveal" style="--delay:0.3s">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Browse Freely</h3>
+                            <p>TheThirdEye silently guards every tab. Password breaches, tracker blocks, cookie
+                                exposures, and header grades are captured in real time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== TECH ======== -->
+    <section class="tech" id="tech">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Under the Hood</span>
+                <h2>Built With <span class="accent">Modern Tech</span></h2>
+                <p>Privacy-respecting architecture. Zero bloat. Nothing phoned home.</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card reveal" style="--delay:0s">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Manifest V3</h3>
+                    <p>Built on Chrome's latest and most secure extension platform. declarativeNetRequest blocks
+                        trackers at engine level with zero JS overhead.</p>
+                </div>
+                <div class="tech-card reveal" style="--delay:0.1s">
+                    <div class="tech-icon">🔑</div>
+                    <h3>k-Anonymity</h3>
+                    <p>Password breach checks use only the first 5 characters of a SHA-1 hash. The full hash and your
+                        actual password never travel the network.</p>
+                </div>
+                <div class="tech-card reveal" style="--delay:0.2s">
+                    <div class="tech-icon">🏠</div>
+                    <h3>Local-First</h3>
+                    <p>All data — breaches, threats, tracker counts — is stored only in your browser's local extension
+                        storage. Nothing is synced or logged externally.</p>
+                </div>
+                <div class="tech-card reveal" style="--delay:0.3s">
+                    <div class="tech-icon">🪶</div>
+                    <h3>Zero Dependencies</h3>
+                    <p>Pure HTML, CSS &amp; vanilla JavaScript. No frameworks, no npm bloat, no supply-chain risk. What
+                        you see is what runs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== INSTALL ======== -->
+    <section class="installation" id="install">
+        <div class="container">
+            <div class="install-card reveal">
+                <div class="install-glow"></div>
+                <div class="install-content">
+                    <img src="assets/hero.png" alt="TheThirdEye" class="install-logo">
+                    <div>
+                        <h2>Install TheThirdEye <span class="accent-green">Today</span></h2>
+                        <p>Free. Open-source. No account required. Start protecting yourself in under 60 seconds.</p>
+                        <ol class="install-steps">
+                            <li>Open Chrome → go to <code>chrome://extensions</code></li>
+                            <li>Toggle on <strong>Developer mode</strong> (top-right)</li>
+                            <li>Click <strong>Load unpacked</strong> → select the <code>TheThirdEye</code> folder</li>
+                            <li>Pin the extension → click the icon → you're protected ✅</li>
+                        </ol>
+                        <a href="https://github.com" target="_blank" rel="noopener" class="btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                            Download from GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#" class="nav-logo footer-logo">
+                <img src="assets/hero.png" alt="TheThirdEye" class="nav-logo-img">
+                <span>TheThirdEye</span>
+            </a>
+            <p class="footer-copy">© 2026 TheThirdEye · Built with privacy in mind</p>
+            <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">View on GitHub →</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

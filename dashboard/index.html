@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheThirdEye — Security Dashboard</title>
+    <meta name="description"
+        content="TheThirdEye fullscreen security dashboard — monitor threats, trackers, breaches, and more.">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ─── Sidebar ─── -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-logo">
+                <img src="../assets/icons/icon128.png" alt="TheThirdEye Logo"
+                    style="width:36px;height:36px;object-fit:contain;">
+                <span class="logo-text">TheThirdEye</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-group-label">General</div>
+                <a href="#" class="nav-item active" data-section="overview" id="nav-overview">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Overview</span>
+                </a>
+
+
+                <div class="nav-group-label">Reports</div>
+                <a href="#" class="nav-item" data-section="threat-details" id="nav-threat-details">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Threat Details</span>
+                    <span class="nav-chevron">›</span>
+                </a>
+                <a href="#" class="nav-item" data-section="threats" id="nav-threats">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Threats</span>
+                    <span class="nav-chevron">›</span>
+                </a>
+
+                <div class="nav-group-label">Settings</div>
+                <a href="#" class="nav-item" data-section="help" id="nav-help">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Help & Support</span>
+                </a>
+                <a href="#" class="nav-item" data-section="settings" id="nav-settings">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+        </div>
+    </aside>
+
+    <!-- ─── Main Area ─── -->
+    <main class="main-area">
+        <!-- ─── Top Bar ─── -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="welcome-block">
+                    <div class="welcome-avatar" id="welcome-avatar">👤</div>
+                    <div>
+                        <h2 class="welcome-name">Welcome! <span id="user-name">User</span></h2>
+                        <p class="welcome-sub">Security is a process, not a product.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search Here" autocomplete="off">
+                </div>
+            </div>
+        </header>
+
+        <!-- ─── Dashboard Content ─── -->
+        <div class="dashboard-content" id="dashboard-content">
+            <!-- OVERVIEW SECTION -->
+            <div id="section-overview" class="content-section" style="display:block;">
+                <!-- ROW 1: Current Risk + Risk Score -->
+                <section class="grid-row-1">
+                    <!-- Current Risk Card -->
+                    <div class="card card-risk-overview">
+                        <div class="card-header">
+                            <h3>Current Risk</h3>
+                            <div class="dropdown-pill" id="risk-period-toggle">
+                                <span>Daily</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="risk-stats-row">
+                            <div class="risk-stat" id="stat-total-threats">
+                                <div class="risk-stat-icon"
+                                    style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                        stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg>
+                                </div>
+                                <div class="risk-stat-info">
+                                    <span class="risk-stat-value" data-target="132">0</span>
+                                    <span class="risk-stat-label">Total Threats</span>
+                                </div>
+                                <button class="dot-menu">⋮</button>
+                            </div>
+                            <div class="risk-stat" id="stat-tracker-risk">
+                                <div class="risk-stat-icon"
+                                    style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+                                </div>
+                                <div class="risk-stat-info">
+                                    <span class="risk-stat-value" data-target="16">0</span><span
+                                        class="risk-stat-unit">%</span>
+                                    <span class="risk-stat-label">Tracker Risk</span>
+                                </div>
+                                <button class="dot-menu">⋮</button>
+                            </div>
+                            <div class="risk-stat" id="stat-phishing-risk">
+                                <div class="risk-stat-icon"
+                                    style="background: linear-gradient(135deg, #a855f7, #7c3aed);">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                        stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                                        <polyline points="2 3 12 13 22 3" />
+                                    </svg>
+                                </div>
+                                <div class="risk-stat-info">
+                                    <span class="risk-stat-value" data-target="43">0</span><span
+                                        class="risk-stat-unit">%</span>
+                                    <span class="risk-stat-label">Phishing Risk</span>
+                                </div>
+                                <button class="dot-menu">⋮</button>
+                            </div>
+                            <div class="risk-stat" id="stat-breach-risk">
+                                <div class="risk-stat-icon"
+                                    style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                        stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                                        <path d="M7 11V7a5 5 0 0110 0v4" />
+                                    </svg>
+                                </div>
+                                <div class="risk-stat-info">
+                                    <span class="risk-stat-value" data-target="7">0</span><span
+                                        class="risk-stat-unit">%</span>
+                                    <span class="risk-stat-label">Breach Risk</span>
+                                </div>
+                                <button class="dot-menu">⋮</button>
+                            </div>
+                            <div class="risk-stat" id="stat-cookie-risk">
+                                <div class="risk-stat-icon"
+                                    style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                        stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <div class="risk-stat-info">
+                                    <span class="risk-stat-value" data-target="66">0</span><span
+                                        class="risk-stat-unit">%</span>
+                                    <span class="risk-stat-label">Cookie Risk</span>
+                                </div>
+                                <button class="dot-menu">⋮</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Score Gauge -->
+                    <div class="card card-risk-score">
+                        <div class="card-header">
+                            <h3>Risk Score</h3>
+                            <button class="dot-menu">⋮</button>
+                        </div>
+                        <div class="gauge-container" id="gauge-container">
+                            <div class="gauge-ring" id="gauge-ring">
+                                <div class="gauge-inner">
+                                    <span class="gauge-label">Score</span>
+                                    <span class="gauge-value" id="gauge-value">0</span>
+                                    <span class="gauge-severity" id="gauge-severity">—</span>
+                                </div>
+                            </div>
+                            <div class="gauge-legend">
+                                <span>0</span>
+                                <span>1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ROW 2: Threat Summary + Threats by Source -->
+                <section class="grid-row-2">
+                    <!-- Threat Summary Chart -->
+                    <div class="card card-threat-summary">
+                        <div class="card-header">
+                            <h3>Threat Summary</h3>
+                            <div class="dropdown-pill" id="summary-period-toggle">
+                                <span>Yearly</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="threat-summary-chart"></canvas>
+                            <div class="chart-tooltip" id="chart-tooltip" style="display:none;">
+                                <span class="tooltip-month"></span>
+                                <span class="tooltip-label">Threats</span>
+                                <span class="tooltip-value"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Threats by Source Donut -->
+                    <div class="card card-threats-source">
+                        <div class="card-header">
+                            <h3>Threats By Source</h3>
+                            <button class="dot-menu">⋮</button>
+                        </div>
+                        <div class="donut-container">
+                            <canvas id="donut-chart" width="180" height="180"></canvas>
+                            <div class="donut-center-label">
+                                <span class="donut-total-label">Total</span>
+                                <span class="donut-total-value" id="donut-total">65%</span>
+                            </div>
+                        </div>
+                        <div class="donut-legend" id="donut-legend"></div>
+                    </div>
+                </section>
+
+                <!-- ROW 3: Threat Details + Threat by Domain -->
+                <section class="grid-row-3">
+                    <!-- Threat Details Table -->
+                    <div class="card card-threat-details">
+                        <div class="card-header">
+                            <h3>Threat Details</h3>
+                            <div class="dropdown-pill" id="details-period-toggle">
+                                <span>Daily</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="details-table" id="threat-details-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="th-icon">📅</span> Date
+                                        </th>
+                                        <th>
+                                            <span class="th-icon">🖥️</span> Domain
+                                        </th>
+                                        <th>
+                                            <span class="th-icon">⚠️</span> Threat Type
+                                        </th>
+                                        <th>
+                                            <span class="th-icon">📁</span> Source
+                                        </th>
+                                        <th>
+                                            <span class="th-icon">📊</span> Severity
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="threat-table-body">
+                                    <!-- JS populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Threat by Domain -->
+                    <div class="card card-threat-domain">
+                        <div class="card-header">
+                            <h3>Threat by Domain</h3>
+                            <button class="dot-menu">⋮</button>
+                        </div>
+                        <div class="domain-list" id="domain-list">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+                </section>
+            </div> <!-- End Overview Section -->
+
+            <!-- THREATS/BREACHES SECTION -->
+            <div id="section-threats" class="content-section" style="display:none;">
+                <div class="card" style="width: 100%; min-height: 400px; padding: 24px;">
+                    <h2 style="margin-bottom: 20px;">Breached Passwords</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">The following sites have been compromised
+                        in
+                        known data breaches. It is highly recommended to change your passwords immediately.</p>
+                    <div class="table-wrapper">
+                        <table class="details-table" id="breaches-table">
+                            <thead>
+                                <tr>
+                                    <th><span class="th-icon">📅</span> Date Detected</th>
+                                    <th><span class="th-icon">🖥️</span> Site Domain</th>
+                                    <th><span class="th-icon">⚠️</span> Breach Source</th>
+                                </tr>
+                            </thead>
+                            <tbody id="breaches-table-body">
+                                <tr>
+                                    <td colspan="3" style="text-align:center; color: var(--text-muted);">No breaches
+                                        detected.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS SECTION -->
+            <div id="section-settings" class="content-section" style="display:none;">
+                <div class="card" style="width: 100%; max-width: 800px; padding: 24px;">
+                    <h2 style="margin-bottom: 24px;">Security Settings</h2>
+
+                    <div
+                        style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid var(--border);">
+                        <div>
+                            <h3 style="font-size: 16px; margin-bottom: 4px;">Tracker Blocker</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">Automatically block known trackers.
+                            </p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                            <input type="checkbox" id="setting-tracker" checked
+                                style="opacity: 0; width: 0; height: 0;">
+                            <span
+                                style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success); transition: .4s; border-radius: 34px;"></span>
+                            <span
+                                style="position: absolute; content: ''; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; transform: translateX(20px);"></span>
+                        </label>
+                    </div>
+
+                    <div
+                        style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid var(--border);">
+                        <div>
+                            <h3 style="font-size: 16px; margin-bottom: 4px;">Password Breach Monitoring</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">Securely check passwords against
+                                HaveIBeenPwned locally.</p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                            <input type="checkbox" id="setting-password" checked
+                                style="opacity: 0; width: 0; height: 0;">
+                            <span
+                                style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success); transition: .4s; border-radius: 34px;"></span>
+                            <span
+                                style="position: absolute; content: ''; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; transform: translateX(20px);"></span>
+                        </label>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 15px;">
+                        <div>
+                            <h3 style="font-size: 16px; margin-bottom: 4px;">Phishing Protection</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">Use local AI models and heuristics to
+                                detect zero-day phishing.</p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                            <input type="checkbox" id="setting-phishing" checked
+                                style="opacity: 0; width: 0; height: 0;">
+                            <span
+                                style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success); transition: .4s; border-radius: 34px;"></span>
+                            <span
+                                style="position: absolute; content: ''; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; transform: translateX(20px);"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HELP SECTION -->
+            <div id="section-help" class="content-section" style="display:none;">
+                <div class="card" style="width: 100%; max-width: 800px; padding: 24px;">
+                    <h2 style="margin-bottom: 20px;">Help & Support</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Learn more about how TheThirdEye protects
+                        your
+                        browsing data.</p>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="margin-bottom: 8px;">How does local AI analysis work?</h4>
+                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-muted);">The extension extracts
+                            structural signals from web pages (like the number of hidden iframes or suspicious keyword
+                            presence) without logging keystrokes or inputs. These signals are scored heuristically and
+                            passed to the backend for AI inference.</p>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="margin-bottom: 8px;">Are my passwords sent to a server?</h4>
+                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-muted);">No. Passwords are hashed
+                            locally using SHA-1. Only the first 5 characters of the hash are queried against the HIBP
+                            database using k-Anonymity. This guarantees cryptographic safety.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

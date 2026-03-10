@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "TheThirdEye",
+  "version": "1.0",
+  "description": "Protects against online threats, checks passwords locally, blocks trackers, and detects phishing.",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "notifications",
+    "declarativeNetRequest",
+    "cookies",
+    "privacy",
+    "webRequest",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://api.pwnedpasswords.com/*",
+    "https://safebrowsing.googleapis.com/*",
+    "https://checkurl.phishtank.com/*",
+    "http://localhost:3000/*",
+    "https://mail.google.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "lib/crypto.js",
+        "lib/constants.js",
+        "content/password-monitor.js",
+        "content/homoglyph-detector.js",
+        "content/search-scanner.js",
+        "content/page-analyzer.js",
+        "content/mixed-content-detector.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "lib/constants.js",
+        "content/gmail-scanner.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_trackers",
+        "enabled": true,
+        "path": "rules/tracker-rules.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "thethirdeye",
+    "version": "1.0.0",
+    "description": "A Chrome extension that protects against online threats, checks passwords locally via HIBP, blocks trackers, and detects phishing.",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^29.5.0"
+    },
+    "author": "",
+    "license": "MIT"
+}

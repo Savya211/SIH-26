@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheThirdEye</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../assets/icons/icon128.png" alt="TheThirdEye Logo"
+                    style="width:32px;height:32px;object-fit:contain;">
+                <h1>TheThirdEye</h1>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+                <button id="panic-btn" title="Super Logout — Log out of all sites"
+                    style="background:linear-gradient(135deg,#dc2626,#991b1b);border:none;border-radius:7px;color:#fff;cursor:pointer;padding:5px 11px;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;letter-spacing:.4px;box-shadow:0 0 0 0 rgba(220,38,38,.5);animation:panic-pulse 2s infinite;transition:transform .1s,box-shadow .1s;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    PANIC
+                </button>
+                <button id="open-dashboard-btn" title="Open Fullscreen Dashboard"
+                    style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text-muted);cursor:pointer;padding:6px 8px;display:flex;align-items:center;transition:all .2s;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 3h6v6" />
+                        <path d="M9 21H3v-6" />
+                        <path d="M21 3l-7 7" />
+                        <path d="M3 21l7-7" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="passwords">Passwords</button>
+            <button class="tab-btn" data-tab="threats">Threats</button>
+            <button class="tab-btn" data-tab="trackers">Trackers</button>
+            <button class="tab-btn" data-tab="cookies">Cookies</button>
+            <button class="tab-btn" data-tab="network">Network</button>
+            <button class="tab-btn" data-tab="settings">Settings</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active">
+                <div class="status-card green">
+                    <h2>Connection Secure</h2>
+                    <p>No active threats detected on this page.</p>
+                </div>
+
+                <div id="reputation-card" class="status-card" style="display:none;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div>
+                            <h2 style="margin-bottom:2px;">Domain Reputation</h2>
+                            <p id="rep-domain" style="font-size:13px;"></p>
+                            <p id="rep-verdict" style="font-size:12px;font-weight:600;margin-top:4px;"></p>
+                        </div>
+                        <div id="rep-score" class="score-badge" style="font-size:18px;padding:6px 14px;">--</div>
+                    </div>
+                    <div id="rep-details" style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value" id="stat-passwords">0</span>
+                        <span class="stat-label">Breaches Found</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="stat-trackers">0</span>
+                        <span class="stat-label">Trackers Blocked</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="stat-threats">0</span>
+                        <span class="stat-label">Phishing Blocked</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other tabs will be populated dynamically or hidden initially -->
+            <section id="passwords" class="tab-content">
+                <h2>Breached Passwords</h2>
+                <div id="passwords-list" class="list-container">
+                    <p class="empty-state">No breached passwords detected yet.</p>
+                </div>
+            </section>
+
+            <section id="threats" class="tab-content">
+                <h2>Threat Log</h2>
+                <div id="threats-list" class="list-container">
+                    <p class="empty-state">No threats detected.</p>
+                </div>
+            </section>
+
+            <section id="trackers" class="tab-content">
+                <h2>Trackers Blocked (Current Page)</h2>
+                <div id="trackers-list" class="list-container">
+                    <p class="empty-state">No trackers detected on this page.</p>
+                </div>
+            </section>
+
+            <section id="cookies" class="tab-content">
+                <h2>Site Cookies</h2>
+                <button id="clear-cookies-btn" class="danger-btn">Clear All Current Site Cookies</button>
+                <div id="cookies-list" class="list-container mt-10">
+                    <p class="empty-state">Loading cookies...</p>
+                </div>
+            </section>
+
+            <section id="network" class="tab-content">
+                <h2>Security Headers</h2>
+                <div id="security-grade"></div>
+                <h3>Mixed Content</h3>
+                <div id="mixed-content-list" class="list-container">
+                    <p class="empty-state">Checking...</p>
+                </div>
+                <h3>Response Headers</h3>
+                <div id="header-status"></div>
+                <div id="headers-list" class="list-container">
+                    <p class="empty-state">Click to load headers.</p>
+                </div>
+            </section>
+
+            <section id="settings" class="tab-content">
+                <h2>Settings</h2>
+                <div class="settings-group">
+                    <label class="toggle">
+                        <span class="toggle-label">Password Breach Check (HIBP)</span>
+                        <input type="checkbox" id="setting-password" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle">
+                        <span class="toggle-label">Phishing/Malware Check</span>
+                        <input type="checkbox" id="setting-phishing" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle">
+                        <span class="toggle-label">Tracker Blocker</span>
+                        <input type="checkbox" id="setting-tracker" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle">
+                        <span class="toggle-label">WebRTC Leak Prevention</span>
+                        <input type="checkbox" id="setting-webrtc" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle">
+                        <span class="toggle-label">DNS-over-HTTPS (Secure DNS)</span>
+                        <input type="checkbox" id="setting-doh">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle">
+                        <span class="toggle-label">Search Result Safety Icons</span>
+                        <input type="checkbox" id="setting-search-annotations" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <label class="toggle" style="border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+                        <span class="toggle-label" style="display:flex;align-items:center;gap:6px;">
+                            <span>📧</span>
+                            <span>Gmail Phishing Scanner</span>
+                            <span
+                                style="font-size:10px;background:#2563eb;color:#fff;border-radius:4px;padding:1px 5px;font-weight:600;">NEW</span>
+                        </span>
+                        <input type="checkbox" id="setting-gmail-scanner" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <p style="font-size:11px;color:var(--text-muted);margin:-8px 0 8px 0;padding-left:2px;">
+                        Scans Gmail emails for phishing links, fake login pages (ZPhisher), and suspicious images before
+                        you click.
+                    </p>
+                </div>
+
+                <h3>API Keys</h3>
+                <div class="input-group">
+                    <label>Google Safe Browsing API Key</label>
+                    <input type="password" id="safebrowsing-key" placeholder="Enter API Key">
+                </div>
+                <div class="input-group">
+                    <label>PhishTank API Key</label>
+                    <input type="password" id="phishtank-key" placeholder="Enter API Key">
+                </div>
+                <button id="save-settings-btn" class="primary-btn">Save Settings</button>
+            </section>
+
+        </main>
+    </div>
+    <script src="../lib/header-grader.js"></script>
+    <script src="../lib/domain-reputation.js"></script>
+    <script src="components/dashboard.js"></script>
+    <script src="components/reputation.js"></script>
+    <script src="components/passwords.js"></script>
+    <script src="components/threats.js"></script>
+    <script src="components/cookies.js"></script>
+    <script src="components/network.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

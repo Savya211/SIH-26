@@ -1,0 +1,77 @@
+{
+  "utorrent": {
+    "category": "Torrent Client",
+    "reason": "Has ads and trackers; same issues as BitTorrent; unsafe",
+    "risk_level": "High"
+  },
+  "bittorrent": {
+    "category": "Torrent Client",
+    "reason": "Has ads and trackers; same issues as uTorrent; unsafe",
+    "risk_level": "High"
+  },
+  "ccleaner": {
+    "category": "Software Tool",
+    "reason": "Owned by Avast which has a history of questionable data practices",
+    "risk_level": "Medium"
+  },
+  "avast": {
+    "category": "Antivirus Software",
+    "reason": "Notorious for collecting and selling user data",
+    "risk_level": "High"
+  },
+  "igg games / pc games torrents": {
+    "category": "Game Downloads",
+    "reason": "Doxxed GoodOldDownloads owner; packages own DRM in indie games; exploits users for ad revenue",
+    "risk_level": "High"
+  },
+  "bbrepacks": {
+    "category": "Game Repacks",
+    "reason": "Fake BlackBox Repacks; contain malware",
+    "risk_level": "High"
+  },
+  "oceanofgames": {
+    "category": "Game Downloads",
+    "reason": "High malware risk",
+    "risk_level": "High"
+  },
+  "seyter": {
+    "category": "Game Repacks",
+    "reason": "Repacks contain bitcoin miners",
+    "risk_level": "High"
+  },
+  "steamunlocked": {
+    "category": "Game Downloads",
+    "reason": "Slow downloads; malicious link redirects; uploads stolen from IGG Games",
+    "risk_level": "High"
+  },
+  "gog unlocked": {
+    "category": "Game Downloads",
+    "reason": "Slow downloads; malicious link redirects; uploads stolen from IGG Games",
+    "risk_level": "High"
+  },
+  "repackgames": {
+    "category": "Game Repacks",
+    "reason": "Mislabels games and steals releases",
+    "risk_level": "Medium"
+  },
+  "the pirate bay": {
+    "category": "Torrent Indexer",
+    "reason": "Malware risk",
+    "risk_level": "High"
+  },
+  "kickass torrents": {
+    "category": "Torrent Indexer",
+    "reason": "Malware risk",
+    "risk_level": "High"
+  },
+  "wifi4games": {
+    "category": "Game Downloads",
+    "reason": "Malware downloads",
+    "risk_level": "High"
+  },
+  "sites with scene group names in url": {
+    "category": "Various",
+    "reason": "Scene groups do not have official websites; impersonators often bundle malware with releases",
+    "risk_level": "High"
+  }
+}
