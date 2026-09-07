@@ -1,77 +1,82 @@
 {
-  "utorrent": {
-    "category": "Torrent Client",
-    "reason": "Has ads and trackers; same issues as BitTorrent; unsafe",
+  "account verify example": {
+    "category": "Phishing",
+    "reason": "Credential verification lure",
     "risk_level": "High"
   },
-  "bittorrent": {
-    "category": "Torrent Client",
-    "reason": "Has ads and trackers; same issues as uTorrent; unsafe",
+  "bank login example": {
+    "category": "Phishing",
+    "reason": "Fake banking login request",
     "risk_level": "High"
   },
-  "ccleaner": {
-    "category": "Software Tool",
-    "reason": "Owned by Avast which has a history of questionable data practices",
-    "risk_level": "Medium"
-  },
-  "avast": {
-    "category": "Antivirus Software",
-    "reason": "Notorious for collecting and selling user data",
+  "payment update example": {
+    "category": "Phishing",
+    "reason": "Urgent payment-information request",
     "risk_level": "High"
   },
-  "igg games / pc games torrents": {
-    "category": "Game Downloads",
-    "reason": "Doxxed GoodOldDownloads owner; packages own DRM in indie games; exploits users for ad revenue",
+  "password reset example": {
+    "category": "Phishing",
+    "reason": "Suspicious password-reset lure",
     "risk_level": "High"
   },
-  "bbrepacks": {
-    "category": "Game Repacks",
-    "reason": "Fake BlackBox Repacks; contain malware",
+  "security alert example": {
+    "category": "Phishing",
+    "reason": "Impersonation/security-alert lure",
     "risk_level": "High"
   },
-  "oceanofgames": {
-    "category": "Game Downloads",
-    "reason": "High malware risk",
+  "invoice notice example": {
+    "category": "Phishing",
+    "reason": "Fraudulent invoice-themed lure",
     "risk_level": "High"
   },
-  "seyter": {
-    "category": "Game Repacks",
-    "reason": "Repacks contain bitcoin miners",
+  "delivery update example": {
+    "category": "Phishing",
+    "reason": "Fake delivery notification",
     "risk_level": "High"
   },
-  "steamunlocked": {
-    "category": "Game Downloads",
-    "reason": "Slow downloads; malicious link redirects; uploads stolen from IGG Games",
+  "prize claim example": {
+    "category": "Phishing",
+    "reason": "Prize/reward social-engineering lure",
     "risk_level": "High"
   },
-  "gog unlocked": {
-    "category": "Game Downloads",
-    "reason": "Slow downloads; malicious link redirects; uploads stolen from IGG Games",
+  "tax refund example": {
+    "category": "Phishing",
+    "reason": "Fake tax/refund lure",
     "risk_level": "High"
   },
-  "repackgames": {
-    "category": "Game Repacks",
-    "reason": "Mislabels games and steals releases",
-    "risk_level": "Medium"
-  },
-  "the pirate bay": {
-    "category": "Torrent Indexer",
-    "reason": "Malware risk",
+  "cloud login example": {
+    "category": "Phishing",
+    "reason": "Cloud-account credential lure",
     "risk_level": "High"
   },
-  "kickass torrents": {
-    "category": "Torrent Indexer",
-    "reason": "Malware risk",
+  "document share example": {
+    "category": "Phishing",
+    "reason": "Fake shared-document login lure",
     "risk_level": "High"
   },
-  "wifi4games": {
-    "category": "Game Downloads",
-    "reason": "Malware downloads",
+  "wallet security example": {
+    "category": "Phishing",
+    "reason": "Fake wallet/security warning",
     "risk_level": "High"
   },
-  "sites with scene group names in url": {
-    "category": "Various",
-    "reason": "Scene groups do not have official websites; impersonators often bundle malware with releases",
+  "social media verify example": {
+    "category": "Phishing",
+    "reason": "Fake account-verification lure",
+    "risk_level": "High"
+  },
+  "hr portal example": {
+    "category": "Phishing",
+    "reason": "Fake employee-portal login lure",
+    "risk_level": "High"
+  },
+  "support desk example": {
+    "category": "Phishing",
+    "reason": "Fake technical-support lure",
+    "risk_level": "High"
+  },
+  "crypto investment example": {
+    "category": "Phishing",
+    "reason": "Suspicious investment lure",
     "risk_level": "High"
   }
 }

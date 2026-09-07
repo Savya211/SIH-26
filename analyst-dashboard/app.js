@@ -24,8 +24,33 @@ let currentAnalysis = null;
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initDropzone();
+    initThemeToggle();
     checkEngineStatus();
+    updateStatCards();
 });
+
+
+// ═══════════════════════════════════════════════
+//  Theme Toggle
+// ═══════════════════════════════════════════════
+
+function initThemeToggle() {
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('aegismail_theme');
+
+    if (saved) {
+        root.setAttribute('data-theme', saved);
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('aegismail_theme', next);
+        });
+    }
+}
 
 
 // ═══════════════════════════════════════════════
@@ -38,6 +63,7 @@ const panelTitles = {
     map: { title: 'GeoTrace Map', subtitle: 'Hop-by-hop email relay visualization' },
     headers: { title: 'Header Inspector', subtitle: 'RFC 822 header forensic breakdown' },
     cases: { title: 'Case History', subtitle: 'Previously analyzed email cases' },
+    threatintel: { title: 'Threat Intelligence', subtitle: 'Recurring threat indicators across analyzed cases' },
 };
 
 function initNavigation() {
@@ -77,6 +103,11 @@ function switchPanel(panelId) {
     // Load cases when switching to cases panel
     if (panelId === 'cases') {
         loadCases();
+    }
+
+    // Load threat intel when switching to threatintel panel
+    if (panelId === 'threatintel') {
+        loadThreatIntel();
     }
 }
 
@@ -173,6 +204,7 @@ async function analyzeFile(file) {
         await new Promise(r => setTimeout(r, 300));
 
         renderResults(data);
+        saveCaseToStats(data);
         hideAnalyzingState();
         switchPanel('results');
 
@@ -204,6 +236,7 @@ async function analyzeDemoEmail(filename) {
         await new Promise(r => setTimeout(r, 300));
 
         renderResults(data);
+        saveCaseToStats(data);
         hideAnalyzingState();
         switchPanel('results');
 
@@ -582,6 +615,239 @@ async function loadCase(caseId) {
     } catch {
         alert('Failed to load case');
     }
+}
+
+
+// ═══════════════════════════════════════════════
+// Statistics Cards
+// ═══════════════════════════════════════════════
+
+function getStats() {
+    try {
+        return JSON.parse(
+            localStorage.getItem('aegismail_stats') ||
+            '{"emails":0,"threats":0,"cases":0,"highrisk":0}'
+        );
+    } catch {
+        return {
+            emails: 0,
+            threats: 0,
+            cases: 0,
+            highrisk: 0
+        };
+    }
+}
+
+function updateStatCards() {
+    const stats = getStats();
+
+    document.getElementById('stat-emails').textContent = stats.emails;
+    document.getElementById('stat-threats').textContent = stats.threats;
+    document.getElementById('stat-cases').textContent = stats.cases;
+    document.getElementById('stat-highrisk').textContent = stats.highrisk;
+}
+
+function saveCaseToStats(data) {
+    const stats = getStats();
+
+    stats.emails += 1;
+    stats.cases += 1;
+
+    const verdict = String(data?.risk?.verdict || '').toUpperCase();
+    const score = Number(data?.risk?.threat_score || 0);
+
+    if (verdict === 'MALICIOUS' || verdict === 'SUSPICIOUS') {
+        stats.threats += 1;
+    }
+
+    if (score >= 70) {
+        stats.highrisk += 1;
+    }
+
+    localStorage.setItem(
+        'aegismail_stats',
+        JSON.stringify(stats)
+    );
+
+    updateStatCards();
+}
+
+// ═══════════════════════════════════════════════
+//  Threat Intelligence
+// ═══════════════════════════════════════════════
+
+async function loadThreatIntel() {
+    const domainsEl = document.getElementById('threatintel-domains');
+    const sendersEl = document.getElementById('threatintel-senders');
+    const ipsEl = document.getElementById('threatintel-ips');
+    const warningEl = document.getElementById('threatintel-warning');
+
+    domainsEl.innerHTML = '<p class="empty-state">Loading case data…</p>';
+    sendersEl.innerHTML = '';
+    ipsEl.innerHTML = '';
+    warningEl.style.display = 'none';
+
+    try {
+        // Step 1: Get case list
+        const listResp = await fetch(`${API_BASE}/api/cases`);
+        if (!listResp.ok) throw new Error('Cannot reach engine');
+        const listData = await listResp.json();
+        const caseSummaries = listData.cases || [];
+
+        if (caseSummaries.length === 0) {
+            domainsEl.innerHTML = '<p class="empty-state">No cases analyzed yet. Upload emails to build threat intelligence.</p>';
+            sendersEl.innerHTML = '<p class="empty-state">No data</p>';
+            ipsEl.innerHTML = '<p class="empty-state">No data</p>';
+            return;
+        }
+
+        // Step 2: Fetch full case data for each case
+        const casePromises = caseSummaries.map(c =>
+            fetch(`${API_BASE}/api/cases/${c.case_id}`)
+                .then(r => r.ok ? r.json() : null)
+                .catch(() => null)
+        );
+        const fullCases = (await Promise.all(casePromises)).filter(Boolean);
+
+        // Step 3: Aggregate indicators across cases
+        const domainCounts = {};  // domain -> { count, cases Set }
+        const senderCounts = {};  // email -> { count, cases Set }
+        const ipCounts = {};      // ip -> { count, cases Set }
+
+        const isPrivateIP = (ip) => {
+            return /^(10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|127\.)/.test(ip);
+        };
+
+        for (const c of fullCases) {
+            const caseId = c.case_id || '';
+            const headers = c.headers || {};
+            const urlAnalysis = c.url_analysis || {};
+
+            // Sender domain
+            const senderDomain = headers.sender?.domain;
+            if (senderDomain) {
+                if (!domainCounts[senderDomain]) domainCounts[senderDomain] = { count: 0, cases: new Set() };
+                domainCounts[senderDomain].count++;
+                domainCounts[senderDomain].cases.add(caseId);
+            }
+
+            // Reply-to domain
+            const replyDomain = headers.reply_to?.domain;
+            if (replyDomain && replyDomain !== senderDomain) {
+                if (!domainCounts[replyDomain]) domainCounts[replyDomain] = { count: 0, cases: new Set() };
+                domainCounts[replyDomain].count++;
+                domainCounts[replyDomain].cases.add(caseId);
+            }
+
+            // Return-path domain
+            const returnDomain = headers.return_path?.domain;
+            if (returnDomain && returnDomain !== senderDomain && returnDomain !== replyDomain) {
+                if (!domainCounts[returnDomain]) domainCounts[returnDomain] = { count: 0, cases: new Set() };
+                domainCounts[returnDomain].count++;
+                domainCounts[returnDomain].cases.add(caseId);
+            }
+
+            // Domains from analyzed URLs
+            const urls = urlAnalysis.analyzed_urls || [];
+            for (const u of urls) {
+                if (u.risk_score >= 0.2) {
+                    try {
+                        const urlDomain = new URL(u.url).hostname;
+                        if (urlDomain && !isPrivateIP(urlDomain)) {
+                            if (!domainCounts[urlDomain]) domainCounts[urlDomain] = { count: 0, cases: new Set() };
+                            domainCounts[urlDomain].count++;
+                            domainCounts[urlDomain].cases.add(caseId);
+                        }
+                    } catch { /* invalid URL */ }
+                }
+            }
+
+            // Sender email
+            const senderFull = headers.sender?.full;
+            if (senderFull) {
+                if (!senderCounts[senderFull]) senderCounts[senderFull] = { count: 0, cases: new Set() };
+                senderCounts[senderFull].count++;
+                senderCounts[senderFull].cases.add(caseId);
+            }
+
+            // Reply-to email
+            const replyFull = headers.reply_to?.full;
+            if (replyFull && replyFull !== senderFull) {
+                if (!senderCounts[replyFull]) senderCounts[replyFull] = { count: 0, cases: new Set() };
+                senderCounts[replyFull].count++;
+                senderCounts[replyFull].cases.add(caseId);
+            }
+
+            // IPs from hops (skip private)
+            const allIPs = headers.all_ips || [];
+            for (const ip of allIPs) {
+                if (!isPrivateIP(ip)) {
+                    if (!ipCounts[ip]) ipCounts[ip] = { count: 0, cases: new Set() };
+                    ipCounts[ip].count++;
+                    ipCounts[ip].cases.add(caseId);
+                }
+            }
+        }
+
+        // Step 4: Check if any recurring indicators exist
+        const hasRecurring = (obj) => Object.values(obj).some(v => v.cases.size >= 2);
+        if (hasRecurring(domainCounts) || hasRecurring(senderCounts) || hasRecurring(ipCounts)) {
+            warningEl.style.display = 'flex';
+            warningEl.className = 'threatintel-warning';
+            warningEl.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Recurring Attack Detected — Threat indicators observed across multiple analyzed cases
+            `;
+        }
+
+        // Step 5: Render tables
+        domainsEl.innerHTML = renderThreatIntelTable(domainCounts, 'Domain');
+        sendersEl.innerHTML = renderThreatIntelTable(senderCounts, 'Sender');
+        ipsEl.innerHTML = renderThreatIntelTable(ipCounts, 'IP Address');
+
+    } catch {
+        domainsEl.innerHTML = '<p class="empty-state">Unable to load threat data. Is the engine running?</p>';
+        sendersEl.innerHTML = '<p class="empty-state">Engine offline</p>';
+        ipsEl.innerHTML = '<p class="empty-state">Engine offline</p>';
+    }
+}
+
+function renderThreatIntelTable(countsObj, label) {
+    const entries = Object.entries(countsObj)
+        .map(([key, val]) => ({ indicator: key, count: val.count, uniqueCases: val.cases.size }))
+        .sort((a, b) => b.uniqueCases - a.uniqueCases || b.count - a.count);
+
+    if (entries.length === 0) {
+        return `<p class="empty-state">No ${label.toLowerCase()} indicators found</p>`;
+    }
+
+    const rows = entries.map(e => {
+        const badge = e.uniqueCases >= 2
+            ? '<span class="ti-recurring-badge">Recurring</span>'
+            : '';
+        return `
+            <tr>
+                <td class="ti-indicator">${escapeHtml(e.indicator)}</td>
+                <td class="ti-count">${e.count}</td>
+                <td class="ti-count">${e.uniqueCases}</td>
+                <td>${badge}</td>
+            </tr>
+        `;
+    }).join('');
+
+    return `
+        <table class="threatintel-table">
+            <thead>
+                <tr>
+                    <th>${label}</th>
+                    <th style="text-align:center;">Appearances</th>
+                    <th style="text-align:center;">Unique Cases</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
 }
 
 

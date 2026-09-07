@@ -1,1018 +1,1082 @@
 {
-  "github.com": {
-    "name": "FMHY SafeGuard",
-    "category": "Safety"
-  },
-  "fastforward.team": {
-    "name": "FastForward",
-    "category": "Browser Extension"
-  },
-  "privacybadger.org": {
-    "name": "Privacy Badger",
-    "category": "Browser Extension"
-  },
-  "eff.org": {
-    "name": "HTTPS Everywhere",
-    "category": "Browser Extension"
-  },
-  "decentraleyes.org": {
-    "name": "Decentraleyes",
-    "category": "Browser Extension"
-  },
-  "localcdn.org": {
-    "name": "LocalCDN",
-    "category": "Browser Extension"
-  },
-  "sponsor.ajay.app": {
-    "name": "SponsorBlock",
-    "category": "Browser Extension"
-  },
-  "cineby.gd": {
-    "name": "Cineby",
-    "category": "Streaming - Movies & TV"
-  },
-  "xprime.today": {
-    "name": "XPrime",
-    "category": "Streaming - Movies & TV"
-  },
-  "rivestream.org": {
-    "name": "Rive",
-    "category": "Streaming - Movies & TV"
-  },
-  "67movies.net": {
-    "name": "67Movies",
-    "category": "Streaming - Movies & TV"
-  },
-  "aether.mom": {
-    "name": "Aether",
-    "category": "Streaming - Movies & TV"
-  },
-  "flickystream.ru": {
-    "name": "FlickyStream",
-    "category": "Streaming - Movies & TV"
-  },
-  "watch.spencerdevs.xyz": {
-    "name": "SpenFlix",
-    "category": "Streaming - Movies & TV"
-  },
-  "cinegram.net": {
-    "name": "Cinegram",
-    "category": "Streaming - Movies & TV"
-  },
-  "shuttletv.su": {
-    "name": "ShuttleTV",
-    "category": "Streaming - Movies & TV"
-  },
-  "1shows.nl": {
-    "name": "1Shows",
-    "category": "Streaming - Movies & TV"
-  },
-  "cinema.bz": {
-    "name": "Cinema.BZ",
-    "category": "Streaming - Movies & TV"
-  },
-  "filmcave.ru": {
-    "name": "FilmCave",
-    "category": "Streaming - Movies & TV"
-  },
-  "popcornmovies.org": {
-    "name": "PopcornMovies",
-    "category": "Streaming - Movies & TV"
-  },
-  "azmovies.to": {
-    "name": "AZMovies",
-    "category": "Streaming - Movies & TV"
-  },
-  "bflix.sh": {
-    "name": "BFLIX",
-    "category": "Streaming - Movies & TV"
-  },
-  "primewire.mov": {
-    "name": "PrimeWire",
-    "category": "Streaming - Movies & TV"
-  },
-  "nepu.to": {
-    "name": "NEPU",
-    "category": "Streaming - Single Server"
-  },
-  "ee3.me": {
-    "name": "EE3",
-    "category": "Streaming - Single Server"
-  },
-  "yflix.to": {
-    "name": "yFlix",
-    "category": "Streaming - Single Server"
-  },
-  "sflix2.to": {
-    "name": "SFlix",
-    "category": "Streaming - Single Server"
-  },
-  "flixhq.to": {
-    "name": "FlixHQ",
-    "category": "Streaming - Single Server"
-  },
-  "lookmovie2.to": {
-    "name": "LookMovie",
-    "category": "Streaming - Single Server"
-  },
-  "hollymoviehd.cc": {
-    "name": "HollyMovieHD",
-    "category": "Streaming - Single Server"
-  },
-  "flixer.su": {
-    "name": "Flixer",
-    "category": "Streaming - Aggregator"
-  },
-  "bcine.app": {
-    "name": "bCine",
-    "category": "Streaming - Aggregator"
-  },
-  "filmex.to": {
-    "name": "Filmex",
-    "category": "Streaming - Aggregator"
-  },
-  "vidbox.cc": {
-    "name": "Vidbox",
-    "category": "Streaming - Aggregator"
-  },
-  "willow.arlen.icu": {
-    "name": "Willow",
-    "category": "Streaming - Aggregator"
-  },
-  "cinemaos.live": {
-    "name": "CinemaOS",
-    "category": "Streaming - Aggregator"
-  },
-  "tv.vynx.cc": {
-    "name": "FlyX",
-    "category": "Streaming - Aggregator"
-  },
-  "aurorascreen.org": {
-    "name": "AuroraScreen",
-    "category": "Streaming - Aggregator"
-  },
-  "popr.ink": {
-    "name": "Poprink",
-    "category": "Streaming - Aggregator"
-  },
-  "sanuflix-web-v2.pages.dev": {
-    "name": "SanuFlix",
-    "category": "Streaming - Aggregator"
-  },
-  "hydrahd.com": {
-    "name": "HydraHD",
-    "category": "Streaming - Aggregator"
-  },
-  "flickermini.pages.dev": {
-    "name": "Flicker",
-    "category": "Streaming - Aggregator"
-  },
-  "flixzy.pages.dev": {
-    "name": "VoidFlix",
-    "category": "Streaming - Embed Frontend"
-  },
-  "cinezo.net": {
-    "name": "Cinezo",
-    "category": "Streaming - Embed Frontend"
-  },
-  "redflix.co": {
-    "name": "Redflix",
-    "category": "Streaming - Embed Frontend"
-  },
-  "alienflix.net": {
-    "name": "AlienFlix",
-    "category": "Streaming - Embed Frontend"
-  },
-  "tubitv.com": {
-    "name": "Tubi",
-    "category": "Streaming - Free with Ads"
-  },
-  "watch.plex.tv": {
-    "name": "Plex",
-    "category": "Streaming - Free with Ads"
-  },
-  "pluto.tv": {
-    "name": "Pluto TV",
-    "category": "Streaming - Free with Ads"
-  },
-  "kanopy.com": {
-    "name": "Kanopy",
-    "category": "Streaming - Free with Ads"
-  },
-  "hoopladigital.com": {
-    "name": "hoopla",
-    "category": "Streaming - Free with Ads"
-  },
-  "arte.tv": {
-    "name": "ARTE",
-    "category": "Streaming - Free with Ads"
-  },
-  "justwatch.com": {
-    "name": "JustWatch",
-    "category": "Streaming Directory"
-  },
-  "streamed.pk": {
-    "name": "Streamed",
-    "category": "Sports Streaming"
-  },
-  "sportyhunter.com": {
-    "name": "SportyHunter",
-    "category": "Sports Streaming"
-  },
-  "dramacoolt.com.in": {
-    "name": "DramaCool",
-    "category": "Drama Streaming"
-  },
-  "goplay.su": {
-    "name": "GoPlay",
-    "category": "Drama Streaming"
-  },
-  "animekai.to": {
-    "name": "AnimeKai",
-    "category": "Anime - Streaming"
-  },
-  "miruro.com": {
-    "name": "Miruro",
-    "category": "Anime - Streaming"
-  },
-  "hianime.to": {
-    "name": "HiAnime",
-    "category": "Anime - Streaming"
-  },
-  "nyaa.si": {
-    "name": "Nyaa",
-    "category": "Anime - Torrenting"
-  },
-  "hayase.watch": {
-    "name": "Hayase",
-    "category": "Anime - Torrenting"
-  },
-  "tokyoinsider.com": {
-    "name": "Tokyo Insider",
-    "category": "Anime - Downloading"
-  },
-  "kayoanime.com": {
-    "name": "Kayoanime",
-    "category": "Anime - Downloading"
-  },
-  "vkvideo.ru": {
-    "name": "VK Video",
-    "category": "Video Streaming"
-  },
-  "ok.ru": {
-    "name": "OK Video",
-    "category": "Video Streaming"
+  "google.com": {
+    "name": "Google",
+    "category": "Legitimate"
   },
   "youtube.com": {
-    "name": "YouTube",
-    "category": "Video Streaming"
+    "name": "Youtube",
+    "category": "Legitimate"
   },
-  "dailymotion.com": {
-    "name": "Dailymotion",
-    "category": "Video Streaming"
+  "gmail.com": {
+    "name": "Gmail",
+    "category": "Legitimate"
   },
-  "bilibili.com": {
-    "name": "BiliBili",
-    "category": "Video Streaming"
+  "google.co.in": {
+    "name": "Google",
+    "category": "Legitimate"
   },
-  "nicovideo.jp": {
-    "name": "Niconico",
-    "category": "Video Streaming"
+  "google.co.uk": {
+    "name": "Google",
+    "category": "Legitimate"
   },
-  "annas-archive.li": {
-    "name": "Anna's Archive",
-    "category": "Books"
+  "google.de": {
+    "name": "Google",
+    "category": "Legitimate"
   },
-  "z-lib.gd": {
-    "name": "Z-Library",
-    "category": "Books"
+  "google.fr": {
+    "name": "Google",
+    "category": "Legitimate"
   },
-  "libgen.is": {
-    "name": "Library Genesis",
-    "category": "Books"
+  "google.ca": {
+    "name": "Google",
+    "category": "Legitimate"
   },
-  "myanonamouse.net": {
-    "name": "MyAnonamouse (MAM)",
-    "category": "Books"
+  "google.com.au": {
+    "name": "Google",
+    "category": "Legitimate"
+  },
+  "microsoft.com": {
+    "name": "Microsoft",
+    "category": "Legitimate"
+  },
+  "office.com": {
+    "name": "Office",
+    "category": "Legitimate"
+  },
+  "live.com": {
+    "name": "Live",
+    "category": "Legitimate"
+  },
+  "outlook.com": {
+    "name": "Outlook",
+    "category": "Legitimate"
+  },
+  "bing.com": {
+    "name": "Bing",
+    "category": "Legitimate"
+  },
+  "azure.com": {
+    "name": "Azure",
+    "category": "Legitimate"
+  },
+  "github.com": {
+    "name": "Github",
+    "category": "Legitimate"
+  },
+  "githubusercontent.com": {
+    "name": "Githubusercontent",
+    "category": "Legitimate"
+  },
+  "gitlab.com": {
+    "name": "Gitlab",
+    "category": "Legitimate"
+  },
+  "bitbucket.org": {
+    "name": "Bitbucket",
+    "category": "Legitimate"
+  },
+  "stackoverflow.com": {
+    "name": "Stackoverflow",
+    "category": "Legitimate"
+  },
+  "stackexchange.com": {
+    "name": "Stackexchange",
+    "category": "Legitimate"
+  },
+  "npmjs.com": {
+    "name": "Npmjs",
+    "category": "Legitimate"
+  },
+  "pypi.org": {
+    "name": "Pypi",
+    "category": "Legitimate"
+  },
+  "python.org": {
+    "name": "Python",
+    "category": "Legitimate"
+  },
+  "pythonhosted.org": {
+    "name": "Pythonhosted",
+    "category": "Legitimate"
+  },
+  "nodejs.org": {
+    "name": "Nodejs",
+    "category": "Legitimate"
+  },
+  "react.dev": {
+    "name": "React",
+    "category": "Legitimate"
+  },
+  "developer.mozilla.org": {
+    "name": "Developer",
+    "category": "Legitimate"
+  },
+  "w3.org": {
+    "name": "W3",
+    "category": "Legitimate"
+  },
+  "ietf.org": {
+    "name": "Ietf",
+    "category": "Legitimate"
+  },
+  "ubuntu.com": {
+    "name": "Ubuntu",
+    "category": "Legitimate"
+  },
+  "debian.org": {
+    "name": "Debian",
+    "category": "Legitimate"
+  },
+  "redhat.com": {
+    "name": "Redhat",
+    "category": "Legitimate"
+  },
+  "docker.com": {
+    "name": "Docker",
+    "category": "Legitimate"
+  },
+  "kubernetes.io": {
+    "name": "Kubernetes",
+    "category": "Legitimate"
+  },
+  "apple.com": {
+    "name": "Apple",
+    "category": "Legitimate"
+  },
+  "icloud.com": {
+    "name": "Icloud",
+    "category": "Legitimate"
+  },
+  "developer.apple.com": {
+    "name": "Developer",
+    "category": "Legitimate"
+  },
+  "amazon.com": {
+    "name": "Amazon",
+    "category": "Legitimate"
+  },
+  "amazon.in": {
+    "name": "Amazon",
+    "category": "Legitimate"
+  },
+  "aws.amazon.com": {
+    "name": "Aws",
+    "category": "Legitimate"
+  },
+  "aws.com": {
+    "name": "Aws",
+    "category": "Legitimate"
+  },
+  "amazonaws.com": {
+    "name": "Amazonaws",
+    "category": "Legitimate"
+  },
+  "ebay.com": {
+    "name": "Ebay",
+    "category": "Legitimate"
+  },
+  "walmart.com": {
+    "name": "Walmart",
+    "category": "Legitimate"
+  },
+  "target.com": {
+    "name": "Target",
+    "category": "Legitimate"
+  },
+  "bestbuy.com": {
+    "name": "Bestbuy",
+    "category": "Legitimate"
+  },
+  "etsy.com": {
+    "name": "Etsy",
+    "category": "Legitimate"
+  },
+  "shopify.com": {
+    "name": "Shopify",
+    "category": "Legitimate"
+  },
+  "stripe.com": {
+    "name": "Stripe",
+    "category": "Legitimate"
+  },
+  "paypal.com": {
+    "name": "Paypal",
+    "category": "Legitimate"
+  },
+  "visa.com": {
+    "name": "Visa",
+    "category": "Legitimate"
+  },
+  "mastercard.com": {
+    "name": "Mastercard",
+    "category": "Legitimate"
+  },
+  "adobe.com": {
+    "name": "Adobe",
+    "category": "Legitimate"
+  },
+  "canva.com": {
+    "name": "Canva",
+    "category": "Legitimate"
+  },
+  "figma.com": {
+    "name": "Figma",
+    "category": "Legitimate"
+  },
+  "notion.so": {
+    "name": "Notion",
+    "category": "Legitimate"
+  },
+  "slack.com": {
+    "name": "Slack",
+    "category": "Legitimate"
+  },
+  "zoom.us": {
+    "name": "Zoom",
+    "category": "Legitimate"
+  },
+  "dropbox.com": {
+    "name": "Dropbox",
+    "category": "Legitimate"
+  },
+  "box.com": {
+    "name": "Box",
+    "category": "Legitimate"
+  },
+  "salesforce.com": {
+    "name": "Salesforce",
+    "category": "Legitimate"
+  },
+  "hubspot.com": {
+    "name": "Hubspot",
+    "category": "Legitimate"
+  },
+  "atlassian.com": {
+    "name": "Atlassian",
+    "category": "Legitimate"
+  },
+  "trello.com": {
+    "name": "Trello",
+    "category": "Legitimate"
+  },
+  "asana.com": {
+    "name": "Asana",
+    "category": "Legitimate"
+  },
+  "monday.com": {
+    "name": "Monday",
+    "category": "Legitimate"
+  },
+  "airtable.com": {
+    "name": "Airtable",
+    "category": "Legitimate"
+  },
+  "docusign.com": {
+    "name": "Docusign",
+    "category": "Legitimate"
+  },
+  "linkedin.com": {
+    "name": "Linkedin",
+    "category": "Legitimate"
+  },
+  "indeed.com": {
+    "name": "Indeed",
+    "category": "Legitimate"
+  },
+  "glassdoor.com": {
+    "name": "Glassdoor",
+    "category": "Legitimate"
+  },
+  "coursera.org": {
+    "name": "Coursera",
+    "category": "Legitimate"
+  },
+  "edx.org": {
+    "name": "Edx",
+    "category": "Legitimate"
+  },
+  "udemy.com": {
+    "name": "Udemy",
+    "category": "Legitimate"
+  },
+  "khanacademy.org": {
+    "name": "Khanacademy",
+    "category": "Legitimate"
+  },
+  "duolingo.com": {
+    "name": "Duolingo",
+    "category": "Legitimate"
+  },
+  "wikipedia.org": {
+    "name": "Wikipedia",
+    "category": "Legitimate"
+  },
+  "wikimedia.org": {
+    "name": "Wikimedia",
+    "category": "Legitimate"
   },
   "archive.org": {
-    "name": "Internet Archive",
-    "category": "Download - General"
-  },
-  "ebookbb.com": {
-    "name": "eBookBB",
-    "category": "Books"
-  },
-  "ibookpile.net": {
-    "name": "iBookPile",
-    "category": "Books"
-  },
-  "liber3.eth.limo": {
-    "name": "Liber3",
-    "category": "Books"
-  },
-  "en.booksee.org": {
-    "name": "BookSee",
-    "category": "Books"
-  },
-  "librarylandsc.com": {
-    "name": "Library Land",
-    "category": "Books"
-  },
-  "audiobookbay.lu": {
-    "name": "AudiobookBay",
-    "category": "Audiobooks"
-  },
-  "tokybook.com": {
-    "name": "Tokybook",
-    "category": "Audiobooks"
-  },
-  "forum.mobilism.org": {
-    "name": "Mobilism",
-    "category": "Mobile Apps"
-  },
-  "weebcentral.com": {
-    "name": "Weeb Central",
-    "category": "Manga"
-  },
-  "comix.to": {
-    "name": "Comix",
-    "category": "Manga"
-  },
-  "mangafire.to": {
-    "name": "MangaFire",
-    "category": "Manga"
-  },
-  "manganato.com": {
-    "name": "MangaNato",
-    "category": "Manga"
-  },
-  "batcave.biz": {
-    "name": "BatCave",
-    "category": "Comics"
-  },
-  "readcomiconline.li": {
-    "name": "ReadComicsOnline",
-    "category": "Comics"
-  },
-  "getcomics.org": {
-    "name": "GetComics",
-    "category": "Comics"
-  },
-  "monochrome.tf": {
-    "name": "Monochrome",
-    "category": "Music - Streaming"
-  },
-  "lucida.to": {
-    "name": "lucida",
-    "category": "Music - Downloading"
-  },
-  "doubledouble.top": {
-    "name": "DoubleDouble",
-    "category": "Music - Downloading"
-  },
-  "slsknet.org": {
-    "name": "Soulseek",
-    "category": "Music - Downloading"
-  },
-  "nicotine-plus.org": {
-    "name": "Nicotine+ / Soulseek",
-    "category": "Download - P2P"
-  },
-  "mostafaalagamy.github.io": {
-    "name": "Metrolist",
-    "category": "Music - Android"
-  },
-  "rutracker.org": {
-    "name": "RuTracker",
-    "category": "Torrent Indexer"
-  },
-  "1337x.to": {
-    "name": "1337x",
-    "category": "Torrent Indexer"
-  },
-  "rarbgdump.com": {
-    "name": "RARBG Dump",
-    "category": "Torrent Indexer"
-  },
-  "limetorrents.lol": {
-    "name": "LimeTorrents",
-    "category": "Torrent Indexer"
-  },
-  "torrentdownloads.pro": {
-    "name": "TorrentDownloads",
-    "category": "Torrent Indexer"
-  },
-  "extratorrent.st": {
-    "name": "ExtraTorrent",
-    "category": "Torrent Indexer"
-  },
-  "rutor.is": {
-    "name": "RuTor",
-    "category": "Torrent Indexer"
-  },
-  "nnmclub.to": {
-    "name": "NNM-Club",
-    "category": "Torrent Indexer"
-  },
-  "ext.to": {
-    "name": "ExT",
-    "category": "Torrent Aggregator"
-  },
-  "btdig.com": {
-    "name": "BTDigg",
-    "category": "Torrent Aggregator"
-  },
-  "knaben.org": {
-    "name": "Knaben",
-    "category": "Torrent Aggregator"
-  },
-  "torrentproject.cc": {
-    "name": "TorrentProject",
-    "category": "Torrent Aggregator"
-  },
-  "snowfl.com": {
-    "name": "snowfl",
-    "category": "Torrent Aggregator"
-  },
-  "torlock.com": {
-    "name": "Torlock",
-    "category": "Torrent Aggregator"
-  },
-  "bt4gprx.com": {
-    "name": "BT4G",
-    "category": "Torrent Aggregator"
-  },
-  "filemood.com": {
-    "name": "FileMood",
-    "category": "Torrent Aggregator"
-  },
-  "torrents-csv.com": {
-    "name": "Torrents-CSV",
-    "category": "Torrent Aggregator"
-  },
-  "cloudtorrents.com": {
-    "name": "CloudTorrents",
-    "category": "Torrent Aggregator"
-  },
-  "qbittorrent.org": {
-    "name": "qBittorrent",
-    "category": "Torrent Client"
-  },
-  "deluge-torrent.org": {
-    "name": "Deluge",
-    "category": "Torrent Client"
-  },
-  "transmissionbt.com": {
-    "name": "Transmission",
-    "category": "Torrent Client"
-  },
-  "rakshasa.github.io": {
-    "name": "rTorrent",
-    "category": "Torrent Client"
-  },
-  "biglybt.com": {
-    "name": "BiglyBT",
-    "category": "Torrent Client"
-  },
-  "tixati.com": {
-    "name": "Tixati",
-    "category": "Torrent Client"
-  },
-  "webtorrent.io": {
-    "name": "WebTorrent",
-    "category": "Torrent Client"
-  },
-  "picotorrent.org": {
-    "name": "PicoTorrent",
-    "category": "Torrent Client"
-  },
-  "torbox.app": {
-    "name": "TorBox",
-    "category": "Remote Torrenting"
-  },
-  "seedr.cc": {
-    "name": "Seedr",
-    "category": "Remote Torrenting"
-  },
-  "webtor.io": {
-    "name": "webtor",
-    "category": "Remote Torrenting"
-  },
-  "real-debrid.com": {
-    "name": "Real-Debrid",
-    "category": "Debrid Service"
-  },
-  "cs.rin.ru": {
-    "name": "CS.RIN.RU",
-    "category": "Games - Download"
-  },
-  "ankergames.net": {
-    "name": "AnkerGames",
-    "category": "Games - Download"
-  },
-  "steamrip.com": {
-    "name": "SteamRIP",
-    "category": "Games - Download"
-  },
-  "astral-games.xyz": {
-    "name": "AstralGames",
-    "category": "Games - Download"
-  },
-  "gog-games.to": {
-    "name": "GOG Games",
-    "category": "Games - Download"
-  },
-  "union-crax.xyz": {
-    "name": "UnionCrax",
-    "category": "Games - Download"
-  },
-  "online-fix.me": {
-    "name": "Online Fix",
-    "category": "Games - Download"
-  },
-  "ovagames.com": {
-    "name": "Ova Games",
-    "category": "Games - Download"
-  },
-  "forum.torrminatorr.com": {
-    "name": "Torrminatorr",
-    "category": "Games - Download"
-  },
-  "steamunderground.net": {
-    "name": "SteamUnderground",
-    "category": "Games - Download"
-  },
-  "gload.to": {
-    "name": "GLoad",
-    "category": "Games - Download"
-  },
-  "g4u.to": {
-    "name": "g4u",
-    "category": "Games - Download"
-  },
-  "gamebounty.world": {
-    "name": "GameBounty",
-    "category": "Games - Download"
-  },
-  "elenemigos.com": {
-    "name": "ElEnemigos",
-    "category": "Games - Download"
-  },
-  "atopgames.com": {
-    "name": "AtopGames",
-    "category": "Games - Download"
-  },
-  "fitgirl-repacks.site": {
-    "name": "FitGirl Repacks",
-    "category": "Games - Repacks"
-  },
-  "kaoskrew.org": {
-    "name": "KaOsKrew",
-    "category": "Games - Repacks"
-  },
-  "rentry.co": {
-    "name": "Myrient",
-    "category": "ROMs & Emulation"
-  },
-  "m4ckd0ge-repacks.site": {
-    "name": "M4CKD0GE Repacks",
-    "category": "Games - Repacks"
-  },
-  "elamigos.site": {
-    "name": "ElAmigos",
-    "category": "Games - Repacks"
-  },
-  "byxatab.com": {
-    "name": "Xatab Repacks",
-    "category": "Games - Repacks"
-  },
-  "cpgrepacks.site": {
-    "name": "CPG Repacks",
-    "category": "Games - Repacks"
-  },
-  "repack.info": {
-    "name": "Chovka",
-    "category": "Games - Repacks"
-  },
-  "tiny-repacks.win": {
-    "name": "Tiny Repacks",
-    "category": "Games - Repacks"
-  },
-  "freegogpcgames.com": {
-    "name": "FreeGOGPCGames",
-    "category": "Games - Repacks"
-  },
-  "myabandonware.com": {
-    "name": "My Abandonware",
-    "category": "Games - Abandonware"
-  },
-  "abandonwaregames.net": {
-    "name": "AbandonwareGames",
-    "category": "Games - Abandonware"
-  },
-  "retro-exo.com": {
-    "name": "Retro eXo",
-    "category": "Games - Abandonware"
-  },
-  "vetusware.com": {
-    "name": "VETUSWARE",
-    "category": "Games - Abandonware"
-  },
-  "collectionchamber.blogspot.com": {
-    "name": "CollectionChamber",
-    "category": "Games - Abandonware"
-  },
-  "oldgamesdownload.com": {
-    "name": "OldGamesDownload",
-    "category": "Games - Abandonware"
-  },
-  "vrpirates.wiki": {
-    "name": "VRPirates",
-    "category": "Games - VR"
-  },
-  "rentry.org": {
-    "name": "Piracy Glossary",
-    "category": "Reference"
-  },
-  "megathread.pages.dev": {
-    "name": "privateersclub",
-    "category": "Games - Index"
-  },
-  "fearlessrevolution.com": {
-    "name": "Fearless Revolution",
-    "category": "Games - Trainers"
-  },
-  "flingtrainer.com": {
-    "name": "FLiNG Trainers",
-    "category": "Games - Trainers"
-  },
-  "wemod.com": {
-    "name": "WeMod",
-    "category": "Games - Trainers"
-  },
-  "mrantifun.net": {
-    "name": "MrAntiFun",
-    "category": "Games - Trainers"
-  },
-  "gamecopyworld.com": {
-    "name": "GameCopyWorld",
-    "category": "Games - Trainers"
-  },
-  "itch.io": {
-    "name": "itch.io Free Games",
-    "category": "Games - Free"
-  },
-  "freetogame.com": {
-    "name": "FreeToGame",
-    "category": "Games - Free"
-  },
-  "emulation.gametechwiki.com": {
-    "name": "Emulation Wiki",
-    "category": "ROMs & Emulation"
-  },
-  "r-roms.github.io": {
-    "name": "r/ROMs Mega Thread",
-    "category": "ROMs & Emulation"
-  },
-  "vimm.net": {
-    "name": "Vimm's Lair",
-    "category": "ROMs & Emulation"
-  },
-  "crocdb.net": {
-    "name": "CrocDB",
-    "category": "ROMs & Emulation"
-  },
-  "cdromance.com": {
-    "name": "CDRomance",
-    "category": "ROMs & Emulation"
-  },
-  "nxbrew.com": {
-    "name": "NXBrew",
-    "category": "ROMs & Emulation"
-  },
-  "ziperto.com": {
-    "name": "Ziperto",
-    "category": "ROMs & Emulation"
-  },
-  "the-eye.eu": {
-    "name": "The Eye",
-    "category": "ROMs & Emulation"
-  },
-  "edgeemu.net": {
-    "name": "Edge Emulation",
-    "category": "ROMs & Emulation"
-  },
-  "romulation.net": {
-    "name": "Romulation",
-    "category": "ROMs & Emulation"
-  },
-  "romspure.cc": {
-    "name": "Romspure",
-    "category": "ROMs & Emulation"
-  },
-  "theromdepot.com": {
-    "name": "TheRomDepot",
-    "category": "ROMs & Emulation"
-  },
-  "apkmirror.com": {
-    "name": "APKMirror",
-    "category": "Mobile Apps"
-  },
-  "droidify.eu.org": {
-    "name": "Droid-ify",
-    "category": "Mobile Apps"
-  },
-  "iphonecake.com": {
-    "name": "iPhone Cake",
-    "category": "Mobile Apps"
-  },
-  "revanced.app": {
-    "name": "ReVanced Manager",
-    "category": "Android"
-  },
-  "morphe.software": {
-    "name": "Morphe",
-    "category": "Android"
-  },
-  "sidestore.io": {
-    "name": "SideStore",
-    "category": "iOS Sideloading"
-  },
-  "sideloadly.io": {
-    "name": "Sideloadly",
-    "category": "iOS Sideloading"
-  },
-  "softarchive.download": {
-    "name": "SoftArchive",
-    "category": "Software Download"
-  },
-  "cracksurl.com": {
-    "name": "CracksURL",
-    "category": "Software Download"
-  },
-  "lrepacks.net": {
-    "name": "LRepacks",
-    "category": "Software Download"
-  },
-  "nsaneforums.com": {
-    "name": "Nsane Forums",
-    "category": "Software Download"
-  },
-  "soft98.ir": {
-    "name": "soft98",
-    "category": "Software Download"
-  },
-  "alternativeto.net": {
-    "name": "AlternativeTo",
-    "category": "Software"
-  },
-  "majorgeeks.com": {
-    "name": "MajorGeeks",
-    "category": "Software - Freeware"
-  },
-  "softpedia.com": {
-    "name": "Softpedia",
-    "category": "Software - Freeware"
-  },
-  "portableapps.com": {
-    "name": "PortableApps.com",
-    "category": "Software - Freeware"
-  },
-  "nirsoft.net": {
-    "name": "Nirsoft",
-    "category": "Software - Freeware"
-  },
-  "fosshub.com": {
-    "name": "FossHub",
-    "category": "Software - FOSS"
-  },
-  "sourceforge.net": {
-    "name": "SourceForge",
-    "category": "Software - FOSS"
-  },
-  "oss.gallery": {
-    "name": "OSS Gallery",
-    "category": "Software - FOSS"
-  },
-  "rlsbb.ru": {
-    "name": "ReleaseBB (RLSBB)",
-    "category": "Download - General"
-  },
-  "scnlog.me": {
-    "name": "SCNLOG",
-    "category": "Download - General"
-  },
-  "scnsrc.me": {
-    "name": "SceneSource",
-    "category": "Download - General"
-  },
-  "forum.dirtywarez.com": {
-    "name": "DirtyWarez",
-    "category": "Download - General"
-  },
-  "4shared.com": {
-    "name": "4Shared",
-    "category": "Download - General"
-  },
-  "eyedex.org": {
-    "name": "EyeDex",
-    "category": "Download - Open Directories"
-  },
-  "odcrawler.xyz": {
-    "name": "ODCrawler",
-    "category": "Download - Open Directories"
-  },
-  "sabnzbd.org": {
-    "name": "sabnzbd",
-    "category": "Usenet Downloader"
-  },
-  "nzbplanet.net": {
-    "name": "NzbPlanet",
-    "category": "Usenet Indexer"
-  },
-  "binsearch.info": {
-    "name": "binsearch",
-    "category": "Usenet Indexer"
-  },
-  "nzbfinder.ws": {
-    "name": "NZBFinder",
-    "category": "Usenet Indexer"
-  },
-  "nzbindex.com": {
-    "name": "NZB Index",
-    "category": "Usenet Indexer"
-  },
-  "predb.net": {
-    "name": "PreDB.net",
-    "category": "Release Tracker"
-  },
-  "milkie.cc": {
-    "name": "Milkie",
-    "category": "Release Tracker"
-  },
-  "xrel.to": {
-    "name": "xREL",
-    "category": "Release Tracker"
-  },
-  "srrdb.com": {
-    "name": "srrDB",
-    "category": "Release Tracker"
-  },
-  "m2v.ru": {
-    "name": "m2v.ru",
-    "category": "Release Tracker"
-  },
-  "predb.me": {
-    "name": "predb.me",
-    "category": "Release Tracker"
-  },
-  "predb.org": {
-    "name": "predb.org",
-    "category": "Release Tracker"
+    "name": "Archive",
+    "category": "Legitimate"
+  },
+  "mit.edu": {
+    "name": "Mit",
+    "category": "Legitimate"
+  },
+  "stanford.edu": {
+    "name": "Stanford",
+    "category": "Legitimate"
+  },
+  "harvard.edu": {
+    "name": "Harvard",
+    "category": "Legitimate"
+  },
+  "berkeley.edu": {
+    "name": "Berkeley",
+    "category": "Legitimate"
+  },
+  "ox.ac.uk": {
+    "name": "Ox",
+    "category": "Legitimate"
+  },
+  "cam.ac.uk": {
+    "name": "Cam",
+    "category": "Legitimate"
+  },
+  "iitb.ac.in": {
+    "name": "Iitb",
+    "category": "Legitimate"
+  },
+  "iitd.ac.in": {
+    "name": "Iitd",
+    "category": "Legitimate"
+  },
+  "iitr.ac.in": {
+    "name": "Iitr",
+    "category": "Legitimate"
+  },
+  "iitm.ac.in": {
+    "name": "Iitm",
+    "category": "Legitimate"
+  },
+  "iisc.ac.in": {
+    "name": "Iisc",
+    "category": "Legitimate"
+  },
+  "isro.gov.in": {
+    "name": "Isro",
+    "category": "Legitimate"
+  },
+  "india.gov.in": {
+    "name": "India",
+    "category": "Legitimate"
+  },
+  "mygov.in": {
+    "name": "Mygov",
+    "category": "Legitimate"
+  },
+  "uidai.gov.in": {
+    "name": "Uidai",
+    "category": "Legitimate"
+  },
+  "incometax.gov.in": {
+    "name": "Incometax",
+    "category": "Legitimate"
+  },
+  "gst.gov.in": {
+    "name": "Gst",
+    "category": "Legitimate"
+  },
+  "epfindia.gov.in": {
+    "name": "Epfindia",
+    "category": "Legitimate"
+  },
+  "irctc.co.in": {
+    "name": "Irctc",
+    "category": "Legitimate"
+  },
+  "sbi.co.in": {
+    "name": "Sbi",
+    "category": "Legitimate"
+  },
+  "hdfcbank.com": {
+    "name": "Hdfcbank",
+    "category": "Legitimate"
+  },
+  "icicibank.com": {
+    "name": "Icicibank",
+    "category": "Legitimate"
+  },
+  "axisbank.com": {
+    "name": "Axisbank",
+    "category": "Legitimate"
+  },
+  "kotak.com": {
+    "name": "Kotak",
+    "category": "Legitimate"
+  },
+  "bankofbaroda.in": {
+    "name": "Bankofbaroda",
+    "category": "Legitimate"
+  },
+  "pnbindia.in": {
+    "name": "Pnbindia",
+    "category": "Legitimate"
+  },
+  "canarabank.com": {
+    "name": "Canarabank",
+    "category": "Legitimate"
+  },
+  "unionbankofindia.co.in": {
+    "name": "Unionbankofindia",
+    "category": "Legitimate"
+  },
+  "indianbank.in": {
+    "name": "Indianbank",
+    "category": "Legitimate"
+  },
+  "idbibank.in": {
+    "name": "Idbibank",
+    "category": "Legitimate"
+  },
+  "idfcfirstbank.com": {
+    "name": "Idfcfirstbank",
+    "category": "Legitimate"
+  },
+  "yesbank.in": {
+    "name": "Yesbank",
+    "category": "Legitimate"
+  },
+  "rblbank.com": {
+    "name": "Rblbank",
+    "category": "Legitimate"
+  },
+  "federalbank.co.in": {
+    "name": "Federalbank",
+    "category": "Legitimate"
+  },
+  "paytm.com": {
+    "name": "Paytm",
+    "category": "Legitimate"
+  },
+  "phonepe.com": {
+    "name": "Phonepe",
+    "category": "Legitimate"
+  },
+  "razorpay.com": {
+    "name": "Razorpay",
+    "category": "Legitimate"
+  },
+  "cred.club": {
+    "name": "Cred",
+    "category": "Legitimate"
+  },
+  "groww.in": {
+    "name": "Groww",
+    "category": "Legitimate"
+  },
+  "zerodha.com": {
+    "name": "Zerodha",
+    "category": "Legitimate"
+  },
+  "upstox.com": {
+    "name": "Upstox",
+    "category": "Legitimate"
+  },
+  "zerodha.tech": {
+    "name": "Zerodha",
+    "category": "Legitimate"
+  },
+  "flipkart.com": {
+    "name": "Flipkart",
+    "category": "Legitimate"
+  },
+  "myntra.com": {
+    "name": "Myntra",
+    "category": "Legitimate"
+  },
+  "ajio.com": {
+    "name": "Ajio",
+    "category": "Legitimate"
+  },
+  "nykaa.com": {
+    "name": "Nykaa",
+    "category": "Legitimate"
+  },
+  "meesho.com": {
+    "name": "Meesho",
+    "category": "Legitimate"
+  },
+  "swiggy.com": {
+    "name": "Swiggy",
+    "category": "Legitimate"
+  },
+  "zomato.com": {
+    "name": "Zomato",
+    "category": "Legitimate"
+  },
+  "makemytrip.com": {
+    "name": "Makemytrip",
+    "category": "Legitimate"
+  },
+  "goibibo.com": {
+    "name": "Goibibo",
+    "category": "Legitimate"
+  },
+  "booking.com": {
+    "name": "Booking",
+    "category": "Legitimate"
+  },
+  "airbnb.com": {
+    "name": "Airbnb",
+    "category": "Legitimate"
+  },
+  "uber.com": {
+    "name": "Uber",
+    "category": "Legitimate"
+  },
+  "ola.com": {
+    "name": "Ola",
+    "category": "Legitimate"
+  },
+  "rapido.bike": {
+    "name": "Rapido",
+    "category": "Legitimate"
+  },
+  "cleartrip.com": {
+    "name": "Cleartrip",
+    "category": "Legitimate"
+  },
+  "yatra.com": {
+    "name": "Yatra",
+    "category": "Legitimate"
+  },
+  "ixigo.com": {
+    "name": "Ixigo",
+    "category": "Legitimate"
   },
   "reddit.com": {
-    "name": "CrackWatch",
-    "category": "Release Tracker"
+    "name": "Reddit",
+    "category": "Legitimate"
   },
-  "jdownloader.org": {
-    "name": "JDownloader2",
-    "category": "Download Manager"
+  "x.com": {
+    "name": "X",
+    "category": "Legitimate"
   },
-  "freedownloadmanager.org": {
-    "name": "FreeDownloadManager",
-    "category": "Download Manager"
+  "facebook.com": {
+    "name": "Facebook",
+    "category": "Legitimate"
   },
-  "motrix.app": {
-    "name": "Motrix",
-    "category": "Download Manager"
+  "instagram.com": {
+    "name": "Instagram",
+    "category": "Legitimate"
   },
-  "subhra74.github.io": {
-    "name": "Xtreme Download Manager",
-    "category": "Download Manager"
+  "whatsapp.com": {
+    "name": "Whatsapp",
+    "category": "Legitimate"
   },
-  "mullvad.net": {
-    "name": "Mullvad VPN",
-    "category": "VPN"
+  "messenger.com": {
+    "name": "Messenger",
+    "category": "Legitimate"
   },
-  "protonvpn.com": {
-    "name": "ProtonVPN",
-    "category": "VPN"
+  "tiktok.com": {
+    "name": "Tiktok",
+    "category": "Legitimate"
   },
-  "monkrus.ws": {
-    "name": "monkrus.ws",
-    "category": "Activation"
+  "snapchat.com": {
+    "name": "Snapchat",
+    "category": "Legitimate"
   },
-  "virustotal.com": {
-    "name": "VirusTotal",
-    "category": "Safety"
+  "pinterest.com": {
+    "name": "Pinterest",
+    "category": "Legitimate"
   },
-  "claraiscute.neocities.org": {
-    "name": "Sandboxie",
-    "category": "Safety"
+  "tumblr.com": {
+    "name": "Tumblr",
+    "category": "Legitimate"
   },
-  "7-zip.org": {
-    "name": "7-Zip",
-    "category": "Utility"
+  "telegram.org": {
+    "name": "Telegram",
+    "category": "Legitimate"
   },
-  "bitwarden.com": {
-    "name": "Bitwarden",
-    "category": "Utility"
+  "discord.com": {
+    "name": "Discord",
+    "category": "Legitimate"
   },
-  "torproject.org": {
-    "name": "Tor Browser",
-    "category": "Privacy Browser"
+  "quora.com": {
+    "name": "Quora",
+    "category": "Legitimate"
   },
-  "mozilla.org": {
-    "name": "Firefox",
-    "category": "Browser"
+  "medium.com": {
+    "name": "Medium",
+    "category": "Legitimate"
   },
-  "brave.com": {
-    "name": "Brave",
-    "category": "Browser"
+  "substack.com": {
+    "name": "Substack",
+    "category": "Legitimate"
   },
-  "proton.me": {
-    "name": "Proton Mail",
-    "category": "Privacy"
+  "wordpress.com": {
+    "name": "Wordpress",
+    "category": "Legitimate"
   },
-  "searx.fmhy.net": {
-    "name": "SearXNG",
-    "category": "Privacy"
+  "blogger.com": {
+    "name": "Blogger",
+    "category": "Legitimate"
   },
-  "haveibeenpwned.com": {
-    "name": "HaveIBeenPwned",
-    "category": "Privacy"
+  "vk.com": {
+    "name": "Vk",
+    "category": "Legitimate"
   },
-  "fmhy.net": {
-    "name": "FMHY Unsafe Sites List",
-    "category": "Reference"
+  "bbc.com": {
+    "name": "Bbc",
+    "category": "Legitimate"
   },
-  "fmhy.pages.dev": {
-    "name": "FMHY Backup",
-    "category": "Aggregator"
+  "bbc.co.uk": {
+    "name": "Bbc",
+    "category": "Legitimate"
   },
-  "shakil-shahadat.github.io": {
-    "name": "Awesome Piracy",
-    "category": "Aggregator"
+  "cnn.com": {
+    "name": "Cnn",
+    "category": "Legitimate"
   },
-  "ripped.guide": {
-    "name": "Ripped.guide",
-    "category": "Aggregator"
+  "nytimes.com": {
+    "name": "Nytimes",
+    "category": "Legitimate"
   },
-  "champagne.pages.dev": {
-    "name": "Champagne Piracy Wiki",
-    "category": "Aggregator"
+  "theguardian.com": {
+    "name": "Theguardian",
+    "category": "Legitimate"
   },
-  "ducklink.pages.dev": {
-    "name": "Ducklink",
-    "category": "Aggregator"
+  "reuters.com": {
+    "name": "Reuters",
+    "category": "Legitimate"
   },
-  "simkl.com": {
-    "name": "Simkl",
-    "category": "Media Tracker"
+  "apnews.com": {
+    "name": "Apnews",
+    "category": "Legitimate"
   },
-  "trakt.tv": {
-    "name": "Trakt",
-    "category": "Media Tracker"
+  "npr.org": {
+    "name": "Npr",
+    "category": "Legitimate"
   },
-  "letterboxd.com": {
-    "name": "Letterboxd",
-    "category": "Media Tracker"
+  "economist.com": {
+    "name": "Economist",
+    "category": "Legitimate"
   },
-  "myanimelist.net": {
-    "name": "MyAnimeList",
-    "category": "Media Tracker"
+  "forbes.com": {
+    "name": "Forbes",
+    "category": "Legitimate"
   },
-  "anilist.co": {
-    "name": "AniList",
-    "category": "Media Tracker"
+  "bloomberg.com": {
+    "name": "Bloomberg",
+    "category": "Legitimate"
   },
-  "backloggd.com": {
-    "name": "Backloggd",
-    "category": "Media Tracker"
+  "cnbc.com": {
+    "name": "Cnbc",
+    "category": "Legitimate"
   },
-  "rateyourmusic.com": {
-    "name": "RateYourMusic",
-    "category": "Media Tracker"
+  "techcrunch.com": {
+    "name": "Techcrunch",
+    "category": "Legitimate"
   },
-  "last.fm": {
-    "name": "Last.fm",
-    "category": "Media Tracker"
+  "wired.com": {
+    "name": "Wired",
+    "category": "Legitimate"
   },
-  "goodreads.com": {
-    "name": "GoodReads",
-    "category": "Media Tracker"
+  "theverge.com": {
+    "name": "Theverge",
+    "category": "Legitimate"
   },
-  "thestorygraph.com": {
-    "name": "StoryGraph",
-    "category": "Media Tracker"
+  "arstechnica.com": {
+    "name": "Arstechnica",
+    "category": "Legitimate"
   },
-  "leagueofcomicgeeks.com": {
-    "name": "LeagueOfComicGeeks",
-    "category": "Media Tracker"
+  "engadget.com": {
+    "name": "Engadget",
+    "category": "Legitimate"
   },
-  "skmedix.pl": {
-    "name": "SKlauncher",
-    "category": "Games - Misc"
+  "espn.com": {
+    "name": "Espn",
+    "category": "Legitimate"
+  },
+  "fifa.com": {
+    "name": "Fifa",
+    "category": "Legitimate"
+  },
+  "uefa.com": {
+    "name": "Uefa",
+    "category": "Legitimate"
+  },
+  "nba.com": {
+    "name": "Nba",
+    "category": "Legitimate"
+  },
+  "nfl.com": {
+    "name": "Nfl",
+    "category": "Legitimate"
+  },
+  "olympics.com": {
+    "name": "Olympics",
+    "category": "Legitimate"
+  },
+  "cricbuzz.com": {
+    "name": "Cricbuzz",
+    "category": "Legitimate"
+  },
+  "espncricinfo.com": {
+    "name": "Espncricinfo",
+    "category": "Legitimate"
+  },
+  "imdb.com": {
+    "name": "Imdb",
+    "category": "Legitimate"
+  },
+  "rottentomatoes.com": {
+    "name": "Rottentomatoes",
+    "category": "Legitimate"
+  },
+  "netflix.com": {
+    "name": "Netflix",
+    "category": "Legitimate"
+  },
+  "spotify.com": {
+    "name": "Spotify",
+    "category": "Legitimate"
+  },
+  "soundcloud.com": {
+    "name": "Soundcloud",
+    "category": "Legitimate"
+  },
+  "twitch.tv": {
+    "name": "Twitch",
+    "category": "Legitimate"
+  },
+  "vimeo.com": {
+    "name": "Vimeo",
+    "category": "Legitimate"
+  },
+  "disneyplus.com": {
+    "name": "Disneyplus",
+    "category": "Legitimate"
+  },
+  "primevideo.com": {
+    "name": "Primevideo",
+    "category": "Legitimate"
+  },
+  "hulu.com": {
+    "name": "Hulu",
+    "category": "Legitimate"
+  },
+  "hbomax.com": {
+    "name": "Hbomax",
+    "category": "Legitimate"
+  },
+  "playstation.com": {
+    "name": "Playstation",
+    "category": "Legitimate"
+  },
+  "xbox.com": {
+    "name": "Xbox",
+    "category": "Legitimate"
+  },
+  "nintendo.com": {
+    "name": "Nintendo",
+    "category": "Legitimate"
+  },
+  "steampowered.com": {
+    "name": "Steampowered",
+    "category": "Legitimate"
+  },
+  "epicgames.com": {
+    "name": "Epicgames",
+    "category": "Legitimate"
+  },
+  "ea.com": {
+    "name": "Ea",
+    "category": "Legitimate"
+  },
+  "ubisoft.com": {
+    "name": "Ubisoft",
+    "category": "Legitimate"
+  },
+  "unity.com": {
+    "name": "Unity",
+    "category": "Legitimate"
+  },
+  "unrealengine.com": {
+    "name": "Unrealengine",
+    "category": "Legitimate"
+  },
+  "blender.org": {
+    "name": "Blender",
+    "category": "Legitimate"
+  },
+  "godotengine.org": {
+    "name": "Godotengine",
+    "category": "Legitimate"
+  },
+  "weather.com": {
+    "name": "Weather",
+    "category": "Legitimate"
+  },
+  "accuweather.com": {
+    "name": "Accuweather",
+    "category": "Legitimate"
+  },
+  "timeanddate.com": {
+    "name": "Timeanddate",
+    "category": "Legitimate"
+  },
+  "mapquest.com": {
+    "name": "Mapquest",
+    "category": "Legitimate"
+  },
+  "maps.google.com": {
+    "name": "Maps",
+    "category": "Legitimate"
+  },
+  "openstreetmap.org": {
+    "name": "Openstreetmap",
+    "category": "Legitimate"
+  },
+  "tripadvisor.com": {
+    "name": "Tripadvisor",
+    "category": "Legitimate"
+  },
+  "yelp.com": {
+    "name": "Yelp",
+    "category": "Legitimate"
+  },
+  "doordash.com": {
+    "name": "Doordash",
+    "category": "Legitimate"
+  },
+  "ubereats.com": {
+    "name": "Ubereats",
+    "category": "Legitimate"
+  },
+  "dominos.com": {
+    "name": "Dominos",
+    "category": "Legitimate"
+  },
+  "mcdonalds.com": {
+    "name": "Mcdonalds",
+    "category": "Legitimate"
+  },
+  "starbucks.com": {
+    "name": "Starbucks",
+    "category": "Legitimate"
+  },
+  "kfc.com": {
+    "name": "Kfc",
+    "category": "Legitimate"
+  },
+  "subway.com": {
+    "name": "Subway",
+    "category": "Legitimate"
+  },
+  "tesla.com": {
+    "name": "Tesla",
+    "category": "Legitimate"
+  },
+  "toyota.com": {
+    "name": "Toyota",
+    "category": "Legitimate"
+  },
+  "honda.com": {
+    "name": "Honda",
+    "category": "Legitimate"
+  },
+  "ford.com": {
+    "name": "Ford",
+    "category": "Legitimate"
+  },
+  "bmw.com": {
+    "name": "Bmw",
+    "category": "Legitimate"
+  },
+  "mercedes-benz.com": {
+    "name": "Mercedes Benz",
+    "category": "Legitimate"
+  },
+  "volkswagen.com": {
+    "name": "Volkswagen",
+    "category": "Legitimate"
+  },
+  "hyundai.com": {
+    "name": "Hyundai",
+    "category": "Legitimate"
+  },
+  "kia.com": {
+    "name": "Kia",
+    "category": "Legitimate"
+  },
+  "nike.com": {
+    "name": "Nike",
+    "category": "Legitimate"
+  },
+  "adidas.com": {
+    "name": "Adidas",
+    "category": "Legitimate"
+  },
+  "puma.com": {
+    "name": "Puma",
+    "category": "Legitimate"
+  },
+  "reebok.com": {
+    "name": "Reebok",
+    "category": "Legitimate"
+  },
+  "underarmour.com": {
+    "name": "Underarmour",
+    "category": "Legitimate"
+  },
+  "zara.com": {
+    "name": "Zara",
+    "category": "Legitimate"
+  },
+  "hm.com": {
+    "name": "Hm",
+    "category": "Legitimate"
+  },
+  "uniqlo.com": {
+    "name": "Uniqlo",
+    "category": "Legitimate"
+  },
+  "levi.com": {
+    "name": "Levi",
+    "category": "Legitimate"
+  },
+  "nationalgeographic.com": {
+    "name": "Nationalgeographic",
+    "category": "Legitimate"
+  },
+  "smithsonianmag.com": {
+    "name": "Smithsonianmag",
+    "category": "Legitimate"
+  },
+  "nasa.gov": {
+    "name": "Nasa",
+    "category": "Legitimate"
+  },
+  "noaa.gov": {
+    "name": "Noaa",
+    "category": "Legitimate"
+  },
+  "nih.gov": {
+    "name": "Nih",
+    "category": "Legitimate"
+  },
+  "cdc.gov": {
+    "name": "Cdc",
+    "category": "Legitimate"
+  },
+  "who.int": {
+    "name": "Who",
+    "category": "Legitimate"
+  },
+  "un.org": {
+    "name": "Un",
+    "category": "Legitimate"
+  },
+  "redcross.org": {
+    "name": "Redcross",
+    "category": "Legitimate"
+  },
+  "unicef.org": {
+    "name": "Unicef",
+    "category": "Legitimate"
+  },
+  "worldbank.org": {
+    "name": "Worldbank",
+    "category": "Legitimate"
+  },
+  "imf.org": {
+    "name": "Imf",
+    "category": "Legitimate"
+  },
+  "oecd.org": {
+    "name": "Oecd",
+    "category": "Legitimate"
+  },
+  "europa.eu": {
+    "name": "Europa",
+    "category": "Legitimate"
+  },
+  "gov.uk": {
+    "name": "Gov",
+    "category": "Legitimate"
+  },
+  "usa.gov": {
+    "name": "Usa",
+    "category": "Legitimate"
+  },
+  "canada.ca": {
+    "name": "Canada",
+    "category": "Legitimate"
+  },
+  "australia.gov.au": {
+    "name": "Australia",
+    "category": "Legitimate"
+  },
+  "gov.au": {
+    "name": "Gov",
+    "category": "Legitimate"
+  },
+  "gov.sg": {
+    "name": "Gov",
+    "category": "Legitimate"
+  },
+  "gov.in": {
+    "name": "Gov",
+    "category": "Legitimate"
+  },
+  "nic.in": {
+    "name": "Nic",
+    "category": "Legitimate"
+  },
+  "digitalindia.gov.in": {
+    "name": "Digitalindia",
+    "category": "Legitimate"
+  },
+  "meity.gov.in": {
+    "name": "Meity",
+    "category": "Legitimate"
+  },
+  "mha.gov.in": {
+    "name": "Mha",
+    "category": "Legitimate"
+  },
+  "mohfw.gov.in": {
+    "name": "Mohfw",
+    "category": "Legitimate"
+  },
+  "education.gov.in": {
+    "name": "Education",
+    "category": "Legitimate"
+  },
+  "courts.gov.in": {
+    "name": "Courts",
+    "category": "Legitimate"
+  },
+  "supremecourtofindia.nic.in": {
+    "name": "Supremecourtofindia",
+    "category": "Legitimate"
+  },
+  "drdo.gov.in": {
+    "name": "Drdo",
+    "category": "Legitimate"
+  },
+  "bhuvan.nrsc.gov.in": {
+    "name": "Bhuvan",
+    "category": "Legitimate"
+  },
+  "digilocker.gov.in": {
+    "name": "Digilocker",
+    "category": "Legitimate"
+  },
+  "parivahan.gov.in": {
+    "name": "Parivahan",
+    "category": "Legitimate"
   }
 }
