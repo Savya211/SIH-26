@@ -64,6 +64,7 @@ const panelTitles = {
     headers: { title: 'Header Inspector', subtitle: 'RFC 822 header forensic breakdown' },
     cases: { title: 'Case History', subtitle: 'Previously analyzed email cases' },
     threatintel: { title: 'Threat Intelligence', subtitle: 'Recurring threat indicators across analyzed cases' },
+    finalreport: { title: 'Final Report', subtitle: 'Complete investigation report for the current case' },
 };
 
 function initNavigation() {
@@ -108,6 +109,11 @@ function switchPanel(panelId) {
     // Load threat intel when switching to threatintel panel
     if (panelId === 'threatintel') {
         loadThreatIntel();
+    }
+
+    // Render final report when switching to finalreport panel
+    if (panelId === 'finalreport') {
+        renderFinalReport();
     }
 }
 
@@ -848,6 +854,498 @@ function renderThreatIntelTable(countsObj, label) {
             <tbody>${rows}</tbody>
         </table>
     `;
+}
+
+
+// ═══════════════════════════════════════════════
+//  Final Report
+// ═══════════════════════════════════════════════
+
+function renderFinalReport() {
+    const container = document.getElementById('final-report-content');
+    if (!currentAnalysis) {
+        container.innerHTML = '<p class="empty-state">Analyze an email first, then generate the final investigation report.</p>';
+        return;
+    }
+
+    const data = currentAnalysis;
+    const h = data.headers || {};
+    const risk = data.risk || {};
+    const auth = data.authentication || {};
+    const nlp = data.nlp_analysis || {};
+    const urlData = data.url_analysis || {};
+    const geo = data.geolocation || {};
+    const now = new Date().toLocaleString();
+
+    // Verdict color
+    const score = risk.threat_score || 0;
+    let verdictClass = 'fr-verdict-safe';
+    if (score >= 70) verdictClass = 'fr-verdict-malicious';
+    else if (score >= 40) verdictClass = 'fr-verdict-suspicious';
+
+    let html = '';
+
+    // ── Report Header ──
+    html += `
+        <div class="fr-header">
+            <div class="fr-header-logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <circle cx="12" cy="11" r="3"/>
+                </svg>
+                <div>
+                    <div class="fr-header-title">AegisMail Investigation Report</div>
+                    <div class="fr-header-subtitle">Email Forensic Intelligence Platform — SIH26106</div>
+                </div>
+            </div>
+            <div class="fr-header-meta">
+                <span>Generated: ${escapeHtml(now)}</span>
+                <span>Case ID: <strong>${escapeHtml(data.case_id || 'N/A')}</strong></span>
+            </div>
+        </div>
+    `;
+
+    // ── 1. Case Overview ──
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">1. Case Overview</div>
+            <div class="fr-overview-grid">
+                <div class="fr-overview-item">
+                    <span class="fr-overview-label">Case ID</span>
+                    <span class="fr-overview-value fr-mono">${escapeHtml(data.case_id || 'N/A')}</span>
+                </div>
+                <div class="fr-overview-item">
+                    <span class="fr-overview-label">Risk Score</span>
+                    <span class="fr-overview-value"><span class="fr-score-badge ${verdictClass}">${score} / 100</span></span>
+                </div>
+                <div class="fr-overview-item">
+                    <span class="fr-overview-label">Verdict</span>
+                    <span class="fr-overview-value"><span class="fr-verdict-badge ${verdictClass}">${escapeHtml(risk.verdict || 'N/A')}</span></span>
+                </div>
+                <div class="fr-overview-item">
+                    <span class="fr-overview-label">Confidence</span>
+                    <span class="fr-overview-value">${risk.confidence ? Math.round(risk.confidence * 100) + '%' : 'N/A'}</span>
+                </div>
+                <div class="fr-overview-item">
+                    <span class="fr-overview-label">Processing Time</span>
+                    <span class="fr-overview-value">${data.processing_time_seconds ? (data.processing_time_seconds * 1000).toFixed(0) + 'ms' : 'N/A'}</span>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // ── 2. Sender / Recipient Details ──
+    const senderFields = [
+        { label: 'From', value: h.sender?.full || 'N/A' },
+        { label: 'To', value: h.to || 'N/A' },
+        { label: 'Reply-To', value: h.reply_to?.full || '—' },
+        { label: 'Return-Path', value: h.return_path?.full || '—' },
+        { label: 'Subject', value: h.subject || 'N/A' },
+        { label: 'Date', value: h.date?.raw || 'N/A' },
+        { label: 'Total Hops', value: `${h.total_hops || 0} relay servers` },
+    ];
+
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">2. Sender / Recipient Details</div>
+            <table class="fr-table">
+                <tbody>
+                    ${senderFields.map(f => `<tr><td class="fr-table-label">${f.label}</td><td>${escapeHtml(f.value)}</td></tr>`).join('')}
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    // ── 3. Authentication Results ──
+    const authProtocols = [
+        { name: 'SPF', data: auth.spf },
+        { name: 'DKIM', data: auth.dkim },
+        { name: 'DMARC', data: auth.dmarc },
+    ];
+
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">3. SPF / DKIM / DMARC Authentication</div>
+            <div class="fr-auth-grid">
+                ${authProtocols.map(p => {
+                    const status = p.data?.status || 'unknown';
+                    const passed = p.data?.pass;
+                    const stClass = passed === true ? 'fr-auth-pass' : passed === false ? 'fr-auth-fail' : 'fr-auth-unknown';
+                    return `
+                        <div class="fr-auth-card ${stClass}">
+                            <div class="fr-auth-name">${p.name}</div>
+                            <div class="fr-auth-status">${status.charAt(0).toUpperCase() + status.slice(1)}</div>
+                            ${p.data?.detail ? `<div class="fr-auth-detail">${escapeHtml(p.data.detail)}</div>` : ''}
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+
+    // ── 4. Header Analysis ──
+    const hops = h.received_hops || [];
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">4. Header Analysis — Received Chain</div>
+            ${hops.length > 0 ? `
+                <table class="fr-table">
+                    <thead><tr><th>Hop</th><th>From Host</th><th>IP</th><th>By Host</th><th>Timestamp</th></tr></thead>
+                    <tbody>
+                        ${hops.map(hop => `
+                            <tr>
+                                <td><strong>Hop ${hop.hop_index}</strong></td>
+                                <td>${escapeHtml(hop.from_hostname || '—')}</td>
+                                <td><code>${hop.from_ip || '—'}</code></td>
+                                <td>${escapeHtml(hop.by_hostname || '—')}</td>
+                                <td>${hop.timestamp || '—'}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            ` : '<p class="fr-empty">No received headers parsed</p>'}
+        </div>
+    `;
+
+    // ── 5. URL & IOC Analysis ──
+    const urls = urlData.analyzed_urls || [];
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">5. URLs & IOC Analysis</div>
+            ${urls.length > 0 ? `
+                <table class="fr-table">
+                    <thead><tr><th>URL</th><th>Status</th><th>Risk</th><th>Findings</th></tr></thead>
+                    <tbody>
+                        ${urls.map(u => {
+                            const r = u.risk_score || 0;
+                            let badge = 'Safe', bClass = 'fr-verdict-safe';
+                            if (r >= 0.5) { badge = 'Dangerous'; bClass = 'fr-verdict-malicious'; }
+                            else if (r >= 0.2) { badge = 'Suspicious'; bClass = 'fr-verdict-suspicious'; }
+                            const findings = (u.findings || []).map(f => f.detail).join('; ');
+                            return `
+                                <tr>
+                                    <td class="fr-url-cell">${escapeHtml(u.url)}</td>
+                                    <td><span class="fr-verdict-badge ${bClass}">${badge}</span></td>
+                                    <td>${Math.round(r * 100)}%</td>
+                                    <td>${escapeHtml(findings || 'None')}</td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            ` : '<p class="fr-empty">No URLs found in email body</p>'}
+        </div>
+    `;
+
+    // ── 6. IP / GeoTrace Information ──
+    const hopPath = geo.hop_path || [];
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">6. IP / GeoTrace Information</div>
+            ${hopPath.length > 0 ? `
+                <table class="fr-table">
+                    <thead><tr><th>Hop</th><th>IP Address</th><th>Location</th><th>ISP / Org</th><th>Country</th></tr></thead>
+                    <tbody>
+                        ${hopPath.map((hop, i) => `
+                            <tr>
+                                <td><strong>${i + 1}</strong></td>
+                                <td><code>${hop.ip || '—'}</code></td>
+                                <td>${escapeHtml(hop.city || '')}${hop.city && hop.region ? ', ' : ''}${escapeHtml(hop.region || '')}</td>
+                                <td>${escapeHtml(hop.org || hop.isp || '—')}</td>
+                                <td>${escapeHtml(hop.country || '—')}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            ` : '<p class="fr-empty">No geolocation data available</p>'}
+        </div>
+    `;
+
+    // ── 7. NLP Findings ──
+    const nlpCategories = [
+        { label: 'Urgency', score: nlp.urgency_score },
+        { label: 'Credential Harvesting', score: nlp.credential_score },
+        { label: 'Financial Manipulation', score: nlp.financial_score },
+        { label: 'Impersonation', score: nlp.impersonation_score },
+        { label: 'Social Engineering', score: nlp.social_engineering_score },
+    ];
+    const flaggedKw = nlp.flagged_keywords || [];
+
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">7. NLP Content Analysis</div>
+            <table class="fr-table">
+                <thead><tr><th>Category</th><th>Score</th><th>Assessment</th></tr></thead>
+                <tbody>
+                    ${nlpCategories.map(cat => {
+                        const pct = Math.round((cat.score || 0) * 100);
+                        let assessment = 'Low risk';
+                        let aClass = 'fr-verdict-safe';
+                        if (pct >= 50) { assessment = 'High risk'; aClass = 'fr-verdict-malicious'; }
+                        else if (pct >= 25) { assessment = 'Moderate'; aClass = 'fr-verdict-suspicious'; }
+                        return `<tr><td>${cat.label}</td><td>${pct}%</td><td><span class="fr-verdict-badge ${aClass}">${assessment}</span></td></tr>`;
+                    }).join('')}
+                </tbody>
+            </table>
+            ${flaggedKw.length > 0 ? `
+                <div class="fr-subsection">
+                    <div class="fr-subsection-title">Flagged Keywords</div>
+                    <div class="fr-keyword-list">
+                        ${flaggedKw.map(kw => `<span class="fr-keyword">${escapeHtml(kw.keyword)}</span>`).join('')}
+                    </div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+
+    // ── 8. Timeline ──
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">8. Email Timeline</div>
+            ${hops.length > 0 ? `
+                <div class="fr-timeline">
+                    ${hops.map(hop => `
+                        <div class="fr-timeline-item">
+                            <div class="fr-timeline-dot"></div>
+                            <div class="fr-timeline-content">
+                                <div class="fr-timeline-time">${hop.timestamp || 'Unknown time'}</div>
+                                <div class="fr-timeline-desc">Hop ${hop.hop_index}: ${escapeHtml(hop.from_hostname || 'Origin')} → ${escapeHtml(hop.by_hostname || 'Destination')}</div>
+                                ${hop.from_ip ? `<div class="fr-timeline-ip">IP: <code>${hop.from_ip}</code></div>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : '<p class="fr-empty">No timeline data available</p>'}
+        </div>
+    `;
+
+    // ── 9. Evidence Summary (Threat Indicators) ──
+    const indicators = risk.indicators || [];
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">9. Evidence Summary — Threat Indicators</div>
+            ${indicators.length > 0 ? `
+                <table class="fr-table">
+                    <thead><tr><th>Severity</th><th>Category</th><th>Description</th></tr></thead>
+                    <tbody>
+                        ${indicators.map(ind => {
+                            let sevClass = 'fr-verdict-safe';
+                            if (ind.severity === 'critical' || ind.severity === 'high') sevClass = 'fr-verdict-malicious';
+                            else if (ind.severity === 'medium') sevClass = 'fr-verdict-suspicious';
+                            return `
+                                <tr>
+                                    <td><span class="fr-verdict-badge ${sevClass}">${ind.severity}</span></td>
+                                    <td>${escapeHtml(ind.category)}</td>
+                                    <td>${escapeHtml(ind.message)}</td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            ` : '<p class="fr-empty">No threat indicators detected — email appears safe</p>'}
+        </div>
+    `;
+
+    // ── 10. Recurring Threat Intelligence ──
+    html += `
+        <div class="fr-section">
+            <div class="fr-section-title">10. Recurring Threat Intelligence</div>
+            <div id="fr-threatintel-content"><p class="fr-empty">Loading cross-case intelligence…</p></div>
+        </div>
+    `;
+
+    // ── Report Footer ──
+    html += `
+        <div class="fr-footer">
+            <p>This report was generated by AegisMail Forensic Intelligence Platform (SIH26106).</p>
+            <p>Report generated on ${escapeHtml(now)}. All data is based on automated analysis and should be reviewed by a qualified analyst.</p>
+        </div>
+    `;
+
+    container.innerHTML = html;
+
+    // Load threat intel asynchronously for section 10
+    loadFinalReportThreatIntel();
+}
+
+
+async function loadFinalReportThreatIntel() {
+    const container = document.getElementById('fr-threatintel-content');
+    if (!container) return;
+
+    try {
+        const resp = await fetch(`${API_BASE}/api/cases`);
+        if (!resp.ok) throw new Error();
+        const listData = await resp.json();
+        const caseSummaries = listData.cases || [];
+
+        if (caseSummaries.length < 2) {
+            container.innerHTML = '<p class="fr-empty">Analyze multiple emails to detect recurring threat patterns across cases.</p>';
+            return;
+        }
+
+        const casePromises = caseSummaries.map(c =>
+            fetch(`${API_BASE}/api/cases/${c.case_id}`)
+                .then(r => r.ok ? r.json() : null)
+                .catch(() => null)
+        );
+        const fullCases = (await Promise.all(casePromises)).filter(Boolean);
+
+        const domainCounts = {};
+        const senderCounts = {};
+        const ipCounts = {};
+        const isPrivateIP = (ip) => /^(10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|127\.)/.test(ip);
+
+        for (const c of fullCases) {
+            const caseId = c.case_id || '';
+            const headers = c.headers || {};
+            const urlAnalysis = c.url_analysis || {};
+
+            const senderDomain = headers.sender?.domain;
+            if (senderDomain) {
+                if (!domainCounts[senderDomain]) domainCounts[senderDomain] = { count: 0, cases: new Set() };
+                domainCounts[senderDomain].count++;
+                domainCounts[senderDomain].cases.add(caseId);
+            }
+
+            const senderFull = headers.sender?.full;
+            if (senderFull) {
+                if (!senderCounts[senderFull]) senderCounts[senderFull] = { count: 0, cases: new Set() };
+                senderCounts[senderFull].count++;
+                senderCounts[senderFull].cases.add(caseId);
+            }
+
+            const allIPs = headers.all_ips || [];
+            for (const ip of allIPs) {
+                if (!isPrivateIP(ip)) {
+                    if (!ipCounts[ip]) ipCounts[ip] = { count: 0, cases: new Set() };
+                    ipCounts[ip].count++;
+                    ipCounts[ip].cases.add(caseId);
+                }
+            }
+
+            const urls = (urlAnalysis.analyzed_urls || []).filter(u => u.risk_score >= 0.2);
+            for (const u of urls) {
+                try {
+                    const urlDomain = new URL(u.url).hostname;
+                    if (urlDomain && !isPrivateIP(urlDomain)) {
+                        if (!domainCounts[urlDomain]) domainCounts[urlDomain] = { count: 0, cases: new Set() };
+                        domainCounts[urlDomain].count++;
+                        domainCounts[urlDomain].cases.add(caseId);
+                    }
+                } catch { /* skip invalid */ }
+            }
+        }
+
+        const renderTI = (obj, label) => {
+            const entries = Object.entries(obj)
+                .map(([key, val]) => ({ indicator: key, count: val.count, uniqueCases: val.cases.size }))
+                .filter(e => e.uniqueCases >= 2)
+                .sort((a, b) => b.uniqueCases - a.uniqueCases || b.count - a.count);
+            if (entries.length === 0) return '';
+            return `
+                <div class="fr-subsection">
+                    <div class="fr-subsection-title">Recurring ${label}</div>
+                    <table class="fr-table">
+                        <thead><tr><th>${label}</th><th>Appearances</th><th>Unique Cases</th></tr></thead>
+                        <tbody>${entries.map(e => `<tr><td>${escapeHtml(e.indicator)}</td><td>${e.count}</td><td>${e.uniqueCases}</td></tr>`).join('')}</tbody>
+                    </table>
+                </div>
+            `;
+        };
+
+        const tiHtml = renderTI(domainCounts, 'Domains') + renderTI(senderCounts, 'Senders') + renderTI(ipCounts, 'IP Addresses');
+        container.innerHTML = tiHtml || '<p class="fr-empty">No recurring threat indicators detected across analyzed cases.</p>';
+
+    } catch {
+        container.innerHTML = '<p class="fr-empty">Unable to load cross-case threat data. Is the engine running?</p>';
+    }
+}
+
+
+// ── Final Report Actions ──
+
+function downloadReportPDF() {
+    if (!currentAnalysis) {
+        alert('No analysis data available. Analyze an email first.');
+        return;
+    }
+    window.print();
+}
+
+async function copyReport() {
+    if (!currentAnalysis) {
+        alert('No analysis data available. Analyze an email first.');
+        return;
+    }
+    const content = document.getElementById('final-report-content');
+    const text = content.innerText;
+    try {
+        await navigator.clipboard.writeText(text);
+        const btn = document.getElementById('fr-btn-copy');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Copied!';
+        btn.classList.add('fr-btn-success');
+        setTimeout(() => {
+            btn.innerHTML = original;
+            btn.classList.remove('fr-btn-success');
+        }, 2000);
+    } catch {
+        // Fallback: select and prompt copy
+        const range = document.createRange();
+        range.selectNodeContents(content);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        alert('Report text selected. Press Ctrl+C to copy.');
+    }
+}
+
+function openSendReportModal() {
+    if (!currentAnalysis) {
+        alert('No analysis data available. Analyze an email first.');
+        return;
+    }
+    const modal = document.getElementById('fr-send-modal');
+    modal.style.display = 'flex';
+
+    // Pre-fill subject
+    const subjectInput = document.getElementById('fr-send-subject');
+    if (!subjectInput.value) {
+        const caseId = currentAnalysis.case_id || 'Unknown';
+        const verdict = currentAnalysis.risk?.verdict || 'N/A';
+        subjectInput.value = `AegisMail Investigation Report — Case ${caseId} [${verdict}]`;
+    }
+}
+
+function closeSendReportModal() {
+    document.getElementById('fr-send-modal').style.display = 'none';
+}
+
+function sendReport() {
+    const to = document.getElementById('fr-send-to').value.trim();
+    const subject = document.getElementById('fr-send-subject').value.trim();
+    const message = document.getElementById('fr-send-message').value.trim();
+
+    if (!to) {
+        alert('Please enter a recipient email address.');
+        return;
+    }
+
+    // Build plain-text report body
+    const content = document.getElementById('final-report-content');
+    let body = '';
+    if (message) {
+        body += message + '\n\n---\n\n';
+    }
+    body += content.innerText;
+
+    // mailto: URI with encoded fields
+    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject || 'AegisMail Investigation Report')}&body=${encodeURIComponent(body)}`;
+
+    // Open user's email client
+    window.open(mailto, '_blank');
+    closeSendReportModal();
 }
 
 

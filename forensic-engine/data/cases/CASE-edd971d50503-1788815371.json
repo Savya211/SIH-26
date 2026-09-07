@@ -1,0 +1,216 @@
+{
+  "case_id": "CASE-edd971d50503-1788815371",
+  "filename": "original_msg.eml",
+  "file_hash_sha256": "edd971d5050343ef85e4ead385dee9623500559d45bfffea88d1a9052b6a1220",
+  "timestamp": "2026-09-08T02:39:32.830200",
+  "processing_time_seconds": 1.206,
+  "headers": {
+    "sender": {
+      "full": "Aayush Prajapati <aayushprajapatib0433@gmail.com>",
+      "domain": "gmail.com",
+      "display_name": "Aayush Prajapati"
+    },
+    "reply_to": {
+      "full": "",
+      "domain": null
+    },
+    "return_path": {
+      "full": "<aayushprajapatib0433@gmail.com>",
+      "domain": "gmail.com"
+    },
+    "to": "om prajapati <omp114427@gmail.com>",
+    "cc": "",
+    "subject": "",
+    "date": {
+      "raw": "Mon, 07 Sep 2026 22:02:06 +0530",
+      "parsed": "2026-09-07T22:02:06+05:30"
+    },
+    "message_id": "<CAHAXC2cX6q5Cux+vSWcsXNjxJi5PtYjW2hyDA=5jvWVp0DPr1w@mail.gmail.com>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20251104 header.b=\"HmM3ri/f\";       arc=pass (i=1);       spf=pass (google.com: domain of aayushprajapatib0433@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=aayushprajapatib0433@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;       dara=pass header.i=@gmail.com",
+    "received_hops": [
+      {
+        "from_hostname": "mail-sor-f41.google.com",
+        "from_ip": "209.85.220.41",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Mon, 07 Sep 2026 09:32:19 -0700 (PDT)",
+        "timestamp": "2026-09-07T09:32:19-07:00",
+        "raw": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id 00721157ae682-8713d2ac68fsor83002137b3.0.2026.09.07.09.32.19        for <omp114427@gmail.com>        (Google Transport Security);        Mon, 07 Sep 2026 09:32:19 -0700 (PDT)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Mon, 7 Sep 2026 09:32:19 -0700 (PDT)",
+        "timestamp": "2026-09-07T09:32:19-07:00",
+        "raw": "by 2002:a05:6359:4425:b0:2b0:31c3:82a with SMTP id nz37csp6132867rwb;        Mon, 7 Sep 2026 09:32:19 -0700 (PDT)",
+        "hop_index": 2
+      }
+    ],
+    "all_ips": [
+      "209.85.220.41"
+    ],
+    "spoofing_indicators": [],
+    "total_hops": 2
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of aayushprajapatib0433@gmail.com designates 209.85.220.41 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: gmail.com",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 redirect=_spf.google.com",
+      "detail": "SPF record found: v=spf1 redirect=_spf.google.com"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "none",
+      "record": "v=DMARC1; p=none; sp=quarantine; rua=mailto:mailauth-reports@google.com",
+      "detail": "DMARC policy: none"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 0,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "Hey\r\nI got to know about a thing you are very close of...\r\nAnd I am very sure of it\r\nI know you have guessed what I am talking about and beware of me now!\r\nIf this comes out might make a huge impact on your life"
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.0,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.0,
+    "flagged_keywords": [],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [],
+    "url_risk_score": 0.0,
+    "total_urls": 0,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "209.85.220.41",
+        "country": "US",
+        "country_code": "US",
+        "city": "Mountain View",
+        "latitude": 38.0088,
+        "longitude": -122.1175,
+        "asn": "AS15169",
+        "org": "AS15169 Google LLC",
+        "isp": "AS15169 Google LLC",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "209.85.220.41",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "209.85.220.41",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.1175,
+              38.0088
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "209.85.220.41",
+            "city": "Mountain View",
+            "country": "US",
+            "org": "AS15169 Google LLC",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 0,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 0.0,
+      "nlp_content": 0.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}
