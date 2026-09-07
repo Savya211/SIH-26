@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisMail — Email Forensic Intelligence Platform</title>
+    <meta name="description" content="AI-Powered Email Threat Detection, GeoLocation & Forensic Intelligence Platform — SIH26106">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Leaflet.js for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════ -->
+    <!--  Sidebar Navigation                     -->
+    <!-- ═══════════════════════════════════════ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round">
+                        <defs>
+                            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#818cf8"/>
+                                <stop offset="100%" style="stop-color:#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <circle cx="12" cy="11" r="3"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">AegisMail</span>
+                    <span class="logo-tag">Forensic Intelligence</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Analysis</div>
+                <a href="#" class="nav-item active" data-panel="upload" id="nav-upload">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </span>
+                    <span class="nav-label">Upload & Analyze</span>
+                </a>
+                <a href="#" class="nav-item" data-panel="results" id="nav-results">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Analysis Report</span>
+                </a>
+
+                <div class="nav-section-label">Intelligence</div>
+                <a href="#" class="nav-item" data-panel="map" id="nav-map">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </span>
+                    <span class="nav-label">GeoTrace Map</span>
+                </a>
+                <a href="#" class="nav-item" data-panel="headers" id="nav-headers">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="2 3 12 13 22 3"/></svg>
+                    </span>
+                    <span class="nav-label">Header Inspector</span>
+                </a>
+
+                <div class="nav-section-label">History</div>
+                <a href="#" class="nav-item" data-panel="cases" id="nav-cases">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                    </span>
+                    <span class="nav-label">Case History</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-badge">SIH26106</div>
+        </div>
+    </aside>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  Main Content Area                      -->
+    <!-- ═══════════════════════════════════════ -->
+    <main class="main-area">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title" id="page-title">Upload & Analyze</h1>
+                <p class="page-subtitle" id="page-subtitle">Drop an .eml file to begin forensic analysis</p>
+            </div>
+            <div class="topbar-right">
+                <div class="status-pill" id="engine-status">
+                    <span class="status-dot"></span>
+                    <span>Engine Online</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Panels -->
+        <div class="content-area" id="content-area">
+
+            <!-- ═══ UPLOAD PANEL ═══ -->
+            <div class="panel active" id="panel-upload">
+                <div class="upload-section">
+                    <div class="upload-dropzone" id="dropzone">
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="url(#upload-grad)" stroke-width="1.5">
+                                    <defs>
+                                        <linearGradient id="upload-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#818cf8"/>
+                                            <stop offset="100%" style="stop-color:#06b6d4"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                            </div>
+                            <h3>Drop your .eml file here</h3>
+                            <p>or click to browse files</p>
+                            <input type="file" id="file-input" accept=".eml,.txt,.msg" hidden>
+                        </div>
+                        <div class="dropzone-analyzing" id="dropzone-analyzing" style="display:none;">
+                            <div class="analyzing-spinner"></div>
+                            <h3>Analyzing email...</h3>
+                            <p id="analyzing-stage">Parsing RFC 822 headers</p>
+                        </div>
+                    </div>
+
+                    <!-- Demo Emails Section -->
+                    <div class="demo-section">
+                        <h3 class="section-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            Quick Demo
+                        </h3>
+                        <p class="section-desc">Test with pre-crafted sample emails</p>
+                        <div class="demo-cards" id="demo-cards">
+                            <button class="demo-card demo-benign" onclick="analyzeDemoEmail('benign_corporate.eml')">
+                                <div class="demo-card-icon" style="background: rgba(34,197,94,0.15); color: #22c55e;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <div class="demo-card-info">
+                                    <span class="demo-card-title">Benign Corporate</span>
+                                    <span class="demo-card-desc">Valid SPF/DKIM/DMARC</span>
+                                </div>
+                            </button>
+                            <button class="demo-card demo-phishing" onclick="analyzeDemoEmail('spoofed_bank.eml')">
+                                <div class="demo-card-icon" style="background: rgba(239,68,68,0.15); color: #ef4444;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                </div>
+                                <div class="demo-card-info">
+                                    <span class="demo-card-title">Spoofed Bank Alert</span>
+                                    <span class="demo-card-desc">Failed auth + phishing</span>
+                                </div>
+                            </button>
+                            <button class="demo-card demo-beef" onclick="analyzeDemoEmail('beef_attack.eml')">
+                                <div class="demo-card-icon" style="background: rgba(168,85,247,0.15); color: #a855f7;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                </div>
+                                <div class="demo-card-info">
+                                    <span class="demo-card-title">BeEF Hook Attack</span>
+                                    <span class="demo-card-desc">Browser exploit + BEC</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ RESULTS PANEL ═══ -->
+            <div class="panel" id="panel-results">
+                <div class="results-grid">
+                    <!-- Risk Score Card -->
+                    <div class="card card-risk-score" id="risk-card">
+                        <div class="risk-dial-container">
+                            <svg class="risk-dial" viewBox="0 0 200 200" id="risk-dial">
+                                <defs>
+                                    <linearGradient id="dial-green" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#22c55e"/><stop offset="100%" style="stop-color:#16a34a"/>
+                                    </linearGradient>
+                                    <linearGradient id="dial-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#f97316"/><stop offset="100%" style="stop-color:#ea580c"/>
+                                    </linearGradient>
+                                    <linearGradient id="dial-red" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ef4444"/><stop offset="100%" style="stop-color:#dc2626"/>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12"/>
+                                <circle cx="100" cy="100" r="85" fill="none" stroke="url(#dial-green)" stroke-width="12"
+                                    stroke-dasharray="534" stroke-dashoffset="534" stroke-linecap="round"
+                                    transform="rotate(-90 100 100)" id="risk-dial-arc"/>
+                            </svg>
+                            <div class="risk-dial-center">
+                                <span class="risk-score-value" id="risk-score-value">0</span>
+                                <span class="risk-verdict" id="risk-verdict">—</span>
+                            </div>
+                        </div>
+                        <div class="risk-meta">
+                            <div class="risk-meta-item">
+                                <span class="meta-label">Confidence</span>
+                                <span class="meta-value" id="risk-confidence">—</span>
+                            </div>
+                            <div class="risk-meta-item">
+                                <span class="meta-label">Processing</span>
+                                <span class="meta-value" id="risk-time">—</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub Scores -->
+                    <div class="card card-sub-scores">
+                        <h3 class="card-title">Analysis Breakdown</h3>
+                        <div class="sub-scores-list" id="sub-scores-list">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <!-- Email Summary -->
+                    <div class="card card-email-summary">
+                        <h3 class="card-title">Email Summary</h3>
+                        <div class="summary-fields" id="summary-fields">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <!-- Threat Indicators -->
+                    <div class="card card-indicators card-full-width">
+                        <h3 class="card-title">Threat Indicators</h3>
+                        <div class="indicators-list" id="indicators-list">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <!-- NLP Analysis -->
+                    <div class="card card-nlp card-full-width">
+                        <h3 class="card-title">NLP Content Analysis</h3>
+                        <div class="nlp-categories" id="nlp-categories">
+                            <!-- JS populated -->
+                        </div>
+                        <div class="nlp-keywords" id="nlp-keywords">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <!-- URL Analysis -->
+                    <div class="card card-urls card-full-width">
+                        <h3 class="card-title">URL Threat Analysis</h3>
+                        <div class="urls-table-wrapper" id="urls-table-wrapper">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ MAP PANEL ═══ -->
+            <div class="panel" id="panel-map">
+                <div class="map-container">
+                    <div id="geo-map" class="geo-map"></div>
+                    <div class="map-sidebar" id="map-sidebar">
+                        <h3>Relay Path</h3>
+                        <div class="hop-list" id="hop-list">
+                            <p class="empty-state">Upload an email to trace its path</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ HEADERS PANEL ═══ -->
+            <div class="panel" id="panel-headers">
+                <div class="headers-container">
+                    <!-- Auth Status Cards -->
+                    <div class="auth-cards" id="auth-cards">
+                        <!-- JS populated -->
+                    </div>
+                    <!-- Raw Headers Table -->
+                    <div class="card card-full-width">
+                        <h3 class="card-title">Received Headers (Chronological)</h3>
+                        <div class="headers-table-wrapper" id="headers-table-wrapper">
+                            <p class="empty-state">Upload an email to inspect headers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ CASES PANEL ═══ -->
+            <div class="panel" id="panel-cases">
+                <div class="cases-container">
+                    <div class="card card-full-width">
+                        <h3 class="card-title">Analyzed Cases</h3>
+                        <div class="cases-list" id="cases-list">
+                            <p class="empty-state">No cases analyzed yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="map.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

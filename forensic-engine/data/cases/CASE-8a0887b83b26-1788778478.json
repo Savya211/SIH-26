@@ -1,0 +1,142 @@
+{
+  "case_id": "CASE-8a0887b83b26-1788778478",
+  "filename": "hwm_readme.txt",
+  "file_hash_sha256": "8a0887b83b26fb3d2e1ac07f3f42ccfc7478b7970063e741e3551ffbbfc28058",
+  "timestamp": "2026-09-07T16:24:38.602423",
+  "processing_time_seconds": 0.066,
+  "headers": {
+    "sender": {
+      "full": "",
+      "domain": null,
+      "display_name": null
+    },
+    "reply_to": {
+      "full": "",
+      "domain": null
+    },
+    "return_path": {
+      "full": "",
+      "domain": null
+    },
+    "to": "",
+    "cc": "",
+    "subject": "",
+    "date": {
+      "raw": "",
+      "parsed": null
+    },
+    "message_id": "",
+    "x_mailer": "",
+    "authentication_results_raw": "",
+    "received_hops": [],
+    "all_ips": [],
+    "spoofing_indicators": [],
+    "total_hops": 0
+  },
+  "authentication": {
+    "spf": {
+      "status": "unknown",
+      "detail": "",
+      "pass": null
+    },
+    "dkim": {
+      "status": "unknown",
+      "detail": "",
+      "pass": null
+    },
+    "dmarc": {
+      "status": "unknown",
+      "detail": "",
+      "pass": null
+    },
+    "dns_spf": {
+      "has_spf": null,
+      "record": "",
+      "detail": "No sender domain provided"
+    },
+    "dns_dmarc": {
+      "has_dmarc": null,
+      "policy": "",
+      "record": "",
+      "detail": "No sender domain provided"
+    },
+    "auth_risk_score": 0.15,
+    "auth_indicators": [
+      "SPF status could not be determined from headers",
+      "DKIM status could not be determined from headers",
+      "DMARC status could not be determined from headers"
+    ]
+  },
+  "body_analysis": {
+    "url_count": 0,
+    "has_html": false,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "HWMonitor Readme file\r\n----------------------\r\n\r\nVersion 1.63\r\nApril 2026\r\nContact : cpuz@cpuid.com\r\nWeb page: https://www.cpuid.com/softwares/hwmonitor.html\r\nCPUID SDK : https://www.cpuid-pro.com/products-system-monitoring-kit.php\r\n\r\nHistory\r\n-------\r\n--------------------------------------------------------------------------------------------------\r\n1.63 - April 2026\r\n- Intel Core Ultra 7 270K Plus and Ultra 5 250K Plus (Arrow Lake Refresh).\r\n- Intel Core 7 360 and 350 (Wildcat Lake).\r\n- Intel "
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.0,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.0,
+    "flagged_keywords": [],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [],
+    "url_risk_score": 0.0,
+    "total_urls": 0,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [],
+    "origin_node": null,
+    "destination_node": null,
+    "total_public_hops": 0,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": []
+    }
+  },
+  "risk": {
+    "threat_score": 4,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 15.0,
+      "nlp_content": 0.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Authentication",
+        "severity": "medium",
+        "message": "SPF status could not be determined from headers"
+      },
+      {
+        "category": "Authentication",
+        "severity": "medium",
+        "message": "DKIM status could not be determined from headers"
+      },
+      {
+        "category": "Authentication",
+        "severity": "medium",
+        "message": "DMARC status could not be determined from headers"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}

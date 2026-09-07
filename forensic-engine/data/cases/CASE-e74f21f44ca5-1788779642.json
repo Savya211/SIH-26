@@ -1,0 +1,635 @@
+{
+  "case_id": "CASE-e74f21f44ca5-1788779642",
+  "filename": "\u26a0\ufe0f Your Gmail has 0% of storage remaining.eml",
+  "file_hash_sha256": "e74f21f44ca5be58599c7aa489ec9063acb7023aaa790f33225b6019a89e6d07",
+  "timestamp": "2026-09-07T16:44:07.188873",
+  "processing_time_seconds": 4.969,
+  "headers": {
+    "sender": {
+      "full": "Google <google-noreply@google.com>",
+      "domain": "google.com",
+      "display_name": "Google"
+    },
+    "reply_to": {
+      "full": "Google <google-noreply@google.com>",
+      "domain": "google.com"
+    },
+    "return_path": {
+      "full": "<3OHeXag4KCd8HPPHMF-OPSFQMZHPPHMF.DPNNPEJTBWZBHNBJM.DPN@scoutcamp.bounces.google.com>",
+      "domain": "scoutcamp.bounces.google.com"
+    },
+    "to": "modisavya@gmail.com",
+    "cc": "",
+    "subject": "\u26a0\ufe0f Your Gmail has 0% of storage remaining",
+    "date": {
+      "raw": "Tue, 01 Sep 2026 18:09:12 -0700",
+      "parsed": "2026-09-01T18:09:12-07:00"
+    },
+    "message_id": "<18e350ddbeb759758b06703c53d6ce25d2a87e21-20268502-111855347@google.com>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@google.com header.s=20251104 header.b=lcZdEmRh;       spf=pass (google.com: domain of 3ohexag4kcd8hpphmf-opsfqmzhpphmf.dpnnpejtbwzbhnbjm.dpn@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3OHeXag4KCd8HPPHMF-OPSFQMZHPPHMF.DPNNPEJTBWZBHNBJM.DPN@scoutcamp.bounces.google.com;       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;       dara=pass header.i=@gmail.com",
+    "received_hops": [
+      {
+        "from_hostname": "mail-sor-f69.google.com",
+        "from_ip": "209.85.220.69",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Tue, 01 Sep 2026 18:09:12 -0700 (PDT)",
+        "timestamp": "2026-09-01T18:09:12-07:00",
+        "raw": "from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])        by mx.google.com with SMTPS id af79cd13be357-9395f0e82absor82794685a.2.2026.09.01.18.09.12        for <modisavya@gmail.com>        (Google Transport Security);        Tue, 01 Sep 2026 18:09:12 -0700 (PDT)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Tue, 1 Sep 2026 18:09:12 -0700 (PDT)",
+        "timestamp": "2026-09-01T18:09:12-07:00",
+        "raw": "by 2002:a17:903:1670:b0:2cc:c38e:5e55 with SMTP id e16csp4720393pll;        Tue, 1 Sep 2026 18:09:12 -0700 (PDT)",
+        "hop_index": 2
+      }
+    ],
+    "all_ips": [
+      "209.85.220.69"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (google.com) differs from Return-Path domain (scoutcamp.bounces.google.com)"
+      },
+      {
+        "type": "DISPLAY_NAME_IMPERSONATION",
+        "severity": "high",
+        "detail": "Display name 'Google' contains impersonation keyword: 'google'"
+      }
+    ],
+    "total_hops": 2
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of 3ohexag4kcd8hpphmf-opsfqmzhpphmf.dpnnpejtbwzbhnbjm.dpn@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: google.com",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": null,
+      "record": "",
+      "detail": "DNS query failed: The DNS response does not contain an answer to the question: google.com. IN TXT"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "reject",
+      "record": "v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com",
+      "detail": "DMARC policy: reject"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 36,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "View in browser  \r\n<https://notifications.google.com/g/vib/ACT4xYzt3YIfIr9W4fRRhdVn-Y3v5ppnT8xea9sE67x6QkSLKMrKt-6Dlf1xU2bvE97myKdqocNSdhV8IZmiLTXsRqIfo8nl5yJBTjVPGjvFFP6Qbf_IB-tWnPTJ5vvgbXV-5IA>\r\n\u00a9 2026 Google LLC\r\n1600 Amphitheatre Parkway\r\nMountain View, CA 94043"
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.0,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.0,
+    "flagged_keywords": [],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://c.gle/ACT4xYxsebGY-Gkd0rdR00vtYchCR0Il6P0KjfedAcZ1wVTEh42QuQr62nYHsiAjEELbJz7vMERPm_1FUMsl1UXcuaf8TkbmbtKHNN__e7boHRsFaCLhnX87x-kB6eqYhnR4laQhm59y0WZbL7Nxet8nNlll34EdKxmgTvnLdskgHUGEL2zzOJmKy5s9ewYg1Ck3saHODgmRiilPJWXJCqlzu0ANFSt3KFEkW9K9HviXd9N2wL5toUjMmzhYU9NrHHGgNCTYhSOSNGz5ODYAQ7iMUOTL6Wv0CinYbituGEKPlxF2gmBpg0dbvZc8VUepjxgxXj5wQ2RMYWkc5Pk8o4a2m5Uoj_AomUIdN8mpaXBFV4Zd1TVzYg2dTqf6pR_0_-aswDZftt0IPcQVIn24R213FoFxUTDpvx64P9z9N-OUQ_YQrXH4e9X8JkqwyPaCEehZtU_8wluCdHkeEF5r2yAqe5VEpIRsFszi",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYyu7IwT7l7t3wyEPMsFvK-KduwnhBGoV60Yebj_6aq3SwnokrDpZfLfuNLAkGzFPYRjrMIubFQKzfTpo7rDz4dzNaGpPR3t-daEMrVPV7k9RCHdv04K6-ynVq2ay40k_DPrv1Pysk-w8yYU5AYwx1H7zdYoL-3XQKhf7CAPCUDTsrxkeRFZUTVZqea7U0yMkuC2V8-OUHXcbr2LOMHXH3sh_jngzIFB8BSV8LsAQjI5VwJOC_KK5GcY-4IfNAyg5hw6wjq-Jy0RbjeZd7CDHMd13mrfCaYvxR2QHTsQrJAzZEYFI-1VQhX0iWfGXUyNmAPnTpCf6n3anIAfI0XG0Qa5QE-NBVg6teoy6cSYTn3bR0rIH4oYoL8ql83kuVRu6090LZX_T3WWMg142Ob8164IRg4xNVhEZcvJhxqHX1H1iU71PAIujQFfyiqbUM37c9Ly6eSNJ53iCwCDhQdjhqMHfU-naUYTTSCjWQ",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwiSTHwGL3ZGsTBbPJP6y7KmSGuJnwASjIZ6gtlPX91--l9iicRhFdJAm_JmlK66PoVg6GJggFH2CHDTQJAZS4pjpQ4Nf0FI_lYRXA82vXWlt0wWIW31GhnyZtdGb_CXcjeguPBPivZYIb0SO0d_U_c__lpbaPmpm9tXwnJPNcyUKRXVcNZuSOPppvbucVHLZpeeY_cUgodgssyDR7gJx7OegmcMU5Y7MX9Pf52OToEcpKE6CEnkMT1hW6v4T2N5DHnxZ59oxxymgu7Kj6hZOpoCb1XK8e13ecJi_6pUeto3fTwH25mpRPXggGoZs8I-4u8sI-9dcNAFZ3TAnXq6MOXPjHgJ1il1lqZCXK1Dgg7GR7JZ5KtKM2y9qRZmWTvGuWOyNnAytjXzppdb7ZZ1nmz2D4pL_X0WJIYO_7eGnX2Mrt-rxNStMYHwH2uxhmDlc8JT8rGiub0lWJSgxbzzihrI1YM5-KweYZPvfZ08ozMDdI",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYyJ-CXt4uc60kcMu2B1APGJ-clTW-sUzqbAVj_2BJvQjBnx8EbPD19osTQvfgVsT4u4SDeQo_CAnhry2WM5ldgXzCVfHDh0uHdDsdbi9gob0PaFFW5OcYRx1dJnRFLhIPQpM43WgJ4hBFg1-l9kZGdexYt-ViW2ilKhmIBJWQfjGWFLFLm_ZaGqaLftvLDHMzPHKA2QBrHn51ILsHPD3FMa453pZgLxzMBp8LiXgcZR52S_Y-vti3aS5NHK8fimb6-zzzrqqnnYEaj2KBnbqG3dFHYoyvOutukxCArvmgJixv0GX1T-2HV4ARAwGDGKMZ5PH-o5cwEKHLbg9-3sIVGazO4dC3NETyPAiDDXhAXYUkaIbsK5_jcnaq2bVsg9dd7WsArYEcdfYjKGXz4uz50JAcQROLTGl_yQQFTjSwdwUuDLJZY_XM_P4V8E4g1_tk-nBLC1Kr2HbKdG3LuNmDo6JOQIGNYsU_8pNmy98h-aD7Oz4Rtn",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYyNpmwV8S-hTRb4HaJLikdtpQJmuP63pbAFJtk7Gs58hFtj2qJoDfqY71OPQQtfmiBxcE8_P0Hrpn9xV6h7qkwMgMBrywLxKXQM_rRBY1yivnjslS9vFFKRCuUip7s9QNlNjrbtRuJfNmAeGVtBwrSLdSCnaLhokWGORmQMTz_50R1Hndtv6ZX31M7D2yqNuGmQVLhitwKJbROEBrpb-7PPt4iAFYgChH23LESvu52vx1ZABw1gAfzYIm9R1Vsb0fdiSg0LGvgzGN0LV8MEmPkSnCCHApYTf7Zi-tCNMB8ccuurRCqaTbXztWAnGP4WFWkVgqlqNU_biIhn5aDuS1gqb6D7EwEvIffxdqGCEYR_hDUfqM9W7MTFX5BiyBSoodbBznvPPMeNTjG8lrS3YPIFxsm85l5rU2fRq9_4tB3NHyGJqjoZzTvIBXPncZO5ajTVDkVgnd31JV3FD0MVjitgoPO6OweQ",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzcE0B-YNmTYbe58HRKHe40lRQnY1Z0DL8dKs8qBVt10uNSWsiNs0ywUb1W_Wc5Ru1Cdc2GXyZAs7XDJLf0z0acm1XrEVFlP-Cv7-m3HnWCvo1vZfGs42sJVMrwac2gZAdKusDGxlUraq7gTw8VRolv5N4eWPamlbHqAi5zAFCxFEtbMxStEr8ALsbpnqYJg6U2Y0DWLF4RPH7NGHKptt6WkuhtNpO_yLh_VI3RjuNn-P9aYDbPkYXRGTlEvD_beTtCn_pE_DnCNvJpTU_2CJ5K6MRJIYFb4L4pEj89dTxn89wJjQpVtEduHi0MgXyYACUVDnZrBhn6zSRc7oijSjVQUBjgSGUxnFIzUyOA4NsAHU0zQYJNrRrM2vJPx-goREJJ253bCF92DXfQ_PFilejEUtZUPtL8ipYgXXZrYAj0MXidrFrUtqP5XAPaeWujm1P67BSfyQq0jy-FY2eMuZ9JFT3hWPOL86vkPw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzuNIqPYUmPXlfvZpqVoUaf0IGc204HeZ15d2fXcayCwhXwmVLrL2hP9sIUcJJqCkMMxvWSFXiydcXVw4Fq-vlVV3sNQv1n8V2DPn3t4_htZE-15DFesH_TccpNVleMI42Ytv4NRBbfhLuc1SNjLMPUTsIbyl58eVJzqRnJGWjwdbvGz8LXOJdLrk4UaqZruwTBHRhjNQ0Sw7eR1g1a7guUzdFquBpE5HFG01QJumwuoobJ34Vh8hBgaTOpKBG42E1aqS0-5fsolkcFu08-QkfmSR2TVy0LEos7XyFQMqcG2xHlx9D1fF46oMuYvWwLL4qPkLEDmL2OOe1o-yZf99w3ivyDWBsGafGWsgJZYfYfTiWXaqEW_i6IbkEB_qUhkeGKttEim8PTmYhcEXc7V1rt3qlX3poXSVXUK4wes9L-scSXcxycyyFYlYc9sFKY04lcU8pIcmFOqKr4HLHsVAGc9zkFRQ932EgQM24uq3L35po",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxcKgfO2OqDscYmmMrTztrR_MO7h8MmhH-DGlBm-mU0WGH7aRUOzvHYjo9RBoOfkxnj7fnYCi-z2xDV8ZwWqNXuDB9OzGZ1RYy5OG_fgxF7PIgmZQqFZG2Nhk5JdJiAcuvEZztPALSRoSm_sqxKYXLfL9_5uwhBavDkr-bCFfFjb6RdF4OMZt7teltxq6HIXujXhPi6maB6mbCyjdJtYHC-rjXWtprefZM80stDyBDg2549PlTGmIAc_G90f0nrvyFRsOF73OfSr8k7GMO0sKJrltB0MZp3C4PoZ1OwXThkI9EMSK4bWVJMB7I8o9YOdQVb5tKLWzIXBanHqcVV5IS7yhP0kniv2VCaePE5_8udUSL03dDqkD_iOot2QWj8dBY7DDDGHvbG1Tufsw_AOLl7r2YevHoXp9nbwDIVaStjFTADkla3OryClYKMu9QK7flPZZyXT93jDc1zbiFuudgGtN290FW6E8oMf3TARNT2YPfzuc3I",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwrWKPvKp7K_9G5xad0qBeBh1zQsnCvf9MT_KHoriPaQbtkmyvHaZH2QbqTFHf2ggwubkLPik585XohCK42HxlvAiW_T67CjrRnV-spktfUBBNBh8XxpqM0zltFxBqUouAPHWFLX-GgsArCaR9kgIDRPdx1atlWYTJUO1rYGtlz5Q6Rhkg1a24jWX-Gr257Ttrv33fbDSQ7p3sDTMiOe7GOnrZH5tPl1aWlpGokVnUrvdQLxl_Htzz8IssB8fewEq0v8pUplAIqYYpSwJ7iFXDE5Q_NKM27jJCXeuAX9CSnIJV_V_iszz2pW4Ta4RY3v5WXl0pUnvqtJ9sZVUgt-S4hdUnZ8WeambkeEXnwE4V068PG3rfmGdDLYhSYdr9MjQvQKrfPv20AGcHsVr5KoPJGHFTE4hkktL3PTPFC1qSce2zd0PlsnCru1ld1Darjd0ppqunVlWxlwFMjVi4Ov3eVxgrrJfm007BdEA",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYy0kJHid45wK6_pPJmWYvvBnFvmMlPdOgRgbropk3F-d0j4dKaLjlZVkFX1pcDTSxIMl7PpQNcnnCLGnHZ583XfLFVBOOMR6udjsqurh1Yo7bKDq0n-qXc70bSOxd1e7nlZPn-0l7v_6-nemwt8il-o2g-Q3TZ8ELxLiAb-dRgizkxmA2gmbL3NS0EBF_ilZezcQM5_0vpe0jT3KnY7KcEbgydReKqQju1bpPSuUwaGXrAYXvDDcMl70pRQCJFlEgBZeBmORXcQg1qWMMKst8bKBZvRo4ByHK9kiO9hEJ0_OpGFYJsxqqGJHTWAJhzo9Or1wlhCyKo_QKTSXYz93hx7J14-QO1XtgZaLtzUtKPxYzbS8TyHXwlWW2m0UZy0uayVKtJsFgUmLekVwmd0qxIOAHpFyus6OCNUziTS5PbP6fChop3UdozU7ZlDkt-PzhC3D_39ugHHXvi4id-e765HiZfqqg1ALTED_lF6RsE",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwrWKPvKp7K_9G5xad0qBeBh1zQsnCvf9MT_KHoriPaQbtkmyvHaZH2QbqTFHf2ggwubkLPik585XohCK42HxlvAiW_T67CjrRnV-spktfUBBNBh8XxpqM0zltFxBqUouAPHWFLX-GgsArCaR9kgIDRPdx1atlWYTJUO1rYGtlz5Q6Rhkg1a24jWX-Gr257Ttrv33fbDSQ7p3sDTMiOe7GOnrZH5tPl1aWlpGokVnUrvdQLxl_Htzz8IssB8fewEq0v8pUplAIqYYpSwJ7iFXDE5Q_NKM27jJCXeuAX9CSnIJV_V_iszz2pW4Ta4RY3v5WXl0pUnvqtJ9sZVUgt-S4hdUnZ8WeambkeEXnwE4V068PG3rfmGdDLYhSYdr9MjQvQKrfPv20AGcHsVr5KoPJGHFTE4hkktL3PTPFC1qSce2zd0PlsnCru1ld1Darjd0ppqunVlWxlwFMjVi4Ov3eVxgrrJfm007BdEA",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYy0kJHid45wK6_pPJmWYvvBnFvmMlPdOgRgbropk3F-d0j4dKaLjlZVkFX1pcDTSxIMl7PpQNcnnCLGnHZ583XfLFVBOOMR6udjsqurh1Yo7bKDq0n-qXc70bSOxd1e7nlZPn-0l7v_6-nemwt8il-o2g-Q3TZ8ELxLiAb-dRgizkxmA2gmbL3NS0EBF_ilZezcQM5_0vpe0jT3KnY7KcEbgydReKqQju1bpPSuUwaGXrAYXvDDcMl70pRQCJFlEgBZeBmORXcQg1qWMMKst8bKBZvRo4ByHK9kiO9hEJ0_OpGFYJsxqqGJHTWAJhzo9Or1wlhCyKo_QKTSXYz93hx7J14-QO1XtgZaLtzUtKPxYzbS8TyHXwlWW2m0UZy0uayVKtJsFgUmLekVwmd0qxIOAHpFyus6OCNUziTS5PbP6fChop3UdozU7ZlDkt-PzhC3D_39ugHHXvi4id-e765HiZfqqg1ALTED_lF6RsE",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxUoW2sOAFFah4vA_iIbwJHMyhZAf_XQ74AQdLpV6GZ5S5kj_2EMgmuyY3xbX434RdYBF5hcMV3CErMd1laPUedfwTdcjwFpfgBg2SzlYHz31SPX5c6LsqauSt5_RrcZ1Esz9MHNQ9cus_UjW7iXRUEPCC6pVUPIHVfp36zn10ldOQTRqdwO3HfgjbYQCL0tZTWl5xh2Tj2N7nKo1qP5A37IbI9ylh99qX2tbtrdVwMua0pnkXPUcTVOxK5X8YkTqoVtQr985AaAX5G5zfrry0g1lAiOsCggn7wFSEOsT6c0nrV2iA7whtO_i5rIYwZLV1Kyvp9Y8wwjfmzu5iguE7I9b-cCg8ly0VSMWIDuBrPgvYwDlvC058UpXy_iOsXnm-cNt_aWaSskST1Ck7JrhwSUlFzkcne7UCT4WDbeasgJ1wIVceevxQQct-itC05C0V4L1h-w_C2q_E4yJRAagr-VsqJ9gfwYg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwsyYBdgHjiHWbfUl0lkpRjZZ2nXrLXzqkf-A-sVOSUXXgEc-FSLcgLNtPgDiyaaln6zxX_H4r1TxqTgQ47d1JUuDvybFc8bpqERmupk5cZ5Sq5VX0YctxwCJ2-ZQ9OdaOZkAqPqV5h0qlRqswf7-ZPY7jqYwCWrYl9KMjQA26vY3STieS7E5H8IVBkymbm1aSJKdJTBD6As1QsHRuF_M6REQDOLqmHIBg1gC6gX2VMbEnrH3pg9xqDm36TB76n2oYkNgzMAblJBPgjt2Lgry1Eo4LsJD4HyI8aZA1iVZtYbdgx8303An1ryRb_JW4NOHh5JSOBZXJovo_vHB1pJowNBqTKk0Ljjp_B8Eq4yud4EKDACoeMpODzGmDbaHCiWbIrqhMvxMu5e53DEAC46wE_qmL_ZyPCkYvvTFTdczvgW4nnN1-g7jZqiYLrdverBqgI_vVUj_gIa42B83ZQ_SxSVOHm1bMiW8BDumk",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxUoW2sOAFFah4vA_iIbwJHMyhZAf_XQ74AQdLpV6GZ5S5kj_2EMgmuyY3xbX434RdYBF5hcMV3CErMd1laPUedfwTdcjwFpfgBg2SzlYHz31SPX5c6LsqauSt5_RrcZ1Esz9MHNQ9cus_UjW7iXRUEPCC6pVUPIHVfp36zn10ldOQTRqdwO3HfgjbYQCL0tZTWl5xh2Tj2N7nKo1qP5A37IbI9ylh99qX2tbtrdVwMua0pnkXPUcTVOxK5X8YkTqoVtQr985AaAX5G5zfrry0g1lAiOsCggn7wFSEOsT6c0nrV2iA7whtO_i5rIYwZLV1Kyvp9Y8wwjfmzu5iguE7I9b-cCg8ly0VSMWIDuBrPgvYwDlvC058UpXy_iOsXnm-cNt_aWaSskST1Ck7JrhwSUlFzkcne7UCT4WDbeasgJ1wIVceevxQQct-itC05C0V4L1h-w_C2q_E4yJRAagr-VsqJ9gfwYg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwsyYBdgHjiHWbfUl0lkpRjZZ2nXrLXzqkf-A-sVOSUXXgEc-FSLcgLNtPgDiyaaln6zxX_H4r1TxqTgQ47d1JUuDvybFc8bpqERmupk5cZ5Sq5VX0YctxwCJ2-ZQ9OdaOZkAqPqV5h0qlRqswf7-ZPY7jqYwCWrYl9KMjQA26vY3STieS7E5H8IVBkymbm1aSJKdJTBD6As1QsHRuF_M6REQDOLqmHIBg1gC6gX2VMbEnrH3pg9xqDm36TB76n2oYkNgzMAblJBPgjt2Lgry1Eo4LsJD4HyI8aZA1iVZtYbdgx8303An1ryRb_JW4NOHh5JSOBZXJovo_vHB1pJowNBqTKk0Ljjp_B8Eq4yud4EKDACoeMpODzGmDbaHCiWbIrqhMvxMu5e53DEAC46wE_qmL_ZyPCkYvvTFTdczvgW4nnN1-g7jZqiYLrdverBqgI_vVUj_gIa42B83ZQ_SxSVOHm1bMiW8BDumk",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxQgTSUDB2Bf8kVdzk_0hgAOdeT1q_M4GtoxJcgAG3yQ1Ph-x37Y2gYu0AyZCwNFPlmbsPCVtxBpuIGFLHgmmPFx8k7sVQzhZsaky5zb1WEj8hYaVS-TGQskXAfD2SkB3_BTx_XAOQfWMtJgWRExakVg4ZvamMr2RL8Jr8V91oG1i5dDzIbhZ2YFDYMuJ-c-HXmkdpH4PDcNaP1WodEFMvazOh9qW3oLmGwLIb_EIppfdYuJuVv_9SE0kmUlJK6RzP6SIFVGY93G-w4eTPdMdyQTbxjBH2CDsecXbVcyDEjh5ibOV3xFidGJxYVAgT4Fwt5cBISijfj1Q5BJEdCo-GJYdEN0Bm3ikwiIWBntVLINPS78aRuKXhwyc99dT1yXgy7FRfuVzcGsktt2KdVt-WpnzWoNwJ4krOxCvXBtSYIw7-sxUdy0_btWyR6O9eht1JLPBevulbmtCnpE8viZYFhrWnwEjCC0A",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYz2iJVRdyQLAKpEKedszL_2fPvncn_IQ0KLeJXKogz-ibMt2e8w30cLqZvBMS1xDtV3oMiJqUezUVqLkN5sFpeWv6f3s1wd2j7xYANqKhRAt6ncb_M_lRAGX3lJ85ufQWaOGW7gywIhk2nzKCveVNvtLsV7jWr4-BVCk6e9ELgN45sUS10E29q-_pcanJCqkfDirEwBeDRPjpWH4OxdhgPBWnfGRssKEcCqUhLZd8f2q40OTBle24XPPy1dFNseTs0eN0zzSHqz8rL0hRg8kaHzs-wE6HkafqH01IUZnnJo1EEXouqOXcW2yFhilJnVJ-HQdn4fjKaO0Pm6mX0-kNftcya_v7dN6hOGPkVh6AsjEHXclAdJn_D09iJ0MaDLjNxf829lH6J-e9z3goTUOQ2t6YDnfTqGfyJ2W5uIQeI7wA2n_6_d9AOibgV3ZGtBctz9WCX42gwadE2NnK2_GiT0C3eT39lvH2dlk78",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxQgTSUDB2Bf8kVdzk_0hgAOdeT1q_M4GtoxJcgAG3yQ1Ph-x37Y2gYu0AyZCwNFPlmbsPCVtxBpuIGFLHgmmPFx8k7sVQzhZsaky5zb1WEj8hYaVS-TGQskXAfD2SkB3_BTx_XAOQfWMtJgWRExakVg4ZvamMr2RL8Jr8V91oG1i5dDzIbhZ2YFDYMuJ-c-HXmkdpH4PDcNaP1WodEFMvazOh9qW3oLmGwLIb_EIppfdYuJuVv_9SE0kmUlJK6RzP6SIFVGY93G-w4eTPdMdyQTbxjBH2CDsecXbVcyDEjh5ibOV3xFidGJxYVAgT4Fwt5cBISijfj1Q5BJEdCo-GJYdEN0Bm3ikwiIWBntVLINPS78aRuKXhwyc99dT1yXgy7FRfuVzcGsktt2KdVt-WpnzWoNwJ4krOxCvXBtSYIw7-sxUdy0_btWyR6O9eht1JLPBevulbmtCnpE8viZYFhrWnwEjCC0A",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYz2iJVRdyQLAKpEKedszL_2fPvncn_IQ0KLeJXKogz-ibMt2e8w30cLqZvBMS1xDtV3oMiJqUezUVqLkN5sFpeWv6f3s1wd2j7xYANqKhRAt6ncb_M_lRAGX3lJ85ufQWaOGW7gywIhk2nzKCveVNvtLsV7jWr4-BVCk6e9ELgN45sUS10E29q-_pcanJCqkfDirEwBeDRPjpWH4OxdhgPBWnfGRssKEcCqUhLZd8f2q40OTBle24XPPy1dFNseTs0eN0zzSHqz8rL0hRg8kaHzs-wE6HkafqH01IUZnnJo1EEXouqOXcW2yFhilJnVJ-HQdn4fjKaO0Pm6mX0-kNftcya_v7dN6hOGPkVh6AsjEHXclAdJn_D09iJ0MaDLjNxf829lH6J-e9z3goTUOQ2t6YDnfTqGfyJ2W5uIQeI7wA2n_6_d9AOibgV3ZGtBctz9WCX42gwadE2NnK2_GiT0C3eT39lvH2dlk78",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzFSOzurRTVJ-S0317Is-wbUohTVodBlUed8AOhz6fL7XIIo-NXE0VTAkq1_URg483WjHPEt0RY5cmUTMAejYJb8t5jH8ipVx5tdC-F00fcTW3ZP_I4JHst0dCL_GXFPx8han_YBGReFfUJqiwjQubG-jIMkfWqxuQqAzb4TPn5kzYbh0_WVpSVmd9CYQBWTNKrgIrjxj5fOkNztjpAVTD5Mnsj6grctv2QlqZeLrrDN1FuUsYDBKMAz7eHU087f-QKR2VoznBZfdSXLs5nsuYlOjnTCZF6gLslTMQ1rmAelaVbxCB4tbmu1AQ9S7gangKJPXXGbUzQqNIljGZVTzGb7mkfv2DgPRZEIzQqZ8f7EgwnVBrAse3CwnwIFKzGzg6kHdjxwORqAQP0ggLcvw0CZar-PvYXRjw9l4ZGHg6O7R8bKNdZZOxqftv2t-hpwZH1LcXdGIWrtTBsiDQN59-9KyJN8Eg77mRCeu0v9QVn",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzaZUCmL5XCzWUV9pP-4DTeKbOiU9YTdnc8a828Kdy-j1YaxzMstcu0p-RJE6Tf4fDHHdOBBz9XYQD7dV9JyOdeR769x7Zjr9f1m0DFXBCRkjMIffwd82aHBpe4P4P2GxIaEIisvCpHM0f4-jhxAL-nX6ZCTtPKKQWj_-2BRT4TAhUtJEz9aqrZJTey3-lV-7f7Mj4UUmKzs3DFC2O80syO2HJIjZcl4E6S0MZTlYbWnLjZ66ukIfaaiLzJuAUwBVRmGFvF6IyDfGF5yiXUkH_kKjwewiI7U1fAzlZjYVpQQ9BM5eXNCcP_Rdcmht6IV5UACUn5M5ljJ8Kx38GnZPnMM0CcOuyPBJNN-31S6soaud8lk78ZLQoHi0Fg_4rTV2KDBRr0A1liP1YCr86UDVTISzY6MrUyXDN3RjYSmWviBJHCDntVAVah0jZUxX9GC6hYhq5KsWtBGO63HW0-49nuRYc2Z3RQUsurT2hh-xD56bj-xg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzFSOzurRTVJ-S0317Is-wbUohTVodBlUed8AOhz6fL7XIIo-NXE0VTAkq1_URg483WjHPEt0RY5cmUTMAejYJb8t5jH8ipVx5tdC-F00fcTW3ZP_I4JHst0dCL_GXFPx8han_YBGReFfUJqiwjQubG-jIMkfWqxuQqAzb4TPn5kzYbh0_WVpSVmd9CYQBWTNKrgIrjxj5fOkNztjpAVTD5Mnsj6grctv2QlqZeLrrDN1FuUsYDBKMAz7eHU087f-QKR2VoznBZfdSXLs5nsuYlOjnTCZF6gLslTMQ1rmAelaVbxCB4tbmu1AQ9S7gangKJPXXGbUzQqNIljGZVTzGb7mkfv2DgPRZEIzQqZ8f7EgwnVBrAse3CwnwIFKzGzg6kHdjxwORqAQP0ggLcvw0CZar-PvYXRjw9l4ZGHg6O7R8bKNdZZOxqftv2t-hpwZH1LcXdGIWrtTBsiDQN59-9KyJN8Eg77mRCeu0v9QVn",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzaZUCmL5XCzWUV9pP-4DTeKbOiU9YTdnc8a828Kdy-j1YaxzMstcu0p-RJE6Tf4fDHHdOBBz9XYQD7dV9JyOdeR769x7Zjr9f1m0DFXBCRkjMIffwd82aHBpe4P4P2GxIaEIisvCpHM0f4-jhxAL-nX6ZCTtPKKQWj_-2BRT4TAhUtJEz9aqrZJTey3-lV-7f7Mj4UUmKzs3DFC2O80syO2HJIjZcl4E6S0MZTlYbWnLjZ66ukIfaaiLzJuAUwBVRmGFvF6IyDfGF5yiXUkH_kKjwewiI7U1fAzlZjYVpQQ9BM5eXNCcP_Rdcmht6IV5UACUn5M5ljJ8Kx38GnZPnMM0CcOuyPBJNN-31S6soaud8lk78ZLQoHi0Fg_4rTV2KDBRr0A1liP1YCr86UDVTISzY6MrUyXDN3RjYSmWviBJHCDntVAVah0jZUxX9GC6hYhq5KsWtBGO63HW0-49nuRYc2Z3RQUsurT2hh-xD56bj-xg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxWBv9Z85Z8sHjUp0ybVfI2bHozxrG5uYQM-xVldLZHkMITmvZWkyL3xJ60qn_9dgi3-7ImUnn0KgxVaMRO2oM2ii_zzNkty6VCw5UcdIFPE0RzBOYsQI-7nNZfu6-QqDsyWje1O70rVMaRhkaHKhINoQsNF9xTtfSTmX8c",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwTLokfoajdl_MzlAM5fPefMBjz2BR9SFrRi5Fpw8v18GHBm1aoiJZ8jvqY8TWFXEIxD9tj2DISM74uTSrVyMXkzIV7IpTBeGBbc2dmKJp2taYUXALTvdMV5IJvCc6ka4-Sp3sx5kZG4c04f6zqZtsxcw3v3GsUjhfmSgVxVwkPehW1xacm5TEt053IoOWhgQxf5m_KKe7F0rktnMQjGVyr",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYzNj2WtE_yTRVZKSZMMEwNBFjGqNaLSuhkLYaRk3taQBPc3OSYrRnNWi1l3OHY4Y2zTiWkldZHEwEAaVPYWXDYzzCdcbgkLPe57qwmN-zJL5ksTPQYjlRb9hACv1cpGMaEdJWMexYbB-EO0FBtAXiYR1oW7FNuqmSZmuWyqpQI2HWB0au0u5v1juhdBDE8z9rMFOhz6WzLn-F47SL3rv7DTf3By3A",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwF146rDuv1cqaQRk-mcHvvNxRcu0Zu5QqyWEJf3T2E37GpNc-qMOvTnWzY-oCBPOJOTV4-ee10RwZ79SDPqsiSryVGdK1yIkzkMaBo7YrQBeS6m8ebXu94B9GpCTuT1fElxPBT1NNzzKnG0QDaBDfiF1NmOl78PCu2bBzvacY7DhONE8J9eQQh8MYL0TLQgO_yfcsXPwWzMqY5yik",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwW7aikPuQqfdHisjGmAFoSCX1FSRYPMKXp24Jekz4_QNhJqQuX-vDHJZ_dwJv0F63EAGyT7o-tl4O2uo_dSbcplyqTfppy4IgNEl45MT1jkoM3elVp80NW5AOLygy_TdUFwcJaQuCM3oATCa1nIin9Xq8yuTsj4gc8CKlzoJWWIlHb3cjVHbJsrgmdFM3ZDHEHbkYsIV2esqzUuwHLLRJtStOz38n-BOcr3rIUVg4azOsuwNqOmZS1QmqOkkzAfrgl0tofiAhUtIcSRhboCe-pMX-_cngQHPEYxolJeom07ZxEiKzmFWmsLLEWIbAa8gaojW_72ZiFQBLuT8txuBwaL0CI3mM8xVfxWHzzs768CLUHvUqvKOHHo2Bnk_7dKbfagg95Yx_cFUBseFuqSvzslkrO0me8z3g7X8VvD-KCC3FD0tChySn2Wmv6gmdGbGkl3HPq9jVr",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwF1cepOtQL_d46sRS6yWYkFXpTftK2Evxd3eJSgueH9yn6XFIxG_m8HIvTHRgQSaI4EX63-HMTUDMbUks1Gdr0xo30aYKEEviR-X62cUXRMm9xBiwOp1fA5COnkJSFkw5_tZ8TqiiqEcRPhk-cE9N1BrkG5ZzYJMSkOGCErO7WDU1ldIJV",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxaIVT6yCm2xXK1kLKuFokhZY2CoFfmatsB9v34kMcD-Pk-zTH5wMC4bNZOFEZ0k6Hp4XJ5uvOsxrjF1Qp3eNrUaguKf6KjVgC5MVi6creIE-UHuDgaHwBwFjrCBBUqxuEOPMCc8yj0bFM39pw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwW7aikPuQqfdHisjGmAFoSCX1FSRYPMKXp24Jekz4_QNhJqQuX-vDHJZ_dwJv0F63EAGyT7o-tl4O2uo_dSbcplyqTfppy4IgNEl45MT1jkoM3elVp80NW5AOLygy_TdUFwcJaQuCM3oATCa1nIin9Xq8yuTsj4gc8CKlzoJWWIlHb3cjVHbJsrgmdFM3ZDHEHbkYsIV2esqzUuwHLLRJtStOz38n-BOcr3rIUVg4azOsuwNqOmZS1QmqOkkzAfrgl0tofiAhUtIcSRhboCe-pMX-_cngQHPEYxolJeom07ZxEiKzmFWmsLLEWIbAa8gaojW_72ZiFQBLuT8txuBwaL0CI3mM8xVfxWHzzs768CLUHvUqvKOHHo2Bnk_7dKbfagg95Yx_cFUBseFuqSvzslkrO0me8z3g7X8VvD-KCC3FD0tChySn2Wmv6gmdGbGkl3HPq9jVr",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxnWDUkvwem08ntpbMHDGn8pxjxd5UjEG9KToI5LweWTZr_tydK1rgVEJA9fuJDzDpZMGiGY3xwiAVdmLBLLXqVudxn0eK6l7F_2GFgVihGJWLSW3_lk01I5B8TKxo716aTpnQMClxjIn5Xqo2BIuTzi8a2WZpJULDjVRkRMgp6US8gZG0BJqr8KvkxUn5bJp3w9JuXAFFQ52H5CKHCKh_5oOwiBaKUqqDvFAfUjE2sgrzhXHf1ZZsEEIL8VRnKpd5IH1uTv_XiQXNss_jXDtu_5u0Ge9KaUpV6gCDgoZNpLtuyb42ORcSgKq2ntS1EEFbA-mQuZSSjvmdzrqhHIO6kzOPmuQjfJI6_FIq4RtwV9_YsFWYmUKnbmGvLMmYxihoOdLdI9PlyY3IvSj-Vc25K1VkPO4NvnUMltvOwxO8fuI7PNJlXiwLTkHTHOsyaTr3CpEM_QKfaVB-vRRkOW4CwR42r__x0qg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxaIVT6yCm2xXK1kLKuFokhZY2CoFfmatsB9v34kMcD-Pk-zTH5wMC4bNZOFEZ0k6Hp4XJ5uvOsxrjF1Qp3eNrUaguKf6KjVgC5MVi6creIE-UHuDgaHwBwFjrCBBUqxuEOPMCc8yj0bFM39pw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYwW7aikPuQqfdHisjGmAFoSCX1FSRYPMKXp24Jekz4_QNhJqQuX-vDHJZ_dwJv0F63EAGyT7o-tl4O2uo_dSbcplyqTfppy4IgNEl45MT1jkoM3elVp80NW5AOLygy_TdUFwcJaQuCM3oATCa1nIin9Xq8yuTsj4gc8CKlzoJWWIlHb3cjVHbJsrgmdFM3ZDHEHbkYsIV2esqzUuwHLLRJtStOz38n-BOcr3rIUVg4azOsuwNqOmZS1QmqOkkzAfrgl0tofiAhUtIcSRhboCe-pMX-_cngQHPEYxolJeom07ZxEiKzmFWmsLLEWIbAa8gaojW_72ZiFQBLuT8txuBwaL0CI3mM8xVfxWHzzs768CLUHvUqvKOHHo2Bnk_7dKbfagg95Yx_cFUBseFuqSvzslkrO0me8z3g7X8VvD-KCC3FD0tChySn2Wmv6gmdGbGkl3HPq9jVr",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.gle/ACT4xYxBl88mhKlF_Ej6yk31Q1RFeJbca8uc8ju7Emuo3ko-spKQBcHIyhBUMyvHM08kZbhFiXEFClTs0cnLeRHhdqSmHY6S-90h5vfSA2d87gudg0gqFmpR33dga4g64qtVaTcxRXjP1Kh9yIsVDJwji-ke0GC2xYx8V6vBjGX6bSfx02cSryLwNsEO1i3-TbJXAGV-BHLf4m1l8G5AtVZeGUZQO_dCZwmz8vXCQnyvJbehy6l7ttyzkxFV2YQjyuurzGlM",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 36,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "209.85.220.69",
+        "country": "US",
+        "country_code": "US",
+        "city": "Mountain View",
+        "latitude": 38.0088,
+        "longitude": -122.1175,
+        "asn": "AS15169",
+        "org": "AS15169 Google LLC",
+        "isp": "AS15169 Google LLC",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "209.85.220.69",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "209.85.220.69",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.1175,
+              38.0088
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "209.85.220.69",
+            "city": "Mountain View",
+            "country": "US",
+            "org": "AS15169 Google LLC",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 12,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.5,
+    "sub_scores": {
+      "authentication": 40.0,
+      "nlp_content": 0.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Identity Spoofing",
+        "severity": "high",
+        "message": "Display name 'Google' contains impersonation keyword: 'google'"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (google.com) differs from Return-Path domain (scoutcamp.bounces.google.com)"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}

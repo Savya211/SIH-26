@@ -1,0 +1,49 @@
+Delivered-To: victim@example.com
+Received: by 10.0.0.2 with SMTP id abc12345;
+        Wed, 02 Sep 2026 10:15:30 +0000
+Received: from mail-relay.attacker-vps.net (198.51.100.25) by mx.google.com
+        with ESMTPS id xyz98765;
+        Wed, 02 Sep 2026 10:15:20 +0000
+Received: from [185.220.101.5] (helo=attacker-node)
+        by mail-relay.attacker-vps.net with ESMTP;
+        Wed, 02 Sep 2026 10:15:00 +0000
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of official-bank.com does not designate 198.51.100.25 as permitted sender);
+       dkim=fail;
+       dmarc=fail action=none header.from=official-bank.com;
+From: "Security Desk - State Bank" <alerts@official-bank.com>
+Reply-To: phisher-drop@suspicious-domain.xyz
+Return-Path: <bounce@suspicious-domain.xyz>
+To: victim@example.com
+Subject: URGENT: Your Account Has Been Suspended - Action Required Immediately
+Date: Wed, 02 Sep 2026 10:14:55 +0000
+Message-ID: <fake-id-2026@attacker-vps.net>
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif;">
+    <div style="background: #1a365d; color: white; padding: 20px; text-align: center;">
+        <h1>State Bank Security Alert</h1>
+    </div>
+    <div style="padding: 30px; background: #f7fafc;">
+        <p>Dear Valued Customer,</p>
+        <p>We detected <strong>unauthorized access</strong> to your online banking account from an unrecognized device. Your account has been <span style="color: red; font-weight: bold;">TEMPORARILY SUSPENDED</span> for security purposes.</p>
+        <p><strong>Immediate action is required</strong> to prevent permanent deactivation of your account within the next <strong>24 hours</strong>.</p>
+        <p>To restore your account access, please verify your identity immediately:</p>
+        <p style="text-align: center; margin: 30px 0;">
+            <a href="http://185.220.101.5:3000/login" style="background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+                Verify Your Identity Now
+            </a>
+        </p>
+        <p>If you do not verify within 24 hours, your account will be permanently suspended and all funds will be frozen.</p>
+        <p>For your security, please do not share this email with anyone.</p>
+        <p>Regards,<br><strong>Central IT & Security Support</strong><br>State Bank of India</p>
+    </div>
+    <div style="background: #edf2f7; padding: 15px; font-size: 11px; color: #718096; text-align: center;">
+        <p>This is an automated security notification. Do not reply to this email.</p>
+        <p><a href="https://onlinesbi.sbi">https://onlinesbi.sbi</a></p>
+    </div>
+</body>
+</html>

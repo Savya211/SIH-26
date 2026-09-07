@@ -1,0 +1,36 @@
+Delivered-To: employee@techcorp.com
+Received: by 10.0.0.5 with SMTP id abc12345;
+        Mon, 01 Sep 2026 09:30:00 +0530
+Received: from mail.techcorp.com (mail.techcorp.com [203.0.113.50]) by mx.techcorp.com
+        with ESMTPS id xyz98765;
+        Mon, 01 Sep 2026 09:29:55 +0530
+Authentication-Results: mx.techcorp.com;
+       spf=pass (techcorp.com: domain of hr@techcorp.com designates 203.0.113.50 as permitted sender);
+       dkim=pass header.d=techcorp.com;
+       dmarc=pass action=none header.from=techcorp.com;
+From: "HR Department" <hr@techcorp.com>
+Reply-To: hr@techcorp.com
+To: employee@techcorp.com
+Subject: Team Building Activity - September 15th
+Date: Mon, 01 Sep 2026 09:29:50 +0530
+Message-ID: <20260901092950.abc123@techcorp.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif; color: #333;">
+    <p>Dear Team,</p>
+    <p>We are excited to announce our annual team building activity scheduled for <strong>September 15th, 2026</strong> at the Riverside Convention Center.</p>
+    <p>The agenda includes:</p>
+    <ul>
+        <li>Morning ice-breaker session (9:00 AM)</li>
+        <li>Team challenges and activities (10:00 AM - 1:00 PM)</li>
+        <li>Lunch and networking (1:00 PM - 2:00 PM)</li>
+        <li>Awards ceremony (2:00 PM - 3:00 PM)</li>
+    </ul>
+    <p>Please confirm your attendance by replying to this email by September 8th.</p>
+    <p>Looking forward to a great day together!</p>
+    <p>Best regards,<br>HR Department<br>TechCorp Solutions Pvt. Ltd.</p>
+</body>
+</html>

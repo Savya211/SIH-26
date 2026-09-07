@@ -1,0 +1,439 @@
+{
+  "case_id": "CASE-142bba33af00-1788779672",
+  "filename": "Account Verification Required.eml",
+  "file_hash_sha256": "142bba33af0086fb50a4e56ff0af59fcfc4e7b6f358ee11f1a177e8214700c39",
+  "timestamp": "2026-09-07T16:44:38.252060",
+  "processing_time_seconds": 5.769,
+  "headers": {
+    "sender": {
+      "full": "Oracle Red Bull Racing <info@paddock.redbull.racing>",
+      "domain": "paddock.redbull.racing",
+      "display_name": "Oracle Red Bull Racing"
+    },
+    "reply_to": {
+      "full": "",
+      "domain": null
+    },
+    "return_path": {
+      "full": "<bounce+3fb5e4.1fb42-modisavya=gmail.com@paddock.redbull.racing>",
+      "domain": "paddock.redbull.racing"
+    },
+    "to": "modisavya@gmail.com",
+    "cc": "",
+    "subject": "Account Verification Required",
+    "date": {
+      "raw": "Mon, 24 Aug 2026 15:45:46 +0000",
+      "parsed": "2026-08-24T15:45:46+00:00"
+    },
+    "message_id": "<LT177DTR4UU4.EEV6IDY78RGA@paddock.redbull.racing>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@paddock.redbull.racing header.s=mta header.b=byn4Uj83;       dkim=pass header.i=@eu.mailgun.org header.s=krs2 header.b=ke7OPdUo;       spf=pass (google.com: domain of bounce+3fb5e4.1fb42-modisavya=gmail.com@paddock.redbull.racing designates 143.55.239.55 as permitted sender) smtp.mailfrom=\"bounce+3fb5e4.1fb42-modisavya=gmail.com@paddock.redbull.racing\";       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=paddock.redbull.racing",
+    "received_hops": [
+      {
+        "from_hostname": "emailservice-eu1-prod-568d47cb88-b6hhx",
+        "from_ip": "52.16.210.181",
+        "by_hostname": "43e8403debb75079df77391d007fca2b44e2682cad002b380cff849f796b4d3f",
+        "timestamp_raw": "Mon, 24 Aug 2026 15:45:46 GMT",
+        "timestamp": "2026-08-24T15:45:46+00:00",
+        "raw": "from emailservice-eu1-prod-568d47cb88-b6hhx (ec2-52-16-210-181.eu-west-1.compute.amazonaws.com [52.16.210.181]) by 43e8403debb75079df77391d007fca2b44e2682cad002b380cff849f796b4d3f with SMTP id 6a8c672a08719ad01a918ee7 (version=TLS1.3, cipher=TLS_AES_128_GCM_SHA256); Mon, 24 Aug 2026 15:45:46 GMT",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": "v555.v5a39be5d.euw1.send.eu.mailgun.net",
+        "from_ip": "143.55.239.55",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Mon, 24 Aug 2026 08:45:47 -0700 (PDT)",
+        "timestamp": "2026-08-24T08:45:47-07:00",
+        "raw": "from v555.v5a39be5d.euw1.send.eu.mailgun.net (v555.v5a39be5d.euw1.send.eu.mailgun.net. [143.55.239.55])        by mx.google.com with UTF8SMTPS id ffacd0b85a97d-482c9c14620si9322606f8f.288.2026.08.24.08.45.46        for <modisavya@gmail.com>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Mon, 24 Aug 2026 08:45:47 -0700 (PDT)",
+        "hop_index": 2
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Mon, 24 Aug 2026 08:45:47 -0700 (PDT)",
+        "timestamp": "2026-08-24T08:45:47-07:00",
+        "raw": "by 2002:a17:902:ab98:b0:2cc:c38e:5e55 with SMTP id f24csp3878348plr;        Mon, 24 Aug 2026 08:45:47 -0700 (PDT)",
+        "hop_index": 3
+      }
+    ],
+    "all_ips": [
+      "52.16.210.181",
+      "143.55.239.55"
+    ],
+    "spoofing_indicators": [],
+    "total_hops": 3
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of bounce+3fb5e4.1fb42-modisavya=gmail.com@paddock.redbull.racing designates 143.55.239.55 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: paddock.redbull.racing",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 include:mailgun.org ~all",
+      "detail": "SPF record found: v=spf1 include:mailgun.org ~all"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "reject",
+      "record": "v=DMARC1; p=reject; rua=mailto:zsrbf6su@ag.eu.dmarcadvisor.com;",
+      "detail": "DMARC policy: reject"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 11,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "It's great to have you on board. \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0 \u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\r\n\r\nHi Savya,\r\n\r\nIt's great to have you on board with Oracle Red Bull Racing as we Charge On in 2026!\r\n\r\nPlease verify your account by clicking on button belo"
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.3,
+    "credential_score": 0.3,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.165,
+    "flagged_keywords": [
+      {
+        "keyword": "expiring",
+        "category": "Urgency & Pressure",
+        "context": "...please note: this link will expire in 72 hours. if not verified..."
+      },
+      {
+        "keyword": "verify account",
+        "category": "Credential Harvesting",
+        "context": "...charge on in 2026!\r\n\r\nplease verify your account by clicking on button below:..."
+      }
+    ],
+    "threat_categories": [
+      "Urgency & Pressure Tactics",
+      "Credential Harvesting Attempt"
+    ],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://www.redbullracing.com/int-en?utm_source=RBR_Newsletter&utm_medium=CRM&utm_campaign=OracleRedBullRacing&utm_content=Project_Page",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://sociallogin.redbull.com/accounts.verifyEmail?apiKey=3_jJhtlTDUJaUwfzi_5q7m8OXHEXggrn8Qrvc-yewSXO7t9ECqkj2bmbq96uYoznU7&ticket=eyJhbGciOiJFUzI1NiIsImtpZCI6IkExRTU0MDdDRDg0MTcyMDhFMzg0RDBBNEE3NzM0Nzk1ODI3NzVDMDBGQUU3NTVCMkY3NzM3Qjc0OUZCMDYyNUMiLCJkYyI6ImV1MSIsInR5cCI6ImlkK2p3cyIsImtleWlkIjoiZXUxX2VjZHNhX3B1YiJ9.eyJpc3MiOiJodHRwczovL29hdXRoMi5naWd5YS5jb20iLCJleHAiOjE3ODc4NDU1NDYsImlhdCI6MTc4NzU4NjM0NiwibmJmIjoxNzg3NTg2MzQ2LCJqdGkiOiIwMU0wVDc1WlMzWTREQzBDNE5SNkFCRzMyRSIsInRyeCI6IjAxYTAzNDcyZmJiOTdmNjU4ZGMzN2Q3YjUyNDY4NmUwIiwic3ViIjoiMjcwNzU0ZGVkNGIzNDBhNDkwMmViNTM2MjRkN2Q4YTciLCJhcGlrZXkiOiIzX2pKaHRsVERVSmFVd2Z6aV81cTdtOE9YSEVYZ2dybjhRcnZjLXlld1NYTzd0OUVDcWtqMmJtYnE5NnVZb3puVTciLCJhbXIiOiJsaW5rIiwiYWNyIjoidXJuOmdpZ3lhOmxvbmctbGl2ZSIsImF1dGgiOnsiY2hhbm5lbCI6ImVtYWlsIiwibWV0aG9kIjoibGluayJ9LCJ1c2VyIjp7ImZvcm1hdCI6InVua25vd24iLCJ1aWQiOiIyNzA3NTRkZWQ0YjM0MGE0OTAyZWI1MzYyNGQ3ZDhhNyJ9LCJwYXlsb2FkcyI6eyJ2ZXJpZnlFbWFpbCI6eyJlbWFpbCI6eyJ2YWx1ZSI6Im1vZGlzYXZ5YUBnbWFpbC5jb20iLCJpc0xvY2tlZCI6ZmFsc2V9LCJpc0xvZ2luSWRlbnRpZmllciI6dHJ1ZSwic2Vzc2lvbkV4cGlyYXRpb24iOjAsInRpY2tldFZlcnNpb24iOjN9fX0.R9vbMXJRtDL4rXEyIzASAYKezqQZdmIZxdMCJ4_iGLQ5235csWX8i-9D_pwDVIfQ7avjxHH8rrwdy8ehqhNmXg&lang=en",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.instagram.com/redbullracing/",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.youtube.com/user/redbullracing",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.facebook.com/redbullracing",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://twitter.com/redbullracing",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.linkedin.com/company/red-bull-racing/",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.tiktok.com/@redbullracing?dm_i=6MYP%2C8TE9%2C349KFW%2C11MZM%2C1",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://policies.redbullracing.com/policies/RedBull_Racing_Limited/202203150847/en/privacy.html",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.redbullracing.com/int-en/partners?utm_source=RBR_CDC&utm_medium=CRM&utm_campaign=ORBRPartners&utm_content=Partner_CTA",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://www.redbullracing.com/int-en/partners?utm_source=RBR_CDC&utm_medium=CRM&utm_campaign=ORBRPartners&utm_content=Partner_CTA",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 11,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "52.16.210.181",
+        "country": "IE",
+        "country_code": "IE",
+        "city": "Dublin",
+        "latitude": 53.3331,
+        "longitude": -6.2489,
+        "asn": "AS16509",
+        "org": "AS16509 Amazon.com, Inc.",
+        "isp": "AS16509 Amazon.com, Inc.",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": true,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      },
+      {
+        "ip": "143.55.239.55",
+        "country": "FR",
+        "country_code": "FR",
+        "city": "Paris",
+        "latitude": 48.8534,
+        "longitude": 2.3488,
+        "asn": "AS200069",
+        "org": "AS200069 MAILJET SAS",
+        "isp": "AS200069 MAILJET SAS",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 2,
+        "role": "destination"
+      }
+    ],
+    "origin_node": {
+      "ip": "52.16.210.181",
+      "country": "IE",
+      "country_code": "IE",
+      "city": "Dublin",
+      "latitude": 53.3331,
+      "longitude": -6.2489,
+      "asn": "AS16509",
+      "org": "AS16509 Amazon.com, Inc.",
+      "isp": "AS16509 Amazon.com, Inc.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": true,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "143.55.239.55",
+      "country": "FR",
+      "country_code": "FR",
+      "city": "Paris",
+      "latitude": 48.8534,
+      "longitude": 2.3488,
+      "asn": "AS200069",
+      "org": "AS200069 MAILJET SAS",
+      "isp": "AS200069 MAILJET SAS",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 2,
+      "role": "destination"
+    },
+    "total_public_hops": 2,
+    "geo_risk_score": 0.15,
+    "geo_indicators": [
+      "Origin IP belongs to cloud/datacenter infrastructure (AS16509 Amazon.com, Inc.)"
+    ],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -6.2489,
+              53.3331
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "52.16.210.181",
+            "city": "Dublin",
+            "country": "IE",
+            "org": "AS16509 Amazon.com, Inc.",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": true,
+            "marker_color": "#ef4444"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              2.3488,
+              48.8534
+            ]
+          },
+          "properties": {
+            "hop_index": 2,
+            "ip": "143.55.239.55",
+            "city": "Paris",
+            "country": "FR",
+            "org": "AS200069 MAILJET SAS",
+            "role": "destination",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#22c55e"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -6.2489,
+                53.3331
+              ],
+              [
+                2.3488,
+                48.8534
+              ]
+            ]
+          },
+          "properties": {
+            "type": "route",
+            "hop_count": 2
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 6,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 0.0,
+      "nlp_content": 16.5,
+      "url_heuristics": 0.0,
+      "geographic": 15.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Urgency & Pressure Tactics"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Credential Harvesting Attempt"
+      },
+      {
+        "category": "Geographic",
+        "severity": "medium",
+        "message": "Origin IP belongs to cloud/datacenter infrastructure (AS16509 Amazon.com, Inc.)"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}

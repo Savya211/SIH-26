@@ -1,0 +1,349 @@
+{
+  "case_id": "CASE-25d6cb232876-1788778989",
+  "filename": "Data Structures and Algorithms Design _ Problem solving Session Reminder !!.eml",
+  "file_hash_sha256": "25d6cb232876e61ccb1c7139a0c42f86ddefd459b5089f0cec2757a5911189ea",
+  "timestamp": "2026-09-07T16:33:14.789331",
+  "processing_time_seconds": 5.042,
+  "headers": {
+    "sender": {
+      "full": "onlinecourses@nptel.iitm.ac.in",
+      "domain": "nptel.iitm.ac.in",
+      "display_name": null
+    },
+    "reply_to": {
+      "full": "",
+      "domain": null
+    },
+    "return_path": {
+      "full": "<noc26-cs146-announce+bncBCZ5RXNBUUOBBXGY7HKAMGQEWXAZIPA@nptel.iitm.ac.in>",
+      "domain": "nptel.iitm.ac.in"
+    },
+    "to": "noc26-cs146-announce@nptel.iitm.ac.in",
+    "cc": "",
+    "subject": "Data Structures and Algorithms Design : Problem solving Session Reminder !!",
+    "date": {
+      "raw": "Mon, 07 Sep 2026 07:48:42 +0000",
+      "parsed": "2026-09-07T07:48:42+00:00"
+    },
+    "message_id": "<9uNzqQF2QBuBkzK71jo_sw@geopod-ismtpd-4>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@nptel-iitm-ac-in.20251104.gappssmtp.com header.s=20251104 header.b=dZq1+6bO;       arc=pass (i=2 spf=pass spfdomain=mail.nptel.iitm.ac.in dkim=pass dkdomain=nptel.iitm.ac.in dmarc=pass fromdomain=nptel.iitm.ac.in);       spf=pass (google.com: domain of noc26-cs146-announce+bncbcz5rxnbuuobbxgy7hkamgqewxazipa@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc26-cs146-announce+bncBCZ5RXNBUUOBBXGY7HKAMGQEWXAZIPA@nptel.iitm.ac.in;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=nptel.iitm.ac.in;       dara=pass header.i=@gmail.com",
+    "received_hops": [
+      {
+        "from_hostname": "MzQ0NzA3Mg",
+        "from_ip": null,
+        "by_hostname": "geopod-ismtpd-4",
+        "timestamp_raw": null,
+        "timestamp": null,
+        "raw": "from MzQ0NzA3Mg (unknown)\tby geopod-ismtpd-4 (SG) with HTTP\tid 9uNzqQF2QBuBkzK71jo_sw\tMon, 07 Sep 2026 07:48:42.448 +0000 (UTC)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "recvd-69c5bdb77c-pdcpz",
+        "timestamp_raw": null,
+        "timestamp": null,
+        "raw": "by recvd-69c5bdb77c-pdcpz with SMTP id recvd-69c5bdb77c-pdcpz-1-6A9E6C5A-14\t2026-09-07 07:48:42.621473707 +0000 UTC m=+3502549.909092406",
+        "hop_index": 2
+      },
+      {
+        "from_hostname": "wfbthwzh.outbound-mail.sendgrid.net",
+        "from_ip": "159.183.9.224",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Mon, 07 Sep 2026 00:48:43 -0700 (PDT)",
+        "timestamp": "2026-09-07T00:48:43-07:00",
+        "raw": "from wfbthwzh.outbound-mail.sendgrid.net (wfbthwzh.outbound-mail.sendgrid.net. [159.183.9.224])        by mx.google.com with ESMTPS id d75a77b69052e-53054551137si91734101cf.400.2026.09.07.00.48.43        for <noc26-cs146-announce@nptel.iitm.ac.in>        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);        Mon, 07 Sep 2026 00:48:43 -0700 (PDT)",
+        "hop_index": 3
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Mon, 07 Sep 2026 00:48:44 -0700 (PDT)",
+        "timestamp": "2026-09-07T00:48:44-07:00",
+        "raw": "by 2002:ac8:5a0b:0:b0:51c:1857:2e3e with SMTP id d75a77b69052e-53052e46925ls86944941cf.1.-pod-prod-09-us; Mon, 07 Sep 2026 00:48:44 -0700 (PDT)",
+        "hop_index": 4
+      },
+      {
+        "from_hostname": "mail-sor-f69.google.com",
+        "from_ip": "209.85.220.69",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Mon, 07 Sep 2026 00:49:34 -0700 (PDT)",
+        "timestamp": "2026-09-07T00:49:34-07:00",
+        "raw": "from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])        by mx.google.com with SMTPS id d75a77b69052e-5305433cb6fsor70256691cf.9.2026.09.07.00.49.34        for <modisavya@gmail.com>        (Google Transport Security);        Mon, 07 Sep 2026 00:49:34 -0700 (PDT)",
+        "hop_index": 5
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Mon, 7 Sep 2026 00:49:34 -0700 (PDT)",
+        "timestamp": "2026-09-07T00:49:34-07:00",
+        "raw": "by 2002:a17:903:1670:b0:2cc:c38e:5e55 with SMTP id e16csp10465974pll;        Mon, 7 Sep 2026 00:49:34 -0700 (PDT)",
+        "hop_index": 6
+      }
+    ],
+    "all_ips": [
+      "159.183.9.224",
+      "209.85.220.69"
+    ],
+    "spoofing_indicators": [],
+    "total_hops": 6
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of noc26-cs146-announce+bncbcz5rxnbuuobbxgy7hkamgqewxazipa@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: nptel.iitm.ac.in",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 include:_spf.google.com include:sendgrid.net ~all",
+      "detail": "SPF record found: v=spf1 include:_spf.google.com include:sendgrid.net ~all"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "quarantine",
+      "record": "v=DMARC1;p=quarantine;sp=quarantine;pct=100;fo=1;rua=mailto:mail-admin@nptel.iitm.ac.in;ruf=mailto:mail-admin@nptel.iitm.ac.in",
+      "detail": "DMARC policy: quarantine"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 1,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": true,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": ""
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.1,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.025,
+    "flagged_keywords": [
+      {
+        "keyword": "excessive exclamation marks",
+        "category": "Urgency & Pressure",
+        "context": "Found 11 exclamation marks"
+      }
+    ],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://u3447072.ct.sendgrid.net/ls/click?upn=u001.KVe6xeK12Gy7P9NKD6c-2FfImZKEcFdm-2BdhHgP0NgZKUr4iZnsm-2ByvpmTw6UXkgZCP8WQy_SrqTdgxHwt4G1HcV0Pu3p8e0cQ8TASsM67dvffBszsKmqrK96jHeVjpSDvKd-2F4zjcHxpWHBNsnNXGVrBFo9OvKeYQO1nhGIs-2BUm-2F-2BSWAzRd5rr3ZY6IEKpbt3yToyPaG6P-2BPzdeQ9aTo8KbbgJ9SeGS4gJHS2H-2Fjt2KJ6Gjak9z2-2FBK6wkUOI-2BTWeaKyQG542vztA-2FvZOCb8-2F4jHiQONyYsd5PHNnTAyJD0t7yn8DFk-3D",
+        "risk_score": 0.35,
+        "findings": [
+          {
+            "type": "ANCHOR_MISMATCH",
+            "severity": "critical",
+            "detail": "Display text shows 'https://meet.google.com/kns-kgwy-fzh' but href points to 'https://u3447072.ct.sendgrid.net/ls/click?upn=u001.KVe6xeK12Gy7P9NKD6c-2FfImZKEcFdm-2BdhHgP0NgZKUr4iZnsm-2ByvpmTw6UXkgZCP8WQy_SrqTdgxHwt4G1HcV0Pu3p8e0cQ8TASsM67dvffBszsKmqrK96jHeVjpSDvKd-2F4zjcHxpWHBNsnNXGVrBFo9OvKeYQO1nhGIs-2BUm-2F-2BSWAzRd5rr3ZY6IEKpbt3yToyPaG6P-2BPzdeQ9aTo8KbbgJ9SeGS4gJHS2H-2Fjt2KJ6Gjak9z2-2FBK6wkUOI-2BTWeaKyQG542vztA-2FvZOCb8-2F4jHiQONyYsd5PHNnTAyJD0t7yn8DFk-3D'"
+          }
+        ],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.35,
+    "total_urls": 1,
+    "dangerous_urls": 0,
+    "url_indicators": [
+      "1 anchor text / href mismatch(es) found"
+    ]
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "159.183.9.224",
+        "country": "US",
+        "country_code": "US",
+        "city": "Chicago",
+        "latitude": 41.85,
+        "longitude": -87.65,
+        "asn": "AS11377",
+        "org": "AS11377 SendGrid, Inc.",
+        "isp": "AS11377 SendGrid, Inc.",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      },
+      {
+        "ip": "209.85.220.69",
+        "country": "US",
+        "country_code": "US",
+        "city": "Mountain View",
+        "latitude": 38.0088,
+        "longitude": -122.1175,
+        "asn": "AS15169",
+        "org": "AS15169 Google LLC",
+        "isp": "AS15169 Google LLC",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 2,
+        "role": "destination"
+      }
+    ],
+    "origin_node": {
+      "ip": "159.183.9.224",
+      "country": "US",
+      "country_code": "US",
+      "city": "Chicago",
+      "latitude": 41.85,
+      "longitude": -87.65,
+      "asn": "AS11377",
+      "org": "AS11377 SendGrid, Inc.",
+      "isp": "AS11377 SendGrid, Inc.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "209.85.220.69",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 2,
+      "role": "destination"
+    },
+    "total_public_hops": 2,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.65,
+              41.85
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "159.183.9.224",
+            "city": "Chicago",
+            "country": "US",
+            "org": "AS11377 SendGrid, Inc.",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.1175,
+              38.0088
+            ]
+          },
+          "properties": {
+            "hop_index": 2,
+            "ip": "209.85.220.69",
+            "city": "Mountain View",
+            "country": "US",
+            "org": "AS15169 Google LLC",
+            "role": "destination",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#22c55e"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -87.65,
+                41.85
+              ],
+              [
+                -122.1175,
+                38.0088
+              ]
+            ]
+          },
+          "properties": {
+            "type": "route",
+            "hop_count": 2
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 14,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.3,
+    "sub_scores": {
+      "authentication": 0.0,
+      "nlp_content": 2.5,
+      "url_heuristics": 65.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "URL Analysis",
+        "severity": "critical",
+        "message": "Link display text does not match the actual destination URL"
+      },
+      {
+        "category": "URL Analysis",
+        "severity": "high",
+        "message": "1 anchor text / href mismatch(es) found"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "case_id": "CASE-fd02ee7d454d-1788779906",
+  "filename": "Get the Bharat T-Shirt at up to 26% off.eml",
+  "file_hash_sha256": "fd02ee7d454dea39c28493825090d2980ee129570a76340cb717ca490273c7b0",
+  "timestamp": "2026-09-07T16:48:31.554961",
+  "processing_time_seconds": 5.53,
+  "headers": {
+    "sender": {
+      "full": "ZEPP Student Purchase Program <spp@zrpl.co.in>",
+      "domain": "zrpl.co.in",
+      "display_name": "ZEPP Student Purchase Program"
+    },
+    "reply_to": {
+      "full": "spp@zrpl.co.in",
+      "domain": "zrpl.co.in"
+    },
+    "return_path": {
+      "full": "<spp@zrpl.co.in>",
+      "domain": "zrpl.co.in"
+    },
+    "to": "12402080601127@adit.ac.in",
+    "cc": "",
+    "subject": "Get the Bharat T-Shirt at up to 26% off.",
+    "date": {
+      "raw": "Fri, 28 Aug 2026 11:58:19 +0000",
+      "parsed": "2026-08-28T11:58:19+00:00"
+    },
+    "message_id": "<aW5+NThhZGNiMzBffjNla2NubmdfM2VmNmU2YTRkNTdjZ2NmXzkyNDM2NzVlLTRkY2EtNGE1OS05ZDM3LWQxMDM0MWY2ZDI0ZDoxNzg3OTAyMjk4NjIz@zrpl.co.in>",
+    "x_mailer": "mailercloud",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@zrpl.co.in header.s=zr header.b=tudR+PJr;       dkim=pass header.i=@mlrct.com header.s=s1 header.b=3bB0tGTO;       spf=pass (google.com: domain of spp@zrpl.co.in designates 103.147.104.34 as permitted sender) smtp.mailfrom=spp@zrpl.co.in;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=zrpl.co.in",
+    "received_hops": [
+      {
+        "from_hostname": "mail.mc1034.mlrcd.com",
+        "from_ip": "103.147.104.34",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Fri, 28 Aug 2026 04:58:20 -0700 (PDT)",
+        "timestamp": "2026-08-28T04:58:20-07:00",
+        "raw": "from mail.mc1034.mlrcd.com (mail.mc1034.mlrcd.com. [103.147.104.34])        by mx.google.com with ESMTPS id 4fb4d7f45d1cf-6a611c3b7b9si1186077a12.146.2026.08.28.04.58.19        for <12402080601127@adit.ac.in>        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);        Fri, 28 Aug 2026 04:58:20 -0700 (PDT)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Fri, 28 Aug 2026 04:58:20 -0700 (PDT)",
+        "timestamp": "2026-08-28T04:58:20-07:00",
+        "raw": "by 2002:ac8:51d7:0:b0:52e:96ac:7c39 with SMTP id d23csp1009991qtn;        Fri, 28 Aug 2026 04:58:20 -0700 (PDT)",
+        "hop_index": 2
+      }
+    ],
+    "all_ips": [
+      "103.147.104.34"
+    ],
+    "spoofing_indicators": [],
+    "total_hops": 2
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of spp@zrpl.co.in designates 103.147.104.34 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: zrpl.co.in",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": null,
+      "record": "",
+      "detail": "DNS query failed: The DNS response does not contain an answer to the question: zrpl.co.in. IN TXT"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "none",
+      "record": "v=DMARC1; p=none; rua=mailto:admin@zrpl.co.in,mailto:dmarc@mlrcloud.com; ruf=mailto:admin@zrpl.co.in,mailto:dmarc@mlrcloud.com; pct=100",
+      "detail": "DMARC policy: none"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 6,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "Discover the Motherland collection! \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff \u034f \u200c \u2007 \ufeff\r\n\r\nLOGO (https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNj"
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.15,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.037,
+    "flagged_keywords": [
+      {
+        "keyword": "excessive capitalization",
+        "category": "Urgency & Pressure",
+        "context": "Upper case ratio: 37%"
+      }
+    ],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoiODkzMjk5ODQiLCJ0b1VSTCI6Imh0dHBzOi8vemVwcC5zdHVkZW50cHVyY2hhc2Vwcm9ncmFtLmNvbS9zZWFyY2guaHRtbD9xdWVyeT1Nb3RoZXJsYW5kJnBhZ2U9MiZzcGxpdF9ieV9icmFuZCU1QmZpbHRlciU1RD1Nb3RoZXJsYW5kJTJDNTMyOSZ1dG1fc291cmNlPVdlYkVuZ2FnZSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1%2BM2VrY25uZyZ1dG1fY29udGVudD1OVUxMIn0%3D",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoiOTVlZGNjYmMiLCJ0b1VSTCI6Imh0dHBzOi8vemVwcC5zdHVkZW50cHVyY2hhc2Vwcm9ncmFtLmNvbS9zZWFyY2guaHRtbD9xdWVyeT1Nb3RoZXJsYW5kJnBhZ2U9MiZzcGxpdF9ieV9icmFuZCU1QmZpbHRlciU1RD1Nb3RoZXJsYW5kJTJDNTMyOSZ1dG1fc291cmNlPVdlYkVuZ2FnZSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1%2BM2VrY25uZyZ1dG1fY29udGVudD1OVUxMIn0%3D",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoiNzA5YTMzMTMiLCJ0b1VSTCI6Imh0dHBzOi8vemVwcC5zdHVkZW50cHVyY2hhc2Vwcm9ncmFtLmNvbT91dG1fc291cmNlPVdlYkVuZ2FnZSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1%2BM2VrY25uZyZ1dG1fY29udGVudD1OVUxMLyJ9",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoiN2M2NjY2NGIiLCJ0b1VSTCI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vemVwcC5zdHVkZW50cz91dG1fc291cmNlPVdlYkVuZ2FnZSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1%2BM2VrY25uZyZ1dG1fY29udGVudD1OVUxMLyJ9",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://c.in.webengage.com/lw/g1.jpg?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX2NsaWNrIiwiY3RhIjoifjcxNmI5YTI2IiwidG9VUkwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vc3R1ZGVudHB1cmNoYXNlcHJvZ3JhbT91dG1fc291cmNlPVdlYkVuZ2FnZSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1%2BM2VrY25uZyZ1dG1fY29udGVudD1OVUxMIn0%3D",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://in.webengage.com/users/emails/unsubscribe.html?p=eyJsYyI6ImlufjU4YWRjYjMwIiwibCI6IjE4N2RmNzk4N2RhNzYyODY2NmE0N2RiZDI4MjBmNGRlYmNjMmI3OTIiLCJjIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImVtIjoiMTI0MDIwODA2MDExMjdAYWRpdC5hYy5pbiIsImUiOiJ%2BM2VrY25uZyIsInYiOiJ%2BM2xwbXBhYiIsInMiOiIzZWY2ZTZhNGQ1N2NnY2ZfOTI0MzY3NWUtNGRjYS00YTU5LTlkMzctZDEwMzQxZjZkMjRkOjE3ODc5MDIyOTg2MjMiLCJldmVudCI6ImVtYWlsX3Vuc3Vic2NyaWJlIiwiY3RhIjoiZDY2NTU2NzM2MTVjZDkxOTY0MzQ4ZWMzZDZhNjE2NTA1YzE1MzE3OSJ9",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 6,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "103.147.104.34",
+        "country": "DE",
+        "country_code": "DE",
+        "city": "Frankfurt am Main",
+        "latitude": 50.1155,
+        "longitude": 8.6842,
+        "asn": "AS29066",
+        "org": "AS29066 velia.net Internetdienste GmbH",
+        "isp": "AS29066 velia.net Internetdienste GmbH",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "103.147.104.34",
+      "country": "DE",
+      "country_code": "DE",
+      "city": "Frankfurt am Main",
+      "latitude": 50.1155,
+      "longitude": 8.6842,
+      "asn": "AS29066",
+      "org": "AS29066 velia.net Internetdienste GmbH",
+      "isp": "AS29066 velia.net Internetdienste GmbH",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "103.147.104.34",
+      "country": "DE",
+      "country_code": "DE",
+      "city": "Frankfurt am Main",
+      "latitude": 50.1155,
+      "longitude": 8.6842,
+      "asn": "AS29066",
+      "org": "AS29066 velia.net Internetdienste GmbH",
+      "isp": "AS29066 velia.net Internetdienste GmbH",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              8.6842,
+              50.1155
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "103.147.104.34",
+            "city": "Frankfurt am Main",
+            "country": "DE",
+            "org": "AS29066 velia.net Internetdienste GmbH",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 1,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 0.0,
+      "nlp_content": 3.7,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}
