@@ -1,0 +1,422 @@
+{
+  "case_id": "CASE-a618f9237cf9-1788777563",
+  "filename": "spoofed_bank.eml",
+  "file_hash_sha256": "a618f9237cf90ec612b56f92e58fa29c4c18349310f475f150a99a33c734be10",
+  "timestamp": "2026-09-07T16:09:30.189929",
+  "processing_time_seconds": 6.801,
+  "headers": {
+    "sender": {
+      "full": "Security Desk - State Bank <alerts@official-bank.com>",
+      "domain": "official-bank.com",
+      "display_name": "Security Desk - State Bank"
+    },
+    "reply_to": {
+      "full": "phisher-drop@suspicious-domain.xyz",
+      "domain": "suspicious-domain.xyz"
+    },
+    "return_path": {
+      "full": "<bounce@suspicious-domain.xyz>",
+      "domain": "suspicious-domain.xyz"
+    },
+    "to": "victim@example.com",
+    "cc": "",
+    "subject": "URGENT: Your Account Has Been Suspended - Action Required Immediately",
+    "date": {
+      "raw": "Wed, 02 Sep 2026 10:14:55 +0000",
+      "parsed": "2026-09-02T10:14:55+00:00"
+    },
+    "message_id": "<fake-id-2026@attacker-vps.net>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       spf=fail (google.com: domain of official-bank.com does not designate 198.51.100.25 as permitted sender);       dkim=fail;       dmarc=fail action=none header.from=official-bank.com;",
+    "received_hops": [
+      {
+        "from_hostname": null,
+        "from_ip": "185.220.101.5",
+        "by_hostname": "mail-relay.attacker-vps.net",
+        "timestamp_raw": "Wed, 02 Sep 2026 10:15:00 +0000",
+        "timestamp": "2026-09-02T10:15:00+00:00",
+        "raw": "from [185.220.101.5] (helo=attacker-node)        by mail-relay.attacker-vps.net with ESMTP;        Wed, 02 Sep 2026 10:15:00 +0000",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": "mail-relay.attacker-vps.net",
+        "from_ip": "198.51.100.25",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Wed, 02 Sep 2026 10:15:20 +0000",
+        "timestamp": "2026-09-02T10:15:20+00:00",
+        "raw": "from mail-relay.attacker-vps.net (198.51.100.25) by mx.google.com        with ESMTPS id xyz98765;        Wed, 02 Sep 2026 10:15:20 +0000",
+        "hop_index": 2
+      },
+      {
+        "from_hostname": null,
+        "from_ip": "10.0.0.2",
+        "by_hostname": "10.0.0.2",
+        "timestamp_raw": "Wed, 02 Sep 2026 10:15:30 +0000",
+        "timestamp": "2026-09-02T10:15:30+00:00",
+        "raw": "by 10.0.0.2 with SMTP id abc12345;        Wed, 02 Sep 2026 10:15:30 +0000",
+        "hop_index": 3
+      }
+    ],
+    "all_ips": [
+      "185.220.101.5",
+      "198.51.100.25",
+      "10.0.0.2"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "REPLY_TO_MISMATCH",
+        "severity": "high",
+        "detail": "From domain (official-bank.com) differs from Reply-To domain (suspicious-domain.xyz)"
+      },
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (official-bank.com) differs from Return-Path domain (suspicious-domain.xyz)"
+      },
+      {
+        "type": "DISPLAY_NAME_IMPERSONATION",
+        "severity": "high",
+        "detail": "Display name 'Security Desk - State Bank' contains impersonation keyword: 'bank'"
+      }
+    ],
+    "total_hops": 3
+  },
+  "authentication": {
+    "spf": {
+      "status": "fail",
+      "detail": "google.com: domain of official-bank.com does not designate 198.51.100.25 as permitted sender",
+      "pass": false
+    },
+    "dkim": {
+      "status": "fail",
+      "detail": "",
+      "pass": false
+    },
+    "dmarc": {
+      "status": "fail",
+      "detail": "Policy action: none, From domain: official-bank.com",
+      "pass": false
+    },
+    "dns_spf": {
+      "has_spf": null,
+      "record": "",
+      "detail": "DNS query failed: The DNS query name does not exist: official-bank.com."
+    },
+    "dns_dmarc": {
+      "has_dmarc": null,
+      "policy": "",
+      "record": "",
+      "detail": "DNS query failed for _dmarc.official-bank.com: The DNS query name does not exist: _dmarc.official-bank.com."
+    },
+    "auth_risk_score": 1.0,
+    "auth_indicators": [
+      "SPF verification FAILED \u2014 sender IP is not authorized to send for this domain",
+      "DKIM signature INVALID \u2014 email content may have been tampered with",
+      "DMARC alignment FAILED \u2014 sender domain is likely spoofed"
+    ]
+  },
+  "body_analysis": {
+    "url_count": 2,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": ""
+  },
+  "nlp_analysis": {
+    "urgency_score": 1.0,
+    "credential_score": 0.5,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.3,
+    "overall_nlp_score": 0.43,
+    "flagged_keywords": [
+      {
+        "keyword": "urgent",
+        "category": "Urgency & Pressure",
+        "context": "...urgent: your account has been suspen..."
+      },
+      {
+        "keyword": "immediate",
+        "category": "Urgency & Pressure",
+        "context": "...n suspended - action required immediately\n<!doctype html>\r\n<html>\r\n<bod..."
+      },
+      {
+        "keyword": "action required",
+        "category": "Urgency & Pressure",
+        "context": "...account has been suspended - action required immediately\n<!doctype html>..."
+      },
+      {
+        "keyword": "suspended",
+        "category": "Urgency & Pressure",
+        "context": "...urgent: your account has been suspended - action required immediately..."
+      },
+      {
+        "keyword": "deactivated",
+        "category": "Urgency & Pressure",
+        "context": ".../strong> to prevent permanent deactivation of your account within the ne..."
+      },
+      {
+        "keyword": "time pressure",
+        "category": "Urgency & Pressure",
+        "context": "...<p>if you do not verify within 24 hours, your account will be permane..."
+      },
+      {
+        "keyword": "unauthorized activity",
+        "category": "Urgency & Pressure",
+        "context": "...<p>we detected <strong>unauthorized access</strong> to your online banki..."
+      },
+      {
+        "keyword": "security alert",
+        "category": "Urgency & Pressure",
+        "context": "...er;\">\r\n        <h1>state bank security alert</h1>\r\n    </div>\r\n    <div st..."
+      },
+      {
+        "keyword": "account threat",
+        "category": "Urgency & Pressure",
+        "context": "...urgent: your account has been suspended - action required immediately..."
+      },
+      {
+        "keyword": "verify account",
+        "category": "Credential Harvesting",
+        "context": "...e your account access, please verify your identity immediately:</p>\r\n        <p..."
+      },
+      {
+        "keyword": "restore access",
+        "category": "Credential Harvesting",
+        "context": "...</strong>.</p>\r\n        <p>to restore your account access, please verify your id..."
+      },
+      {
+        "keyword": "secrecy request",
+        "category": "Social Engineering",
+        "context": "...<p>for your security, please do not share this email with anyone.</p>..."
+      }
+    ],
+    "threat_categories": [
+      "Urgency & Pressure Tactics",
+      "Credential Harvesting Attempt",
+      "Social Engineering Manipulation"
+    ],
+    "nlp_indicators": [
+      "High urgency/pressure language detected (score: 100%)",
+      "Social engineering tactics detected (score: 30%)"
+    ]
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "http://185.220.101.5:3000/login",
+        "risk_score": 0.9,
+        "findings": [
+          {
+            "type": "NO_TLS",
+            "severity": "medium",
+            "detail": "URL uses insecure HTTP without encryption"
+          },
+          {
+            "type": "RAW_IP_HOST",
+            "severity": "high",
+            "detail": "Raw IP address used as hostname: 185.220.101.5"
+          },
+          {
+            "type": "EXPLOITATION_PORT",
+            "severity": "high",
+            "detail": "Known exploitation/testing port detected: 3000"
+          },
+          {
+            "type": "PHISHING_PATH",
+            "severity": "medium",
+            "detail": "URL path matches credential harvesting pattern: /login"
+          }
+        ],
+        "is_raw_ip": true,
+        "is_tunnel": false,
+        "has_suspicious_port": true,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": true
+      },
+      {
+        "url": "https://onlinesbi.sbi",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.9,
+    "total_urls": 2,
+    "dangerous_urls": 1,
+    "url_indicators": [
+      "1 dangerous URL(s) detected"
+    ]
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "185.220.101.5",
+        "country": "DE",
+        "country_code": "DE",
+        "city": "Gro\u00df Kreutz",
+        "latitude": 52.4028,
+        "longitude": 12.7794,
+        "asn": "AS60729",
+        "org": "AS60729 Stiftung Erneuerbare Freiheit",
+        "isp": "AS60729 Stiftung Erneuerbare Freiheit",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "185.220.101.5",
+      "country": "DE",
+      "country_code": "DE",
+      "city": "Gro\u00df Kreutz",
+      "latitude": 52.4028,
+      "longitude": 12.7794,
+      "asn": "AS60729",
+      "org": "AS60729 Stiftung Erneuerbare Freiheit",
+      "isp": "AS60729 Stiftung Erneuerbare Freiheit",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "185.220.101.5",
+      "country": "DE",
+      "country_code": "DE",
+      "city": "Gro\u00df Kreutz",
+      "latitude": 52.4028,
+      "longitude": 12.7794,
+      "asn": "AS60729",
+      "org": "AS60729 Stiftung Erneuerbare Freiheit",
+      "isp": "AS60729 Stiftung Erneuerbare Freiheit",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              12.7794,
+              52.4028
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "185.220.101.5",
+            "city": "Gro\u00df Kreutz",
+            "country": "DE",
+            "org": "AS60729 Stiftung Erneuerbare Freiheit",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 61,
+    "verdict": "SUSPICIOUS",
+    "verdict_color": "#f97316",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 100,
+      "nlp_content": 43.0,
+      "url_heuristics": 90.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Authentication",
+        "severity": "high",
+        "message": "SPF verification FAILED \u2014 sender IP is not authorized to send for this domain"
+      },
+      {
+        "category": "Authentication",
+        "severity": "high",
+        "message": "DMARC alignment FAILED \u2014 sender domain is likely spoofed"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "High urgency/pressure language detected (score: 100%)"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Urgency & Pressure Tactics"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Credential Harvesting Attempt"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Social Engineering Manipulation"
+      },
+      {
+        "category": "URL Analysis",
+        "severity": "high",
+        "message": "1 dangerous URL(s) detected"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "high",
+        "message": "From domain (official-bank.com) differs from Reply-To domain (suspicious-domain.xyz)"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "high",
+        "message": "Display name 'Security Desk - State Bank' contains impersonation keyword: 'bank'"
+      },
+      {
+        "category": "Authentication",
+        "severity": "medium",
+        "message": "DKIM signature INVALID \u2014 email content may have been tampered with"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "medium",
+        "message": "Social engineering tactics detected (score: 30%)"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (official-bank.com) differs from Return-Path domain (suspicious-domain.xyz)"
+      }
+    ],
+    "summary": "Email shows 9 suspicious indicators. Manual review advised before interacting with contents."
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "case_id": "CASE-763551f8d868-1788779601",
+  "filename": "Fresh opportunities you shouldn\u2019t miss.eml",
+  "file_hash_sha256": "763551f8d868e4e3176a99b7cfc3bcbcf2abdd0c1c5842ff408fdf45f620a012",
+  "timestamp": "2026-09-07T16:43:26.858731",
+  "processing_time_seconds": 5.204,
+  "headers": {
+    "sender": {
+      "full": "Daily Digest <noreply@unstop.news>",
+      "domain": "unstop.news",
+      "display_name": "Daily Digest"
+    },
+    "reply_to": {
+      "full": "noreply@unstop.news",
+      "domain": "unstop.news"
+    },
+    "return_path": {
+      "full": "<17887203639445570-194419-1-gmail.com@delivery.unstop.news>",
+      "domain": "delivery.unstop.news"
+    },
+    "to": "modisavya@gmail.com",
+    "cc": "",
+    "subject": "Fresh opportunities you shouldn\u2019t miss.",
+    "date": {
+      "raw": "Mon, 07 Sep 2026 09:07:31 +0530",
+      "parsed": "2026-09-07T09:07:31+05:30"
+    },
+    "message_id": "<20260907033729.E843BC0000B2@smtpgcus20-rl.pepipost.com>",
+    "x_mailer": "NetcoreCloud Mailer",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@unstop.news header.s=nc2048 header.b=gBqEkEhN;       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=gM1vOH9F;       spf=pass (google.com: domain of 17887203639445570-194419-1-gmail.com@delivery.unstop.news designates 193.35.16.213 as permitted sender) smtp.mailfrom=17887203639445570-194419-1-gmail.com@delivery.unstop.news;       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=unstop.news",
+    "received_hops": [
+      {
+        "from_hostname": "mta-16.213.unstop.news",
+        "from_ip": "193.35.16.213",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Sun, 06 Sep 2026 20:37:31 -0700 (PDT)",
+        "timestamp": "2026-09-06T20:37:31-07:00",
+        "raw": "from mta-16.213.unstop.news (mta-16.213.unstop.news. [193.35.16.213])        by mx.google.com with ESMTPS id d75a77b69052e-530543bf5acsi109052281cf.74.2026.09.06.20.37.31        for <modisavya@gmail.com>        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Sun, 06 Sep 2026 20:37:31 -0700 (PDT)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Sun, 6 Sep 2026 20:37:31 -0700 (PDT)",
+        "timestamp": "2026-09-06T20:37:31-07:00",
+        "raw": "by 2002:a17:903:1670:b0:2cc:c38e:5e55 with SMTP id e16csp10319247pll;        Sun, 6 Sep 2026 20:37:31 -0700 (PDT)",
+        "hop_index": 2
+      }
+    ],
+    "all_ips": [
+      "193.35.16.213"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (unstop.news) differs from Return-Path domain (delivery.unstop.news)"
+      }
+    ],
+    "total_hops": 2
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of 17887203639445570-194419-1-gmail.com@delivery.unstop.news designates 193.35.16.213 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: unstop.news",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 include:_spf.google.com include:amazonses.com -all",
+      "detail": "SPF record found: v=spf1 include:_spf.google.com include:amazonses.com -all"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "reject",
+      "record": "v=DMARC1;p=reject;pct=100;rua=mailto:dmarcreports@unstop.news",
+      "detail": "DMARC policy: reject"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 27,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": ""
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.4,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.1,
+    "flagged_keywords": [
+      {
+        "keyword": "terminated",
+        "category": "Urgency & Pressure",
+        "context": "...fered the services to you has terminated its relationship with unstop..."
+      },
+      {
+        "keyword": "excessive exclamation marks",
+        "category": "Urgency & Pressure",
+        "context": "Found 50 exclamation marks"
+      }
+    ],
+    "threat_categories": [
+      "Urgency & Pressure Tactics"
+    ],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-gPV.MCYx50svfw6T0rfgH0HnuRo2pI3tS0EjXJgmseKeLxaMGk7Pc32qA.3t3h7OfnzuSM4OssL0exgtL9CZwYIM5QAZiwJwnCPx9CTO4oQdw24lySsCuSL1J6qc8svsG7TJ3yfxjraYi68npq86pNUdkhGdzyigmiD6j0NTrmJfbtLp4PsVnT0GlD6NNIJl1t1aErmS.MI_VFtCM7AVCwgWAoJAqWnMCRDcf9emFtDqmC_ONtTSvam86HUXC3IatEDb62WgsXRf.QWG0y1wBQjRl9XBSlxccP068GHM1Ms2nGmSFDILJ241OMI",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-znHxEDW_f_aQ2qb5FBbx8ZVBgFjITfoG2x.Jk_Fgr9CitPyh9rIg7Vmkebn.Re31GKGkTJjpuRakpKDOsQnoTNivailBH1QNVksVG.WYSqg_YEVjyY1trM3CW2POtP2YCbTe0Np_RBeNr_Cmn4mZ8RUDrZJWn7ddfiqxgcya7TlH3I8xe.WhJB1_mcr6zCJ7h12EY4gxj6pXOFMiUcU9VCGggOmCl.FitL8mU99Ths0DG1apXcJrvQK_Fn.eKG.3TNwkBAOD_fFPcGYCPpbk_taAFl7kdNN8s9riSX_rncgEtz_Jkmx8fMX_bas",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-DlnHTDxThg6Y9VX2KoWZR5YEA6CvJqBfK9fcCtbEd6eUPyKWrmBwCZtdlMNtnufwznvyrtvrmxvhWU9ifn.ScITSWnJBjifzotNt1zRElX4VpDQ...PYQIZaeiie5YwYYuuPmzfHfX9SekYtPPJdq.woQ_3qADnRBVVUcAf2cZRLgTTkw86Ellt23uJjHOsTszsUyrXuknd2VDQ.l3MYxTpCHfrM5rL3ADouVCGuVq.SJVGNVLFBhzb5OUUZM_Pkm9wHjktOsrfgQPGmJY0DvpsM2e50Bmv7p5jNoZ0faHf3mOrIeM1mukxPTe3l0YjbB35yxaRaO_OmrqxlSvbRov5n4xxZpxRTozjhgw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-wUAndeXeXNW3eFV7cd_L_pw8DEnmO.JEyhKxdNdPoDIsarGpPJYc5G88wEGDvcANj18bXWC_1dh3jpHgGfHOqeeBUdPqnE5UtlW467IFLBjq4PuvmTW3khi.Y1BaSkdagKV449NndE6J1Xc3jyXpDoYaqZelvTN2PWw_W8hdbPPJwPiQu3f7mxba1wgfUCFKRu4taBFS3_aNfk2rwO966gR6JexvLuvlN8iyPYGBijhk1OXxjwRKGYPCr8vGQ.jxkMk2K6sebjXux_F4DsAGWU0c_kkl3QsUDGSjKxD9t17EX..ZibmXJaL8uhcZa4LwugV7CGBg8mKXhx5ctYzs8jFUG6PKj2C_zihPPg",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-kKPeuKk.Sa6zkdU4bGfNdMoxCWtVLeNZUIH1oQjmJBD0.yp37Lpn6cYM4YrMFu2WprAUep4.qdJcMm7Hjv7XGDQN5OUAsft2.AyjfZLvQY5S1djj2FR1JoIttso6S6j5y0JgixYmM.cBnIknohwPTw3CarsGX1Lo916JTafCzWBFpfUcKEpzn3peUezMl98GR3ur57KZW1wbF_VzOFqvmKmZjULPpHc0Z4Z_4tPxFptZ5JYk2tDX5TO6FzwUnEc4UAjlyFxFGhHG3RgBiNudF5IfjLVgsN8KRKzOYf3q9cNBmSQHgMXQgOZcEcC60STnaeI79qIF52p_sqpqNiDI",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-BmLu53cCjAuC4FxIIbeY_QygfqNxyg.VN7xp1aai.O0Den3cAV0o0yaUbIr7uJNE6U27cS1g6oIP1_GIstG.Vo0xInOksyRyw2orLiYKaXX0TzzkdsJLpmcmBxaGvdIcuzhad.M50lP1Zx1iZn26RySk0U14DPySTkdBE9mrALPRLTrYbeCCtPtc7PL3ov3WqFw1HM4DfQnfJl3_x13UoXzh_5c3wHDqUQMZlhuCjuPghGDLpHdiXdMsoifl4J8f2ZbsqeqRin_pAGXqkGwmzSScTjQG0lQ4woEvW.i04zyhV3_GN0xCQrYA15HAdLcpqRRXo3OonrHSRcRMz.Rm",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-3A1Adks3Sj1WhdQSeB6waJ0n3BIyy5VUkOVqoMkRsw5POAg0HxSrO.1KMmRdle_uTEQXQHqtCiEiDg147c50bga7nILPeZ9NR3_H5MIQRZzRVFeyybdbfOysFq8at2ulDzz__mCxKsyeao6UkTeQrcHWtgCWL7OjqQgpnkG8LbfSm9u2SocCWcl9te7HrokOD1jNlucsulaCQo.wMB3DN79_jM8zJvzVlK7_i93747VkArIVjrz_N1hocg2y9iMgkq4_qopa6Fzwk2Cug8p_Pz8O5IP86CSoRf0HYnHpMD7v5X7JV.VuWVbOoAHNEVi2Yjxaov5ohUgXnSM54okZ",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-JsdYw8pVWjRoymI9ZlswQ_xkIbbCuAzybRBZ8XX2bCLDKWdzWZNflAgJrhxHsSHY9b7.R1cXc.ysxt85MRr7TVOQwn5XiAqWULn28vLBdGE3WYcRfnsOe1k7hNZoD.3aLtKEDcnTuXpA.YJuk9MHz9xSzAC2t7y9cQsftru3.obeYkRTcQv0hlkVVgqch9UTDdlOMcJuK81o.MelmPuzB3Uw5VwxOBPBhXOvcHVe.Ie1Bl_kZ0GYwJh.yy0AJityJgTiHVN4WgYZTmCeDbJHZ6MImuRHjU5XZuwj3wQjXEBe8c83Wlym8_iiGKn7Z8xFhBa0BuBX8mg0Cxjpi80C",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-mwLpTQ1teUPvaMNPqMg.9rTL3i331i8N6H9b_tImxvEFBUF8Xdt4DLtTulG73ZCX0WlckFLeUB.QplB19Qo6nqo5.CM3wEKv2L4JvVLojK3pQFKfMCt0BgFwyHBp6pxyF8FmrlLpoTpRQn1A0iutimZMFwmH_nX4DaviJ2LMNRG9syrUxWAOQyw7_ZGsRIt3jnqdDYJ6t2iUPVbnJIIDrwuymz74Z0qsDWv9w1ek45SXk4qXOSPtvsdTeVovZe0vIaqcN9LPgVEzK6vdAbwZJe63JQxhpjh7qhEglDze7dZNlSV8xZwGMf1isN0F",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-DVwbm6AMZs.smkqj45_RFeHDQarjGmjtBfjMjBkAtrpUdECy2sO_inuZvf4uJfM3owNXviJ5_lniF5lHbc5GGPwLPmTCURLfrSWQJ624_9V0dVS2Vrqx5154xhJ8lXU39KQoD9I.O6J3Lhoe5f7qYc2w9GrFH60z9iLuJ9xn8lIC13jcgDx2XESHMe1E4G.kpZOMS6rfjh0TgO0lgBoRIZdj1Gw9Vcz0qWud4rybVGSo6qEHk3gbS2xptDBBV.podHvnoEmAypV2uUg6.LtMh9gI0vHefeXHS.UxpeY_cWULLsPPcEBd6_jX8G9F",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-wthYC6i.wn0vwLDTQV8XGqweLUbf5VqPCK1NZrWcPzzhZ5kcIfqvpU_ErDFxce_YIQ4o7h0UvmcNFcC6vX5N.YG0S8kyQ0Uvw24QPu4dCFvlhv3KMwZXU9_cRc4JqI9KiMZ37AsmhTz9Ub4fVbgvW8TDe77tVslhM5blspD.h_uJqnbzy1zsnL_bOm5POE2oW6RmXA70hpdx8HEKjPc1R2HIQ8LymxBhDLupnAlO7_R521l6SsndN0vxzPsmta97Xr4lhBEaiDhjPfvWQbGoAuwmmqSqe9fIEPRqVn5gRMZ_kO5ymbuZbW7huESXsN.AV9v89Y1cLyPMd7AXip5jyrXCN2Y",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-TtbGiIwVnurA9G_Oysba.vTyMGWyWLrIj5UOkcsmKIQ_L23xUANlB5PWjwcfvUih82qqNzR2uKI_Z1rRezW2v_rP0uR8CPdXGSZRlfA1QIpCGMBzNCp1Z3XA419vjV8xeKIREe0mBvjZVBCwxN6X9JlYUhg3zkyO4meagDCDCdZkGwLUapMXooB2Wv2PuOnmxJSBexO9NZZzeSBERYbIbaM4qQcXP4lAhhgwR_2O7lmnEfeQ7SxT0HDn8piv1xBx.t7iIrzIJFxNMyqgve4iIUFgtdVRh2z2doM3rxgdr.8PfuHcNkgsKmB6a6b3TNAeLwzZSbvLu8KkwY6hOuf0etShaN4",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-vuXNMIafTV3dKMnxzL_KXWYQfSs85Kpxc5b4W6c4AIYS8Gd.v3eneGThY7DTZt.dVQTuyOJmm_aRKR4UVMBImvp63tHjc.nCykW4TipXc1mefPrr27w2kNuVUHkNzBcVNEImdElRlGYt0.MPM1Kvp.BgSyIVOCF8weefWal4OT78A6MP.r8WBbpZ6wv6T28douJnBj.tbumfyZkzWzmoHPZRZd2svzfX7R83sikhxJWr25HwK4MJV08zrf65y6tYNvrm6RVm2E2VL1RNqcC8OvEFlZ1kLenZGoNHvzOr81u3",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-2i2HzcTnIysh33bQcQ8uGfeD0mIgQSaMHfmP_b4vf1hhSdSCk0K_utNkZqe9FdbNcR7dD8AkIVE9eXafa8MNZMGGyQPXKbpEvpDe_DqBNOhJBk25Jf4YfWG1ZSTZ8ebO11dtZOl7rpvozJ7EemJPjCLCj85P5I14jfcR2_J9VwoCoA9wtVC9vHLJDakxB8KN46WACKK2KV_sjF9F_gfi5nA1.TDpPbpKTNT_2tptDeY6qdY6l_1S8Yqm3AKgVswHVVTuDPXt0m_enOJljBf9v8X8cDpZNyz3jltIfiaVrL63",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-LlUOW_mKn.lfS_jpOqoVCH64O.kggAd7KvtadjC00ESMGPSHFTQ.UfAxH2T5sa8AHXgS9AdiansnM24D.FtTVGfpjn9M3AZATHWqOCYl2l53PaiezjGUfBof72z_Stx5I6ab8yQKyPPpdBSPdQ944s43oZR168WxD4zIQbZdROLy28HZG.s2oA_tp_8rr7p3L_mu8HJSaxDsTb6BQabyM.aHgtCPKr2lTu2XwZ_xpaab03GqEbfryrUBfO6BX8hIxKI3CBhTMj4w6R6TI4kscWOAmdf2_MiUENHl9zt3SEqX52T.vqzBBsbVO4ygWs43ehW6QkDIrYw7QS4fBZw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-1WnM5mctSERGyWp6pI8yhzL73m4XsP0c8KU5cuDFEAPRGlsPWtcjxvCuD.IICDkuiIJOVbuVS7NPsZqledshnTZMLbcTa9_xC9Cn90E_zIbYTLx1HwvcG_qEHQpq_Ma2wMNE.eE4oI6q5BvV7HdQmYQTGxqSbsePQ7aqGsYlG1KnpYUXZHxNeW2d78w2nx4R9SHG7SASVtQh.JY_HsIC1YSb.ocg1XkcHbRKWQpoSj.uaruVLmEPAUyXQmF76NwUUkWVLQMLUufMXldV7v_JMzsCZ3tsRITQrf7dmAAgW9wethMdF6uQs2IwN3r4SI.jcSvb3o8xhhlrYX1DmSk",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-tSo_wU4.aUWUK34cpJF9R7cQY3O5Zd9D1lvE11fpl_j6wTuz4S._OA3Q9jRhdwgKipBnoiVQM3W4mQ8zgoO4fYvFvGdi.CMvvPZAuueU0UD0iyYhUcy0AMIKGQMPzN3GhZ4BQtjt7tyq8azLkAcl0uOYH1F8b79xRkU8rvBv6hVe2JZLboAow5qk07_8sWxExgbWSkC2THxi87DEQcaQ5zY6_LRhRUjQUw9aBLl6XiKZdxHqpc6ThI.37BjByL9L.PGbetOc6xOV58SoeNepjXwdx5ZgCba78Up4PKJ_O7E7yZSC",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-bmJHlR.NwwCpGBAHC3uELTCAd0Ukp4QJIwxY3tydrlE8spQ0Io4U17HXgTVKLBMFA2SVMvMRfcImrjGPTiLxqnn1HuqRfTmjbxfnuSVD8gByC6WW2EjbNQSeu8sHH4iedIz93mTQez_3gH_4hMkzDFUmxaxVcva.Q81lqe7YNsFWrBTI5D6K5XRfIOI7K2jrg7d9itNfCqCwHHWPuwmFj5X5MDU7tqhgzJLpBs5GAazg8bc4vW4qcIbgkwmm4XEK36_bIZJlYUuQj0WaY6_6ZbJhwioEgmopS4jpF8Oly9tqkFM2",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-9vtaEgftCey8V42jBcxtmo6yD4g92YzUQxSqCjO8gdP2YuqqHmsx7W9MXgK9.JYvnZwMvsvaVJuZRsgFv3jvcnF7ByVqFrqf1yK18t0d4d70Dx1pkI9zMurdf6epJ5jUSljk1nLLctbplA2Yas0gibJmNGqccCi5kglGdS_9hpz58Xi3ELzBRkjlCLQ2dIqAL9Dn3Z6dFmcMjPWqin2bquK8OtdYS9H979U2hgXcvevPNbusDVnq8qVS1JsOGyOVNlkLG9gt_kPcbmalERuQodijAjnkDa.w7VyMH09cg0q6r4VsiCwuitwEWqYm2ZBQ",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-gbVYqOMAJd3z03gJo2GsenbGcqO8_KOjyKaE7vb0XAXzEouAswyY.9I1ulX3wFpsghzvZ8e_6xZyYNxlKomLJPzP5SrHCcGpUwOaGfTm8aaoz5lhrukqkArWSm31GglKxwfQYtdSk3UMnfmeCaLxrrCmaGdreBCGAs6PabMKoK4Fkn2MqpSJxQdIghweFki237AHrELUEzfFqwaOddQYv9hh5Jna8qHVgs2QcnJ3DR6AronNo65VWJPXuyrlammpm7VIAOtCPtTqBJeSjM9DL1k8m8gmNLxwwKCmoN_mcDcJrFWuov6EAfh2aoIqhNSI",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-JHLR56S2Ei7NfCPnZB.ttYt4EA_dl1K9aUKaON3CeJgjKgIvZh7G4pBT.LK4pzKiKJz4merKXE6ua5a2zGfaHnaNNGSj6LstxzhJICAlWKnCzLXSD_cOR9JwZIRA_UxmrWeiFwfQ1ym07AlKU1XQk_8lVXWjRsKkcAz6vigWyOrGiPC4F9D7nZBEEG9fExq1t31.kG2rm61bhZ37dBX45eJJMHq3MF8PnHoxw4kEeNZyJLjhVomNEt_AwQwucULXLMb_vsirvl02rG6ipAYao7kW3JjU0.Z7eeMVKEvqSHU3vw4JOagkS5A3awbZob8Y27ibAq8PNw",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-YYsMEJvHMUO1ke5lYVZM24vVV7eA_gsiWoqx2WnbFiEdQIkryZ.RWsdP5UlypnIN19MBIWfjtXlCNU3vhkWdyCIrJuD3iheoF9W_J6eowLKvJZCZz1sJG3vcMciLX7wf7q8s3iJDOtLHF6iUO3shzUMoYyuDt5JhViwSmn8q7XkVU_TwMV5Jgjf_9b0cBEMlNEs7lj3F0qRstpae9VtK7iCGUQV0HNYlI2DymARZS1pMhbkfa.7ykMFfOEykhPp4Cp5dHp2HnPuLePFqmilA_0KVaZG72foEIf5nVw7BxuoSbRfJsjDdQq.nHkD41sedsdTCUi._.A",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=f4AuK9Pu.4_tZwFm88LhI8uLDNFggnwc7B3NA3bfnEwA8vGF6g-zUiX5_AnfBeFEXUlIQ0V8EN2ZJBnWwqooK40nz2wDh_GuHruHG7MbQoYiflQyrft5tNm4w7uMBhgB3GeTOsNMbR9NwVJqkcFmwaOfMzBXeSY8sQuXZffMcAJxg8ARwsui34R133GTO_P8OI-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-z6eV7VjfyuQntbkYH69YjM3YMHRWr2lQoDAkXsgOYAIF-QKLMd1yMXltr5ZGIeSdncxyiox_fF2vIK5Nrshaq1PWvrfeVe_rkwLux21RfOrL3a96tqmebCGgJeXhjd7xiFuZ.FmOWbIekPsYUoMoFj6OQncwNLQT6TbMy3Nai7nnkW2ieFtJ0I4bNvUXR8gYhk9o.c6Kd55yZxb9dVmD6Cq5hPU4oFBGdkmtQK5fUp0wAcpv6IZc5MMVhAmCU9X8bcGQhKvN1qzFCFO3LZEIAVK2xK7pPQ12m7EzPBIg8U8VRwObu0yzykSROyIOQZWh.B4cY15_DMs83avG1yRwoIDGSHhHkQZdSR2dLQ5wOgbTNuPd7JKANCEVwQIKvGFyFtEI",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=GQHy9BJAZtP_wWwJk6ZLtsLxT_y4YSBWZlszT_VE3bzTT46AtQ-Xt_xKqI6Xs5mzs0O6qXzVHztG9n0tt7lFw.Cx_0wEM2uncICUxYaPbSZ0NWmEoVFDU4q3vYVHRy07QekRyRYYpQlpSSYkHpevrKbqYYeERPxVy6D4TK83vLXJ8rXnfCEG0SEF5NjYcIYAxA-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-hvuYTsfQGUzJRDNL5K8vpNlDWaaSyRZ7U2O9uR2fniaX-A8hPG0PjSi2p9skR4zQFSug3YBeipbmKt1DSeMJ92LXY3XbtEIWY03.PI9K7PciehypTX4Iepz6RU.Bqn.sQXmOriIpqplmu2eU8RODWQa1p.FyfsM_8Bt3otfk2_2m23Q39Df5zafoMPTqaZRllInKXqJDRd5qhvENpfdKhS62Xj8lppLlWz.FEgXJy51tf7rsf4RCHk9UmdoGztaPJS5Jd5zGzsVK5tBR2CUFtpvtH5C5ejYwzfbc8w0ysB9IbkEc9rrjB3ARHnt7a85tqxwvL4QwSA6kfWXrVnv.1IN1fnhicPBE7yL6Gty6QQPDGh_FiuHOS.OW57P461D0DOGk",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=YpFiCsJQGzyMaF5116D1hgccJxrloH0FArMA32H2uM49mRlN7w-mM6rrwT1b1iIQAr3CV96hL_ps1563DW1kF.ZEHb9jLOF6oXEkS95qlvj8MhAa1aXI2uk8W9ltVbFcDsWjwuvqBH0MJ0vN2M4a8dPCLukL.SR3RRGqGfHBN3yOMUqmi85K2c_AJwQuWFtzww-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-WRiOVKSV46kujPUmLd76u6UkNdnqe_MJkF5CCFnQGM5d-fgdItoGOJBzjEXkCocOB3BqRthWQAfqkpHY5JRwjiTmM77cy7DCMz_WH_wmifNekOIsRDu.Z7RptqV9BlKY.FxKjqIapUIyKI1AVlk6FPtSiGABlZ9jHHZPWisRuiYNsncZPuSxsYxROyu.TU1f9lTmFwYYgJnX0cEbLVhbQuLY.b3ta.sKSJPsz7m2d5RAfg9cHS7580cLFldHLbQ6OTwHbpumJ7WhWsu1.A09qep7WYU0ev0U",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://moe_p34i.api-03.moengage.com/v1/emailclick?q=q9ffNTr8RCt5RRLvRxOG2PurQfPENGsda5jHJ6Q2To_jdgNKzA-wpJcohPY8vm_ZXXu8qIBBl1Ad4YiEGUvrjhqbg6m8MUCPVm61wQgcMFaiaWMgoPbU6_cjPj57rIMZO2Gfh8jjSMcAF_caszvc11V7lCYZfXj0CD2ZvHRElxUQDU4Mu1PaXNf7LM8GnCVcYQ-5CCez1Z0gpOiOpvvjurK3hyNf3UlfgSyu7u2xgLdujHR_slvSLsCZwieIwOLzAaf8A66c2lFWA-V7vwlTa1JISmTyY8WLT8uNWcf75X4QMDHr0bpo64AW7Hm_tXZP.Zh.H5Y4eGZSKQ8RY-gqaQrRLfLwvst_5YXAGqh3YbXlhigS0NmjXjIG3r7Ltc-wAbzqqTdECkSlR40.SHk7dhjm.uZGaQa7CUAPa7jRl1SCkZBMfzfpPc4EaKv8NMJJ0DjYbjl_NuEjYoBzL9RMPay6Fj510W268PJE9l1E6dLe2CuNthILR9ftE9JEUEszOfY_f0zllJXeb5B5noM9A6i0Y6WPKrjZTqydxHVOg2ALEPD9Eexg1SLQYhAz5onUh9srTB1dLxvmC7Ktq7OkqUTjLbJApfyFosU2RtaIDjOmOPr0HZWVXD6iKN8CyjTZb2deZBC_0XdJs1HGpoO",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://api-03.moengage.com/v1/emailresubscribe",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 27,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "193.35.16.213",
+        "country": "US",
+        "country_code": "US",
+        "city": "New York City",
+        "latitude": 40.7143,
+        "longitude": -74.006,
+        "asn": "AS132969",
+        "org": "AS132969 Web Werks India Pvt. Ltd.",
+        "isp": "AS132969 Web Werks India Pvt. Ltd.",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "193.35.16.213",
+      "country": "US",
+      "country_code": "US",
+      "city": "New York City",
+      "latitude": 40.7143,
+      "longitude": -74.006,
+      "asn": "AS132969",
+      "org": "AS132969 Web Werks India Pvt. Ltd.",
+      "isp": "AS132969 Web Werks India Pvt. Ltd.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "193.35.16.213",
+      "country": "US",
+      "country_code": "US",
+      "city": "New York City",
+      "latitude": 40.7143,
+      "longitude": -74.006,
+      "asn": "AS132969",
+      "org": "AS132969 Web Werks India Pvt. Ltd.",
+      "isp": "AS132969 Web Werks India Pvt. Ltd.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.006,
+              40.7143
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "193.35.16.213",
+            "city": "New York City",
+            "country": "US",
+            "org": "AS132969 Web Werks India Pvt. Ltd.",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 9,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.3,
+    "sub_scores": {
+      "authentication": 20.0,
+      "nlp_content": 10.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Urgency & Pressure Tactics"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (unstop.news) differs from Return-Path domain (delivery.unstop.news)"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}
