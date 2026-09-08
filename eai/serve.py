@@ -31,6 +31,12 @@ LOOKUPS_DIR = os.path.join(BASE_DIR, "lookups")
 # ── Load model artifacts at startup ──────────────────────────────────────────
 print("Loading model artifacts...")
 
+model_path = os.path.join(MODELS_DIR, "model.joblib")
+if not os.path.exists(model_path):
+    print("  Model artifacts not found in models/. Auto-training initial model...")
+    from train import train
+    train()
+
 _model   = joblib.load(os.path.join(MODELS_DIR, "model.joblib"))
 _scaler  = joblib.load(os.path.join(MODELS_DIR, "scaler.joblib"))
 
@@ -55,10 +61,13 @@ if os.path.exists(unsafe_path):
     with open(unsafe_path) as f:
         _unsafe_names = json.load(f)
 
-with open(os.path.join(MODELS_DIR, "model_meta.json")) as f:
-    _meta = json.load(f)
+_meta = {}
+meta_path = os.path.join(MODELS_DIR, "model_meta.json")
+if os.path.exists(meta_path):
+    with open(meta_path) as f:
+        _meta = json.load(f)
 
-print(f"  Model: {_meta['model_type']}  |  Accuracy: {_meta['accuracy']}")
+print(f"  Model: {_meta.get('model_type', 'RandomForest')}  |  Accuracy: {_meta.get('accuracy', 'N/A')}")
 print(f"  Safe domains lookup: {len(_safe_domains)} entries")
 print(f"  Unsafe names lookup: {len(_unsafe_names)} entries")
 print("Ready.")
