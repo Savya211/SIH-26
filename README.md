@@ -1,9 +1,10 @@
 # AegisMail / TheThirdEye — AI-Powered Email Forensic & Web Threat Intelligence Platform
 
-> **Smart India Hackathon (SIH 2026)** | Problem Statement / Open Innovation Project: **AI-Powered Email Forensic Intelligence, GeoLocation Tracing & Web Threat Defense**
+> **Smart India Hackathon (SIH 2026)** | Problem Statement: **AI-Powered Email Forensic Intelligence, GeoLocation Tracing & Web Threat Defense**
 
 ![Chrome Extension](https://img.shields.io/badge/Platform-Chrome%20Extension-blue)
-![FastAPI](https://img.shields.io/badge/Backend-Python%20FastAPI-green)
+![Node.js](https://img.shields.io/badge/Backend-Node.js%20Express-green)
+![FastAPI](https://img.shields.io/badge/Forensics%20%2F%20ML-Python%20FastAPI-green)
 ![Leaflet](https://img.shields.io/badge/Dashboard-Leaflet.js%20GeoTrace-orange)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
@@ -12,121 +13,166 @@
 
 ## 🌟 Overview
 
-**AegisMail / TheThirdEye** is an enterprise-grade cybersecurity platform that combines:
-1. 🛡️ **Browser Extension (Manifest V3)** — Real-time phishing URL detection, Gmail inline threat scanning, homoglyph lookalike domain detection, password breach monitoring, and tracker blocking.
-2. 🕵️‍♂️ **Email Forensic Engine (FastAPI)** — Multi-stage RFC 822 email header parser, SPF/DKIM/DMARC authentication validator, NLP-driven body urgency analysis, credential harvesting detection, and hop-by-hop IP geolocation tracer.
-3. 🗺️ **Analyst Investigation Dashboard (Leaflet.js)** — Dark-mode SOC analyst UI with animated GeoTrace world map, real-time threat score dials, sub-score breakdown, NLP threat indicators, and raw header inspector.
+**TheThirdEye (AegisMail)** is an enterprise-grade cybersecurity platform combining a browser extension, a multi-layer threat-detection backend, and an analyst investigation dashboard:
+
+1. 🧩 **Browser Extension (Manifest V3)** — Real-time phishing URL detection, Gmail inline threat scanning, homoglyph lookalike domain detection, password breach monitoring, tracker blocking, and mixed-content warnings.
+2. ⚙️ **Node.js Backend (`backend/`)** — Orchestrates a 4-layer defense pipeline for URL/page analysis and exposes REST endpoints the extension calls.
+3. 🧠 **ML Microservice (`eai/`)** — FastAPI service serving a phishing-URL classifier trained on the PhiUSIIL dataset (235K URLs).
+4. 🕵️ **Email Forensic Engine (`forensic-engine/`)** — FastAPI service that parses raw `.eml` files, validates SPF/DKIM/DMARC, runs NLP urgency analysis, and traces the server hop chain by IP geolocation.
+5. 🗺️ **Analyst Investigation Dashboard (`analyst-dashboard/`)** — Dark-mode SOC UI with an animated GeoTrace world map, threat-score dial, sub-score breakdown, and raw header inspector.
+6. 🌐 **Landing Page (`website/`)** — Public-facing marketing/info site for the project.
+
+---
+
+## 🏗️ Architecture
+
+```text
+Browser Extension  ──▶  Node.js Backend (:3000)
+                              │
+                              ├── Layer 1: Community Threat Lists (URLhaus / OpenPhish)
+                              ├── Layer 2: Heuristic Scoring Engine (scorer.js)
+                              ├── Layer 3: ML Model Microservice — eai/ (:5000)
+                              └── Layer 4: OpenRouter LLM Analysis (fallback / deep reasoning)
+
+Uploaded .eml file ──▶  Forensic Engine — forensic-engine/ (:5001)  ──▶  Analyst Dashboard (:8080)
+```
 
 ---
 
 ## ✨ Features
 
+### 🧩 Chrome Browser Extension (Manifest V3)
+- **Gmail Scanner** — scans links and sender credentials inline inside Gmail.
+- **Homoglyph Attack Detector** — flags internationalized domain name (IDN) spoofing (e.g. `gооgle.com`).
+- **Password Breach Shield** — SHA-1 k-Anonymity checks against the HIBP database, done locally.
+- **Tracker Blocker** — `declarativeNetRequest` rules block trackers with zero runtime overhead.
+- **Google Search Safety Annotator** — threat badges next to search result links.
+- **Mixed-Content Detector** — flags insecure resources loaded on HTTPS pages.
+
+### ⚙️ Node.js Backend (`backend/`)
+- REST routes: `analyze`, `reputation`, `check-urls`, `scan-email`, `send-report`.
+- Coordinates threat lists, heuristics, the ML microservice, and an LLM fallback into one verdict.
+
+### 🧠 ML Phishing Classifier (`eai/`)
+- Trained on the **PhiUSIIL dataset** (235K URLs, 52 features) using Logistic Regression / Random Forest.
+- Serves predictions via FastAPI (`/predict-url`, `/predict`, `/health`).
+
 ### 📧 Email Forensic Intelligence Engine (`forensic-engine/`)
-- **RFC 822 Header Parsing**: Extracts `Received:` chain headers, `Reply-To` anomalies, and sender domain alignment.
-- **Email Authentication Validation**: Performs live DNS lookups for SPF records and DMARC policies (`p=reject`, `p=quarantine`, `p=none`).
-- **Body & URL NLP Analysis**: Scans email content for urgency keywords, financial lure phrases, double extension attachments (`.pdf.exe`), and suspicious tunnel domains (`ngrok`, `serveo`, `loclx`).
-- **GeoTrace Relay Mapping**: Traces every server hop across the globe using IP geolocation services to pinpoint origin IPs.
-- **Risk Scoring Matrix**: Calculates a composite 0-100 Threat Score and outputs verdicts (`CRITICAL PHISHING`, `HIGH RISK`, `SUSPICIOUS`, `SAFE`).
+- RFC 822 header parsing (`Received:` chain, `Reply-To` anomalies, sender/domain alignment).
+- Live SPF/DMARC DNS validation (`p=reject`, `p=quarantine`, `p=none`).
+- Body & URL NLP analysis — urgency keywords, financial lures, double-extension attachments (`.pdf.exe`), suspicious tunnel domains (`ngrok`, `serveo`, `loclx`).
+- GeoTrace relay mapping across every server hop.
+- Composite 0–100 threat score with verdicts (`CRITICAL PHISHING`, `HIGH RISK`, `SUSPICIOUS`, `SAFE`).
 
 ### 📊 Analyst Investigation Dashboard (`analyst-dashboard/`)
-- **Interactive GeoTrace Map**: Dark CartoDB basemap with animated polylines showing the physical journey of an email from origin server to target inbox.
-- **Real-Time Risk Dial**: Animated CSS SVG gauge showing threat score and verdict badge.
-- **Deep-Dive Sub-Scores**: Displays separate ratings for Authentication, Urgency/Psychological Manipulation, Link/Domain Safety, and Header Integrity.
-- **Raw Header Inspector**: Code view with syntax highlighting to inspect original email headers.
-- **One-Click Demo Payloads**: Quick buttons to test `Spoofed Bank Alert`, `Executive Phishing`, and `Clean Newsletter`.
-
-### 🧩 Chrome Browser Extension (`manifest.json` — Manifest V3)
-- **Gmail Scanner**: Scans links and sender credentials directly inside the Gmail browser interface.
-- **Homoglyph Attack Detector**: Identifies internationalized domain name (IDN) spoofing (e.g. `gооgle.com`).
-- **Password Breach Shield**: SHA-1 k-Anonymity breach checking against HIBP database.
-- **Tracker Blocker**: DeclarativeNetRequest rules blocking dynamic web trackers with zero runtime overhead.
-- **Google Search Safety Annotator**: Displays threat badges next to search result links.
+- Interactive GeoTrace map (dark CartoDB basemap, animated polylines).
+- Real-time animated SVG risk-score dial with verdict badge.
+- Sub-score breakdown: Authentication, Urgency/Manipulation, Link/Domain Safety, Header Integrity.
+- Raw header inspector with syntax highlighting.
+- One-click demo payloads: *Spoofed Bank Alert*, *Executive Phishing*, *Clean Newsletter*.
 
 ---
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```text
 TheThirdEye/
-├── manifest.json              # Chrome Extension manifest (V3)
-├── analyst-dashboard/         # SOC Analyst Dashboard
-│   ├── index.html             #   Main Dashboard UI
-│   ├── style.css              #   Cyberpunk dark design system
-│   ├── app.js                 #   Dashboard state & API integration
-│   └── map.js                 #   Leaflet GeoTrace map module
-├── forensic-engine/           # Python FastAPI Forensic Engine
-│   ├── main.py                #   FastAPI REST API server (:5001)
-│   ├── create_test_emails.py  #   Generates demo .eml payloads
-│   ├── requirements.txt       #   Python dependencies
-│   ├── parsers/               #   Header, body, auth & hop parsers
-│   └── analyzers/              #   NLP urgency engine & risk scorer
-├── background/                # Extension background service worker
-├── content/                   # Extension content scripts
-│   ├── gmail-scanner.js       #   Gmail DOM scanner
-│   ├── page-analyzer.js       #   Webpage 23+ signal extractor
-│   ├── homoglyph-detector.js  #   Lookalike domain detector
-│   └── password-monitor.js    #   HIBP password breach monitor
-├── popup/                     # Extension popup interface (7 tabs)
-├── rules/                     # Declarative tracker blocking rules
-├── assets/                    # Platform icons & media
-└── website/                   # Landing page
+├── manifest.json               # Chrome Extension manifest (V3)
+├── background/                 # Extension background service worker
+├── content/                    # Extension content scripts (Gmail, homoglyph, password, mixed-content)
+├── popup/                      # Extension popup UI (multi-tab)
+├── pages/                      # Extension warning/interstitial page
+├── lib/                        # Shared extension libs (crypto, constants, header-grader, domain-reputation)
+├── rules/                      # Declarative tracker-blocking rules
+├── assets/                     # Icons & media
+│
+├── backend/                    # Node.js/Express orchestration API (:3000)
+│   ├── server.js
+│   ├── routes/                 #   analyze, reputation, check-urls, scan-email, send-report
+│   └── services/                #   threat-lists, scorer, ml-model, openrouter
+│
+├── eai/                        # Python FastAPI ML microservice (:5000)
+│   ├── serve.py / train.py / evaluate.py
+│   ├── models/                 #   trained model artifacts
+│   └── lookups/                #   safe/unsafe domain lookups
+│
+├── forensic-engine/            # Python FastAPI email forensic engine (:5001)
+│   ├── main.py
+│   ├── parsers/                #   header, body, auth, hop parsers
+│   ├── analyzers/              #   NLP urgency engine & risk scorer
+│   ├── create_test_emails.py   #   generates demo .eml payloads
+│   └── test_emails/            #   sample .eml files
+│
+├── analyst-dashboard/          # SOC analyst dashboard UI (:8080)
+├── dataset/                    # PhiUSIIL phishing URL dataset + safe/unsafe site lists
+├── website/                    # Public landing page
+├── tests/                      # Jest test suite (extension libs)
+└── PROJECT_DOCUMENTATION.md    # Full project write-up
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Quick Start
 
 ### Prerequisites
+- Node.js 18+
 - Python 3.10+
 - Google Chrome, Microsoft Edge, or Brave Browser
 
-### 1. Run the Forensic Engine (Backend)
+### 1. Node.js Backend (`:3000`)
+```bash
+cd backend
+npm install
+npm start
+```
 
-```powershell
+### 2. ML Microservice (`:5000`)
+```bash
+cd eai
+pip install -r requirements.txt
+python train.py      # first run only — trains and saves model artifacts
+python serve.py
+```
+
+### 3. Email Forensic Engine (`:5001`)
+```bash
 cd forensic-engine
 pip install -r requirements.txt
 python main.py
 ```
-> The API server will start at `http://localhost:5001`. View interactive API docs at `http://localhost:5001/docs`.
+> Interactive API docs at `http://localhost:5001/docs`.
 
-### 2. Run the Analyst Dashboard (Frontend)
-
-```powershell
+### 4. Analyst Dashboard (`:8080`)
+```bash
 cd analyst-dashboard
 python -m http.server 8080
 ```
-> Open your browser and navigate to **[http://localhost:8080](http://localhost:8080)**.
+> Open `http://localhost:8080`.
 
-### 3. Load the Chrome Browser Extension
-
-1. Open Chrome/Edge and go to `chrome://extensions/`
-2. Enable **Developer Mode** (top-right toggle).
-3. Click **Load unpacked** and select the root directory `TheThirdEye`.
+### 5. Load the Chrome Extension
+1. Go to `chrome://extensions/`.
+2. Enable **Developer Mode**.
+3. Click **Load unpacked** and select the project root (`TheThirdEye/`).
 
 ---
 
-## 🧪 Testing Demo Email Payloads
+## 🧪 Testing
 
-You can generate sample `.eml` test files using:
+**Extension unit tests (Jest):**
+```bash
+npm install
+npm test
+```
 
-```powershell
+**Demo email payloads for the Forensic Engine:**
+```bash
 cd forensic-engine
 python create_test_emails.py
 ```
-
-Generated payloads:
-- `spoofed_bank.eml` — Critical phishing email impersonating Chase Bank with SPF/DMARC failure and high urgency.
-- `ceo_wire_transfer.eml` — High-risk BEC (Business Email Compromise) wire transfer request.
-- `clean_newsletter.eml` — Legitimate newsletter from GitHub with valid authentication.
-
-Upload these `.eml` files directly into the Analyst Dashboard or click the demo cards to view instant forensic analysis.
+Generates `spoofed_bank.eml`, `beef_attack.eml`, and `benign_corporate.eml` — upload these to the Analyst Dashboard or use the built-in demo cards for instant forensic analysis.
 
 ---
 
-ML server 
-
-cd eai
-python serve.py
 ## 📜 License
 
 Distributed under the [MIT License](LICENSE).
