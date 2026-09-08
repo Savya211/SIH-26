@@ -23,6 +23,7 @@ let currentAnalysis = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initResultsTabs();
     initDropzone();
     initThemeToggle();
     checkEngineStatus();
@@ -115,6 +116,36 @@ function switchPanel(panelId) {
     if (panelId === 'finalreport') {
         renderFinalReport();
     }
+}
+
+
+// ═══════════════════════════════════════════════
+//  Results Sub-Tab Navigation
+// ═══════════════════════════════════════════════
+
+function initResultsTabs() {
+    document.querySelectorAll('.results-tab').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tabName = tab.getAttribute('data-results-tab');
+            switchResultsTab(tabName);
+        });
+    });
+}
+
+function switchResultsTab(tabName) {
+    if (!tabName) return;
+
+    // Deactivate all tab buttons & panels
+    document.querySelectorAll('.results-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.results-tab-panel').forEach(p => p.classList.remove('active'));
+
+    // Activate target tab button & panel
+    const targetTab = document.querySelector(`.results-tab[data-results-tab="${tabName}"]`);
+    const targetPanel = document.getElementById(`results-tab-${tabName}`);
+
+    if (targetTab) targetTab.classList.add('active');
+    if (targetPanel) targetPanel.classList.add('active');
 }
 
 
@@ -284,11 +315,166 @@ function renderResults(data) {
     renderAuthCards(data.authentication);
     renderHeadersTable(data.headers);
 
+    renderAISection(data);
+    renderTimelineSection(data);
+    renderIOCSection(data);
+
     // Map
     if (data.geolocation && data.geolocation.hop_path) {
         renderHopPath(data.geolocation.hop_path);
         renderHopList(data.geolocation.hop_path);
     }
+
+    switchResultsTab('overview');
+}
+
+// ─── AI Section ───
+
+function renderAISection(data) {
+    const container = document.getElementById('ai-section');
+    if (!container) return;
+
+    const risk = data.risk || {};
+
+    let recs = [];
+    if (risk.threat_score >= 70) {
+        recs = [
+            'Quarantine email across organization mailboxes immediately.',
+            'Block sender domain and return-path IP address at gateway firewall.',
+            'Trigger password reset and session revocation for affected recipient.',
+            'Report domain abuse to hosting provider / registrar.'
+        ];
+    } else if (risk.threat_score >= 40) {
+        recs = [
+            'Flag email with external warning banner in recipient inbox.',
+            'Perform secondary sandbox evaluation on attached links/files.',
+            'Verify sender via out-of-band communication (phone/Slack).'
+        ];
+    } else {
+        recs = [
+            'No immediate mitigation required — email passed standard authentication checks.'
+        ];
+    }
+
+    container.innerHTML = `
+        <div class="card card-full-width" style="margin-bottom: 20px;">
+            <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2z"/><circle cx="8.5" cy="14.5" r="1.5"/><circle cx="15.5" cy="14.5" r="1.5"/></svg>
+                AI Forensic Investigation Assessment
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                <strong>Executive Assessment:</strong> ${escapeHtml(risk.explanation || 'Comprehensive threat evaluation completed.')}
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: var(--bg-tertiary); padding: 12px; border-radius: 8px;">
+                    <span style="font-size: 11px; color: var(--text-muted); display: block;">Threat Verdict</span>
+                    <strong style="color: ${risk.verdict_color || 'var(--text-primary)'}; font-size: 14px;">${escapeHtml(risk.verdict || 'N/A')}</strong>
+                </div>
+                <div style="background: var(--bg-tertiary); padding: 12px; border-radius: 8px;">
+                    <span style="font-size: 11px; color: var(--text-muted); display: block;">Composite Risk Score</span>
+                    <strong style="font-size: 14px;">${risk.threat_score || 0} / 100</strong>
+                </div>
+                <div style="background: var(--bg-tertiary); padding: 12px; border-radius: 8px;">
+                    <span style="font-size: 11px; color: var(--text-muted); display: block;">Model Confidence</span>
+                    <strong style="font-size: 14px;">${Math.round((risk.confidence || 0) * 100)}%</strong>
+                </div>
+            </div>
+            <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--accent-primary);">Recommended SOC Action Plan</h4>
+            <ul style="padding-left: 20px; color: var(--text-secondary); font-size: 12px; line-height: 1.7;">
+                ${recs.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+// ─── Timeline Section ───
+
+function renderTimelineSection(data) {
+    const container = document.getElementById('timeline-section');
+    if (!container) return;
+
+    const hops = data.headers?.received_hops || [];
+    if (hops.length === 0) {
+        container.innerHTML = '<p class="empty-state">No server relay hops detected in headers</p>';
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="card card-full-width">
+            <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Email Relay Journey Timeline
+            </h3>
+            <div class="fr-timeline" style="padding: 10px 0;">
+                ${hops.map((h, i) => `
+                    <div class="fr-timeline-item">
+                        <div class="fr-timeline-dot"></div>
+                        <div class="fr-timeline-content">
+                            <div class="fr-timeline-time">${h.timestamp || 'Unknown Time'}</div>
+                            <div class="fr-timeline-desc">Hop ${h.hop_index || (i + 1)}: Server <strong>${escapeHtml(h.from_hostname || 'Origin')}</strong> passed message to <strong>${escapeHtml(h.by_hostname || 'Destination')}</strong></div>
+                            ${h.from_ip ? `<div class="fr-timeline-ip" style="font-size:11px; color: var(--text-muted); margin-top: 4px;">Source IP: <code>${h.from_ip}</code></div>` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+// ─── IOC Section ───
+
+function renderIOCSection(data) {
+    const container = document.getElementById('ioc-section');
+    if (!container) return;
+
+    const iocs = [];
+    const headers = data.headers || {};
+    const urls = data.url_analysis?.analyzed_urls || [];
+    const hops = headers.received_hops || [];
+
+    if (headers.sender?.full) iocs.push({ type: 'Email Sender', value: headers.sender.full, severity: 'info' });
+    if (headers.sender?.domain) iocs.push({ type: 'Sender Domain', value: headers.sender.domain, severity: 'info' });
+
+    hops.forEach(h => {
+        if (h.from_ip && !/^(10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|127\.)/.test(h.from_ip)) {
+            iocs.push({ type: 'Relay IP Address', value: h.from_ip, severity: 'medium' });
+        }
+    });
+
+    urls.forEach(u => {
+        const sev = u.risk_score >= 0.5 ? 'high' : u.risk_score >= 0.2 ? 'medium' : 'low';
+        iocs.push({ type: 'Embedded URL', value: u.url, severity: sev });
+    });
+
+    if (iocs.length === 0) {
+        container.innerHTML = '<p class="empty-state">No Indicators of Compromise extracted</p>';
+        return;
+    }
+
+    const rows = iocs.map(ioc => `
+        <tr>
+            <td><span class="indicator-badge ${ioc.severity}">${ioc.type}</span></td>
+            <td><code>${escapeHtml(ioc.value)}</code></td>
+        </tr>
+    `).join('');
+
+    container.innerHTML = `
+        <div class="card card-full-width">
+            <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Extracted Indicators of Compromise (IOCs)
+            </h3>
+            <table class="headers-table">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">Indicator Type</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        </div>
+    `;
 }
 
 
