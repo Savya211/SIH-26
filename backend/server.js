@@ -18,6 +18,7 @@ import analyzeRoute from './routes/analyze.js';
 import reputationRoute from './routes/reputation.js';
 import checkUrlsRoute from './routes/check-urls.js';
 import scanEmailRoute from './routes/scan-email.js';
+import sendReportRoute from './routes/send-report.js';
 
 dotenv.config();
 
@@ -39,6 +40,7 @@ analyzeRoute(app);
 reputationRoute(app);
 checkUrlsRoute(app);
 scanEmailRoute(app);
+sendReportRoute(app);
 
 // Root info
 app.get('/', (req, res) => {

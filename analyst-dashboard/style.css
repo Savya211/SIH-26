@@ -2065,6 +2065,26 @@ svg * {
 
     .content-area { padding: 16px; }
     .topbar { padding: 0 16px; }
+
+    /* Final Report responsive — 900px */
+    .fr-toolbar {
+        padding: 12px 0;
+        margin: -16px 0 16px 0;
+        width: 100%;
+    }
+    .fr-document {
+        padding: 24px 20px;
+    }
+    .fr-auth-grid {
+        grid-template-columns: 1fr;
+    }
+    .fr-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .fr-header-meta {
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 600px) {
@@ -2081,6 +2101,35 @@ svg * {
     .topbar { gap: 8px; }
     .page-title { font-size: 16px; }
     .page-subtitle { display: none; }
+
+    /* Final Report responsive — 600px */
+    .fr-toolbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .fr-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: 0;
+    }
+    .fr-document {
+        padding: 18px 14px;
+    }
+    .fr-header-title {
+        font-size: 17px;
+    }
+    .fr-overview-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fr-section-title {
+        font-size: 12px;
+    }
+    .fr-table thead,
+    .fr-table tbody,
+    .fr-table tr {
+        table-layout: auto;
+    }
 }
 
 
@@ -2106,8 +2155,14 @@ svg * {
     top: 0;
     z-index: 10;
     background: var(--bg-primary);
-    padding: 10px 0;
-    backdrop-filter: blur(8px);
+    padding: 12px 0;
+    margin: -24px 0 16px 0;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .fr-btn {
@@ -2198,6 +2253,7 @@ svg * {
     border-radius: var(--radius-lg);
     padding: 36px 40px;
     box-shadow: var(--shadow-card);
+    overflow-x: hidden;
 }
 
 .fr-header {
@@ -2335,8 +2391,25 @@ svg * {
     font-size: 12px;
     background: var(--bg-surface);
     border-radius: var(--radius-sm);
-    overflow: hidden;
+    overflow-x: auto;
     border: 1px solid var(--border-color);
+    display: block;
+}
+
+.fr-table thead,
+.fr-table tbody,
+.fr-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.fr-table thead {
+    display: table-header-group;
+}
+
+.fr-table tbody {
+    display: table-row-group;
 }
 
 .fr-table th {

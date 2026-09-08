@@ -1135,7 +1135,7 @@ function renderFinalReport() {
                     <circle cx="12" cy="11" r="3"/>
                 </svg>
                 <div>
-                    <div class="fr-header-title">AegisMail Investigation Report</div>
+                    <div class="fr-header-title">CyberShield</div>
                     <div class="fr-header-subtitle">Email Forensic Intelligence Platform — SIH26106</div>
                 </div>
             </div>
@@ -1555,7 +1555,7 @@ function openSendReportModal() {
     if (!subjectInput.value) {
         const caseId = currentAnalysis.case_id || 'Unknown';
         const verdict = currentAnalysis.risk?.verdict || 'N/A';
-        subjectInput.value = `AegisMail Investigation Report — Case ${caseId} [${verdict}]`;
+        subjectInput.value = `CyberShield Investigation Report — Case ${caseId} [${verdict}]`;
     }
 }
 
@@ -1563,30 +1563,60 @@ function closeSendReportModal() {
     document.getElementById('fr-send-modal').style.display = 'none';
 }
 
-function sendReport() {
+async function sendReport() {
     const to = document.getElementById('fr-send-to').value.trim();
     const subject = document.getElementById('fr-send-subject').value.trim();
     const message = document.getElementById('fr-send-message').value.trim();
+    const sendBtn = document.getElementById('fr-btn-send-confirm');
 
     if (!to) {
         alert('Please enter a recipient email address.');
         return;
     }
 
-    // Build plain-text report body
+    // Build report body (HTML content for rich email)
     const content = document.getElementById('final-report-content');
-    let body = '';
-    if (message) {
-        body += message + '\n\n---\n\n';
+    const reportHtml = content.innerHTML;
+
+    // Show loading state
+    const originalBtnHtml = sendBtn.innerHTML;
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Sending...';
+
+    try {
+        // Determine backend URL (same origin as API_BASE, but on port 3000)
+        const backendUrl = 'http://localhost:3000';
+        const resp = await fetch(`${backendUrl}/api/send-report`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                to,
+                subject: subject || 'CyberShield Investigation Report',
+                message: message || '',
+                reportHtml,
+                body: reportHtml
+            })
+        });
+
+        const result = await resp.json();
+
+        if (resp.ok && result.success) {
+            sendBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Sent!';
+            sendBtn.style.background = 'var(--success)';
+            setTimeout(() => {
+                sendBtn.innerHTML = originalBtnHtml;
+                sendBtn.style.background = '';
+                sendBtn.disabled = false;
+                closeSendReportModal();
+            }, 2000);
+        } else {
+            throw new Error(result.error || 'Failed to send report');
+        }
+    } catch (err) {
+        alert(`Failed to send report: ${err.message}`);
+        sendBtn.innerHTML = originalBtnHtml;
+        sendBtn.disabled = false;
     }
-    body += content.innerText;
-
-    // mailto: URI with encoded fields
-    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject || 'AegisMail Investigation Report')}&body=${encodeURIComponent(body)}`;
-
-    // Open user's email client
-    window.open(mailto, '_blank');
-    closeSendReportModal();
 }
 
 
