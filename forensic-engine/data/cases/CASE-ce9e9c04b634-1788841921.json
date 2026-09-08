@@ -1,0 +1,302 @@
+{
+  "case_id": "CASE-ce9e9c04b634-1788841921",
+  "filename": "Annual Premium at $199.50 ends tomorrow..eml",
+  "file_hash_sha256": "ce9e9c04b6341becb5fc7f4f64e9a99252fc35af1bff1b05e989e4d3c377e85a",
+  "timestamp": "2026-09-08T10:02:02.589535",
+  "processing_time_seconds": 0.766,
+  "headers": {
+    "sender": {
+      "full": "Hyperskill Crew <crew@hyperskill.org>",
+      "domain": "hyperskill.org",
+      "display_name": "Hyperskill Crew"
+    },
+    "reply_to": {
+      "full": "hello@hyperskill.org",
+      "domain": "hyperskill.org"
+    },
+    "return_path": {
+      "full": "<bounces+43027401-4820-u309818=gmail.com@em5467.hyperskill.org>",
+      "domain": "em5467.hyperskill.org"
+    },
+    "to": "u309818@gmail.com",
+    "cc": "",
+    "subject": "Annual Premium at $199.50 ends tomorrow.",
+    "date": {
+      "raw": "Sun, 30 Aug 2026 10:19:12 +0000",
+      "parsed": "2026-08-30T10:19:12+00:00"
+    },
+    "message_id": "<z68-UaaaSDKNFi53MPDKKQ@geopod-ismtpd-4>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@hyperskill.org header.s=s1 header.b=ceU4dtNy;       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=XbmdaPDx;       spf=pass (google.com: domain of bounces+43027401-4820-u309818=gmail.com@em5467.hyperskill.org designates 149.72.69.133 as permitted sender) smtp.mailfrom=\"bounces+43027401-4820-u309818=gmail.com@em5467.hyperskill.org\";       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=hyperskill.org",
+    "received_hops": [
+      {
+        "from_hostname": "NDMwMjc0MDE",
+        "from_ip": null,
+        "by_hostname": "geopod-ismtpd-4",
+        "timestamp_raw": null,
+        "timestamp": null,
+        "raw": "from NDMwMjc0MDE (unknown)\tby geopod-ismtpd-4 (SG) with HTTP\tid z68-UaaaSDKNFi53MPDKKQ\tSun, 30 Aug 2026 10:19:12.106 +0000 (UTC)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "recvd-canary-7b4bc6677b-6hr87",
+        "timestamp_raw": null,
+        "timestamp": null,
+        "raw": "by recvd-canary-7b4bc6677b-6hr87 with SMTP id recvd-canary-7b4bc6677b-6hr87-1-6A9403A0-B\t2026-08-30 10:19:12.166511102 +0000 UTC m=+2820354.033754058",
+        "hop_index": 2
+      },
+      {
+        "from_hostname": "o1.marketing.hyperskill.org",
+        "from_ip": "149.72.69.133",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Sun, 30 Aug 2026 03:19:12 -0700 (PDT)",
+        "timestamp": "2026-08-30T03:19:12-07:00",
+        "raw": "from o1.marketing.hyperskill.org (o1.marketing.hyperskill.org. [149.72.69.133])        by mx.google.com with ESMTPS id 41be03b00d2f7-cc1fd7a571dsi9674702a12.253.2026.08.30.03.19.12        for <u309818@gmail.com>        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);        Sun, 30 Aug 2026 03:19:12 -0700 (PDT)",
+        "hop_index": 3
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Sun, 30 Aug 2026 03:19:13 -0700 (PDT)",
+        "timestamp": "2026-08-30T03:19:13-07:00",
+        "raw": "by 2002:a05:7108:da81:b0:57f:b4af:2a2d with SMTP id dz1csp1884254gdc;        Sun, 30 Aug 2026 03:19:13 -0700 (PDT)",
+        "hop_index": 4
+      }
+    ],
+    "all_ips": [
+      "149.72.69.133"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (hyperskill.org) differs from Return-Path domain (em5467.hyperskill.org)"
+      }
+    ],
+    "total_hops": 4
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of bounces+43027401-4820-u309818=gmail.com@em5467.hyperskill.org designates 149.72.69.133 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: hyperskill.org",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 mx ip4:40.113.130.203 ip4:40.119.132.203 ip4:104.47.158.169 ip4:20.67.124.231 ip4:20.67.124.231 include:mail.zendesk.com include:_spf.google.com ~all",
+      "detail": "SPF record found: v=spf1 mx ip4:40.113.130.203 ip4:40.119.132.203 ip4:104.47.158.169 ip4:20.67.124.231 ip4:20.67.124.2"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "quarantine",
+      "record": "v=DMARC1;p=quarantine;rua=mailto:e7289d3328f04c6abfbc14aebe838bfb@dmarc-reports.cloudflare.net,mailto:dmarc@hyperskill.org,mailto:hyperskill-sre-team@hyperskill.org",
+      "detail": "DMARC policy: quarantine"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 5,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "Annual Premium at $199.50 \u2014 50% off. Code AUGUST50. Closes August 31\r\nat midnight.\r\n\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\u00a0\u200c\r\n\r\n[https://mautic.hyperskill.org/r/140377a3b30a19dc55f8d5c5e?ct=YTo2OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjE0NTE7fXM6NToiZW1haWwiO2k6MTM0MjtzOjQ6InN0YXQiO3M6MjI6IjZhOTQwMzlmY2YyMmI4NTQ1OTQ3NTQiO3M6OToic2VudF90aW1lIjtpOjE3ODgwODUxNTE7czo0OiJsZWFkIjtzOjc6IjE4MzU5MTEiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjEzNDI7fX0%3D&]\r\n\r\nOne year of Premium."
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.0,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.0,
+    "flagged_keywords": [],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://mautic.hyperskill.org/r/140377a3b30a19dc55f8d5c5e?ct=YTo2OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjE0NTE7fXM6NToiZW1haWwiO2k6MTM0MjtzOjQ6InN0YXQiO3M6MjI6IjZhOTQwMzlmY2YyMmI4NTQ1OTQ3NTQiO3M6OToic2VudF90aW1lIjtpOjE3ODgwODUxNTE7czo0OiJsZWFkIjtzOjc6IjE4MzU5MTEiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjEzNDI7fX0%3D&",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://mautic.hyperskill.org/r/3b59babc0cb8d1dc72d8cc897?ct=YTo2OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjE0NTE7fXM6NToiZW1haWwiO2k6MTM0MjtzOjQ6InN0YXQiO3M6MjI6IjZhOTQwMzlmY2YyMmI4NTQ1OTQ3NTQiO3M6OToic2VudF90aW1lIjtpOjE3ODgwODUxNTE7czo0OiJsZWFkIjtzOjc6IjE4MzU5MTEiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjEzNDI7fX0%3D&",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://mautic.hyperskill.org/r/3b59babc0cb8d1dc72d8cc897?ct=YTo2OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjE0NTE7fXM6NToiZW1haWwiO2k6MTM0MjtzOjQ6InN0YXQiO3M6MjI6IjZhOTQwMzlmY2YyMmI4NTQ1OTQ3NTQiO3M6OToic2VudF90aW1lIjtpOjE3ODgwODUxNTE7czo0OiJsZWFkIjtzOjc6IjE4MzU5MTEiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjEzNDI7fX0%3D&",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://mautic.hyperskill.org/r/3b59babc0cb8d1dc72d8cc897?ct=YTo2OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjE0NTE7fXM6NToiZW1haWwiO2k6MTM0MjtzOjQ6InN0YXQiO3M6MjI6IjZhOTQwMzlmY2YyMmI4NTQ1OTQ3NTQiO3M6OToic2VudF90aW1lIjtpOjE3ODgwODUxNTE7czo0OiJsZWFkIjtzOjc6IjE4MzU5MTEiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjEzNDI7fX0%3D&",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      },
+      {
+        "url": "https://mautic.hyperskill.org/email/unsubscribe/6a94039fcf22b854594754/u309818@gmail.com/7c798a50a818fce8134ed2d70d3880acf1a75a256e3a0d4c79135f062b03e84b",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 5,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "149.72.69.133",
+        "country": "US",
+        "country_code": "US",
+        "city": "Las Vegas",
+        "latitude": 36.175,
+        "longitude": -115.1372,
+        "asn": "AS11377",
+        "org": "AS11377 SendGrid, Inc.",
+        "isp": "AS11377 SendGrid, Inc.",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "149.72.69.133",
+      "country": "US",
+      "country_code": "US",
+      "city": "Las Vegas",
+      "latitude": 36.175,
+      "longitude": -115.1372,
+      "asn": "AS11377",
+      "org": "AS11377 SendGrid, Inc.",
+      "isp": "AS11377 SendGrid, Inc.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "149.72.69.133",
+      "country": "US",
+      "country_code": "US",
+      "city": "Las Vegas",
+      "latitude": 36.175,
+      "longitude": -115.1372,
+      "asn": "AS11377",
+      "org": "AS11377 SendGrid, Inc.",
+      "isp": "AS11377 SendGrid, Inc.",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -115.1372,
+              36.175
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "149.72.69.133",
+            "city": "Las Vegas",
+            "country": "US",
+            "org": "AS11377 SendGrid, Inc.",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 6,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.3,
+    "sub_scores": {
+      "authentication": 20.0,
+      "nlp_content": 0.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (hyperskill.org) differs from Return-Path domain (em5467.hyperskill.org)"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}

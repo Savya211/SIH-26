@@ -1,0 +1,240 @@
+{
+  "case_id": "CASE-bc68ceb83c44-1788842074",
+  "filename": "You aced Derive Insights from BigQuery Data_ Challenge Lab!.eml",
+  "file_hash_sha256": "bc68ceb83c443ce17ca48125076aad6af16dabf4ae8a671b04b21adfcd099d71",
+  "timestamp": "2026-09-08T10:04:34.780487",
+  "processing_time_seconds": 0.473,
+  "headers": {
+    "sender": {
+      "full": "noreply@skills.google",
+      "domain": "skills.google",
+      "display_name": null
+    },
+    "reply_to": {
+      "full": "",
+      "domain": null
+    },
+    "return_path": {
+      "full": "<3V0-dagcNB8Yz03q1xA4wuxx4.s00sxq6FCLKDKsymux.o0y@qwiklabs.bounces.google.com>",
+      "domain": "qwiklabs.bounces.google.com"
+    },
+    "to": "u309818@gmail.com",
+    "cc": "",
+    "subject": "You aced Derive Insights from BigQuery Data: Challenge Lab!",
+    "date": {
+      "raw": "Sun, 06 Sep 2026 04:32:39 -0700",
+      "parsed": "2026-09-06T04:32:39-07:00"
+    },
+    "message_id": "<DDRELMEK2VKcyn7aUX-Xfw@notifications.google.com>",
+    "x_mailer": "",
+    "authentication_results_raw": "mx.google.com;       dkim=pass header.i=@skills.google header.s=20250327 header.b=TNCTOlmh;       spf=pass (google.com: domain of 3v0-dagcnb8yz03q1xa4wuxx4.s00sxq6fclkdksymux.o0y@qwiklabs.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3V0-dagcNB8Yz03q1xA4wuxx4.s00sxq6FCLKDKsymux.o0y@qwiklabs.bounces.google.com;       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=skills.google;       dara=pass header.i=@gmail.com",
+    "received_hops": [
+      {
+        "from_hostname": "mail-sor-f69.google.com",
+        "from_ip": "209.85.220.69",
+        "by_hostname": "mx.google.com",
+        "timestamp_raw": "Sun, 06 Sep 2026 04:32:40 -0700 (PDT)",
+        "timestamp": "2026-09-06T04:32:40-07:00",
+        "raw": "from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])        by mx.google.com with SMTPS id 5614622812f47-4b96f2d3b8dsor5203599b6e.2.2026.09.06.04.32.40        for <u309818@gmail.com>        (Google Transport Security);        Sun, 06 Sep 2026 04:32:40 -0700 (PDT)",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": null,
+        "from_ip": null,
+        "by_hostname": "2002",
+        "timestamp_raw": "Sun, 6 Sep 2026 04:32:40 -0700 (PDT)",
+        "timestamp": "2026-09-06T04:32:40-07:00",
+        "raw": "by 2002:a05:7108:da81:b0:57f:b4af:2a2d with SMTP id dz1csp10467259gdc;        Sun, 6 Sep 2026 04:32:40 -0700 (PDT)",
+        "hop_index": 2
+      }
+    ],
+    "all_ips": [
+      "209.85.220.69"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (skills.google) differs from Return-Path domain (qwiklabs.bounces.google.com)"
+      }
+    ],
+    "total_hops": 2
+  },
+  "authentication": {
+    "spf": {
+      "status": "pass",
+      "detail": "google.com: domain of 3v0-dagcnb8yz03q1xa4wuxx4.s00sxq6fclkdksymux.o0y@qwiklabs.bounces.google.com designates 209.85.220.69 as permitted sender",
+      "pass": true
+    },
+    "dkim": {
+      "status": "pass",
+      "detail": "",
+      "pass": true
+    },
+    "dmarc": {
+      "status": "pass",
+      "detail": "From domain: skills.google",
+      "pass": true
+    },
+    "dns_spf": {
+      "has_spf": true,
+      "record": "v=spf1 include:mail.zendesk.com include:_spf.google.com -all",
+      "detail": "SPF record found: v=spf1 include:mail.zendesk.com include:_spf.google.com -all"
+    },
+    "dns_dmarc": {
+      "has_dmarc": true,
+      "policy": "quarantine",
+      "record": "v=DMARC1; p=quarantine",
+      "detail": "DMARC policy: quarantine"
+    },
+    "auth_risk_score": 0.0,
+    "auth_indicators": []
+  },
+  "body_analysis": {
+    "url_count": 1,
+    "has_html": true,
+    "has_scripts": false,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [],
+    "attachments": [],
+    "plain_text_preview": "Congratulations!\r\n\r\nHi Use me 123,\r\n\r\nGreat news! You completed Derive Insights from BigQuery Data: Challenge Lab  \r\nwith a perfect score of 100%. You should be proud of the hard work you put  \r\nin to earn this score.\r\n\r\nHead to your dashboard to review your results and find your next challenge:  \r\nhttps://www.skills.google/?utm_campaign=dashboard&utm_medium=email&utm_source=endlab\r\n\r\nThank you,\r\nGoogle Skills Support"
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.0,
+    "credential_score": 0.0,
+    "financial_score": 0.0,
+    "impersonation_score": 0.0,
+    "social_engineering_score": 0.0,
+    "overall_nlp_score": 0.0,
+    "flagged_keywords": [],
+    "threat_categories": [],
+    "nlp_indicators": []
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "https://notifications.googleapis.com/email/redirect?t=AFG8qyV7xFUkC5h-fmxGSg3YjpvtHPlRbKXcJywbKt1G0zNIputP2TMfxMEw4EtL7TyjFgE_rOBo5x1sk6jdPGe-V1kqNOMTwH4U69Xe0R7b7IYlafJx-kSdpShnU0uvkfqXaUknRCICEmutpGG3_5KnYNljVZH1wq5Hu-q5l1dBAoSDuZZOjYNIG1hUoP87BXVg7DF2PDL90BHJ4aCb0mCCy4SDEk325v9wWRAkdwkiveO7hsIVZv51cr9GpJdoyzuprF_Xdg4AbN8eYwC9&r=eJwdyDEKwCAMAMDfdNS9IH1KiSaoNDFiFL9f2huvzNnt9H7v7eypzOayamby15pyJ5AONbeAYCUqDDy-FsK6JJBA5T9M10gUqCFDfAFdFyCU&s=ALHZ2r6VsYmQNc0RIkaQwElO8YZ-",
+        "risk_score": 0.0,
+        "findings": [],
+        "is_raw_ip": false,
+        "is_tunnel": false,
+        "has_suspicious_port": false,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": false
+      }
+    ],
+    "url_risk_score": 0.0,
+    "total_urls": 1,
+    "dangerous_urls": 0,
+    "url_indicators": []
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "209.85.220.69",
+        "country": "US",
+        "country_code": "US",
+        "city": "Mountain View",
+        "latitude": 38.0088,
+        "longitude": -122.1175,
+        "asn": "AS15169",
+        "org": "AS15169 Google LLC",
+        "isp": "AS15169 Google LLC",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      }
+    ],
+    "origin_node": {
+      "ip": "209.85.220.69",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "209.85.220.69",
+      "country": "US",
+      "country_code": "US",
+      "city": "Mountain View",
+      "latitude": 38.0088,
+      "longitude": -122.1175,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "total_public_hops": 1,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.1175,
+              38.0088
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "209.85.220.69",
+            "city": "Mountain View",
+            "country": "US",
+            "org": "AS15169 Google LLC",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 6,
+    "verdict": "BENIGN",
+    "verdict_color": "#22c55e",
+    "confidence": 0.3,
+    "sub_scores": {
+      "authentication": 20.0,
+      "nlp_content": 0.0,
+      "url_heuristics": 0.0,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (skills.google) differs from Return-Path domain (qwiklabs.bounces.google.com)"
+      }
+    ],
+    "summary": "Email appears legitimate with no significant threat indicators detected."
+  }
+}
