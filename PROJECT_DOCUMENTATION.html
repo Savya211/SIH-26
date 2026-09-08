@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AegisMail — Project Specification & Technical Documentation</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+    @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+        @bottom-right {
+            content: counter(page);
+        }
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #1e293b;
+        background-color: #ffffff;
+        line-height: 1.6;
+        font-size: 13px;
+        padding: 20px 30px;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #0f172a;
+        border-bottom: 3px solid #2563eb;
+        padding-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e293b;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 6px;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        page-break-after: avoid;
+    }
+
+    h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #2563eb;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        page-break-after: avoid;
+    }
+
+    blockquote {
+        background: #f8fafc;
+        border-left: 4px solid #2563eb;
+        margin: 15px 0;
+        padding: 10px 15px;
+        color: #334155;
+        font-weight: 500;
+        border-radius: 0 6px 6px 0;
+    }
+
+    p, li {
+        color: #334155;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 12px;
+        page-break-inside: avoid;
+    }
+
+    th {
+        background-color: #0f172a;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: left;
+        padding: 8px 12px;
+        border: 1px solid #0f172a;
+    }
+
+    td {
+        padding: 8px 12px;
+        border: 1px solid #e2e8f0;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    code {
+        font-family: 'Fira Code', Consolas, Monaco, monospace;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11.5px;
+    }
+
+    pre {
+        background-color: #0f172a;
+        color: #f8fafc;
+        padding: 14px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: 'Fira Code', Consolas, Monaco, monospace;
+        font-size: 11px;
+        line-height: 1.5;
+        page-break-inside: avoid;
+    }
+
+    pre code {
+        background-color: transparent;
+        color: #f8fafc;
+        padding: 0;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #e2e8f0;
+        margin: 25px 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: 600;
+        border-radius: 12px;
+        background: #e0e7ff;
+        color: #3730a3;
+    }
+</style>
+</head>
+<body>
+<h1 id="thethirdeye-aegismail-comprehensive-project-specification-technical-documentation">🛡️ TheThirdEye / AegisMail — Comprehensive Project Specification &amp; Technical Documentation</h1>
+<blockquote>
+<p><strong>Smart India Hackathon (SIH 2026)</strong><br />
+<strong>Project Name</strong>: AegisMail / TheThirdEye<br />
+<strong>Category</strong>: Cybersecurity &amp; AI-Driven Automated Threat Intelligence<br />
+<strong>Repository</strong>: <a href="https://github.com/Savya211/SIH-26">https://github.com/Savya211/SIH-26</a>  </p>
+</blockquote>
+<hr />
+<h2 id="table-of-contents">📑 Table of Contents</h2>
+<ol>
+<li><a href="#1-executive-summary">Executive Summary</a></li>
+<li><a href="#2-complete-system-architecture">Complete System Architecture</a></li>
+<li><a href="#3-comprehensive-feature-matrix">Comprehensive Feature Matrix</a></li>
+<li><a href="#4-languages-frameworks--libraries">Languages, Frameworks &amp; Libraries</a></li>
+<li><a href="#5-complete-api-catalog--specifications">Complete API Catalog &amp; Specifications</a></li>
+<li><a href="#internal-microservice-apis">Internal Microservice APIs</a></li>
+<li><a href="#external-third-party-apis--services">External Third-Party APIs &amp; Services</a></li>
+<li><a href="#6-forensic-risk-engine--scoring-algorithm">Forensic Risk Engine &amp; Scoring Algorithm</a></li>
+<li><a href="#7-repository-file-inventory">Repository File Inventory</a></li>
+<li><a href="#8-setup-execution--deployment-guide">Setup, Execution &amp; Deployment Guide</a></li>
+</ol>
+<hr />
+<h2 id="1-executive-summary">1. Executive Summary</h2>
+<p><strong>TheThirdEye / AegisMail</strong> is an end-to-end cybersecurity ecosystem built to solve two major modern digital attack vectors:
+1. <strong>Advanced Email Phishing &amp; BEC (Business Email Compromise)</strong> — Investigated via an automated AI-powered Python Forensic Engine and SOC Analyst Web Dashboard.
+2. <strong>Real-time Web Threats &amp; Privacy Invasion</strong> — Protected via a Chrome Manifest V3 Browser Extension providing inline DOM defense, password breach shields, and zero-overhead tracker blocking.</p>
+<p>The system ingests raw <code>.eml</code> email files or live browser signals, evaluates multi-dimensional risk factors across 4 defense layers, maps physical server hops on a dark CartoDB GIS map, and delivers instant threat verdicts with transparent indicators.</p>
+<hr />
+<h2 id="2-complete-system-architecture">2. Complete System Architecture</h2>
+<div class="codehilite"><pre><span></span><code><span class="w">                  </span><span class="err">┌─────────────────────────────────────────────────────────────┐</span>
+<span class="w">                  </span><span class="err">│</span><span class="w">                 </span><span class="n">USER</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">ANALYST</span><span class="w"> </span><span class="n">INTERFACE</span><span class="w">                   </span><span class="err">│</span>
+<span class="w">                  </span><span class="err">└──────────────────────────────┬──────────────────────────────┘</span>
+<span class="w">                                                 </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">┌────────────────────────┴────────────────────────┐</span>
+<span class="w">                        </span><span class="err">▼</span><span class="w">                                                 </span><span class="err">▼</span>
+<span class="w">        </span><span class="err">┌───────────────────────────────┐</span><span class="w">                 </span><span class="err">┌───────────────────────────────┐</span>
+<span class="w">        </span><span class="err">│</span><span class="w">  </span><span class="n">Chrome</span><span class="w"> </span><span class="n">Extension</span><span class="w"> </span><span class="p">(</span><span class="n">MV3</span><span class="p">)</span><span class="w">       </span><span class="err">│</span><span class="w">                 </span><span class="err">│</span><span class="w">  </span><span class="n">Analyst</span><span class="w"> </span><span class="n">SOC</span><span class="w"> </span><span class="n">Dashboard</span><span class="w">        </span><span class="err">│</span>
+<span class="w">        </span><span class="err">│</span><span class="w">  </span><span class="p">(</span><span class="n">Gmail</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Web</span><span class="w"> </span><span class="n">Scanner</span><span class="p">)</span><span class="w">        </span><span class="err">│</span><span class="w">                 </span><span class="err">│</span><span class="w">  </span><span class="p">(</span><span class="n">Leaflet</span><span class="o">.</span><span class="n">js</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">HTML5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">CSS3</span><span class="p">)</span><span class="w">  </span><span class="err">│</span>
+<span class="w">        </span><span class="err">└───────────────┬───────────────┘</span><span class="w">                 </span><span class="err">└───────────────┬───────────────┘</span>
+<span class="w">                        </span><span class="err">│</span><span class="w">                                                 </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">│</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">Signals</span><span class="w">                                    </span><span class="err">│</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="o">.</span><span class="n">eml</span><span class="w"> </span><span class="n">Payload</span>
+<span class="w">                        </span><span class="err">▼</span><span class="w">                                                 </span><span class="err">▼</span>
+<span class="w">        </span><span class="err">┌───────────────────────────────┐</span><span class="w">                 </span><span class="err">┌───────────────────────────────┐</span>
+<span class="w">        </span><span class="err">│</span><span class="w"> </span><span class="n">Node</span><span class="o">.</span><span class="n">js</span><span class="w"> </span><span class="n">Express</span><span class="w"> </span><span class="n">Backend</span><span class="w">       </span><span class="err">│</span><span class="w">                 </span><span class="err">│</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">FastAPI</span><span class="w"> </span><span class="n">Forensic</span><span class="w"> </span><span class="n">Engine</span><span class="err">│</span>
+<span class="w">        </span><span class="err">│</span><span class="w"> </span><span class="p">(:</span><span class="mi">3000</span><span class="p">)</span><span class="w">                       </span><span class="err">│</span><span class="w">                 </span><span class="err">│</span><span class="w"> </span><span class="p">(:</span><span class="mi">5001</span><span class="p">)</span><span class="w">                       </span><span class="err">│</span>
+<span class="w">        </span><span class="err">└───────────────┬───────────────┘</span><span class="w">                 </span><span class="err">└───────────────┬───────────────┘</span>
+<span class="w">                        </span><span class="err">│</span><span class="w">                                                 </span><span class="err">│</span>
+<span class="w">     </span><span class="err">┌──────────────────┼──────────────────┐</span><span class="w">           </span><span class="err">┌──────────────────┼──────────────────┐</span>
+<span class="w">     </span><span class="err">▼</span><span class="w">                  </span><span class="err">▼</span><span class="w">                  </span><span class="err">▼</span><span class="w">           </span><span class="err">▼</span><span class="w">                  </span><span class="err">▼</span><span class="w">                  </span><span class="err">▼</span>
+<span class="err">┌─────────┐</span><span class="w">       </span><span class="err">┌───────────┐</span><span class="w">      </span><span class="err">┌───────────┐</span><span class="w"> </span><span class="err">┌─────────┐</span><span class="w">      </span><span class="err">┌───────────┐</span><span class="w">      </span><span class="err">┌───────────┐</span>
+<span class="err">│</span><span class="n">URLhaus</span><span class="w"> </span><span class="o">/</span><span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="n">FastAPI</span><span class="w"> </span><span class="n">ML</span><span class="w"> </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">OpenRouter</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="n">RFC</span><span class="w"> </span><span class="mi">822</span><span class="w">  </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">DNS</span><span class="w"> </span><span class="n">Auth</span><span class="w">   </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">MaxMind</span><span class="w"> </span><span class="o">/</span><span class="w">  </span><span class="err">│</span>
+<span class="err">│</span><span class="n">OpenPhish</span><span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="p">(:</span><span class="mi">5000</span><span class="p">)</span><span class="w">    </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">LLM</span><span class="w">        </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="n">Parser</span><span class="w">   </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">Validator</span><span class="w">  </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="n">IP</span><span class="o">-</span><span class="n">API</span><span class="w">     </span><span class="err">│</span>
+<span class="err">└─────────┘</span><span class="w">       </span><span class="err">└───────────┘</span><span class="w">      </span><span class="err">└───────────┘</span><span class="w"> </span><span class="err">└─────────┘</span><span class="w">      </span><span class="err">└───────────┘</span><span class="w">      </span><span class="err">└───────────┘</span>
+</code></pre></div>
+
+<hr />
+<h2 id="3-comprehensive-feature-matrix">3. Comprehensive Feature Matrix</h2>
+<h3 id="a-email-forensic-engine-intelligence-platform-forensic-engine">📧 A. Email Forensic Engine &amp; Intelligence Platform (<code>forensic-engine/</code>)</h3>
+<ul>
+<li><strong>Multi-Stage RFC 822 Header Parsing</strong>: Extracts sender details (<code>From</code>, <code>Return-Path</code>, <code>Reply-To</code>), authentication tags, message IDs, timestamp chains, and full server relay history (<code>Received:</code> headers).</li>
+<li><strong>Live DNS Email Authentication</strong>:</li>
+<li><strong>SPF (Sender Policy Framework)</strong>: Fetches domain TXT records to verify sender IP authorization.</li>
+<li><strong>DMARC (Domain-based Message Authentication)</strong>: Checks policy enforcement (<code>p=reject</code>, <code>p=quarantine</code>, <code>p=none</code>).</li>
+<li><strong>Domain Mismatch Alignment</strong>: Detects <code>From</code> vs. <code>Reply-To</code> and <code>Return-Path</code> domain spoofing attempts.</li>
+<li><strong>NLP &amp; Threat Content Analyzer</strong>:</li>
+<li><strong>Urgency &amp; Psychological Lure Detection</strong>: Scans for pressure phrases ("Account Suspended", "Action Required within 24 hours", "Unauthorized Login Detected").</li>
+<li><strong>Financial &amp; Credential Harvesting Phrases</strong>: Identifies BEC wire transfer requests, cryptocurrency wallet traps, and login verification lures.</li>
+<li><strong>Suspicious Tunnel &amp; Infrastructure Domains</strong>: Detects links hiding behind <code>ngrok</code>, <code>serveo</code>, <code>loclx</code>, <code>trycloudflare</code>, <code>localxpose</code>.</li>
+<li><strong>Double Extension Attachment Guard</strong>: Flags dangerous files disguised as documents (e.g., <code>invoice.pdf.exe</code>, <code>statement.doc.js</code>).</li>
+<li><strong>Hop-by-Hop GeoTrace Engine</strong>:</li>
+<li>Extracts public IPv4/IPv6 addresses along the email path.</li>
+<li>Queries GeoIP locations (City, Country, Latitude, Longitude, Autonomous System Number / ASN).</li>
+<li>Calculates physical hop trajectory across continents.</li>
+<li><strong>Persistent Forensic Case Management</strong>:</li>
+<li>Generates unique SHA-256 case IDs (<code>CASE-xxxx</code>).</li>
+<li>Stores structured JSON forensic reports in <code>forensic-engine/data/cases/</code>.</li>
+</ul>
+<hr />
+<h3 id="b-analyst-investigation-dashboard-analyst-dashboard">📊 B. Analyst Investigation Dashboard (<code>analyst-dashboard/</code>)</h3>
+<ul>
+<li><strong>Leaflet.js Dark GeoTrace World Map</strong>: Renders origin, intermediate relays, and destination nodes using dark CartoDB tiles with animated polylines and pulse indicators.</li>
+<li><strong>Animated Composite Risk Dial</strong>: SVG-rendered threat gauge updating from <code>0</code> to <code>100</code> with dynamic verdict styling:</li>
+<li>🔴 <strong>CRITICAL PHISHING</strong> (80 - 100)</li>
+<li>🟠 <strong>HIGH RISK</strong> (60 - 79)</li>
+<li>🟡 <strong>SUSPICIOUS</strong> (30 - 59)</li>
+<li>🟢 <strong>SAFE</strong> (0 - 29)</li>
+<li><strong>Sub-Score Breakdown Panels</strong>:</li>
+<li><strong>Authentication Score</strong> (SPF / DMARC / Domain Alignment)</li>
+<li><strong>Urgency &amp; Manipulation Score</strong> (Psychological keywords)</li>
+<li><strong>URL &amp; Attachment Safety Score</strong> (Suspicious TLDs, IP links, tunnels)</li>
+<li><strong>Header Integrity Score</strong> (Missing Message-IDs, date anomalies)</li>
+<li><strong>Interactive Raw Header Inspector</strong>: Includes syntax highlighting to inspect original email headers line-by-line.</li>
+<li><strong>Preset One-Click Demo Payloads</strong>:</li>
+<li>🏦 <code>Spoofed Bank Alert</code> (Impersonating Chase Bank)</li>
+<li>💼 <code>Executive BEC Wire Transfer</code> (CEO urgent request)</li>
+<li>📰 <code>Clean Corporate Newsletter</code> (Legitimate newsletter)</li>
+</ul>
+<hr />
+<h3 id="c-chrome-browser-extension-manifestjson-manifest-v3">🧩 C. Chrome Browser Extension (<code>manifest.json</code> — Manifest V3)</h3>
+<ul>
+<li><strong>Inline Gmail Threat Scanner</strong>: Injects safety badges directly into Gmail email headers and scans embedded email URLs.</li>
+<li><strong>Homoglyph &amp; IDN Lookalike Domain Detector</strong>: Detects internationalized Cyrillic/Greek character substitution attacks (e.g. <code>gооgle.com</code> vs <code>google.com</code>).</li>
+<li><strong>Password Breach Shield (HIBP Integration)</strong>: Checks typed passwords against 10B+ breached records using SHA-1 <strong>k-Anonymity</strong> (only first 5 hash characters sent).</li>
+<li><strong>Zero-Overhead Tracker Blocker</strong>: Uses Manifest V3 <code>declarativeNetRequest</code> rules to block telemetry, analytics, and advertising scripts without slowing down page load times.</li>
+<li><strong>Google Search Safety Annotator</strong>: Injects green/red safety indicators next to Google search results before the user clicks.</li>
+<li><strong>WebRTC Leak Shield</strong>: Prevents private IP address exposure via WebRTC UDP candidates.</li>
+<li><strong>Security Headers Grader</strong>: Analyzes site HTTP headers (<code>CSP</code>, <code>HSTS</code>, <code>X-Frame-Options</code>, <code>X-Content-Type-Options</code>) and awards grades from <strong>A+ to F</strong>.</li>
+</ul>
+<hr />
+<h2 id="4-languages-frameworks-libraries">4. Languages, Frameworks &amp; Libraries</h2>
+<h3 id="programming-languages">💻 Programming Languages</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Language</th>
+<th style="text-align: left;">Version / Specification</th>
+<th style="text-align: left;">Usage Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Python</strong></td>
+<td style="text-align: left;">Python 3.10+</td>
+<td style="text-align: left;">Forensic Engine, RFC 822 Parser, GeoTrace, FastAPI Microservice</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JavaScript (ES6+)</strong></td>
+<td style="text-align: left;">Modern Vanilla JS</td>
+<td style="text-align: left;">Chrome Extension (Service Worker, Content Scripts, Popup), Analyst Dashboard UI</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTML5</strong></td>
+<td style="text-align: left;">Semantic HTML5</td>
+<td style="text-align: left;">Dashboard Interface, Extension Popup, Warning Pages</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CSS3</strong></td>
+<td style="text-align: left;">Vanilla CSS (Variables, Grid, Flexbox)</td>
+<td style="text-align: left;">Dark-mode Cyberpunk UI design system, Glassmorphism cards</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="key-libraries-frameworks">📦 Key Libraries &amp; Frameworks</h3>
+<h4 id="python-stack-forensic-enginerequirementstxt-eairequirementstxt">Python Stack (<code>forensic-engine/requirements.txt</code> &amp; <code>eai/requirements.txt</code>)</h4>
+<ul>
+<li><strong><code>FastAPI</code></strong>: High-performance asynchronous REST API web framework.</li>
+<li><strong><code>uvicorn</code></strong>: Lightning-fast ASGI server implementation.</li>
+<li><strong><code>dnspython</code></strong>: Performs DNS resolution for SPF, DKIM, and DMARC TXT records.</li>
+<li><strong><code>beautifulsoup4</code></strong>: Parses HTML email content and extracts raw links, anchors, and forms.</li>
+<li><strong><code>tldextract</code></strong>: Accurately separates registered domains, subdomains, and TLDs.</li>
+<li><strong><code>requests</code></strong>: HTTP requests for IP geolocation services.</li>
+<li><strong><code>scikit-learn</code></strong>: RandomForest &amp; LogisticRegression ML model training on 235k URLs.</li>
+<li><strong><code>geoip2</code> / <code>maxminddb</code></strong>: Local offline database lookup for IP cities and ASNs.</li>
+</ul>
+<h4 id="frontend-extension-stack">Frontend &amp; Extension Stack</h4>
+<ul>
+<li><strong><code>Leaflet.js</code></strong>: Interactive GIS map rendering engine.</li>
+<li><strong><code>CartoDB Dark Matter</code></strong>: Dark basemap tile provider.</li>
+<li><strong><code>Chrome Extension API (V3)</code></strong>: <code>declarativeNetRequest</code>, <code>activeTab</code>, <code>storage</code>, <code>webRequest</code>, <code>cookies</code>, <code>scripting</code>.</li>
+</ul>
+<hr />
+<h2 id="5-complete-api-catalog-specifications">5. Complete API Catalog &amp; Specifications</h2>
+<h3 id="internal-microservice-apis">⚙️ Internal Microservice APIs</h3>
+<h4 id="1-analyze-uploaded-email-payload">1. Analyze Uploaded Email Payload</h4>
+<ul>
+<li><strong>Endpoint</strong>: <code>POST /api/analyze</code></li>
+<li><strong>Content-Type</strong>: <code>multipart/form-data</code></li>
+<li><strong>Request Body</strong>: <code>file: &lt;.eml binary&gt;</code></li>
+<li><strong>Response</strong>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;spoofed_bank.eml&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;processing_time_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;case_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CASE-a618f9237cf9-1788777798&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-09-07T10:43:18Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;threat_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">92.5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;verdict&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CRITICAL PHISHING&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sub_scores&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;urgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;link_safety&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;header_integrity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;indicators&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;DMARC validation failed (policy=reject)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;SPF validation failed for sender IP 185.220.101.5&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Sender domain (chase-security-update.com) does not match Reply-To (support@chase.com)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;High psychological urgency detected (Urgency Score: 100%)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Credential harvesting keyword detected in body&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;header_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chase Security &lt;alert@chase-security-update.com&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;return_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bounce@chase-security-update.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reply_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;support@chase.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;URGENT: Your Chase Account Has Been Suspended&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mon, 07 Sep 2026 10:12:00 +0000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;202609071012.83921@chase-security-update.com&gt;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;hops&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;hop_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;by_host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mail.chase-security-update.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;185.220.101.5&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frankfurt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">50.1109</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.6821</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;asn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AS200384&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tor Exit Node Provider&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="2-analyze-demo-email-payload">2. Analyze Demo Email Payload</h4>
+<ul>
+<li><strong>Endpoint</strong>: <code>POST /api/analyze-demo/{filename}</code></li>
+<li><strong>Parameters</strong>: <code>filename</code> (<code>spoofed_bank.eml</code>, <code>ceo_wire_transfer.eml</code>, <code>clean_newsletter.eml</code>)</li>
+</ul>
+<h4 id="3-forensic-case-management-endpoints">3. Forensic Case Management Endpoints</h4>
+<ul>
+<li><code>GET /api/cases</code>: Returns a list of all stored forensic investigation cases.</li>
+<li><code>GET /api/cases/{case_id}</code>: Fetches full details for a specific case file.</li>
+<li><code>GET /health</code>: Healthcheck endpoint returning engine status, uptime, and database metrics.</li>
+</ul>
+<hr />
+<h3 id="external-third-party-apis-services">🌐 External Third-Party APIs &amp; Services</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Service Name</th>
+<th style="text-align: left;">API Endpoint / Resource</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Auth Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>IP-API Geolocation</strong></td>
+<td style="text-align: left;"><code>http://ip-api.com/json/{ip}</code></td>
+<td style="text-align: left;">Retrieves IP City, Country, Lat/Lon, and ASN</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CARTO Basemaps</strong></td>
+<td style="text-align: left;"><code>https://{s}.basemaps.cartocdn.com/dark_all/...</code></td>
+<td style="text-align: left;">Dark GIS tile provider for Leaflet GeoTrace map</td>
+<td style="text-align: left;">Optional (Key parameter supported)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Have I Been Pwned</strong></td>
+<td style="text-align: left;"><code>https://api.pwnedpasswords.com/range/{hash5}</code></td>
+<td style="text-align: left;">Checks password breaches via k-Anonymity</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Google Safe Browsing</strong></td>
+<td style="text-align: left;"><code>https://safebrowsing.googleapis.com/v4/threatMatches:find</code></td>
+<td style="text-align: left;">Queries Google's known malicious web page database</td>
+<td style="text-align: left;">Yes (API Key)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PhishTank API</strong></td>
+<td style="text-align: left;"><code>https://checkurl.phishtank.com/checkurl/</code></td>
+<td style="text-align: left;">Queries PhishTank phishing link database</td>
+<td style="text-align: left;">Yes (API Key)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>URLhaus Feed</strong></td>
+<td style="text-align: left;"><code>https://urlhaus-api.abuse.ch/v1/url/</code></td>
+<td style="text-align: left;">Community threat feed for malware links</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OpenRouter AI</strong></td>
+<td style="text-align: left;"><code>https://openrouter.ai/api/v1/chat/completions</code></td>
+<td style="text-align: left;">LLM fallback for zero-day phishing analysis</td>
+<td style="text-align: left;">Yes (API Key)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-forensic-risk-engine-scoring-algorithm">6. Forensic Risk Engine &amp; Scoring Algorithm</h2>
+<p>The threat score $S_{threat} \in [0, 100]$ is computed using a weighted composite model across 4 security pillars:</p>
+<p>$$S_{threat} = \min\left(100, \sum_{i=1}^{4} w_i \cdot S_i + \delta_{penalty}\right)$$</p>
+<p>Where:
+* $S_1$ = <strong>Authentication Deficit Score</strong> ($w_1 = 0.35$): Computed from SPF failures, DMARC policy violations, and <code>From</code>/<code>Reply-To</code> domain mismatch.
+* $S_2$ = <strong>Psychological Manipulation &amp; Urgency Score</strong> ($w_2 = 0.25$): NLP frequency analysis of high-pressure threat keywords.
+* $S_3$ = <strong>URL &amp; Domain Infrastructure Risk</strong> ($w_3 = 0.25$): Evaluates direct IP links, tunnel domain presence (<code>ngrok</code>, <code>serveo</code>), newly registered domain TLDs, and double extension attachments.
+* $S_4$ = <strong>Header Anomalies Score</strong> ($w_4 = 0.15$): Missing RFC Message-IDs, invalid date formats, or suspicious relay hop count (&gt; 8 hops).
+* $\delta_{penalty}$: Flat $+20$ penalty if SPF <strong>AND</strong> DMARC both fail simultaneously.</p>
+<hr />
+<h2 id="7-repository-file-inventory">7. Repository File Inventory</h2>
+<div class="codehilite"><pre><span></span><code>TheThirdEye/
+├── PROJECT_DOCUMENTATION.md    # Master Project Specification (This File)
+├── README.md                   # Quickstart Guide &amp; GitHub Presentation
+├── manifest.json               # Chrome Extension Manifest V3 Config
+│
+├── analyst-dashboard/          # SOC Analyst Forensic Dashboard
+│   ├── index.html              # Main HTML5 Interface
+│   ├── style.css               # Dark Cyberpunk CSS Design Tokens
+│   ├── app.js                  # Frontend Controller &amp; API Integration
+│   └── map.js                  # Leaflet.js Map &amp; Polyline Animator
+│
+├── forensic-engine/            # Python FastAPI Forensic Engine
+│   ├── main.py                 # FastAPI Application Server Entrypoint
+│   ├── requirements.txt        # Python Dependencies List
+│   ├── create_test_emails.py   # Script to generate sample .eml payloads
+│   ├── parsers/                # Email Parsing Modules
+│   │   ├── __init__.py
+│   │   ├── header_parser.py    # RFC 822 Header &amp; Relay Extractor
+│   │   ├── body_parser.py      # HTML Link, Attachment &amp; Text Extractor
+│   │   └── auth_validator.py   # Live SPF/DMARC DNS Validator
+│   ├── analyzers/              # Threat Scoring &amp; Geolocation Engines
+│   │   ├── __init__.py
+│   │   ├── nlp_engine.py       # Psychological Urgency &amp; BEC Classifier
+│   │   ├── url_analyzer.py     # Link Safety &amp; Tunnel Domain Detector
+│   │   ├── geo_tracer.py       # IP Geolocation &amp; ASN Lookup Module
+│   │   └── risk_scorer.py      # Composite Threat Scoring Matrix
+│   ├── data/                   # MaxMind Databases &amp; Stored Forensic Cases
+│   └── test_emails/            # Sample .eml Threat Payloads
+│
+├── background/                 # Chrome Extension Service Worker
+│   └── service-worker.js       # Background Threat Orchestrator
+│
+├── content/                    # Extension Content Scripts
+│   ├── gmail-scanner.js        # Gmail DOM Link &amp; Header Scanner
+│   ├── page-analyzer.js        # Webpage Signal Extractor (23+ features)
+│   ├── homoglyph-detector.js   # IDN Cyrillic/Greek Lookalike Detector
+│   ├── password-monitor.js     # HIBP k-Anonymity Password Monitor
+│   ├── search-scanner.js       # Google Search Result Annotator
+│   └── mixed-content-detector.js # Insecure HTTP Content Inspector
+│
+├── popup/                      # Extension UI Interface
+│   ├── popup.html              # 7-Tab Extension Popup View
+│   ├── popup.css               # Popup Stylesheet
+│   └── popup.js                # Popup Controller Script
+│
+├── backend/                    # Legacy Node.js Express Backend (:3000)
+│   ├── server.js               # Express Server
+│   ├── routes/                 # Threat Reputation &amp; Scanner Routes
+│   └── services/               # OpenRouter LLM Bridge &amp; Feed Parsers
+│
+├── eai/                        # Legacy Python ML Microservice (:5000)
+│   ├── train.py                # RandomForest Model Trainer (PhiUSIIL dataset)
+│   ├── serve.py                # ML Prediction FastAPI Server
+│   └── evaluate.py             # Accuracy &amp; ROC-AUC Metric Evaluator
+│
+└── rules/                      # Tracker Blocking Rules
+    └── tracker-rules.json      # DeclarativeNetRequest Rule Definitions
+</code></pre></div>
+
+<hr />
+<h2 id="8-setup-execution-deployment-guide">8. Setup, Execution &amp; Deployment Guide</h2>
+<h3 id="1-launch-the-forensic-engine-backend">1. Launch the Forensic Engine (Backend)</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd </span><span class="s2">&quot;c:\Users\DELL\OneDrive\Desktop\SIH&#39;26\TheThirdEye\forensic-engine&quot;</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">python</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Engine Endpoint</strong>: <code>http://localhost:5001</code></li>
+<li><strong>Swagger API Docs</strong>: <code>http://localhost:5001/docs</code></li>
+</ul>
+<h3 id="2-launch-the-analyst-dashboard-frontend">2. Launch the Analyst Dashboard (Frontend)</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd </span><span class="s2">&quot;c:\Users\DELL\OneDrive\Desktop\SIH&#39;26\TheThirdEye\analyst-dashboard&quot;</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">http</span><span class="p">.</span><span class="n">server</span> <span class="n">8080</span>
+</code></pre></div>
+
+<ul>
+<li>Access the dashboard at <strong><a href="http://localhost:8080">http://localhost:8080</a></strong>.</li>
+</ul>
+<h3 id="3-load-the-browser-extension">3. Load the Browser Extension</h3>
+<ol>
+<li>Open Chrome or Edge and go to <code>chrome://extensions/</code>.</li>
+<li>Enable <strong>Developer Mode</strong>.</li>
+<li>Click <strong>Load Unpacked</strong> and choose <code>c:\Users\DELL\OneDrive\Desktop\SIH'26\TheThirdEye</code>.</li>
+</ol>
+<hr />
+<p><em>Documentation maintained for Smart India Hackathon 2026.</em></p>
+</body>
+</html>

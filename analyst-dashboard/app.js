@@ -695,8 +695,11 @@ function renderURLAnalysis(urlData) {
 
 function renderAuthCards(auth) {
     const container = document.getElementById('auth-cards');
+    const resultsGrid = document.getElementById('auth-results-grid');
+    const resultsDetails = document.getElementById('auth-details-content');
+
     if (!auth) {
-        container.innerHTML = '';
+        if (container) container.innerHTML = '';
         return;
     }
 
@@ -706,7 +709,7 @@ function renderAuthCards(auth) {
         { name: 'DMARC', data: auth.dmarc, icon: '🛡️' },
     ];
 
-    container.innerHTML = protocols.map(p => {
+    const cardsHtml = protocols.map(p => {
         const status = p.data?.status || 'unknown';
         const stateClass = p.data?.pass === true ? 'pass' : p.data?.pass === false ? 'fail' : 'unknown';
         const statusText = status.charAt(0).toUpperCase() + status.slice(1);
@@ -720,6 +723,32 @@ function renderAuthCards(auth) {
             </div>
         `;
     }).join('');
+
+    // Populate sidebar Headers panel
+    if (container) container.innerHTML = cardsHtml;
+
+    // Populate Results > Authentication sub-tab grid
+    if (resultsGrid) resultsGrid.innerHTML = cardsHtml;
+
+    // Populate Results > Authentication details section
+    if (resultsDetails) {
+        const detailRows = protocols.map(p => {
+            const status = p.data?.status || 'unknown';
+            const pass = p.data?.pass;
+            const color = pass === true ? '#22c55e' : pass === false ? '#ef4444' : '#f97316';
+            const verdict = pass === true ? 'PASS' : pass === false ? 'FAIL' : 'UNKNOWN';
+            return `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-tertiary); border-radius: 8px; margin-bottom: 8px;">
+                    <div>
+                        <strong style="font-size: 13px;">${p.icon} ${p.name}</strong>
+                        <span style="font-size: 12px; color: var(--text-muted); margin-left: 12px;">${escapeHtml(p.data?.detail || status)}</span>
+                    </div>
+                    <span style="font-weight: 700; font-size: 12px; color: ${color}; background: ${color}22; padding: 4px 10px; border-radius: 6px;">${verdict}</span>
+                </div>
+            `;
+        }).join('');
+        resultsDetails.innerHTML = detailRows;
+    }
 }
 
 
@@ -727,8 +756,14 @@ function renderAuthCards(auth) {
 
 function renderHeadersTable(headers) {
     const container = document.getElementById('headers-table-wrapper');
+    const resultsChain = document.getElementById('received-chain');
+    const resultsTable = document.getElementById('results-headers-table');
+
+    const emptyMsg = '<p class="empty-state">No Received headers parsed</p>';
     if (!headers || !headers.received_hops || headers.received_hops.length === 0) {
-        container.innerHTML = '<p class="empty-state">No Received headers parsed</p>';
+        if (container) container.innerHTML = emptyMsg;
+        if (resultsChain) resultsChain.innerHTML = emptyMsg;
+        if (resultsTable) resultsTable.innerHTML = emptyMsg;
         return;
     }
 
@@ -742,7 +777,7 @@ function renderHeadersTable(headers) {
         </tr>
     `).join('');
 
-    container.innerHTML = `
+    const tableHtml = `
         <table class="headers-table">
             <thead>
                 <tr>
@@ -756,6 +791,26 @@ function renderHeadersTable(headers) {
             <tbody>${rows}</tbody>
         </table>
     `;
+
+    // Populate sidebar Headers panel
+    if (container) container.innerHTML = tableHtml;
+
+    // Populate Results > Headers sub-tab: Received Chain visual
+    if (resultsChain) {
+        const chainHtml = headers.received_hops.map(hop => `
+            <div class="chain-hop" style="display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-primary);">
+                <div style="min-width: 42px; height: 42px; border-radius: 50%; background: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0;">${hop.hop_index}</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">${escapeHtml(hop.from_hostname || 'Unknown')} → ${escapeHtml(hop.by_hostname || 'Unknown')}</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">IP: <code>${hop.from_ip || '—'}</code> &nbsp;|&nbsp; ${hop.timestamp || '—'}</div>
+                </div>
+            </div>
+        `).join('');
+        resultsChain.innerHTML = chainHtml;
+    }
+
+    // Populate Results > Headers sub-tab: Full headers table
+    if (resultsTable) resultsTable.innerHTML = tableHtml;
 }
 
 

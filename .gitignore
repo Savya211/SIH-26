@@ -15,6 +15,10 @@ eai/models/
 # Chrome extension build artifacts
 _metadata/
 
+# Runtime data
+forensic-engine/data/cases/
+.vscode/
+
 # OS files
 Thumbs.db
 Desktop.ini
