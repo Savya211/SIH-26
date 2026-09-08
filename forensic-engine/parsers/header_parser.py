@@ -14,11 +14,30 @@ import email
 from email import policy
 from email.utils import parsedate_to_datetime
 import re
+import ipaddress
 from typing import Optional
 
 
 # Regex to match IPv4 addresses in Received headers
 IPV4_PATTERN = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
+
+
+def is_public_ip(ip_str: str) -> bool:
+    """Check if an IP address string is valid and routable on the public internet."""
+    if not ip_str:
+        return False
+    try:
+        ip_obj = ipaddress.ip_address(ip_str.strip())
+        return not (
+            ip_obj.is_private or
+            ip_obj.is_loopback or
+            ip_obj.is_reserved or
+            ip_obj.is_multicast or
+            ip_obj.is_link_local or
+            ip_obj.is_unspecified
+        )
+    except ValueError:
+        return False
 
 # Regex to extract domain from email addresses
 EMAIL_DOMAIN_PATTERN = re.compile(r'@([\w.-]+)')
@@ -224,6 +243,46 @@ def extract_all_headers(msg: email.message.EmailMessage) -> dict:
         except Exception:
             parsed_date = date_header
     
+    # --- Extract Best Candidate Public Sender IP ---
+    explicit_client_ip = None
+    detection_source = None
+    is_explicit = False
+
+    explicit_headers = [
+        'X-Originating-IP',
+        'X-Sender-IP',
+        'X-Remote-IP',
+        'X-Client-IP'
+    ]
+    for h_name in explicit_headers:
+        val = msg.get(h_name)
+        if val:
+            clean_ip = re.sub(r'[\[\]\s]', '', val)
+            if is_public_ip(clean_ip):
+                explicit_client_ip = clean_ip
+                detection_source = f"Explicit Header ({h_name})"
+                is_explicit = True
+                break
+
+    if not explicit_client_ip and auth_results:
+        spf_match = IPV4_PATTERN.findall(auth_results)
+        for ip in spf_match:
+            if is_public_ip(ip):
+                explicit_client_ip = ip
+                detection_source = "Authentication-Results (SPF)"
+                break
+
+    # Public IP chain from Received headers (bottom to top / oldest to newest)
+    public_ip_chain = []
+    for hop in received_hops:
+        ip = hop.get("from_ip")
+        if ip and is_public_ip(ip) and ip not in public_ip_chain:
+            public_ip_chain.append(ip)
+
+    if not explicit_client_ip and public_ip_chain:
+        explicit_client_ip = public_ip_chain[0]  # Earliest public relay
+        detection_source = "Received (Earliest Public Hop)"
+
     return {
         "sender": {
             "full": from_header,
@@ -237,6 +296,12 @@ def extract_all_headers(msg: email.message.EmailMessage) -> dict:
         "return_path": {
             "full": return_path,
             "domain": return_path_domain
+        },
+        "origin_ip_analysis": {
+            "origin_ip": explicit_client_ip,
+            "detection_source": detection_source or "None (No public IP detected)",
+            "ip_chain": public_ip_chain,
+            "is_explicit_client_ip": is_explicit
         },
         "to": to_header,
         "cc": cc_header,
