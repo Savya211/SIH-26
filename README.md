@@ -123,6 +123,10 @@ Upload these `.eml` files directly into the Analyst Dashboard or click the demo 
 
 ---
 
+ML server 
+
+cd eai
+python serve.py
 ## 📜 License
 
 Distributed under the [MIT License](LICENSE).

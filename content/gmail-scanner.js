@@ -78,20 +78,39 @@
 
             console.log(`[GmailScanner] Email loaded — scanning ${links.length} links, ${images.length} images`);
 
-            // Send to backend for scanning
-            fetch('http://localhost:3000/api/scan-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ links, images }),
-                signal: AbortSignal.timeout(8000)
-            })
-                .then(r => r.json())
-                .then(data => handleScanResults(data, body))
-                .catch(err => {
-                    // Backend unavailable — fall back to local quick scan
-                    console.warn('[GmailScanner] Backend unavailable, using local scan:', err.message);
-                    handleLocalFallback(links, images, body);
-                });
+            // Send to background service worker for backend scanning
+chrome.runtime.sendMessage(
+    {
+        type: 'SCAN_GMAIL_EMAIL',
+        links,
+        images
+    },
+    (response) => {
+        if (chrome.runtime.lastError) {
+            console.warn(
+                '[GmailScanner] Service worker error:',
+                chrome.runtime.lastError.message
+            );
+
+            handleLocalFallback(links, images, body);
+            return;
+        }
+
+        if (!response || !response.success) {
+            console.warn(
+                '[GmailScanner] Backend unavailable, using local scan:',
+                response?.error || 'Unknown error'
+            );
+
+            handleLocalFallback(links, images, body);
+            return;
+        }
+
+        console.log('[GmailScanner] Backend scan completed');
+
+        handleScanResults(response.data, body);
+    }
+);
         });
     }
 

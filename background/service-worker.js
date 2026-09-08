@@ -44,6 +44,46 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({ status: 'ok' });
     }
 
+    // --- Gmail Email Scanner Backend ---
+if (request.type === 'SCAN_GMAIL_EMAIL') {
+    fetch('http://localhost:3000/api/scan-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            links: request.links || [],
+            images: request.images || []
+        }),
+        signal: AbortSignal.timeout(8000)
+    })
+        .then(async (res) => {
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`Backend returned ${res.status}: ${text}`);
+            }
+
+            return res.json();
+        })
+        .then(data => {
+            console.log('[ServiceWorker] Gmail scan successful');
+
+            sendResponse({
+                success: true,
+                data
+            });
+        })
+        .catch(err => {
+            console.error('[ServiceWorker] Gmail scan failed:', err);
+
+            sendResponse({
+                success: false,
+                error: err.message
+            });
+        });
+
+    return true;
+}
     // --- AI/Backend Page Analysis ---
     if (request.type === 'ANALYZE_PAGE') {
         const { signals } = request;

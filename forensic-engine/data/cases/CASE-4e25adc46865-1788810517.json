@@ -1,0 +1,542 @@
+{
+  "case_id": "CASE-4e25adc46865-1788810517",
+  "filename": "beef_attack.eml",
+  "file_hash_sha256": "4e25adc46865be175e6a20688228296b93abb99b691019de5bed9b7c337b72b7",
+  "timestamp": "2026-09-08T01:18:39.021303",
+  "processing_time_seconds": 1.687,
+  "headers": {
+    "sender": {
+      "full": "Director General - University Administration <director@university.edu>",
+      "domain": "university.edu",
+      "display_name": "Director General - University Administration"
+    },
+    "reply_to": {
+      "full": "director.urgent@gmail.com",
+      "domain": "gmail.com"
+    },
+    "return_path": {
+      "full": "<bounce@temp-mail.org>",
+      "domain": "temp-mail.org"
+    },
+    "to": "target@university.edu",
+    "cc": "",
+    "subject": "CONFIDENTIAL: Scholarship Fund Transfer - Immediate Processing Required",
+    "date": {
+      "raw": "Thu, 03 Sep 2026 14:18:55 +0530",
+      "parsed": "2026-09-03T14:18:55+05:30"
+    },
+    "message_id": "<malicious-hook-2026@temp-mail.org>",
+    "x_mailer": "PhishKit v3.1",
+    "authentication_results_raw": "mx.university.edu;       spf=fail (university.edu: domain of director@university.edu does not designate 77.247.181.163 as permitted sender);       dkim=none;       dmarc=fail action=quarantine header.from=university.edu;",
+    "received_hops": [
+      {
+        "from_hostname": null,
+        "from_ip": "45.33.32.156",
+        "by_hostname": "unknown",
+        "timestamp_raw": "Thu, 03 Sep 2026 14:19:10 +0530",
+        "timestamp": "2026-09-03T14:19:10+05:30",
+        "raw": "from [45.33.32.156] (helo=mail.legit-portal.com)        by unknown with ESMTP;        Thu, 03 Sep 2026 14:19:10 +0530",
+        "hop_index": 1
+      },
+      {
+        "from_hostname": "unknown",
+        "from_ip": "77.247.181.163",
+        "by_hostname": "mail-gw.university.edu",
+        "timestamp_raw": "Thu, 03 Sep 2026 14:19:30 +0530",
+        "timestamp": "2026-09-03T14:19:30+05:30",
+        "raw": "from unknown (unknown [77.247.181.163])        by mail-gw.university.edu with SMTP;        Thu, 03 Sep 2026 14:19:30 +0530",
+        "hop_index": 2
+      },
+      {
+        "from_hostname": "mail-gw.university.edu",
+        "from_ip": "142.250.190.46",
+        "by_hostname": "mx.university.edu",
+        "timestamp_raw": "Thu, 03 Sep 2026 14:19:50 +0530",
+        "timestamp": "2026-09-03T14:19:50+05:30",
+        "raw": "from mail-gw.university.edu (mail-gw.university.edu [142.250.190.46]) by mx.university.edu        with ESMTPS id uvw54321;        Thu, 03 Sep 2026 14:19:50 +0530",
+        "hop_index": 3
+      },
+      {
+        "from_hostname": null,
+        "from_ip": "10.0.0.3",
+        "by_hostname": "10.0.0.3",
+        "timestamp_raw": "Thu, 03 Sep 2026 14:20:00 +0530",
+        "timestamp": "2026-09-03T14:20:00+05:30",
+        "raw": "by 10.0.0.3 with SMTP id def67890;        Thu, 03 Sep 2026 14:20:00 +0530",
+        "hop_index": 4
+      }
+    ],
+    "all_ips": [
+      "45.33.32.156",
+      "77.247.181.163",
+      "142.250.190.46",
+      "10.0.0.3"
+    ],
+    "spoofing_indicators": [
+      {
+        "type": "REPLY_TO_MISMATCH",
+        "severity": "high",
+        "detail": "From domain (university.edu) differs from Reply-To domain (gmail.com)"
+      },
+      {
+        "type": "RETURN_PATH_MISMATCH",
+        "severity": "medium",
+        "detail": "From domain (university.edu) differs from Return-Path domain (temp-mail.org)"
+      },
+      {
+        "type": "DISPLAY_NAME_IMPERSONATION",
+        "severity": "high",
+        "detail": "Display name 'Director General - University Administration' contains impersonation keyword: 'admin'"
+      }
+    ],
+    "total_hops": 4
+  },
+  "authentication": {
+    "spf": {
+      "status": "fail",
+      "detail": "university.edu: domain of director@university.edu does not designate 77.247.181.163 as permitted sender",
+      "pass": false
+    },
+    "dkim": {
+      "status": "none",
+      "detail": "",
+      "pass": false
+    },
+    "dmarc": {
+      "status": "fail",
+      "detail": "Policy action: quarantine, From domain: university.edu",
+      "pass": false
+    },
+    "dns_spf": {
+      "has_spf": null,
+      "record": "",
+      "detail": "DNS query failed: The DNS response does not contain an answer to the question: university.edu. IN TXT"
+    },
+    "dns_dmarc": {
+      "has_dmarc": null,
+      "policy": "",
+      "record": "",
+      "detail": "DNS query failed for _dmarc.university.edu: The DNS query name does not exist: _dmarc.university.edu."
+    },
+    "auth_risk_score": 0.8,
+    "auth_indicators": [
+      "SPF verification FAILED \u2014 sender IP is not authorized to send for this domain",
+      "No DKIM signature present on this email",
+      "DMARC alignment FAILED \u2014 sender domain is likely spoofed"
+    ]
+  },
+  "body_analysis": {
+    "url_count": 1,
+    "has_html": true,
+    "has_scripts": true,
+    "has_anchor_mismatch": false,
+    "dangerous_attachments": 0,
+    "scripts": [
+      {
+        "type": "BEEF_HOOK",
+        "severity": "critical",
+        "detail": "BeEF Browser Exploitation Framework hook detected: http://45.33.32.156:3000/hook.js (suspicious port in URL: http://45.33.32.156:3000/hook.js)"
+      }
+    ],
+    "attachments": [],
+    "plain_text_preview": ""
+  },
+  "nlp_analysis": {
+    "urgency_score": 0.3,
+    "credential_score": 0.3,
+    "financial_score": 0.9,
+    "impersonation_score": 0.3,
+    "social_engineering_score": 0.7,
+    "overall_nlp_score": 0.46,
+    "flagged_keywords": [
+      {
+        "keyword": "immediate",
+        "category": "Urgency & Pressure",
+        "context": "...: scholarship fund transfer - immediate processing required\n<!doctype..."
+      },
+      {
+        "keyword": "enter credentials",
+        "category": "Credential Harvesting",
+        "context": "...he transfer</li>\r\n        <li>enter your credentials and authorize the payment</li..."
+      },
+      {
+        "keyword": "wire transfer",
+        "category": "Financial Fraud",
+        "context": "...the payment</li>\r\n        <li>wire transfer the amount to the new bank ac..."
+      },
+      {
+        "keyword": "bank account",
+        "category": "Financial Fraud",
+        "context": "...foundation</li>\r\n        <li>account number: 9876543210123456</li>..."
+      },
+      {
+        "keyword": "fund transfer",
+        "category": "Financial Fraud",
+        "context": "...confidential: scholarship fund transfer - immediate processing requir..."
+      },
+      {
+        "keyword": "changed bank details",
+        "category": "Financial Fraud",
+        "context": "...re transfer the amount to the new bank account details attached</li>\r\n    </..."
+      },
+      {
+        "keyword": "Director",
+        "category": "Impersonation",
+        "context": "...margin: 5px 0;\">office of the director general</p>\r\n    </div>\r\n    \r\n    <p..."
+      },
+      {
+        "keyword": "confidentiality",
+        "category": "Social Engineering",
+        "context": "...confidential: scholarship fund transfer -..."
+      },
+      {
+        "keyword": "false familiarity",
+        "category": "Social Engineering",
+        "context": "...lty member,</p>\r\n    \r\n    <p>as discussed in our board meeting, we need..."
+      },
+      {
+        "keyword": "false familiarity",
+        "category": "Social Engineering",
+        "context": "...til the transfer is complete. per our conversation, this must be done before end..."
+      }
+    ],
+    "threat_categories": [
+      "Urgency & Pressure Tactics",
+      "Credential Harvesting Attempt",
+      "Financial Fraud / Payment Redirection",
+      "Identity Impersonation / Whaling",
+      "Social Engineering Manipulation"
+    ],
+    "nlp_indicators": [
+      "Financial fraud indicators detected (score: 90%)",
+      "Impersonation cues detected (score: 30%)",
+      "Social engineering tactics detected (score: 70%)"
+    ]
+  },
+  "url_analysis": {
+    "analyzed_urls": [
+      {
+        "url": "http://45.33.32.156:8080/university-portal/login",
+        "risk_score": 0.9,
+        "findings": [
+          {
+            "type": "NO_TLS",
+            "severity": "medium",
+            "detail": "URL uses insecure HTTP without encryption"
+          },
+          {
+            "type": "RAW_IP_HOST",
+            "severity": "high",
+            "detail": "Raw IP address used as hostname: 45.33.32.156"
+          },
+          {
+            "type": "EXPLOITATION_PORT",
+            "severity": "high",
+            "detail": "Known exploitation/testing port detected: 8080"
+          },
+          {
+            "type": "PHISHING_PATH",
+            "severity": "medium",
+            "detail": "URL path matches credential harvesting pattern: /university-portal/login"
+          }
+        ],
+        "is_raw_ip": true,
+        "is_tunnel": false,
+        "has_suspicious_port": true,
+        "is_typosquat": false,
+        "has_suspicious_tld": false,
+        "has_phishing_path": true
+      }
+    ],
+    "url_risk_score": 0.9,
+    "total_urls": 1,
+    "dangerous_urls": 1,
+    "url_indicators": [
+      "1 dangerous URL(s) detected"
+    ]
+  },
+  "geolocation": {
+    "hop_path": [
+      {
+        "ip": "45.33.32.156",
+        "country": "US",
+        "country_code": "US",
+        "city": "Fremont",
+        "latitude": 37.5483,
+        "longitude": -121.9886,
+        "asn": "AS63949",
+        "org": "AS63949 Akamai Connected Cloud",
+        "isp": "AS63949 Akamai Connected Cloud",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 1,
+        "role": "origin"
+      },
+      {
+        "ip": "77.247.181.163",
+        "country": "NL",
+        "country_code": "NL",
+        "city": "Lelystad",
+        "latitude": 52.5083,
+        "longitude": 5.475,
+        "asn": "AS43350",
+        "org": "AS43350 NForce Entertainment B.V.",
+        "isp": "AS43350 NForce Entertainment B.V.",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 2,
+        "role": "relay"
+      },
+      {
+        "ip": "142.250.190.46",
+        "country": "US",
+        "country_code": "US",
+        "city": "New York City",
+        "latitude": 40.7143,
+        "longitude": -74.006,
+        "asn": "AS15169",
+        "org": "AS15169 Google LLC",
+        "isp": "AS15169 Google LLC",
+        "is_tor": false,
+        "is_vpn": false,
+        "is_datacenter": false,
+        "source": "ipinfo",
+        "hop_index": 3,
+        "role": "destination"
+      }
+    ],
+    "origin_node": {
+      "ip": "45.33.32.156",
+      "country": "US",
+      "country_code": "US",
+      "city": "Fremont",
+      "latitude": 37.5483,
+      "longitude": -121.9886,
+      "asn": "AS63949",
+      "org": "AS63949 Akamai Connected Cloud",
+      "isp": "AS63949 Akamai Connected Cloud",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 1,
+      "role": "origin"
+    },
+    "destination_node": {
+      "ip": "142.250.190.46",
+      "country": "US",
+      "country_code": "US",
+      "city": "New York City",
+      "latitude": 40.7143,
+      "longitude": -74.006,
+      "asn": "AS15169",
+      "org": "AS15169 Google LLC",
+      "isp": "AS15169 Google LLC",
+      "is_tor": false,
+      "is_vpn": false,
+      "is_datacenter": false,
+      "source": "ipinfo",
+      "hop_index": 3,
+      "role": "destination"
+    },
+    "total_public_hops": 3,
+    "geo_risk_score": 0.0,
+    "geo_indicators": [],
+    "geo_anomalies": [],
+    "geojson": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -121.9886,
+              37.5483
+            ]
+          },
+          "properties": {
+            "hop_index": 1,
+            "ip": "45.33.32.156",
+            "city": "Fremont",
+            "country": "US",
+            "org": "AS63949 Akamai Connected Cloud",
+            "role": "origin",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#ef4444"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              5.475,
+              52.5083
+            ]
+          },
+          "properties": {
+            "hop_index": 2,
+            "ip": "77.247.181.163",
+            "city": "Lelystad",
+            "country": "NL",
+            "org": "AS43350 NForce Entertainment B.V.",
+            "role": "relay",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#f97316"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.006,
+              40.7143
+            ]
+          },
+          "properties": {
+            "hop_index": 3,
+            "ip": "142.250.190.46",
+            "city": "New York City",
+            "country": "US",
+            "org": "AS15169 Google LLC",
+            "role": "destination",
+            "is_tor": false,
+            "is_vpn": false,
+            "is_datacenter": false,
+            "marker_color": "#22c55e"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -121.9886,
+                37.5483
+              ],
+              [
+                5.475,
+                52.5083
+              ],
+              [
+                -74.006,
+                40.7143
+              ]
+            ]
+          },
+          "properties": {
+            "type": "route",
+            "hop_count": 3
+          }
+        }
+      ]
+    }
+  },
+  "risk": {
+    "threat_score": 64,
+    "verdict": "SUSPICIOUS",
+    "verdict_color": "#f97316",
+    "confidence": 0.9,
+    "sub_scores": {
+      "authentication": 100,
+      "nlp_content": 46.0,
+      "url_heuristics": 100,
+      "geographic": 0.0,
+      "attachments": 0.0
+    },
+    "indicators": [
+      {
+        "category": "Active Content",
+        "severity": "critical",
+        "message": "BeEF Browser Exploitation Framework hook detected: http://45.33.32.156:3000/hook.js (suspicious port in URL: http://45.33.32.156:3000/hook.js)"
+      },
+      {
+        "category": "Authentication",
+        "severity": "high",
+        "message": "SPF verification FAILED \u2014 sender IP is not authorized to send for this domain"
+      },
+      {
+        "category": "Authentication",
+        "severity": "high",
+        "message": "DMARC alignment FAILED \u2014 sender domain is likely spoofed"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Urgency & Pressure Tactics"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Credential Harvesting Attempt"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Financial Fraud / Payment Redirection"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Identity Impersonation / Whaling"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "high",
+        "message": "Threat category detected: Social Engineering Manipulation"
+      },
+      {
+        "category": "URL Analysis",
+        "severity": "high",
+        "message": "1 dangerous URL(s) detected"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "high",
+        "message": "From domain (university.edu) differs from Reply-To domain (gmail.com)"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "high",
+        "message": "Display name 'Director General - University Administration' contains impersonation keyword: 'admin'"
+      },
+      {
+        "category": "Authentication",
+        "severity": "medium",
+        "message": "No DKIM signature present on this email"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "medium",
+        "message": "Financial fraud indicators detected (score: 90%)"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "medium",
+        "message": "Impersonation cues detected (score: 30%)"
+      },
+      {
+        "category": "NLP Content",
+        "severity": "medium",
+        "message": "Social engineering tactics detected (score: 70%)"
+      },
+      {
+        "category": "Identity Spoofing",
+        "severity": "medium",
+        "message": "From domain (university.edu) differs from Return-Path domain (temp-mail.org)"
+      }
+    ],
+    "summary": "Email shows 10 suspicious indicators. Manual review advised before interacting with contents."
+  }
+}
