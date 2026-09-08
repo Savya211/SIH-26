@@ -38,9 +38,11 @@ function initMap() {
         maxZoom: 14,
     });
 
-    // Dark tile layer (Supports CARTO API key via window.CARTO_API_KEY or default tile URL)
+    // Dark tile layer with CARTO API key support
     const cartoKey = (typeof window !== 'undefined' && window.CARTO_API_KEY) ? window.CARTO_API_KEY : '';
-    const tileUrl = cartoKey ? `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${cartoKey}` : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+    const tileUrl = cartoKey 
+        ? `https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=${cartoKey}` 
+        : 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png';
 
     L.tileLayer(tileUrl, {
         subdomains: 'abcd',

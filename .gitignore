@@ -15,8 +15,9 @@ eai/models/
 # Chrome extension build artifacts
 _metadata/
 
-# Runtime data
+# Runtime data & Local Configs
 forensic-engine/data/cases/
+analyst-dashboard/config.js
 .vscode/
 
 # OS files
