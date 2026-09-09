@@ -1587,6 +1587,50 @@ svg * {
     box-shadow: 0 0 0 2px var(--accent-primary);
 }
 
+.cases-clear-btn {
+    padding: 9px 16px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--danger, #ef4444);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-family: var(--font-sans);
+    transition: all var(--transition-fast);
+}
+
+.cases-clear-btn:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.6);
+    transform: translateY(-1px);
+}
+
+.case-delete-btn {
+    opacity: 0.5;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-left: 8px;
+}
+
+.case-delete-btn:hover {
+    opacity: 1;
+    color: var(--danger, #ef4444);
+    background: rgba(239, 68, 68, 0.15);
+}
+
 /* Cases List */
 .cases-list { display: flex; flex-direction: column; gap: 6px; }
 

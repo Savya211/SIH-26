@@ -273,6 +273,40 @@ async def get_case(case_id: str):
         return json.load(f)
 
 
+@app.delete("/api/cases")
+async def delete_all_cases():
+    """Delete all previously analyzed case history."""
+    deleted_count = 0
+    for case_file in CASES_DIR.glob("*.json"):
+        try:
+            case_file.unlink()
+            deleted_count += 1
+        except Exception:
+            continue
+    return {
+        "status": "success",
+        "message": "All case history deleted successfully",
+        "deleted_count": deleted_count
+    }
+
+
+@app.delete("/api/cases/{case_id}")
+async def delete_single_case(case_id: str):
+    """Delete a specific case by ID."""
+    case_file = CASES_DIR / f"{case_id}.json"
+    if not case_file.exists():
+        raise HTTPException(status_code=404, detail=f"Case {case_id} not found")
+    
+    try:
+        case_file.unlink()
+        return {
+            "status": "success",
+            "message": f"Case {case_id} deleted successfully"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to delete case {case_id}: {str(e)}")
+
+
 @app.get("/api/demo-emails")
 async def list_demo_emails():
     """List available demo .eml files for testing."""

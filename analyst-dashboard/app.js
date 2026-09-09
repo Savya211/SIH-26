@@ -842,6 +842,9 @@ async function loadCases() {
                         <div class="case-score" style="color: ${color};">${c.threat_score}</div>
                         <div class="case-time">${c.filename || ''}</div>
                     </div>
+                    <button class="case-delete-btn" onclick="deleteSingleCase(event, '${c.case_id}')" title="Delete this case">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
                 </div>
             `;
         }).join('');
@@ -861,6 +864,61 @@ async function loadCase(caseId) {
         switchPanel('results');
     } catch {
         alert('Failed to load case');
+    }
+}
+
+async function clearAllCases() {
+    if (!confirm('Are you sure you want to delete all case history? This action cannot be undone.')) {
+        return;
+    }
+
+    try {
+        const resp = await fetch(`${API_BASE}/api/cases`, { method: 'DELETE' });
+        if (!resp.ok) throw new Error('Failed to delete cases');
+        
+        currentAnalysis = null;
+        stats = { emails: 0, threats: 0, cases: 0, highrisk: 0 };
+        saveStats();
+        updateStatsDisplay();
+        
+        await loadCases();
+        
+        const activeNav = document.querySelector('.nav-item.active');
+        if (activeNav && (activeNav.dataset.panel === 'results' || activeNav.dataset.panel === 'cases')) {
+            switchPanel('upload');
+        }
+
+        showToast('All case history cleared successfully', 'success');
+    } catch (err) {
+        showToast('Failed to clear case history', 'danger');
+    }
+}
+
+async function deleteSingleCase(event, caseId) {
+    if (event) event.stopPropagation();
+
+    if (!confirm(`Are you sure you want to delete case ${caseId}?`)) {
+        return;
+    }
+
+    try {
+        const resp = await fetch(`${API_BASE}/api/cases/${caseId}`, { method: 'DELETE' });
+        if (!resp.ok) throw new Error('Failed to delete case');
+
+        if (currentAnalysis && currentAnalysis.case_id === caseId) {
+            currentAnalysis = null;
+        }
+
+        if (stats.cases > 0) {
+            stats.cases -= 1;
+            saveStats();
+            updateStatsDisplay();
+        }
+
+        await loadCases();
+        showToast(`Case ${caseId} deleted`, 'info');
+    } catch (err) {
+        showToast('Failed to delete case', 'danger');
     }
 }
 
