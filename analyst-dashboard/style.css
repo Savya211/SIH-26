@@ -764,7 +764,6 @@ svg * {
 }
 
 /* Demo Cards */
-.demo-section { }
 
 .section-title {
     font-size: 14px; font-weight: 600;
@@ -1645,8 +1644,6 @@ svg * {
    IOC Section
    ═══════════════════════════════════════════════════════════════ */
 
-.ioc-section { }
-
 .ioc-header {
     display: flex; align-items: center; justify-content: space-between;
     margin-bottom: 18px;
@@ -1767,8 +1764,6 @@ svg * {
    AI Investigation Section
    ═══════════════════════════════════════════════════════════════ */
 
-.ai-section { }
-
 .ai-assessment {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -1840,8 +1835,6 @@ svg * {
 /* ═══════════════════════════════════════════════════════════════
    Investigation Timeline
    ═══════════════════════════════════════════════════════════════ */
-
-.timeline-section { }
 
 .timeline {
     display: flex; flex-direction: column;
@@ -1981,8 +1974,6 @@ svg * {
 /* ═══════════════════════════════════════════════════════════════
    Threat Intelligence Panel
    ═══════════════════════════════════════════════════════════════ */
-
-.threatintel-container { }
 
 .threatintel-grid {
     display: flex;
