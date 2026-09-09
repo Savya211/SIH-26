@@ -184,16 +184,36 @@ def compute_composite_risk(
         geo_score * 0.10 +
         attachment_score * 0.10
     )
+
+    # ═══════════════════════════════════════════
+    #  Guaranteed Authentication Immunity Rule
+    # ═══════════════════════════════════════════
+    spf_pass = auth_data.get("spf", {}).get("pass") is True
+    dkim_pass = auth_data.get("dkim", {}).get("pass") is True
+    dmarc_pass = auth_data.get("dmarc", {}).get("pass") is True
     
+    # Email is authoritatively verified if SPF/DKIM pass with DMARC or both pass
+    is_fully_authenticated = (spf_pass or dkim_pass) and (dmarc_pass or (spf_pass and dkim_pass))
+    
+    if is_fully_authenticated:
+        # Purge spoofing indicators since cryptographic DKIM/SPF proves authenticity
+        indicators = [i for i in indicators if i.get("category") != "Identity Spoofing"]
+        
+        # Absolute Guarantee: Unless containing dangerous executable files or active scripts,
+        # an authentically signed email CANNOT exceed 15 (BENIGN).
+        if dangerous_count == 0 and not body_data.get("has_scripts"):
+            composite = min(composite, 15.0)
+
     # Count critical and high severity indicators
     critical_count = sum(1 for i in indicators if i["severity"] == "critical")
     high_count = sum(1 for i in indicators if i["severity"] == "high")
 
-    # Apply score floors for critical/high severity findings
-    if critical_count > 0:
-        composite = max(composite, 75.0)
-    elif auth_score >= 80 or (high_count >= 2 and auth_score >= 30):
-        composite = max(composite, 55.0)
+    # Apply score floors for critical/high severity findings (unauthenticated emails only)
+    if not is_fully_authenticated:
+        if critical_count > 0:
+            composite = max(composite, 75.0)
+        elif auth_score >= 80 or (high_count >= 2 and auth_score >= 30):
+            composite = max(composite, 55.0)
     
     threat_score = round(min(100, max(0, composite)))
     
