@@ -85,9 +85,10 @@ def compute_composite_risk(
     
     # Add specific threat category indicators
     for cat in nlp_data.get("threat_categories", []):
+        cat_severity = "high" if nlp_score >= 50 else "medium"
         indicators.append({
             "category": "NLP Content",
-            "severity": "high",
+            "severity": cat_severity,
             "message": f"Threat category detected: {cat}"
         })
     
@@ -191,10 +192,8 @@ def compute_composite_risk(
     # Apply score floors for critical/high severity findings
     if critical_count > 0:
         composite = max(composite, 75.0)
-    elif high_count >= 2 or auth_score >= 80:
+    elif auth_score >= 80 or (high_count >= 2 and auth_score >= 30):
         composite = max(composite, 55.0)
-    elif high_count == 1 and auth_score >= 30:
-        composite = max(composite, 45.0)
     
     threat_score = round(min(100, max(0, composite)))
     
