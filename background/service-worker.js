@@ -327,7 +327,7 @@ if (request.type === 'SCAN_GMAIL_EMAIL') {
             type: 'basic',
             iconUrl: 'assets/icons/icon128.png',
             title: verdict === 'dangerous' ? '⛔ Phishing Email Link Blocked!' : '⚠️ Suspicious Email Link',
-            message: `TheThirdEye intercepted a ${verdict} link in Gmail:\n${reasons?.[0] || 'Phishing pattern detected'}`,
+            message: `CyberShield intercepted a ${verdict} link in Gmail:\n${reasons?.[0] || 'Phishing pattern detected'}`,
             priority: verdict === 'dangerous' ? 2 : 1
         });
 

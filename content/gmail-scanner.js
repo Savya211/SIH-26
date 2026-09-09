@@ -227,7 +227,7 @@ chrome.runtime.sendMessage(
                 a.style.outline = `2px solid ${isDangerous ? '#ef4444' : '#f59e0b'}`;
                 a.style.borderRadius = '3px';
                 a.style.padding = '1px 3px';
-                a.title = `⚠️ TheThirdEye: ${result.reasons[0] || 'Suspicious link'}`;
+                a.title = `⚠️ CyberShield: ${result.reasons[0] || 'Suspicious link'}`;
 
                 // Add a small warning badge after the link
                 if (!a.dataset.tteBadge) {
@@ -275,7 +275,7 @@ chrome.runtime.sendMessage(
         banner.innerHTML = `
             <span style="font-size:20px;">${icon}</span>
             <div style="flex:1">
-                <strong style="display:block;margin-bottom:2px;">TheThirdEye: ${title}</strong>
+                <strong style="display:block;margin-bottom:2px;">CyberShield: ${title}</strong>
                 <span style="color:#6b7280;font-size:12px;">Links are highlighted. Click to see details before proceeding.</span>
             </div>
             <button id="tte-dismiss-banner" style="
@@ -362,7 +362,7 @@ chrome.runtime.sendMessage(
                     font-weight: 700;
                 ">${isDangerous ? 'Phishing Link Detected!' : 'Suspicious Link'}</h2>
                 <p style="margin:0 0 16px;color:#374151;font-size:14px;">
-                    This link was flagged by <strong>TheThirdEye</strong> as
+                    This link was flagged by <strong>CyberShield</strong> as
                     <strong>${isDangerous ? 'dangerous' : 'suspicious'}</strong>.
                 </p>
 
@@ -417,7 +417,7 @@ chrome.runtime.sendMessage(
                     ">Proceed Anyway ↗</button>
                 </div>
                 <p style="margin:16px 0 0;font-size:11px;color:#9ca3af;">
-                    TheThirdEye Security Extension
+                    CyberShield Security Extension
                 </p>
             </div>
             <style>

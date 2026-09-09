@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "TheThirdEye",
+  "name": "CyberShield",
   "version": "1.0",
   "description": "Protects against online threats, checks passwords locally, blocks trackers, and detects phishing.",
   "icons": {
