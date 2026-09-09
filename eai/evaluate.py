@@ -1,5 +1,5 @@
 """
-Model evaluation script for TheThirdEye phishing detection model.
+Model evaluation script for CyberShield phishing detection model.
 
 Usage:
     cd eai

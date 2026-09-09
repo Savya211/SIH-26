@@ -1,5 +1,5 @@
 """
-main.py — TheThirdEye Forensic Intelligence Engine
+main.py — CyberShield Forensic Intelligence Engine
 
 FastAPI application exposing email forensic analysis endpoints.
 Runs on port 5001 alongside the existing ML microservice on port 5000.
@@ -38,7 +38,7 @@ from analyzers.risk_scorer import compute_composite_risk
 # ═══════════════════════════════════════════════
 
 app = FastAPI(
-    title="TheThirdEye Forensic Engine",
+    title="CyberShield Forensic Engine",
     description="AI-Powered Email Threat Detection, GeoLocation & Forensic Intelligence Platform",
     version="1.0.0"
 )
@@ -106,7 +106,7 @@ def load_cases() -> list:
 async def root():
     """Root endpoint with API info."""
     return {
-        "name": "TheThirdEye Forensic Intelligence Engine",
+        "name": "CyberShield Forensic Intelligence Engine",
         "version": "1.0.0",
         "status": "online",
         "problem_statement": "SIH26106",
@@ -315,7 +315,7 @@ async def analyze_demo_email(filename: str):
 if __name__ == "__main__":
     import uvicorn
     print("=" * 60)
-    print("  TheThirdEye Forensic Intelligence Engine")
+    print("  CyberShield Forensic Intelligence Engine")
     print("  SIH26106: AI-Powered Email Threat Detection")
     print("=" * 60)
     uvicorn.run(

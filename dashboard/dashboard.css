@@ -1,5 +1,5 @@
 /* ────────────────────────────────────────────
-   TheThirdEye — Fullscreen Dashboard CSS
+   CyberShield — Fullscreen Dashboard CSS
    ──────────────────────────────────────────── */
 
 /* ═══ Design Tokens ═══ */
@@ -105,6 +105,7 @@ body {
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary), var(--accent-purple));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -.3px;
 }
@@ -558,6 +559,7 @@ body {
     line-height: 1;
     background: linear-gradient(135deg, var(--accent-orange), var(--accent-rose));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

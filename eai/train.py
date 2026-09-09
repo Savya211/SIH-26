@@ -1,5 +1,5 @@
 """
-Training script for TheThirdEye phishing detection model.
+Training script for CyberShield phishing detection model.
 
 Usage:
     cd eai

@@ -1,5 +1,5 @@
 """
-Preprocessing pipeline for TheThirdEye ML model.
+Preprocessing pipeline for CyberShield ML model.
 - Loads PhiUSIIL_Phishing_URL_Dataset.csv (235K rows, 52 cols)
 - Drops text columns, handles missing values
 - Splits 80/20 stratified, fits StandardScaler

@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════
-   TheThirdEye — Website JS
+   CyberShield — Website JS
    Particles, scroll reveal, navbar, hamburger
    ════════════════════════════════════════════════ */
 

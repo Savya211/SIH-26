@@ -1,5 +1,5 @@
 /**
- * dashboard.js — TheThirdEye Fullscreen Dashboard
+ * dashboard.js — CyberShield Fullscreen Dashboard
  * Reads REAL data from chrome.storage.local (extension storage).
  * Must be opened as a chrome-extension:// page to access chrome APIs.
  */
@@ -43,7 +43,7 @@
                 <div style="font-size:64px;">🛡️</div>
                 <h2 style="font-size:24px;font-weight:700;">Extension Context Required</h2>
                 <p style="color:#64748b;max-width:480px;line-height:1.7;">
-                    This dashboard needs to be opened from the TheThirdEye extension to access your security data.<br><br>
+                    This dashboard needs to be opened from the CyberShield extension to access your security data.<br><br>
                     Open it by clicking the <strong>"Open Dashboard"</strong> button in the extension popup, or navigate to:<br>
                     <code style="background:#1e293b;padding:4px 10px;border-radius:6px;font-size:13px;margin-top:8px;display:inline-block;">chrome-extension://&lt;your-extension-id&gt;/dashboard/index.html</code>
                 </p>

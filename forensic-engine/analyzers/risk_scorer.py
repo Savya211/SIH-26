@@ -184,6 +184,18 @@ def compute_composite_risk(
         attachment_score * 0.10
     )
     
+    # Count critical and high severity indicators
+    critical_count = sum(1 for i in indicators if i["severity"] == "critical")
+    high_count = sum(1 for i in indicators if i["severity"] == "high")
+
+    # Apply score floors for critical/high severity findings
+    if critical_count > 0:
+        composite = max(composite, 75.0)
+    elif high_count >= 2 or auth_score >= 80:
+        composite = max(composite, 55.0)
+    elif high_count == 1 and auth_score >= 30:
+        composite = max(composite, 45.0)
+    
     threat_score = round(min(100, max(0, composite)))
     
     # ═══════════════════════════════════════════

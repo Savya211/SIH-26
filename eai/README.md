@@ -1,4 +1,4 @@
-# TheThirdEye — ML Model (eai/)
+# CyberShield — ML Model (eai/)
 
 Local phishing-detection model trained on the **PhiUSIIL dataset** (235K URLs, 52 features).  
 Serves predictions via **FastAPI on port 5000**, integrated as **Layer 3** in the Node.js backend.

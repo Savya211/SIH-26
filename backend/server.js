@@ -1,5 +1,5 @@
 /**
- * server.js - TheThirdEye Backend Server
+ * server.js - CyberShield Backend Server
  * Provides AI-powered page analysis for the browser extension.
  *
  * 4-Layer Defense:
@@ -45,7 +45,7 @@ sendReportRoute(app);
 // Root info
 app.get('/', (req, res) => {
     res.json({
-        name: 'TheThirdEye Backend',
+        name: 'CyberShield Backend',
         version: '1.1.0',
         status: 'online',
         threatListSize: getThreatListSize(),
@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
 
 // Start server
 async function start() {
-    console.log('🛡️  TheThirdEye Backend Server');
+    console.log('🛡️  CyberShield Backend Server');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
 
     // Load community threat lists on startup

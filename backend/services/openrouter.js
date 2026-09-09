@@ -23,8 +23,8 @@ export async function analyzePageWithAI(pageSignals) {
             headers: {
                 'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
                 'Content-Type': 'application/json',
-                'HTTP-Referer': 'https://thethirdeye-extension.local',
-                'X-Title': 'TheThirdEye Security Extension'
+                'HTTP-Referer': 'https://cybershield-extension.local',
+                'X-Title': 'CyberShield Security Extension'
             },
             body: JSON.stringify({
                 model: 'google/gemini-2.0-flash-001',

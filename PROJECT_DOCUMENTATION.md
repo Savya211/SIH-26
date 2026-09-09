@@ -1,7 +1,7 @@
-# 🛡️ TheThirdEye / AegisMail — Comprehensive Project Specification & Technical Documentation
+# 🛡️ CyberShield — Comprehensive Project Specification & Technical Documentation
 
 > **Smart India Hackathon (SIH 2026)**  
-> **Project Name**: AegisMail / TheThirdEye  
+> **Project Name**: CyberShield  
 > **Category**: Cybersecurity & AI-Driven Automated Threat Intelligence  
 > **Repository**: [https://github.com/Savya211/SIH-26](https://github.com/Savya211/SIH-26)  
 
@@ -23,7 +23,7 @@
 
 ## 1. Executive Summary
 
-**TheThirdEye / AegisMail** is an end-to-end cybersecurity ecosystem built to solve two major modern digital attack vectors:
+**CyberShield** is an end-to-end cybersecurity ecosystem built to solve two major modern digital attack vectors:
 1. **Advanced Email Phishing & BEC (Business Email Compromise)** — Investigated via an automated AI-powered Python Forensic Engine and SOC Analyst Web Dashboard.
 2. **Real-time Web Threats & Privacy Invasion** — Protected via a Chrome Manifest V3 Browser Extension providing inline DOM defense, password breach shields, and zero-overhead tracker blocking.
 
@@ -247,7 +247,7 @@ Where:
 ## 7. Repository File Inventory
 
 ```text
-TheThirdEye/
+CyberShield/
 ├── PROJECT_DOCUMENTATION.md    # Master Project Specification (This File)
 ├── README.md                   # Quickstart Guide & GitHub Presentation
 ├── manifest.json               # Chrome Extension Manifest V3 Config

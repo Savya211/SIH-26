@@ -1,5 +1,5 @@
 """
-TheThirdEye ML Prediction Microservice
+CyberShield ML Prediction Microservice
 Runs on http://localhost:5000
 
 Endpoints:
@@ -73,7 +73,7 @@ print(f"  Unsafe names lookup: {len(_unsafe_names)} entries")
 print("Ready.")
 
 # ── FastAPI app ───────────────────────────────────────────────────────────────
-app = FastAPI(title="TheThirdEye ML Service", version="1.0.0")
+app = FastAPI(title="CyberShield ML Service", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,

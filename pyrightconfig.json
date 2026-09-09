@@ -1,0 +1,14 @@
+{
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "extraPaths": [
+                "eai",
+                "forensic-engine"
+            ]
+        }
+    ],
+    "pythonPath": "python",
+    "pythonVersion": "3.13",
+    "pythonPlatform": "Windows"
+}

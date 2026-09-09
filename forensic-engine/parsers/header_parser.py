@@ -79,6 +79,21 @@ def extract_domain(address: str) -> Optional[str]:
     return match.group(1).lower() if match else None
 
 
+def is_same_org_domain(dom1: str, dom2: str) -> bool:
+    """Check if two domains belong to the same organization (e.g. google.com vs scoutcamp.bounces.google.com)."""
+    if not dom1 or not dom2:
+        return False
+    d1 = dom1.lower().strip()
+    d2 = dom2.lower().strip()
+    if d1 == d2 or d1.endswith('.' + d2) or d2.endswith('.' + d1):
+        return True
+    parts1 = d1.split('.')
+    parts2 = d2.split('.')
+    if len(parts1) >= 2 and len(parts2) >= 2:
+        return parts1[-2:] == parts2[-2:]
+    return False
+
+
 def extract_display_name(address: str) -> Optional[str]:
     """Extract display name from a formatted email address like 'John Doe <john@example.com>'."""
     if not address:
@@ -200,40 +215,49 @@ def extract_all_headers(msg: email.message.EmailMessage) -> dict:
     # --- Detect Spoofing Indicators ---
     spoofing_indicators = []
     
-    # Check From vs Reply-To domain mismatch
-    if from_domain and reply_domain and from_domain.lower() != reply_domain.lower():
+    # Check From vs Reply-To domain mismatch (respecting organizational domains)
+    if from_domain and reply_domain and not is_same_org_domain(from_domain, reply_domain):
         spoofing_indicators.append({
             "type": "REPLY_TO_MISMATCH",
             "severity": "high",
             "detail": f"From domain ({from_domain}) differs from Reply-To domain ({reply_domain})"
         })
     
-    # Check From vs Return-Path domain mismatch
-    if from_domain and return_path_domain and from_domain.lower() != return_path_domain.lower():
+    # Check From vs Return-Path domain mismatch (respecting organizational domains)
+    if from_domain and return_path_domain and not is_same_org_domain(from_domain, return_path_domain):
         spoofing_indicators.append({
             "type": "RETURN_PATH_MISMATCH",
             "severity": "medium",
             "detail": f"From domain ({from_domain}) differs from Return-Path domain ({return_path_domain})"
         })
     
-    # Check for suspicious display name (looks like a domain or organization)
-    if from_display_name:
-        # Check if display name impersonates known brands
-        impersonation_keywords = [
-            "bank", "security", "admin", "support", "helpdesk", "paypal",
-            "microsoft", "google", "apple", "amazon", "netflix", "facebook",
-            "instagram", "state bank", "sbi", "hdfc", "icici", "rbi",
-            "director", "ceo", "cfo", "executive", "president", "manager"
-        ]
+    # Check for suspicious display name impersonation
+    if from_display_name and from_domain:
+        brand_domains = {
+            "google": ["google.com", "gmail.com", "youtube.com"],
+            "paypal": ["paypal.com"],
+            "microsoft": ["microsoft.com", "outlook.com", "office.com", "office365.com", "live.com", "hotmail.com"],
+            "apple": ["apple.com", "icloud.com"],
+            "amazon": ["amazon.com", "aws.amazon.com"],
+            "netflix": ["netflix.com"],
+            "facebook": ["facebook.com", "meta.com"],
+            "instagram": ["instagram.com"],
+            "sbi": ["sbi.co.in"],
+            "hdfc": ["hdfcbank.com"],
+            "icici": ["icicibank.com"]
+        }
         display_lower = from_display_name.lower()
-        for keyword in impersonation_keywords:
-            if keyword in display_lower:
-                spoofing_indicators.append({
-                    "type": "DISPLAY_NAME_IMPERSONATION",
-                    "severity": "high",
-                    "detail": f"Display name '{from_display_name}' contains impersonation keyword: '{keyword}'"
-                })
-                break
+        for brand, allowed_list in brand_domains.items():
+            if brand in display_lower:
+                # Check if sender domain is legitimate for this brand
+                is_legit = any(is_same_org_domain(from_domain, d) for d in allowed_list)
+                if not is_legit:
+                    spoofing_indicators.append({
+                        "type": "DISPLAY_NAME_IMPERSONATION",
+                        "severity": "high",
+                        "detail": f"Display name '{from_display_name}' contains brand '{brand}' but from domain is '{from_domain}'"
+                    })
+                    break
     
     # --- Parse Date ---
     parsed_date = None

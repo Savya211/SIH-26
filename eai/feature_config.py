@@ -1,4 +1,4 @@
-# Feature configuration for TheThirdEye ML model
+# Feature configuration for CyberShield ML model
 # Maps PhiUSIIL dataset columns to browser-extracted signals
 
 # All numerical feature columns from PhiUSIIL (drop text cols: URL, Domain, TLD, Title)

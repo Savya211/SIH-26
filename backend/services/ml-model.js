@@ -1,6 +1,6 @@
 /**
  * services/ml-model.js
- * HTTP client for the TheThirdEye ML prediction microservice (Python FastAPI on :5000)
+ * HTTP client for the CyberShield ML prediction microservice (Python FastAPI on :5000)
  *
  * Returns null on any failure so the caller can gracefully fall back to OpenRouter.
  */

@@ -1,7 +1,7 @@
 {
-    "name": "thethirdeye-backend",
+    "name": "cybershield-backend",
     "version": "1.0.0",
-    "description": "Backend server for TheThirdEye browser security extension - AI-powered page analysis",
+    "description": "Backend server for CyberShield browser security extension - AI-powered page analysis",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
