@@ -337,8 +337,8 @@
 
         // Gradient fill
         const grad = ctx.createLinearGradient(0, padTop, 0, padTop + chartH);
-        grad.addColorStop(0, 'rgba(139,92,246,.3)');
-        grad.addColorStop(1, 'rgba(139,92,246,0)');
+        grad.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+        grad.addColorStop(1, 'rgba(16, 185, 129, 0)');
 
         ctx.beginPath();
         ctx.moveTo(points[0].x, padTop + chartH);
@@ -351,7 +351,7 @@
         // Line
         ctx.beginPath();
         drawSmoothCurve(ctx, points);
-        ctx.strokeStyle = '#8b5cf6';
+        ctx.strokeStyle = '#10B981';
         ctx.lineWidth = 2.5;
         ctx.stroke();
 
@@ -359,9 +359,9 @@
         points.forEach((p) => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-            ctx.fillStyle = '#8b5cf6';
+            ctx.fillStyle = '#10B981';
             ctx.fill();
-            ctx.strokeStyle = '#111827';
+            ctx.strokeStyle = '#282E35';
             ctx.lineWidth = 2;
             ctx.stroke();
         });

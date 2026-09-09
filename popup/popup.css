@@ -1,14 +1,14 @@
 :root {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --border: #334155;
+    --bg-main: #20252B;
+    --bg-card: #282E35;
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --primary: #10B981;
+    --primary-hover: #059669;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --border: #3A414A;
     --radius: 8px;
 }
 
@@ -243,7 +243,8 @@ h3 {
 
 .primary-btn {
     background-color: var(--primary);
-    color: white;
+    color: #20252B;
+    font-weight: 700;
 }
 
 .primary-btn:hover {

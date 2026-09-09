@@ -1,14 +1,18 @@
 :root {
-    --bg-danger: #ef4444;
-    --text-light: #ffffff;
-    --card-bg: rgba(0, 0, 0, 0.2);
+    --bg-danger: #20252B;
+    --danger-accent: #EF4444;
+    --text-light: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --card-bg: rgba(239, 68, 68, 0.06);
+    --border-danger: rgba(239, 68, 68, 0.2);
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-danger);
+    background: radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.1) 0%, #20252B 80%);
+    background-color: #20252B;
     color: var(--text-light);
     display: flex;
     justify-content: center;
@@ -23,34 +27,45 @@ body {
 }
 
 .icon-container {
-    font-size: 80px;
+    font-size: 72px;
     margin-bottom: 20px;
+    filter: drop-shadow(0 0 24px rgba(239, 68, 68, 0.6));
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 34px;
     margin-bottom: 16px;
-    font-weight: 700;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
 
 #warning-message {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 32px;
+    color: #c9d5e4;
 }
 
 .details-box {
     background-color: var(--card-bg);
+    border: 1px solid var(--border-danger);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: left;
     margin-bottom: 40px;
     font-size: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .details-box p {
     margin: 8px 0;
     word-break: break-all;
+    color: #e2e8f0;
+}
+
+.details-box strong {
+    color: var(--danger-accent);
 }
 
 .actions {
@@ -61,31 +76,34 @@ h1 {
 
 .btn {
     padding: 14px 24px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .primary {
-    background-color: #ffffff;
-    color: var(--bg-danger);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ef4444;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
 }
 
 .primary:hover {
+    background-color: #dc2626;
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
 }
 
 .secondary {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
 }
