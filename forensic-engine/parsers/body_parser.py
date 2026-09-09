@@ -36,6 +36,18 @@ TUNNEL_DOMAINS = [
     'pagekite.me', 'localhost.run'
 ]
 
+# Legitimate Email Service Provider (ESP) tracking / redirect domains
+LEGITIMATE_ESP_DOMAINS = [
+    'sendgrid.net', 'sendgrid.me', 'ct.sendgrid.net',
+    'mailgun.net', 'mailgun.org', 'amazonses.com',
+    'mailchimp.com', 'list-manage.com', 'mcsv.net',
+    'hubspot.com', 'hs-sites.com', 'hubspotemail.net',
+    'salesforce.com', 'exacttarget.com', 'pardot.com',
+    'marketo.com', 'mktoresp.com',
+    'constantcontact.com', 'rs6.net',
+    'substack.com', 'convertkit.com', 'activecampaign.com'
+]
+
 
 def extract_body(msg: EmailMessage) -> dict:
     """
@@ -171,17 +183,26 @@ def extract_urls_from_html(html_content: str) -> list:
         }
         
         # Check for anchor text / href mismatch
-        # If display text looks like a URL but points elsewhere
-        if display_text and re.match(r'https?://', display_text):
-            try:
-                from urllib.parse import urlparse
-                display_parsed = urlparse(display_text)
-                href_parsed = urlparse(href)
-                if (display_parsed.hostname and href_parsed.hostname and
-                    display_parsed.hostname.lower() != href_parsed.hostname.lower()):
-                    url_info["anchor_mismatch"] = True
-            except Exception:
-                pass
+        # If display text looks like a URL or domain but points elsewhere
+        if display_text:
+            display_url_match = re.search(r'(?:https?://)?([\w.-]+\.[a-zA-Z]{2,})', display_text)
+            if display_url_match:
+                try:
+                    from urllib.parse import urlparse
+                    disp_host = display_url_match.group(1).lower()
+                    href_parsed = urlparse(href)
+                    href_host = (href_parsed.hostname or "").lower()
+                    
+                    if disp_host and href_host and disp_host != href_host:
+                        from parsers.header_parser import is_same_org_domain
+                        # Ignore if both share organizational domain (e.g. nptel.ac.in and onlinecourses.nptel.iitm.ac.in)
+                        if not is_same_org_domain(disp_host, href_host):
+                            # Ignore if href destination is a known Email Service Provider tracking service
+                            is_esp_tracker = any(href_host == esp or href_host.endswith('.' + esp) for esp in LEGITIMATE_ESP_DOMAINS)
+                            if not is_esp_tracker:
+                                url_info["anchor_mismatch"] = True
+                except Exception:
+                    pass
         
         # Check for raw IP address as host
         try:

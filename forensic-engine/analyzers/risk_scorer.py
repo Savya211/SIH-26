@@ -114,12 +114,12 @@ def compute_composite_risk(
                 "message": script.get("detail", "Embedded active content detected")
             })
     
-    # Anchor mismatch is a critical phishing signal
+    # Anchor mismatch is a high phishing signal
     if body_data.get("has_anchor_mismatch"):
         url_score = min(100, url_score + 30)
         indicators.append({
             "category": "URL Analysis",
-            "severity": "critical",
+            "severity": "high",
             "message": "Link display text does not match the actual destination URL"
         })
     
