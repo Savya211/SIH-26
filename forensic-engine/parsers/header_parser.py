@@ -18,8 +18,9 @@ import ipaddress
 from typing import Optional
 
 
-# Regex to match IPv4 addresses in Received headers
+# Regex to match IPv4 and IPv6 addresses in Received headers
 IPV4_PATTERN = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
+IPV6_PATTERN = re.compile(r'\b(?:[0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}\b')
 
 
 def is_public_ip(ip_str: str) -> bool:
@@ -44,7 +45,7 @@ EMAIL_DOMAIN_PATTERN = re.compile(r'@([\w.-]+)')
 
 # Regex to extract "from <hostname>" in Received headers
 RECEIVED_FROM_PATTERN = re.compile(
-    r'from\s+([\w.-]+)\s*\(?([\w.-]*)\s*\[?([\d.]*)\]?\)?',
+    r'from\s+([\w.-]+)\s*\(?([\w.-]*)\s*\[?([\d.a-fA-F:]*)\]?\)?',
     re.IGNORECASE
 )
 
@@ -134,11 +135,15 @@ def parse_received_header(header_text: str) -> dict:
         if from_match.group(3):
             result["from_ip"] = from_match.group(3)
 
-    # If no IP found in "from" pattern, try to find any IP in the header
+    # If no IP found in "from" pattern, try to find any IPv4 or IPv6 in the header
     if not result["from_ip"]:
-        ips = IPV4_PATTERN.findall(header_text)
-        if ips:
-            result["from_ip"] = ips[0]
+        v4_ips = IPV4_PATTERN.findall(header_text)
+        if v4_ips:
+            result["from_ip"] = v4_ips[0]
+        else:
+            v6_ips = IPV6_PATTERN.findall(header_text)
+            if v6_ips:
+                result["from_ip"] = v6_ips[0]
 
     # Extract "by" information
     by_match = RECEIVED_BY_PATTERN.search(header_text)
