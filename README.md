@@ -1,4 +1,4 @@
-# AegisMail / TheThirdEye — AI-Powered Email Forensic & Web Threat Intelligence Platform
+# CyberShield — AI-Powered Email Forensic & Web Threat Intelligence Platform
 
 > **Smart India Hackathon (SIH 2026)** | Problem Statement: **AI-Powered Email Forensic Intelligence, GeoLocation Tracing & Web Threat Defense**
 
@@ -13,7 +13,7 @@
 
 ## 🌟 Overview
 
-**TheThirdEye (AegisMail)** is an enterprise-grade cybersecurity platform combining a browser extension, a multi-layer threat-detection backend, and an analyst investigation dashboard:
+**CyberShield** is an enterprise-grade cybersecurity platform combining a browser extension, a multi-layer threat-detection backend, and an analyst investigation dashboard:
 
 1. 🧩 **Browser Extension (Manifest V3)** — Real-time phishing URL detection, Gmail inline threat scanning, homoglyph lookalike domain detection, password breach monitoring, tracker blocking, and mixed-content warnings.
 2. ⚙️ **Node.js Backend (`backend/`)** — Orchestrates a 4-layer defense pipeline for URL/page analysis and exposes REST endpoints the extension calls.
@@ -76,7 +76,7 @@ Uploaded .eml file ──▶  Forensic Engine — forensic-engine/ (:5001)  ─�
 ## 📁 Project Structure
 
 ```text
-TheThirdEye/
+CyberShield/
 ├── manifest.json               # Chrome Extension manifest (V3)
 ├── background/                 # Extension background service worker
 ├── content/                    # Extension content scripts (Gmail, homoglyph, password, mixed-content)
@@ -152,7 +152,7 @@ python -m http.server 8080
 ### 5. Load the Chrome Extension
 1. Go to `chrome://extensions/`.
 2. Enable **Developer Mode**.
-3. Click **Load unpacked** and select the project root (`TheThirdEye/`).
+3. Click **Load unpacked** and select the project root (`CyberShield/`).
 
 ---
 
