@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AegisMail — Project Specification & Technical Documentation</title>
+<title>CyberShield — Project Specification & Technical Documentation</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
@@ -151,10 +151,10 @@
 </style>
 </head>
 <body>
-<h1 id="cybershield-comprehensive-project-specification-technical-documentation">🛡️ CyberShield — Comprehensive Project Specification &amp; Technical Documentation</h1>
+<h1 id="cybershield-master-technical-specification-system-documentation">🛡️ CyberShield — Master Technical Specification &amp; System Documentation</h1>
 <blockquote>
 <p><strong>Smart India Hackathon (SIH 2026)</strong><br />
-<strong>Project Name</strong>: CyberShield<br />
+<strong>Project Name</strong>: CyberShield — AI-Powered Email Forensic Intelligence, GeoLocation Tracing &amp; Web Threat Defense<br />
 <strong>Category</strong>: Cybersecurity &amp; AI-Driven Automated Threat Intelligence<br />
 <strong>Repository</strong>: <a href="https://github.com/Savya211/SIH-26">https://github.com/Savya211/SIH-26</a>  </p>
 </blockquote>
@@ -166,18 +166,20 @@
 <li><a href="#3-comprehensive-feature-matrix">Comprehensive Feature Matrix</a></li>
 <li><a href="#4-languages-frameworks--libraries">Languages, Frameworks &amp; Libraries</a></li>
 <li><a href="#5-complete-api-catalog--specifications">Complete API Catalog &amp; Specifications</a></li>
-<li><a href="#internal-microservice-apis">Internal Microservice APIs</a></li>
+<li><a href="#email-forensic-engine-rest-api">Email Forensic Engine REST API</a></li>
+<li><a href="#nodejs-backend--threat-services-api">Node.js Backend &amp; Threat Services API</a></li>
 <li><a href="#external-third-party-apis--services">External Third-Party APIs &amp; Services</a></li>
-<li><a href="#6-forensic-risk-engine--scoring-algorithm">Forensic Risk Engine &amp; Scoring Algorithm</a></li>
+<li><a href="#6-forensic-risk-engine-immunity-rules--scoring-algorithm">Forensic Risk Engine, Immunity Rules &amp; Scoring Algorithm</a></li>
 <li><a href="#7-repository-file-inventory">Repository File Inventory</a></li>
 <li><a href="#8-setup-execution--deployment-guide">Setup, Execution &amp; Deployment Guide</a></li>
 </ol>
 <hr />
 <h2 id="1-executive-summary">1. Executive Summary</h2>
-<p><strong>CyberShield</strong> is an end-to-end cybersecurity ecosystem built to solve two major modern digital attack vectors:
-1. <strong>Advanced Email Phishing &amp; BEC (Business Email Compromise)</strong> — Investigated via an automated AI-powered Python Forensic Engine and SOC Analyst Web Dashboard.
-2. <strong>Real-time Web Threats &amp; Privacy Invasion</strong> — Protected via a Chrome Manifest V3 Browser Extension providing inline DOM defense, password breach shields, and zero-overhead tracker blocking.</p>
-<p>The system ingests raw <code>.eml</code> email files or live browser signals, evaluates multi-dimensional risk factors across 4 defense layers, maps physical server hops on a dark CartoDB GIS map, and delivers instant threat verdicts with transparent indicators.</p>
+<p><strong>CyberShield</strong> is an enterprise-grade cybersecurity platform designed to protect organizations and users against modern email phishing, Business Email Compromise (BEC), credential harvesting, and web privacy threats. Built for <strong>Smart India Hackathon (SIH 2026)</strong>, CyberShield combines:</p>
+<ol>
+<li><strong>Email Forensic Intelligence &amp; GeoTrace Platform</strong>: Automated deep analysis of raw <code>.eml</code> emails through multi-stage RFC 822 header parsing, live DNS-level authentication checks (SPF/DKIM/DMARC), NLP psychological urgency detection, ESP tracking domain resolution, server relay IP geolocation mapping, and a SOC Analyst Web Dashboard.</li>
+<li><strong>Real-time Web Threat &amp; Privacy Extension</strong>: A Google Chrome Manifest V3 extension providing inline Gmail link scanning, Cyrillic/Greek IDN homoglyph spoof detection, password breach alerts via SHA-1 k-anonymity, zero-overhead tracker blocking, search safety badges, and security header grading.</li>
+</ol>
 <hr />
 <h2 id="2-complete-system-architecture">2. Complete System Architecture</h2>
 <div class="codehilite"><pre><span></span><code><span class="w">                  </span><span class="err">┌─────────────────────────────────────────────────────────────┐</span>
@@ -378,6 +380,8 @@
 <ul>
 <li><code>GET /api/cases</code>: Returns a list of all stored forensic investigation cases.</li>
 <li><code>GET /api/cases/{case_id}</code>: Fetches full details for a specific case file.</li>
+<li><code>DELETE /api/cases/{case_id}</code>: Permanently deletes a single forensic investigation case.</li>
+<li><code>DELETE /api/cases</code>: Purges all stored investigation history and resets the case store.</li>
 <li><code>GET /health</code>: Healthcheck endpoint returning engine status, uptime, and database metrics.</li>
 </ul>
 <hr />
@@ -437,7 +441,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="6-forensic-risk-engine-scoring-algorithm">6. Forensic Risk Engine &amp; Scoring Algorithm</h2>
+<h2 id="6-forensic-risk-engine-immunity-rules-scoring-algorithm">6. Forensic Risk Engine, Immunity Rules &amp; Scoring Algorithm</h2>
 <p>The threat score $S_{threat} \in [0, 100]$ is computed using a weighted composite model across 4 security pillars:</p>
 <p>$$S_{threat} = \min\left(100, \sum_{i=1}^{4} w_i \cdot S_i + \delta_{penalty}\right)$$</p>
 <p>Where:
@@ -446,6 +450,19 @@
 * $S_3$ = <strong>URL &amp; Domain Infrastructure Risk</strong> ($w_3 = 0.25$): Evaluates direct IP links, tunnel domain presence (<code>ngrok</code>, <code>serveo</code>), newly registered domain TLDs, and double extension attachments.
 * $S_4$ = <strong>Header Anomalies Score</strong> ($w_4 = 0.15$): Missing RFC Message-IDs, invalid date formats, or suspicious relay hop count (&gt; 8 hops).
 * $\delta_{penalty}$: Flat $+20$ penalty if SPF <strong>AND</strong> DMARC both fail simultaneously.</p>
+<h3 id="critical-engine-safeguards-immunity-rules">🛡️ Critical Engine Safeguards &amp; Immunity Rules</h3>
+<ol>
+<li>
+<p><strong>Guaranteed Authentication Immunity Rule</strong>:
+   If an email passes <strong>SPF</strong> ($\text{SPF} = \text{PASS}$), <strong>DKIM</strong> ($\text{DKIM} = \text{PASS}$), and <strong>DMARC</strong> ($\text{DMARC} = \text{PASS}$) with strict domain alignment, its composite risk score is hard-capped:
+   $$S_{threat} = \min(S_{threat}, 15)$$
+   This guarantees that legitimate corporate emails (e.g. password resets, security notifications, official newsletters) will never be falsely flagged as phishing regardless of urgency keywords in the body text.</p>
+</li>
+<li>
+<p><strong>ESP Tracking Domain Whitelisting</strong>:
+   Major Email Service Providers (e.g., <code>sendgrid.net</code>, <code>mailgun.net</code>, <code>mailchimp.com</code>, <code>amazonses.com</code>, <code>hubspot.com</code>) rewrite link URLs for open/click analytics. CyberShield's body parser detects ESP tracking domains and extracts the underlying destination without penalizing ESP infrastructure as "lookalike or suspicious" domains.</p>
+</li>
+</ol>
 <hr />
 <h2 id="7-repository-file-inventory">7. Repository File Inventory</h2>
 <div class="codehilite"><pre><span></span><code>CyberShield/

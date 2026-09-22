@@ -1,7 +1,7 @@
-# 🛡️ CyberShield — Comprehensive Project Specification & Technical Documentation
+# 🛡️ CyberShield — Master Technical Specification & System Documentation
 
 > **Smart India Hackathon (SIH 2026)**  
-> **Project Name**: CyberShield  
+> **Project Name**: CyberShield — AI-Powered Email Forensic Intelligence, GeoLocation Tracing & Web Threat Defense  
 > **Category**: Cybersecurity & AI-Driven Automated Threat Intelligence  
 > **Repository**: [https://github.com/Savya211/SIH-26](https://github.com/Savya211/SIH-26)  
 
@@ -13,9 +13,10 @@
 3. [Comprehensive Feature Matrix](#3-comprehensive-feature-matrix)
 4. [Languages, Frameworks & Libraries](#4-languages-frameworks--libraries)
 5. [Complete API Catalog & Specifications](#5-complete-api-catalog--specifications)
-   - [Internal Microservice APIs](#internal-microservice-apis)
+   - [Email Forensic Engine REST API](#email-forensic-engine-rest-api)
+   - [Node.js Backend & Threat Services API](#nodejs-backend--threat-services-api)
    - [External Third-Party APIs & Services](#external-third-party-apis--services)
-6. [Forensic Risk Engine & Scoring Algorithm](#6-forensic-risk-engine--scoring-algorithm)
+6. [Forensic Risk Engine, Immunity Rules & Scoring Algorithm](#6-forensic-risk-engine-immunity-rules--scoring-algorithm)
 7. [Repository File Inventory](#7-repository-file-inventory)
 8. [Setup, Execution & Deployment Guide](#8-setup-execution--deployment-guide)
 
@@ -23,11 +24,11 @@
 
 ## 1. Executive Summary
 
-**CyberShield** is an end-to-end cybersecurity ecosystem built to solve two major modern digital attack vectors:
-1. **Advanced Email Phishing & BEC (Business Email Compromise)** — Investigated via an automated AI-powered Python Forensic Engine and SOC Analyst Web Dashboard.
-2. **Real-time Web Threats & Privacy Invasion** — Protected via a Chrome Manifest V3 Browser Extension providing inline DOM defense, password breach shields, and zero-overhead tracker blocking.
+**CyberShield** is an enterprise-grade cybersecurity platform designed to protect organizations and users against modern email phishing, Business Email Compromise (BEC), credential harvesting, and web privacy threats. Built for **Smart India Hackathon (SIH 2026)**, CyberShield combines:
 
-The system ingests raw `.eml` email files or live browser signals, evaluates multi-dimensional risk factors across 4 defense layers, maps physical server hops on a dark CartoDB GIS map, and delivers instant threat verdicts with transparent indicators.
+1. **Email Forensic Intelligence & GeoTrace Platform**: Automated deep analysis of raw `.eml` emails through multi-stage RFC 822 header parsing, live DNS-level authentication checks (SPF/DKIM/DMARC), NLP psychological urgency detection, ESP tracking domain resolution, server relay IP geolocation mapping, and a SOC Analyst Web Dashboard.
+2. **Real-time Web Threat & Privacy Extension**: A Google Chrome Manifest V3 extension providing inline Gmail link scanning, Cyrillic/Greek IDN homoglyph spoof detection, password breach alerts via SHA-1 k-anonymity, zero-overhead tracker blocking, search safety badges, and security header grading.
+
 
 ---
 
@@ -211,6 +212,8 @@ The system ingests raw `.eml` email files or live browser signals, evaluates mul
 #### 3. Forensic Case Management Endpoints
 * `GET /api/cases`: Returns a list of all stored forensic investigation cases.
 * `GET /api/cases/{case_id}`: Fetches full details for a specific case file.
+* `DELETE /api/cases/{case_id}`: Permanently deletes a single forensic investigation case.
+* `DELETE /api/cases`: Purges all stored investigation history and resets the case store.
 * `GET /health`: Healthcheck endpoint returning engine status, uptime, and database metrics.
 
 ---
@@ -229,7 +232,7 @@ The system ingests raw `.eml` email files or live browser signals, evaluates mul
 
 ---
 
-## 6. Forensic Risk Engine & Scoring Algorithm
+## 6. Forensic Risk Engine, Immunity Rules & Scoring Algorithm
 
 The threat score $S_{threat} \in [0, 100]$ is computed using a weighted composite model across 4 security pillars:
 
@@ -241,6 +244,17 @@ Where:
 * $S_3$ = **URL & Domain Infrastructure Risk** ($w_3 = 0.25$): Evaluates direct IP links, tunnel domain presence (`ngrok`, `serveo`), newly registered domain TLDs, and double extension attachments.
 * $S_4$ = **Header Anomalies Score** ($w_4 = 0.15$): Missing RFC Message-IDs, invalid date formats, or suspicious relay hop count (> 8 hops).
 * $\delta_{penalty}$: Flat $+20$ penalty if SPF **AND** DMARC both fail simultaneously.
+
+### 🛡️ Critical Engine Safeguards & Immunity Rules
+
+1. **Guaranteed Authentication Immunity Rule**:
+   If an email passes **SPF** ($\text{SPF} = \text{PASS}$), **DKIM** ($\text{DKIM} = \text{PASS}$), and **DMARC** ($\text{DMARC} = \text{PASS}$) with strict domain alignment, its composite risk score is hard-capped:
+   $$S_{threat} = \min(S_{threat}, 15)$$
+   This guarantees that legitimate corporate emails (e.g. password resets, security notifications, official newsletters) will never be falsely flagged as phishing regardless of urgency keywords in the body text.
+
+2. **ESP Tracking Domain Whitelisting**:
+   Major Email Service Providers (e.g., `sendgrid.net`, `mailgun.net`, `mailchimp.com`, `amazonses.com`, `hubspot.com`) rewrite link URLs for open/click analytics. CyberShield's body parser detects ESP tracking domains and extracts the underlying destination without penalizing ESP infrastructure as "lookalike or suspicious" domains.
+
 
 ---
 

@@ -5,7 +5,7 @@ import re
 # Read Markdown document
 md_file_path = r"c:\Users\DELL\OneDrive\Desktop\SIH'26\TheThirdEye\PROJECT_DOCUMENTATION.md"
 html_file_path = r"c:\Users\DELL\OneDrive\Desktop\SIH'26\TheThirdEye\PROJECT_DOCUMENTATION.html"
-pdf_file_path = r"c:\Users\DELL\OneDrive\Desktop\SIH'26\TheThirdEye\AegisMail_Project_Specification.pdf"
+pdf_file_path = r"c:\Users\DELL\OneDrive\Desktop\SIH'26\TheThirdEye\CyberShield_Project_Specification.pdf"
 
 with open(md_file_path, "r", encoding="utf-8") as f:
     md_content = f.read()
@@ -28,7 +28,7 @@ html_full = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AegisMail — Project Specification & Technical Documentation</title>
+<title>CyberShield — Project Specification & Technical Documentation</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
